@@ -1,4 +1,4 @@
-mixin filter(id, type, tabbed, sortoption, search, anchors, subheadings, ...items)
+mixin filter(id, type, tabbed, search, anchors, subheadings, ...items)
   .filter.bg-xlt-grey.border-right(id="filter-" +id class!=attributes.class)
     .filter-overlay
     
@@ -61,13 +61,6 @@ mixin filter(id, type, tabbed, sortoption, search, anchors, subheadings, ...item
                       span= item
 
     .filter-bottom-row.block-hor-xs.border-top
-      if sortoption
-        .filter-tabs.pull-left
-          ul.tab-nav
-            li.tab-nav-tab.tab-nav-subheading Sort by:
-            li.tab-nav-tab.active A—Z
-            li.tab-nav-tab Count
-
       .block-ver-xs.pull-right
         .btn.btn-white
           i.icon.icon-reset
@@ -76,7 +69,6 @@ mixin filter(id, type, tabbed, sortoption, search, anchors, subheadings, ...item
 +filter(
   "category",
   "single-list",
-  false,
   false,
   false,
   false,
@@ -99,7 +91,6 @@ mixin filter(id, type, tabbed, sortoption, search, anchors, subheadings, ...item
   false,
   false,
   false,
-  false,
   "Women (4.54 mil.)",
   "Men (1.07 mil.)",
   "Kids (110,973)",
@@ -113,7 +104,6 @@ mixin filter(id, type, tabbed, sortoption, search, anchors, subheadings, ...item
   false,
   false,
   false,
-  false,
   "Apparel (4.54 mil.)",
   "Accessories (1.07 mil.)",
   "Beauty (110,973)",
@@ -122,7 +112,6 @@ mixin filter(id, type, tabbed, sortoption, search, anchors, subheadings, ...item
 +filter(
   "brand",
   "single-list",
-  true,
   true,
   true,
   true,
@@ -920,7 +909,6 @@ mixin filter(id, type, tabbed, sortoption, search, anchors, subheadings, ...item
   "city",
   "single-list",
   false,
-  false,
   true,
   true,
   "Asia",
@@ -1023,7 +1011,6 @@ mixin filter(id, type, tabbed, sortoption, search, anchors, subheadings, ...item
 +filter(
   "season",
   "single-list",
-  false,
   false,
   true,
   true,
@@ -1129,7 +1116,6 @@ mixin filter(id, type, tabbed, sortoption, search, anchors, subheadings, ...item
   false,
   false,
   false,
-  false,
   "Colours",
   "Black (5.59 mil.)",
   "White (425,589)",
@@ -1165,7 +1151,6 @@ mixin filter(id, type, tabbed, sortoption, search, anchors, subheadings, ...item
   false,
   false,
   false,
-  false,
   "Animal Prints",
   "Lorem ipsum (100)",
   "Lorem ipsum (100)",
@@ -1174,7 +1159,6 @@ mixin filter(id, type, tabbed, sortoption, search, anchors, subheadings, ...item
 +filter(
   "fabric",
   "single-list",
-  false,
   false,
   false,
   false,

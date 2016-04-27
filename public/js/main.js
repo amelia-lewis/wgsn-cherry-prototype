@@ -702,11 +702,9 @@ openModal = function(modalname) {
     if (myaccount > 1) {
       $('#add-to-board-modal').addClass('add-multiple-files');
       $('.num-of-files').text(myaccount + ' images');
-      console.log(myaccount + ' helllooo')
     } else {
       return;
     }
-
   });
 };
 
