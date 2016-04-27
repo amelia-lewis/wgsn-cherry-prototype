@@ -48,9 +48,46 @@
     position: absolute
     top: 0
     bottom: 0
+    @extend .no-transition
 
   $modal-info-panel-width: 480px
   $modal-tool-panel-width: 50px
+
+  //- ============================================================
+  //- REPORT GROUP TABS
+  //- ============================================================
+  
+  .modal-report-group-tabs
+    display: none
+    position: absolute
+    top: 0
+    left: 0
+    width: calc(100% - #{$modal-tool-panel-width})
+    height: 20px
+    margin: 0
+    @extend .border-bottom
+
+    .col-xs-2
+      padding-left: 0
+      padding-right: 0
+      height: 100%
+
+      &:last-of-type
+        .tab
+          border: none
+
+      .tab
+        @extend .flex-center
+        @extend .bg-white
+        @extend .wgsn-font
+        @extend .border-right
+        @extend .hoverable
+        width: 100%
+        height: 100%
+
+        &.active
+          background: $yellow
+          color: white
 
   
   //- ============================================================
@@ -102,14 +139,11 @@
 
       .modal-related-images
         .img
-          width: 100px
           height: 100px
           background: white no-repeat center / contain
 
       .modal-related-reports
         .related-report
-          width: 50%
-          
           .img
             width: 100%
             height: 140px
@@ -358,6 +392,10 @@
     .btn-crop
       display: none
 
+    .modal-info-panel,
+    .modal-image-panel
+      top: 20px
+
     $modal-info-caption-height: 166px
 
     .modal-section-caption
@@ -371,7 +409,8 @@
       .modal-scroll-container
         height: calc((100vh - 60px) - #{$modal-info-caption-height} - 40px - 81px) // height of modal - caption - tabs - comment input - borders
     
-    .modal-page-controls
+    .modal-page-controls,
+    .modal-report-group-tabs
       display: block
 
   &.file-type-video
