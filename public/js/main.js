@@ -94,7 +94,7 @@ checkforhover = function(){
       $('.file.selected .btn').show();
       $('.right-side-panel').addClass('has-file-selected');
       // $('.btn-back-to-top').css({transform: "translate3d(0, -50px, 0)"})
-      $('.file-checkbox').css({opacity: "1"})
+      $('.file .file-checkbox').css({opacity: "1"})
       $('.floating-utility-row .displaying-results').text(myaccount + ' item selected');
       $('.btn-comments').removeClass('active');
     };
@@ -110,7 +110,7 @@ checkforhover = function(){
     $('.floating.context-menu .count').hide();
     $('.right-side-panel').removeClass('has-file-selected').removeClass('has-multiple-files-selected');
     // $('.btn-back-to-top').css({transform: "translate3d(0, 0, 0)"})
-    $('.file-checkbox').css({opacity: "0"})
+    $('.file .file-checkbox').css({opacity: "0"})
   };
 };
 
@@ -604,6 +604,37 @@ $('.btn-comments').on('click', function() {
   $('.page-content').toggleClass('show-comments-panel');
   $('.btn-comments').toggleClass('active');
   $('.btn-back-to-top').toggleClass('show-comments-panel');
+});
+
+// and/remove class when input has focus
+$('.comments-panel .comment-input').focusin(function () {
+  $('.comments-panel').addClass('comment-input-active');
+});
+
+$('.comments-panel .comment-input').focusout(function () {
+  $('.comments-panel').removeClass('comment-input-active');
+});
+
+// hide "new" elements when you scroll to the bottom
+$('.comments-panel .scroll-container').on('scroll', function() {
+  if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 90) {
+    setTimeout(function() {
+      $('.btn-new-comments').addClass('visually-hidden');
+      $('.new-comments-bar').addClass('visually-hidden');
+    }, 300);
+
+    setTimeout(function() {
+      $('.btn-new-comments').addClass('hidden');
+      $('.new-comments-bar').addClass('hidden');
+    }, 800);
+  };
+});
+
+// close comments panel with arrow button
+$('.comments-panel .icon-arrow-right').on('click', function() {
+  $('.page-content').removeClass('show-comments-panel');
+  $('.btn-comments').removeClass('active');
+  $('.btn-back-to-top').removeClass('show-comments-panel');
 });
 
 // board preview

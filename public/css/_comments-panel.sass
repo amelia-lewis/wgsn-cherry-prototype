@@ -6,46 +6,50 @@
   right: 0
   overflow-y: hidden
   +transform(translate3d(100%, 0, 0))
-
-  .tabs
-    position: relative
-    height: 56px
-    @extend .border-bottom
-
-    .col-xs-6:first-of-type
-      .tab
-        &:after
-          content: ""
-          display: block
-          position: absolute
-          bottom: 0
-          left: 0
-          background: $yellow
-          width: 100%
-          height: 4px
-          +transform(translate3d(0, 0, 0))
-          +transition(all 400ms)
-
-        &:not(.active)
-          &:after
-            +transform(translate3d(100%, 0, 0))
-
-    .tab
-      height: 56px
-      @extend .flex-center
-      @extend .no-transition
-
-      &.active
-        color: $yellow
+  box-shadow: 0 0 3px rgba(black, 0.15)
 
   .scroll-container
-    height: calc(100% - 101px)
+    height: calc(100% - 93px)
     overflow-y: auto
+
+  .comment
+    .icon-trash
+      opacity: 0
+      margin-top: 4px
+
+    &:hover
+      .icon-trash
+        opacity: 1
   
   .comment:last-of-type
     border-bottom: none
 
-  .comment-input
+  .new-comments-bar
+    color: $yellow
+    border-top: 1px solid $yellow
+    margin-top: -1px
+
+    &.visually-hidden
+      opacity: 0
+      height: 0
+
+    &.hidden
+      display: none
+
+  .btn-new-comments
+    position: fixed
+    bottom: 70px
+    right: calc(#{$comments-panel-width} / 2)
+    transform: translate3d(50%, 0, 0)
+    @extend .box-shadow
+
+    &.visually-hidden
+      opacity: 0
+
+    &.hidden
+      display: none
+
+  .comment-input-container
     position: absolute
     bottom: 0
     left: 0
@@ -53,4 +57,15 @@
 
     textarea
       width: 100%
-      height: 80px
+      height: 38px
+      min-height: 38px
+
+      &:focus
+        height: 100px 
+
+  &.comment-input-active
+    .scroll-container
+      height: calc(100% - 154px)
+
+    .btn-new-comments
+      transform: translate3d(50%, -61px, 0)

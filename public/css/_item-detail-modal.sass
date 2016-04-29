@@ -123,7 +123,16 @@
             background: white
             border-bottom-color: transparent
       
-      .modal-comments        
+      .modal-comments
+        .comment
+          .icon-trash
+            opacity: 0
+            margin-top: 4px
+
+          &:hover
+            .icon-trash
+              opacity: 1
+              
         .comment:last-of-type
           border-bottom: none
 

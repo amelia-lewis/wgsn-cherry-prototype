@@ -52,9 +52,17 @@ textarea
 :-ms-input-placeholder
    color: $md-grey
 
-input.search
+input.search-input
   background: white url('../img/icons/icon-font_search.svg') no-repeat 12px center / 12px 12px
   padding-left: 36px
+
+textarea.comment-input
+  background: white url('../img/icons/icon-font_comment-filled.svg') no-repeat 12px 12px / 12px 12px
+  padding-left: 36px
+
+  &:focus
+    background: white
+    padding-left: 10px
 
 // .input-container
 //   +clearfix()

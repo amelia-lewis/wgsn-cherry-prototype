@@ -1,11 +1,12 @@
 mixin comment(img, initials, comment, name, time)
-  .comment.block-sm.bg-white.border-bottom
+  .comment.block-sm.bg-white.border-bottom(id!=attributes.id)
     .block-bot-xs.overflow-auto
       if img
         .avatar.avatar-sm.pull-left(style="background-image: url('" + img + "')")
       else
         .avatar.avatar-sm.pull-left(data-initials=initials)
       p.comment-name.text-bold.pull-left.block-top-xxs= name
+      i.icon.icon-trash.text-grey.pull-right.hoverable
     .block
       p.comment-text= comment
       p.tight.text-grey.text-smaller= time 
