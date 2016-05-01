@@ -1,4 +1,4 @@
-.filter
+.filter-extended
   position: absolute
   top: 0
   left: $left-side-panel-width
@@ -10,7 +10,7 @@
   +transform(translate3d(-100%, 0, 0))
   display: none
 
-  .filter-overlay
+  .filter-extended-overlay
     background: rgba($xdk-grey, 0.8)
     position: absolute
     display: block
@@ -24,26 +24,26 @@
   &.show
     +transform(translate3d(0, 0, 0))
 
-    .filter-overlay
+    .filter-extended-overlay
       opacity: 1
       pointer-events: all
   
-  &.filter-sm
+  &.filter-extended-sm
     width: 250px
 
-  &.filter-md
+  &.filter-extended-md
     width: 500px
 
-  &.filter-lg
+  &.filter-extended-lg
     width: 800px
 
-  .filter-top-row
+  .filter-extended-top-row
     overflow: auto
 
     .tab-nav
       margin-top: 1px
 
-  .filter-anchors
+  .filter-extended-anchors
     .anchor-letter
       width: 20px
       height: 20px
@@ -61,7 +61,7 @@
       &:first-of-type
         @extend .active
 
-  .filter-list
+  .filter-extended-list
     position: absolute
     top: 0
     bottom: 52px
@@ -84,16 +84,16 @@
           width: calc(100% - 30px)
           line-height: 1.4em
 
-      .filter-subheading
+      .filter-extended-subheading
         @extend .text-bold
 
-  .filter-top-row + .filter-anchors + .filter-list
+  .filter-extended-top-row + .filter-extended-anchors + .filter-extended-list
     top: 100px
 
-  .filter-columns
+  .filter-extended-columns
     height: calc(100% - 52px)
 
-    .filter-list
+    .filter-extended-list
       position: relative
     
     .col
@@ -112,7 +112,7 @@
           span
             width: calc(100% - 60px)
 
-  .filter-bottom-row
+  .filter-extended-bottom-row
     position: absolute
     bottom: 0
     left: 0
@@ -124,6 +124,6 @@
       margin: 0 6px 0 0
 
 html.tablet
-  .filter
+  .filter-extended
     width: calc(100vw - #{$left-side-panel-width})
     max-width: calc(100vw - #{$left-side-panel-width})

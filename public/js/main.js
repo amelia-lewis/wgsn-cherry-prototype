@@ -594,7 +594,7 @@ $('#tab-filters').on('click', function() {
 $('#tab-folders').on('click', function() {
   $(this).addClass('active');
   $('#tab-filters').removeClass('active');
-  $('.filter').removeClass('show');
+  $('.filter-extended').removeClass('show');
   $('.filter-btn').removeClass('active');
   $('.image-library-view .left-side-panel').addClass('image-library-folders-active').removeClass('image-library-filters-active');
 });
@@ -670,16 +670,16 @@ $('.filter-tag .icon-cross').on('click', function() {
 openFilter = function(filtername) {
   $('#filter-btn-' + filtername).on('click', function() {
     if($(this).hasClass('active')) {
-      $('.filter').removeClass('show');
+      $('.filter-extended').removeClass('show');
       $('.filter-btn').removeClass('active');
       $('.right-side-panel').removeClass('has-file-selected has-multiple-files-selected');
       $('.file').removeClass('selected');
       // $('.file-checkbox').addClass('icon-tick-circle').removeClass('icon-tick-circle-filled');
     } else {
-      $('.filter').removeClass('show');
+      $('.filter-extended').removeClass('show');
       $('.filter-btn').removeClass('active');
       $(this).addClass('active');
-      $('#filter-'+ filtername).addClass('show');
+      $('#filter-extended-'+ filtername).addClass('show');
       $('.right-side-panel').removeClass('has-file-selected has-multiple-files-selected');
       $('.file').removeClass('selected');
       // $('.file-checkbox').addClass('icon-tick-circle').removeClass('icon-tick-circle-filled');
@@ -687,8 +687,8 @@ openFilter = function(filtername) {
   });
 };
 
-$('header, .title-row, .filter-overlay').on('click', function() {
-  $('.filter').removeClass('show');
+$('header, .title-row, .filter-extended-overlay').on('click', function() {
+  $('.filter-extended').removeClass('show');
   $('.filter-btn').removeClass('active');
 });
 

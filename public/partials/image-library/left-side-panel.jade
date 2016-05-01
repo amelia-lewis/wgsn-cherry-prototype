@@ -5,31 +5,26 @@
 
   .panel-filters.block-hor-xxs
     .scroll-container.block-top-xxs
-      mixin filter-btn(name)
-        .filter-btn.hoverable(id!=attributes.id)
-          span= name
-          i.icon.icon-angle-right.pull-right.tight
+      //- mixin filter-btn(name)
+      //-   .filter-btn.hoverable(id!=attributes.id)
+      //-     span= name
+      //-     i.icon.icon-angle-right.pull-right.tight
 
-      +filter-btn("Category")(id="filter-btn-category")
-      +filter-btn("Market")(id="filter-btn-market")
-      +filter-btn("Products")(id="filter-btn-products")
-      +filter-btn("Brand")(id="filter-btn-brand")
-      +filter-btn("City")(id="filter-btn-city")
-      +filter-btn("Season")(id="filter-btn-season")
+      //- +filter-btn("Category")(id="filter-btn-category")
+      //- +filter-btn("Market")(id="filter-btn-market")
+      //- +filter-btn("Products")(id="filter-btn-products")
+      //- +filter-btn("Brand")(id="filter-btn-brand")
+      //- +filter-btn("City")(id="filter-btn-city")
+      //- +filter-btn("Season")(id="filter-btn-season")
 
-      .item.block-xs
+      //- .item.block-xs
 
-      .header-row
-        span.wgsn-font Advanced filter options
+      //- .header-row
+      //-   span.wgsn-font Advanced filter options
 
-      +filter-btn("Colour")(id="filter-btn-colour")
-      +filter-btn("Prints & Graphics")(id="filter-btn-prints")
-      +filter-btn("Fabric")(id="filter-btn-fabric")
-
-    //- .static-bottom-row.block-xs
-    //-   .btn.btn-white
-    //-     i.icon.icon-reset
-    //-     span Reset all filters
+      //- +filter-btn("Colour")(id="filter-btn-colour")
+      //- +filter-btn("Prints & Graphics")(id="filter-btn-prints")
+      //- +filter-btn("Fabric")(id="filter-btn-fabric")
 
   .panel-folders.block-hor-xxs
     .scroll-container
@@ -39,35 +34,32 @@
       .block-xs
         span.wgsn-font Board preview
         i.icon.icon-double-angle-down.pull-right
-    
-      mixin board-preview-image(img)
-        img.pull-left.hoverable(src=img height="100")
 
       .scroll-container.block-hor-xs
         .collage
-          +board-preview-image("https://www.wgsn.com/storage/vol20/ss_image_store/35/39/44/42/media_blm_aw16_003.jpg")
-          +board-preview-image("https://www.wgsn.com/storage/vol20/ss_image_store/45/39/44/42/media_blm_aw16_004.jpg")
-          +board-preview-image("https://www.wgsn.com/storage/vol20/ss_image_store/55/39/44/42/media_blm_aw16_006.jpg")
-          +board-preview-image("https://www.wgsn.com/storage/vol20/ss_image_store/14/10/54/42/media_blm_det_aw16_217.jpg")
-          +board-preview-image("https://www.wgsn.com/storage/vol20/ss_image_store/75/39/44/42/media_blm_aw16_008.jpg")
-          +board-preview-image("https://www.wgsn.com/storage/vol20/ss_image_store/85/39/44/42/media_blm_aw16_010.jpg")
-          +board-preview-image("https://www.wgsn.com/storage/vol20/ss_image_store/95/39/44/42/media_blm_aw16_011.jpg")
-          +board-preview-image("https://www.wgsn.com/storage/vol20/ss_image_store/00/60/54/42/media_blm_det_aw16_225.jpg")
-          +board-preview-image("https://www.wgsn.com/storage/vol20/ss_image_store/16/39/44/42/media_blm_aw16_014.jpg")
-          +board-preview-image("https://www.wgsn.com/storage/vol20/ss_image_store/26/39/44/42/media_blm_aw16_016.jpg")
-          +board-preview-image("https://www.wgsn.com/storage/vol20/ss_image_store/36/39/44/42/media_blm_aw16_018.jpg")
-          +board-preview-image("https://www.wgsn.com/storage/vol20/ss_image_store/46/39/44/42/media_blm_aw16_019.jpg")
-          +board-preview-image("https://www.wgsn.com/storage/vol20/ss_image_store/56/39/44/42/media_blm_aw16_021.jpg")
-          +board-preview-image("https://www.wgsn.com/storage/vol20/ss_image_store/66/39/44/42/media_blm_aw16_022.jpg")
-          +board-preview-image("https://www.wgsn.com/storage/vol20/ss_image_store/76/39/44/42/media_blm_aw16_023.jpg")
-          +board-preview-image("https://www.wgsn.com/storage/vol20/ss_image_store/86/39/44/42/media_blm_aw16_025.jpg")
-          +board-preview-image("https://www.wgsn.com/storage/vol20/ss_image_store/96/39/44/42/media_blm_aw16_026.jpg")
-          +board-preview-image("https://www.wgsn.com/storage/vol20/ss_image_store/07/39/44/42/media_blm_aw16_028.jpg")
-          +board-preview-image("https://www.wgsn.com/storage/vol20/ss_image_store/17/39/44/42/media_blm_aw16_029.jpg")
-          +board-preview-image("https://www.wgsn.com/storage/vol20/ss_image_store/27/39/44/42/media_blm_aw16_031.jpg")
-          +board-preview-image("https://www.wgsn.com/storage/vol20/ss_image_store/37/39/44/42/media_blm_aw16_033.jpg")
-          +board-preview-image("https://www.wgsn.com/storage/vol20/ss_image_store/47/39/44/42/media_blm_aw16_034.jpg")
-          +board-preview-image("https://www.wgsn.com/storage/vol20/ss_image_store/57/39/44/42/media_blm_aw16_036.jpg")
+          img(src="https://www.wgsn.com/storage/vol20/ss_image_store/35/39/44/42/media_blm_aw16_003.jpg" height="100")
+          img(src="https://www.wgsn.com/storage/vol20/ss_image_store/45/39/44/42/media_blm_aw16_004.jpg" height="100")
+          img(src="https://www.wgsn.com/storage/vol20/ss_image_store/55/39/44/42/media_blm_aw16_006.jpg" height="100")
+          img(src="https://www.wgsn.com/storage/vol20/ss_image_store/14/10/54/42/media_blm_det_aw16_217.jpg" height="100")
+          img(src="https://www.wgsn.com/storage/vol20/ss_image_store/75/39/44/42/media_blm_aw16_008.jpg" height="100")
+          img(src="https://www.wgsn.com/storage/vol20/ss_image_store/85/39/44/42/media_blm_aw16_010.jpg" height="100")
+          img(src="https://www.wgsn.com/storage/vol20/ss_image_store/95/39/44/42/media_blm_aw16_011.jpg" height="100")
+          img(src="https://www.wgsn.com/storage/vol20/ss_image_store/00/60/54/42/media_blm_det_aw16_225.jpg" height="100")
+          img(src="https://www.wgsn.com/storage/vol20/ss_image_store/16/39/44/42/media_blm_aw16_014.jpg" height="100")
+          img(src="https://www.wgsn.com/storage/vol20/ss_image_store/26/39/44/42/media_blm_aw16_016.jpg" height="100")
+          img(src="https://www.wgsn.com/storage/vol20/ss_image_store/36/39/44/42/media_blm_aw16_018.jpg" height="100")
+          img(src="https://www.wgsn.com/storage/vol20/ss_image_store/46/39/44/42/media_blm_aw16_019.jpg" height="100")
+          img(src="https://www.wgsn.com/storage/vol20/ss_image_store/56/39/44/42/media_blm_aw16_021.jpg" height="100")
+          img(src="https://www.wgsn.com/storage/vol20/ss_image_store/66/39/44/42/media_blm_aw16_022.jpg" height="100")
+          img(src="https://www.wgsn.com/storage/vol20/ss_image_store/76/39/44/42/media_blm_aw16_023.jpg" height="100")
+          img(src="https://www.wgsn.com/storage/vol20/ss_image_store/86/39/44/42/media_blm_aw16_025.jpg" height="100")
+          img(src="https://www.wgsn.com/storage/vol20/ss_image_store/96/39/44/42/media_blm_aw16_026.jpg" height="100")
+          img(src="https://www.wgsn.com/storage/vol20/ss_image_store/07/39/44/42/media_blm_aw16_028.jpg" height="100")
+          img(src="https://www.wgsn.com/storage/vol20/ss_image_store/17/39/44/42/media_blm_aw16_029.jpg" height="100")
+          img(src="https://www.wgsn.com/storage/vol20/ss_image_store/27/39/44/42/media_blm_aw16_031.jpg" height="100")
+          img(src="https://www.wgsn.com/storage/vol20/ss_image_store/37/39/44/42/media_blm_aw16_033.jpg" height="100")
+          img(src="https://www.wgsn.com/storage/vol20/ss_image_store/47/39/44/42/media_blm_aw16_034.jpg" height="100")
+          img(src="https://www.wgsn.com/storage/vol20/ss_image_store/57/39/44/42/media_blm_aw16_036.jpg" height="100")
 
 
-include filter
+include filter-extended
