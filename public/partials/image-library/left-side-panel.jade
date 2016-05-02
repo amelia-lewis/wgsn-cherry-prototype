@@ -1,3 +1,5 @@
+include filter
+
 .left-side-panel.image-library-filters-active
   .row.tabs
     .col-xs-6.text-center: .tab.active.hoverable#tab-filters: span.wgsn-font Filters
@@ -25,6 +27,36 @@
       //- +filter-btn("Colour")(id="filter-btn-colour")
       //- +filter-btn("Prints & Graphics")(id="filter-btn-prints")
       //- +filter-btn("Fabric")(id="filter-btn-fabric")
+
+      +filter(
+      "category",
+      "Category",
+      "single-list",
+      "Catwalk (5.59 mil.)", 
+      "Denim Details (425,589)", 
+      "Marketing Campaigns (217,336)", 
+      "Mood (123,456)", 
+      "Retail (3.24 mil.)", 
+      "Showrooms (109,454)", 
+      "Street Style (1.79 mil.)", 
+      "Trade Shows & Exhibits (2.66 mil.)", 
+      "Vintage (122,285)", 
+      "Celebrity Fashion (135,456)")
+
+      +filter(
+      "market",
+      "Market",
+      "single-list",
+      "Catwalk (5.59 mil.)", 
+      "Denim Details (425,589)", 
+      "Marketing Campaigns (217,336)", 
+      "Mood (123,456)", 
+      "Retail (3.24 mil.)", 
+      "Showrooms (109,454)", 
+      "Street Style (1.79 mil.)", 
+      "Trade Shows & Exhibits (2.66 mil.)", 
+      "Vintage (122,285)", 
+      "Celebrity Fashion (135,456)")
 
   .panel-folders.block-hor-xxs
     .scroll-container

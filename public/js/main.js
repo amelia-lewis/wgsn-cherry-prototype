@@ -667,40 +667,57 @@ $('.filter-tag .icon-cross').on('click', function() {
 // |_|    |_|_|\__\___|_|  |___/
 // ====================================================================================================
 
-openFilter = function(filtername) {
-  $('#filter-btn-' + filtername).on('click', function() {
-    if($(this).hasClass('active')) {
-      $('.filter-extended').removeClass('show');
-      $('.filter-btn').removeClass('active');
-      $('.right-side-panel').removeClass('has-file-selected has-multiple-files-selected');
-      $('.file').removeClass('selected');
-      // $('.file-checkbox').addClass('icon-tick-circle').removeClass('icon-tick-circle-filled');
-    } else {
-      $('.filter-extended').removeClass('show');
-      $('.filter-btn').removeClass('active');
-      $(this).addClass('active');
-      $('#filter-extended-'+ filtername).addClass('show');
-      $('.right-side-panel').removeClass('has-file-selected has-multiple-files-selected');
-      $('.file').removeClass('selected');
-      // $('.file-checkbox').addClass('icon-tick-circle').removeClass('icon-tick-circle-filled');
-    }
+// openFilter = function(filtername) {
+//   $('#filter-btn-' + filtername).on('click', function() {
+//     if($(this).hasClass('active')) {
+//       $('.filter-extended').removeClass('show');
+//       $('.filter-btn').removeClass('active');
+//       $('.right-side-panel').removeClass('has-file-selected has-multiple-files-selected');
+//       $('.file').removeClass('selected');
+//       // $('.file-checkbox').addClass('icon-tick-circle').removeClass('icon-tick-circle-filled');
+//     } else {
+//       $('.filter-extended').removeClass('show');
+//       $('.filter-btn').removeClass('active');
+//       $(this).addClass('active');
+//       $('#filter-extended-'+ filtername).addClass('show');
+//       $('.right-side-panel').removeClass('has-file-selected has-multiple-files-selected');
+//       $('.file').removeClass('selected');
+//       // $('.file-checkbox').addClass('icon-tick-circle').removeClass('icon-tick-circle-filled');
+//     }
+//   });
+// };
+
+// $('header, .title-row, .filter-extended-overlay').on('click', function() {
+//   $('.filter-extended').removeClass('show');
+//   $('.filter-btn').removeClass('active');
+// });
+
+// openFilter("category");
+// openFilter("market");
+// openFilter("products");
+// openFilter("brand");
+// openFilter("city");
+// openFilter("season");
+// openFilter("colour");
+// openFilter("prints");
+// openFilter("fabric");
+
+
+openFilter2 = function(filtername) {
+  $('.filter .filter-title').on('click', function() {
+    $(this).parentsUntil('.panel-filters').toggleClass('open');
   });
 };
 
-$('header, .title-row, .filter-extended-overlay').on('click', function() {
-  $('.filter-extended').removeClass('show');
-  $('.filter-btn').removeClass('active');
-});
-
-openFilter("category");
-openFilter("market");
-openFilter("products");
-openFilter("brand");
-openFilter("city");
-openFilter("season");
-openFilter("colour");
-openFilter("prints");
-openFilter("fabric");
+openFilter2("category");
+openFilter2("market");
+openFilter2("products");
+openFilter2("brand");
+openFilter2("city");
+openFilter2("season");
+openFilter2("colour");
+openFilter2("prints");
+openFilter2("fabric");
 
 
 // ====================================================================================================
