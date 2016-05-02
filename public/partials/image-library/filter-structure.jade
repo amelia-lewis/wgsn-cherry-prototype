@@ -1,11 +1,11 @@
 mixin filter(id, title, viewall, ...items)
-  .filter
-    .filter-title.overflow-auto.hoverable(id="filter-btn-" + id)
+  .filter.accordion-section.closed
+    .accordion-title.overflow-auto.hoverable(id="filter-btn-" + id)
       span.wgsn-font.pull-left= title
       i.section-expand-icon.icon.icon-plus.pull-right.tight
     
     if viewall
-      .filter-content.has-view-all
+      .accordion-content.has-view-all
         ul.clean.overflow-auto
           each item in items
             li
@@ -13,10 +13,10 @@ mixin filter(id, title, viewall, ...items)
                 input.pull-left(type="checkbox" id=item)
                 span= item
         
-        .block-hor-sm.block-ver-xs.text-right: p.tight.text-underline.btn-view-all.hoverable View all
+        .block-hor-sm.block-ver-xs.text-right: a.tight.text-underline.btn-view-all.hoverable(id="btn-view-all-" + id) View all
 
     if !viewall
-      .filter-content
+      .accordion-content
         ul.clean.overflow-auto
           each item in items
             li
@@ -115,4 +115,12 @@ mixin filter(id, title, viewall, ...items)
   "Haute Couture Spring/Summer 2016",
   "Pre-Fall 2016",
   "Pre-Summer 2016",
-  "Spring/Summer 2016")
+  "Spring/Summer 2016",
+  "Autumn/Winter 2015",
+  "Bridal Autumn/Winter 2015",
+  "Bridal Spring/Summer 2015",
+  "Haute Couture Autumn/Winter 2015",
+  "Haute Couture Spring/Summer 2015",
+  "Pre-Fall 2015",
+  "Pre-Summer 2015",
+  "Spring/Summer 2015")

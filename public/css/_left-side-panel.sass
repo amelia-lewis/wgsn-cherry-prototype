@@ -45,11 +45,7 @@
       @extend .flex-center
       @extend .no-transition
 
-      // span
-      //   @extend .no-transition
-
       &.active
-        // border-bottom: 4px solid white
         color: white
 
   .inbox-number
@@ -62,36 +58,51 @@
     margin: 1px
     @extend .flex-center
 
-  .header-row
-    padding: 14px 12px
-    display: block
-    border-top: 1px solid rgba(white, 0.1)
-    // background: rgba(white, 0.05)
-
-    .icon-angle-up
-      margin: 0
-      +transform(translate3d(0, 0, 0) rotate(180deg))
-      @extend .no-transition
-
-    &.closed
-      .icon-angle-up
-        +transform(translate3d(0, 0, 0) rotate(90deg))
-
-    &.accordion-btn-messages
-      border-top: none
-
-  // .btn-sent-messages
-  //   .icon-arrow-right
-  //     font-size: 0.5em
-  //     position: absolute
-  //     top: 12px
-  //     left: 24px
-
+  // FILTERS & FOLDERS PANELS
   .panel-filters,
   .panel-folders
-    height: calc(100% - 56px)
+    height: 100%
     position: relative
+    
+    // ACCORDION SECTIONS
+    .accordion-section
+      .accordion-title
+        display: block
+        padding: 14px 12px
+        @extend .hoverable
+      
+      .accordion-content
+        border-bottom: 1px solid rgba(white, 0.1)
+        overflow: hidden
+        position: relative
 
+      &.closed
+        .accordion-content
+          height: 0
+
+    .accordion-section-favourites,
+    .accordion-section-mobile
+      .accordion-title
+        border-bottom: 1px solid rgba(white, 0.1)
+
+    // ACCORDION SECTION PANEL HEIGHTS
+    .accordion-section-messages.open
+      .accordion-content
+        height: 67px
+
+    .accordion-section-my-boards.open
+      .accordion-content
+        height: 343px
+
+    .accordion-section-shared-boards.open
+      .accordion-content
+        height: 564px
+
+    .accordion-section-trash.open
+      .accordion-content
+        height: 129px
+
+    // BOARD PREVIEW
     .board-preview
       position: fixed
       bottom: 0
@@ -105,6 +116,10 @@
       .icon-double-angle-down
         margin: 0
         +transform(translate3d(0, 0, 0) rotate(0deg))
+
+      img
+        height: 100px
+        margin: 0 5px 5px 0
 
       &.closed
         +transform(translate3d(0, 294px, 0))
@@ -127,13 +142,8 @@
           @extend .pull-left
           @extend .hoverable
 
+  // FILTERS PANEL
   .panel-filters
-    .scroll-container
-      height: calc(100% - 51px)
-
-    .header-row
-      // border-bottom: 1px solid rgba(white, 0.1)
-    
     .filter-btn
       position: relative
       padding: 10px 12px
@@ -160,32 +170,30 @@
           height: 100%
           width: 1px
 
+  // FOLDERS PANEL
   .panel-folders
     display: none
-
-    .scroll-container
-      height: calc(100% - 26px)
 
     &.board-preview-open
       > .scroll-container
         height: calc(100% - 330px)
 
-  // tabs show/hide
-  &.image-library-filters-active
+  // TABS SHOW/HIDE
+  &.lhs-filters-active
     .panel-filters
       display: block
 
     .panel-folders
       display: none
 
-  &.image-library-folders-active
+  &.lhs-folders-active
     .panel-filters
       display: none
 
     .panel-folders
       display: block
 
-// active states
+// ACTIVE STATES
 body.workspace-autumn-winter-2016-view
   a.board-row.autumn-winter-2016
     @extend .active
@@ -215,8 +223,8 @@ body.workspace-favourites-view
 
 body.image-library-view
   .panel-folders
-    .btn-my-boards
-      border-top: none
+    .scroll-container
+      height: calc(100% - 26px)
 
 // tablet
 html.tablet

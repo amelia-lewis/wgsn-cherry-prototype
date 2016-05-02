@@ -1,15 +1,13 @@
 mixin filter-extended(id, type, tabbed, search, anchors, subheadings, ...items)
-  .filter-extended.bg-xlt-grey.border-right(id="filter-extended-" +id class!=attributes.class)
-    .filter-extended-overlay
-    
+  .filter-extended.bg-xlt-grey.border.box-shadow(id="filter-extended-" +id class!=attributes.class)
     if type == "single-list"
       if search
         .filter-extended-top-row.border-bottom.block-hor-xs
-          if tabbed
-            .filter-extended-tabs.pull-left
-              ul.tab-nav
-                li.tab-nav-tab.active Top Brands
-                li.tab-nav-tab All Brands
+          //- if tabbed
+          //-   .filter-extended-tabs.pull-left
+          //-     ul.tab-nav
+          //-       li.tab-nav-tab.active Top Brands
+          //-       li.tab-nav-tab All Brands
           .block-ver-xs.pull-right
             input.search-input(type="text", placeholder="Search " + id)
 
@@ -61,41 +59,14 @@ mixin filter-extended(id, type, tabbed, search, anchors, subheadings, ...items)
                       span= item
 
     .filter-extended-bottom-row.block-hor-xs.border-top
+      .block-ver-sm.pull-left
+        p.text-underline.tight.block-top-xxs Reset filter
       .block-ver-xs.pull-right
-        .btn.btn-white
-          i.icon.icon-reset
-          span Reset filter-extended
+        .btn.btn-white Done
 
-+filter-extended(
-  "category",
-  "single-list",
-  false,
-  false,
-  false,
-  false,
-  "Catwalk (5.59 mil.)", 
-  "Denim Details (425,589)", 
-  "Marketing Campaigns (217,336)", 
-  "Mood (123,456)", 
-  "Retail (3.24 mil.)", 
-  "Showrooms (109,454)", 
-  "Street Style (1.79 mil.)", 
-  "Trade Shows & Exhibits (2.66 mil.)", 
-  "Vintage (122,285)", 
-  "Celebrity Fashion (135,456)")(class="filter-extended-sm")
 
-+filter-extended(
-  "market",
-  "single-list",
-  false,
-  false,
-  false,
-  false,
-  "Women (4.54 mil.)",
-  "Men (1.07 mil.)",
-  "Kids (110,973)",
-  "Girls (68,496)",
-  "Boys (21,562)")(class="filter-extended-sm")
+//- ============================================================
+
 
 +filter-extended(
   "products",
@@ -903,7 +874,7 @@ mixin filter-extended(id, type, tabbed, search, anchors, subheadings, ...items)
   "AZ Araujo (498)",
   "Azzaro (1648)",
   "Azzedine Alaia (326)",
-  "Azzurra Gronchi (10)")(class="filter-extended-lg")
+  "Azzurra Gronchi (10)")
 
 +filter-extended(
   "city",
@@ -1006,10 +977,10 @@ mixin filter-extended(id, type, tabbed, search, anchors, subheadings, ...items)
   "Maceio (26)",
   "Mina Gerais (14)",
   "Rio de Janeiro (3380)",
-  "Sao Paulo (45097)")(class="filter-extended-lg")
+  "Sao Paulo (45097)")
 
 +filter-extended(
-  "season",
+  "season-month",
   "single-list",
   false,
   true,
@@ -1108,65 +1079,4 @@ mixin filter-extended(id, type, tabbed, search, anchors, subheadings, ...items)
   "Spring/Summer 2005 (129721)",
   "Autumn/Winter 2004 (70186)",
   "Haute Couture AutumnWinter 2004 (6373)",
-  "Autumn/Winter 2003 (161)")(class="filter-extended-lg")
-
-+filter-extended(
-  "colour",
-  "single-list",
-  false,
-  false,
-  false,
-  "Colours",
-  "Black (5.59 mil.)",
-  "White (425,589)",
-  "Grey (217,336)",
-  "Red (123,456)",
-  "Orange (3.24 mil.)",
-  "Yellow (109,454)",
-  "Green (1.79 mil.)",
-  "Blue (2.66 mil.)",
-  "Navy (122,285)",
-  "Purple (135,456)",
-  "Pink (109,454)",
-  "Cream (1.79 mil.)",
-  "Gold (2.66 mil.)",
-  "Silver (122,285)",
-  "Multi (135,456)",
-  "Black/White (1413)",
-  "Cosmetics (13730)",
-  "Darks (220096)",
-  "Dusty (11967)",
-  "Earth Tones (27975)",
-  "Jewels/Vegetals (16864)",
-  "Metallic (11939)",
-  "Midtone (26457)",
-  "Midtone Brights (9341)",
-  "Neon (1077)",
-  "Neutrals (106034)",
-  "Pastels (8881)")(class="filter-extended-md")
-
-+filter-extended(
-  "prints",
-  "single-list",
-  false,
-  false,
-  false,
-  "Animal Prints",
-  "Lorem ipsum (100)",
-  "Lorem ipsum (100)",
-  "Lorem ipsum (100)")(class="filter-extended-sm")
-
-+filter-extended(
-  "fabric",
-  "single-list",
-  false,
-  false,
-  false,
-  "Denim",
-  "Lorem ipsum (100)",
-  "Lorem ipsum (100)",
-  "Lorem ipsum (100)")(class="filter-extended-sm")
-
-
-
-
+  "Autumn/Winter 2003 (161)")

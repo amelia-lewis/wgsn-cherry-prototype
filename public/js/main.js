@@ -570,26 +570,17 @@ $('.btn-left-side-panel').on('click', function() {
   $('.page-content').toggleClass('show-left-side-panel');
 });
 
-// left side panel accordion
-accordion = function(name) {
-  $('.left-side-panel .accordion-btn-' + name).on('click', function() {
-    $(this).toggleClass('closed')
-    $('.accordion-content-' + name).toggle();
-    $(this).children('.section-expand-icon').toggleClass('icon-plus icon-minus');
-  });
-}
-
-accordion('messages');
-accordion('favourites');
-accordion('my-boards');
-accordion('shared-boards');
-accordion('trash');
+// lhs accordion panels
+$('.accordion-section .accordion-title').on('click', function() {
+  $(this).parentsUntil('.scroll-container').toggleClass('open closed');
+  $(this).children('.section-expand-icon').toggleClass('icon-plus icon-minus');
+});
 
 //- image library left-side tabs
 $('#tab-filters').on('click', function() {
   $(this).addClass('active');
   $('#tab-folders').removeClass('active');
-  $('.image-library-view .left-side-panel').addClass('image-library-filters-active').removeClass('image-library-folders-active');
+  $('.image-library-view .left-side-panel').addClass('lhs-filters-active').removeClass('lhs-folders-active');
 });
 
 $('#tab-folders').on('click', function() {
@@ -597,7 +588,7 @@ $('#tab-folders').on('click', function() {
   $('#tab-filters').removeClass('active');
   $('.filter-extended').removeClass('show');
   $('.filter-btn').removeClass('active');
-  $('.image-library-view .left-side-panel').addClass('image-library-folders-active').removeClass('image-library-filters-active');
+  $('.image-library-view .left-side-panel').addClass('lhs-folders-active').removeClass('lhs-filters-active');
 });
 
 //- comments panel
@@ -621,12 +612,10 @@ $('.comments-panel .scroll-container').on('scroll', function() {
   if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 90) {
     setTimeout(function() {
       $('.btn-new-comments').addClass('visually-hidden');
-      $('.new-comments-bar').addClass('visually-hidden');
     }, 300);
 
     setTimeout(function() {
       $('.btn-new-comments').addClass('hidden');
-      $('.new-comments-bar').addClass('hidden');
     }, 800);
   };
 });
@@ -688,11 +677,6 @@ $('.filter-tag .icon-cross').on('click', function() {
 //   });
 // };
 
-// $('header, .title-row, .filter-extended-overlay').on('click', function() {
-//   $('.filter-extended').removeClass('show');
-//   $('.filter-btn').removeClass('active');
-// });
-
 // openFilter("category");
 // openFilter("market");
 // openFilter("products");
@@ -703,23 +687,31 @@ $('.filter-tag .icon-cross').on('click', function() {
 // openFilter("prints");
 // openFilter("fabric");
 
-
-openFilter2 = function(filtername) {
-  $('.filter .filter-title').on('click', function() {
-    $(this).parentsUntil('.panel-filters').toggleClass('open');
-    $(this).children('.section-expand-icon').toggleClass('icon-plus icon-minus');
+openExtendedFilter = function(filtername) {
+  $('#btn-view-all-' + filtername).on('click', function() {
+    $('.filter-extended').removeClass('show');
+    $('.filter-extended-overlay').addClass('show');
+    $('#filter-extended-'+ filtername).addClass('show');
+    $('.right-side-panel').removeClass('has-file-selected has-multiple-files-selected');
+    $('.file').removeClass('selected');
   });
 };
 
-openFilter2("category");
-openFilter2("market");
-openFilter2("products");
-openFilter2("brand");
-openFilter2("city");
-openFilter2("season");
-openFilter2("colour");
-openFilter2("prints");
-openFilter2("fabric");
+// openExtendedFilter("category");
+// openExtendedFilter("market");
+openExtendedFilter("products");
+openExtendedFilter("brand");
+openExtendedFilter("city");
+openExtendedFilter("season-month");
+// openExtendedFilter("colour");
+// openExtendedFilter("prints");
+// openExtendedFilter("fabric");
+
+$('header, .title-row, .filter-extended-overlay').on('click', function() {
+  $('.filter-extended-overlay').removeClass('show');
+  $('.filter-extended').removeClass('show');
+  $('.filter-btn').removeClass('active');
+});
 
 
 // ====================================================================================================

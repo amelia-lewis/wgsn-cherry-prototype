@@ -1,54 +1,40 @@
-.left-side-panel.block-hor-xxs
-  .scroll-container
-    .header-row.hoverable.accordion-btn-messages
-      i.icon.icon-envelope
-      span.wgsn-font Messages
-      i.section-expand-icon.icon.icon-minus.pull-right.tight
+.left-side-panel.lhs-folders-active
+  .panel-folders
+    .scroll-container
+      .accordion-section.accordion-section-messages.closed
+        .accordion-title
+          i.icon.icon-envelope
+          span.wgsn-font Messages
+          i.section-expand-icon.icon.icon-plus.pull-right.tight
 
-    .block-bot-xxs.accordion-content-messages
-      a.misc-row.btn-inbox(href="/workspace/inbox")
-        //- i.icon.icon-envelope
-        span Inbox
-        .inbox-number.pull-right.text-center.hidden-workspace-inbox 1
+        .accordion-content
+          a.misc-row.btn-inbox(href="/workspace/inbox")
+            span Inbox
+            .inbox-number.pull-right.text-center.hidden-workspace-inbox 1
 
-      a.misc-row.btn-sent-messages(href="/workspace/sent-messages")
-        //- i.icon.icon-envelope
-        //- i.icon.icon-arrow-right
-        span Sent Messages
-    
-    //- .header-row.hoverable.btn-favourites
-    a.header-row.hoverable(href="/workspace/favourites")
-      i.icon.icon-heart
-      span.wgsn-font Favourites
-      //- i.icon.icon-angle-up.pull-right
+          a.misc-row.btn-sent-messages(href="/workspace/sent-messages")
+            span Sent Messages
+      
+      .accordion-section.accordion-section-favourites
+        a.accordion-title(href="/workspace/favourites")
+          i.icon.icon-heart
+          span.wgsn-font Favourites
 
-    //- .block-bot-xs.content-favourites
-    //-   a.misc-row(href="/workspace/favourites")
-    //-     i.icon.icon-folder
-    //-     span Images
+      .accordion-section.accordion-section-mobile
+        a.accordion-title(href="")
+          i.icon.icon-upload
+          span.wgsn-font Mobile Uploads
+      
+      include folder-structure
 
-    //-   .misc-row
-    //-     i.icon.icon-folder
-    //-     span Reports
+      .accordion-section.accordion-section-trash.closed
+        .accordion-title
+          i.icon.icon-trash
+          span.wgsn-font Trash
+          i.section-expand-icon.icon.icon-plus.pull-right.tight
 
-    //-   .misc-row
-    //-     i.icon.icon-folder
-    //-     span Videos
-
-    .header-row.hoverable
-      i.icon.icon-upload
-      span.wgsn-font Mobile Uploads
-      //- i.icon.icon-angle-up.pull-right
-    
-    include folder-structure
-
-    .header-row.hoverable.accordion-btn-trash
-      i.icon.icon-trash
-      span.wgsn-font Trash
-      i.section-expand-icon.icon.icon-minus.pull-right.tight
-
-    .block-bot-xxs.accordion-content-trash
-      +board-row("/workspace/trash", "All trash", "200", "1", false, "open", false)
-      +board-row(false, "Board name", "200", "2", false, "", false)
-      +board-row(false, "Supercalifragilisticexpialidocious", "200", "2", false, "", false)
-      +board-row(false, "Old stuff", "200", "2", false, "closed", false)
+        .accordion-content
+          +board-row("/workspace/trash", "All trash", "200", "1", false, "open", false)
+          +board-row(false, "Board name", "200", "2", false, "", false)
+          +board-row(false, "Supercalifragilisticexpialidocious", "200", "2", false, "", false)
+          +board-row(false, "Old stuff", "200", "2", false, "closed", false)
