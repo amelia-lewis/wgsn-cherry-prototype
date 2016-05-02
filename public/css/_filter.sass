@@ -132,7 +132,7 @@ html.tablet
 
 .filter
   .filter-title
-    attr: none
+    padding: 14px 12px
     border-bottom: 1px solid rgba(white, 0.1)
 
     .icon-angle-right
@@ -142,12 +142,22 @@ html.tablet
   .filter-content
     height: 0
     border-bottom: 1px solid transparent
+    overflow: hidden
+    position: relative
 
     ul
+      height: 200px
       @extend .block-sm
 
       li
-        margin-bottom: 10px
+        margin-bottom: 15px
+
+        &:last-of-type
+          margin-bottom: 0
+
+    &.has-view-all
+      ul
+        border-bottom: 1px solid rgba(white, 0.05)
 
   &.open
     .filter-title
@@ -155,5 +165,8 @@ html.tablet
         +transform(translate3d(0, 0, 0) rotate(90deg))
     
     .filter-content
-      height: 200px
       border-color: rgba(white, 0.1)
+      height: 200px
+      
+      &.has-view-all
+        height: 235px

@@ -1,0 +1,118 @@
+mixin filter(id, title, viewall, ...items)
+  .filter
+    .filter-title.overflow-auto.hoverable(id="filter-btn-" + id)
+      span.wgsn-font.pull-left= title
+      i.section-expand-icon.icon.icon-plus.pull-right.tight
+    
+    if viewall
+      .filter-content.has-view-all
+        ul.clean.overflow-auto
+          each item in items
+            li
+              label(for=item)
+                input.pull-left(type="checkbox" id=item)
+                span= item
+        
+        .block-hor-sm.block-ver-xs.text-right: p.tight.text-underline.btn-view-all.hoverable View all
+
+    if !viewall
+      .filter-content
+        ul.clean.overflow-auto
+          each item in items
+            li
+              label(for=item)
+                input.pull-left(type="checkbox" id=item)
+                span= item
+
+
+//- ============================================================
+
+
++filter(
+  "category",
+  "Category",
+  false,
+  "Catwalk",
+  "Denim Details", 
+  "Marketing Campaigns", 
+  "Mood", 
+  "Retail", 
+  "Showrooms", 
+  "Street Style", 
+  "Trade Shows & Exhibits", 
+  "Vintage", 
+  "Celebrity Fashion")
+
++filter(
+  "market",
+  "Market",
+  false,
+  "Women",
+  "Men",
+  "Kids",
+  "Girls",
+  "Boys")
+
++filter(
+  "products",
+  "Products",
+  true,
+  "Apparel",
+  "Accessories",
+  "Beauty",
+  "Footwear")
+
++filter(
+  "brand",
+  "Brand",
+  true,
+  "Acne Studios",
+  "Alexander McQueen",
+  "Aquazzura",
+  "Balenciaga",
+  "Balmain",
+  "Bottega Veneta",
+  "Burberry London",
+  "Chloé",
+  "Christian Louboutin",
+  "Dolce &amp; Gabbana",
+  "Eres",
+  "Etro",
+  "Fendi",
+  "Gianvito Rossi",
+  "Givenchy",
+  "Gucci",
+  "Isabel Marant",
+  "Jimmy Choo",
+  "Lanvin",
+  "Marni",
+  "Miu Miu",
+  "Oscar de la Renta",
+  "Proenza Schouler",
+  "Saint Laurent",
+  "Stella McCartney",
+  "TOM FORD",
+  "The Row",
+  "Valentino",
+  "Victoria Beckham")
+
++filter(
+  "city",
+  "City",
+  true,
+  "New York",
+  "London",
+  "Paris",
+  "Milan")
+
++filter(
+  "season-month",
+  "Season/Month",
+  true,
+  "Autumn/Winter 2016",
+  "Bridal Autumn/Winter 2016",
+  "Bridal Spring/Summer 2016",
+  "Haute Couture Spring/Summer 2016",
+  "Pre-Fall 2016",
+  "Pre-Summer 2016",
+  "Spring/Summer 2016")

@@ -575,6 +575,7 @@ accordion = function(name) {
   $('.left-side-panel .accordion-btn-' + name).on('click', function() {
     $(this).toggleClass('closed')
     $('.accordion-content-' + name).toggle();
+    $(this).children('.section-expand-icon').toggleClass('icon-plus icon-minus');
   });
 }
 
@@ -706,6 +707,7 @@ $('.filter-tag .icon-cross').on('click', function() {
 openFilter2 = function(filtername) {
   $('.filter .filter-title').on('click', function() {
     $(this).parentsUntil('.panel-filters').toggleClass('open');
+    $(this).children('.section-expand-icon').toggleClass('icon-plus icon-minus');
   });
 };
 

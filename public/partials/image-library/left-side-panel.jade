@@ -1,62 +1,11 @@
-include filter
-
 .left-side-panel.image-library-filters-active
   .row.tabs
     .col-xs-6.text-center: .tab.active.hoverable#tab-filters: span.wgsn-font Filters
     .col-xs-6.text-center: .tab.hoverable#tab-folders: span.wgsn-font Workspace
 
   .panel-filters.block-hor-xxs
-    .scroll-container.block-top-xxs
-      //- mixin filter-btn(name)
-      //-   .filter-btn.hoverable(id!=attributes.id)
-      //-     span= name
-      //-     i.icon.icon-angle-right.pull-right.tight
-
-      //- +filter-btn("Category")(id="filter-btn-category")
-      //- +filter-btn("Market")(id="filter-btn-market")
-      //- +filter-btn("Products")(id="filter-btn-products")
-      //- +filter-btn("Brand")(id="filter-btn-brand")
-      //- +filter-btn("City")(id="filter-btn-city")
-      //- +filter-btn("Season")(id="filter-btn-season")
-
-      //- .item.block-xs
-
-      //- .header-row
-      //-   span.wgsn-font Advanced filter options
-
-      //- +filter-btn("Colour")(id="filter-btn-colour")
-      //- +filter-btn("Prints & Graphics")(id="filter-btn-prints")
-      //- +filter-btn("Fabric")(id="filter-btn-fabric")
-
-      +filter(
-      "category",
-      "Category",
-      "single-list",
-      "Catwalk (5.59 mil.)", 
-      "Denim Details (425,589)", 
-      "Marketing Campaigns (217,336)", 
-      "Mood (123,456)", 
-      "Retail (3.24 mil.)", 
-      "Showrooms (109,454)", 
-      "Street Style (1.79 mil.)", 
-      "Trade Shows & Exhibits (2.66 mil.)", 
-      "Vintage (122,285)", 
-      "Celebrity Fashion (135,456)")
-
-      +filter(
-      "market",
-      "Market",
-      "single-list",
-      "Catwalk (5.59 mil.)", 
-      "Denim Details (425,589)", 
-      "Marketing Campaigns (217,336)", 
-      "Mood (123,456)", 
-      "Retail (3.24 mil.)", 
-      "Showrooms (109,454)", 
-      "Street Style (1.79 mil.)", 
-      "Trade Shows & Exhibits (2.66 mil.)", 
-      "Vintage (122,285)", 
-      "Celebrity Fashion (135,456)")
+    .scroll-container
+      include filter-structure
 
   .panel-folders.block-hor-xxs
     .scroll-container
