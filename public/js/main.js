@@ -18,11 +18,6 @@ $(document).ready(function() {
   };
 });
 
-//- checkbox icons (for detail view file)
-// $('.file-details-view .file-checkbox').on('click', function() {
-//   $(this).toggleClass('icon-tick-circle icon-tick-circle-filled');
-// });
-
 // show/hide captions
 showCaptions = function() {
   if ($('#toggle-show-caption').hasClass('toggle-on')) {
@@ -58,14 +53,6 @@ $('.toggle').on('click', function() {
   showFilenames();
 });
 
-// default hide LHS for tablet
-// $(document).ready(function() {
-//   if($('html').hasClass('tablet')) {
-//     $('.page-content').removeClass('show-left-side-panel');
-//     collage(400);
-//   };
-// });
-
 
 // ====================================================================================================
 //   _____      _           _         __   ____                     ______ _ _           
@@ -81,7 +68,6 @@ $('.toggle').on('click', function() {
 // remove file utility buttons once in "select mode"
 checkforhover = function(){
   if ($('.file').hasClass('selected')){
-    // $('.file .file-heart').hide(); 
     $('.file .btn').hide(); 
     
     // Count number of items selected
@@ -90,10 +76,8 @@ checkforhover = function(){
     
     // if only one file is selected
     if (myaccount == 1) {
-      // $('.file.selected .file-heart').show();  
       $('.file.selected .btn').show();
       $('.right-side-panel').addClass('has-file-selected');
-      // $('.btn-back-to-top').css({transform: "translate3d(0, -50px, 0)"})
       $('.file .file-checkbox').css({opacity: "1"})
       $('.floating-utility-row .displaying-results').text(myaccount + ' item selected');
       $('.btn-comments').removeClass('active');
@@ -105,17 +89,14 @@ checkforhover = function(){
       $('.btn-comments').removeClass('active');
     };
   } else {
-    // $('.file .file-heart').show(); 
     $('.file .btn').show(); 
     $('.floating.context-menu .count').hide();
     $('.right-side-panel').removeClass('has-file-selected').removeClass('has-multiple-files-selected');
-    // $('.btn-back-to-top').css({transform: "translate3d(0, 0, 0)"})
     $('.file .file-checkbox').css({opacity: "0"})
   };
 };
 
 // ===== SELECT FILE ON SINGLE CLICK, OPEN FILE ON DOUBLE CLICK =====
-
 // select file on single click, open file on double click
 // var DELAY = 160, clicks = 0, timer = null;
 
@@ -133,7 +114,6 @@ checkforhover = function(){
 //           }
           
 //           $(e.target).parentsUntil('.files-container').toggleClass('selected');
-//           // $(e.target).siblings('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
 //           $('.context-menu').removeClass('show');
 //           checkforhover();
 //           clicks = 0; // after action performed, reset counter
@@ -178,7 +158,6 @@ checkforhover = function(){
 //           }
           
 //           $(e.target).parentsUntil('.details-view').toggleClass('selected');
-//           // $(e.target).parentsUntil('.details-view').find('.file-checkbox').toggleClass('icon-tick-circle icon-tick-circle-filled');
 //           clicks = 0; // after action performed, reset counter
 //         }, DELAY);
 //       } else {
@@ -194,15 +173,12 @@ checkforhover = function(){
 //     e.preventDefault(); // cancel system double-click event
 //   });
 // });
-
 // ===== end SELECT FILE ON SINGLE CLICK, OPEN FILE ON DOUBLE CLICK =====
 
 
 // ===== SELECT FILE ON CHECKBOX, OPEN FILE ON SINGLE CLICK =====
-
 $('.file-checkbox').click(function() {
   $(this).parentsUntil('.collage').toggleClass('selected');
-  $(this).toggleClass('icon-tick-circle icon-tick-circle-filled');
 });
 
 multiFileSelect = function(e) {
@@ -241,12 +217,6 @@ multiFileSelect = function(e) {
       $('.floating-utility-row .displaying-results').text(myaccount + ' item selected');
       $('.file-checkbox').css({'opacity': 1})
       $(e.target).parent().addClass('selected');
-      $(e.target).siblings('.file-checkbox').removeClass('icon-tick-circle').addClass('icon-tick-circle-filled');
-
-      // remove overflow on a timeout to display tooltips, not quite working though
-      // setTimeout(function(){
-      //   $('.floating-utility-row-container').css({'overflow-y': 'visible'});
-      // }, 200);
     };
 
   // if 1 or more files are selected
@@ -259,7 +229,6 @@ multiFileSelect = function(e) {
       $('.floating-utility-row .displaying-results').text((myaccount + 1) + ' items selected');
       $('.file-checkbox').css({'opacity': 1})
       $(e.target).parent().addClass('selected');
-      $(e.target).siblings('.file-checkbox').removeClass('icon-tick-circle').addClass('icon-tick-circle-filled');
     };
   };
 };
@@ -267,7 +236,6 @@ multiFileSelect = function(e) {
 $('.file').on('click', function(e) {
   multiFileSelect(e);
 });
-
 // ===== end SELECT FILE ON CHECKBOX, OPEN FILE ON SINGLE CLICK =====
 
 
@@ -276,20 +244,17 @@ $('.select-all').click(function() {
   if ($('.file').length == $('.file.selected').length) {
     $('.select-all').text('Select all');
     $('.file').removeClass('selected');
-    $('.file-checkbox').removeClass('icon-tick-circle-filled').addClass('icon-tick-circle');
     $('.right-side-panel').removeClass('has-file-selected').removeClass('has-multiple-files-selected');
     $('.file-checkbox').css({'opacity': 0})
   } else {
     $('.select-all').text('Deselect all');
     $('.file').addClass('selected');
-    $('.file-checkbox').removeClass('icon-tick-circle').addClass('icon-tick-circle-filled');
   }
 });
 
 // x to close select mode / floating utility row
 $('.floating-utility-row .icon-cross').click(function() {
   $('.file').removeClass('selected');
-  $('.file-checkbox').removeClass('icon-tick-circle-filled').addClass('icon-tick-circle');
   $('.right-side-panel').removeClass('has-file-selected').removeClass('has-multiple-files-selected');
   $('.file-checkbox').css({'opacity': 0})
 });
@@ -378,7 +343,6 @@ $('.context-menu').click(function(e, evt) {
 // floating item context menu
 $(".file").contextmenu(function(e){
   $(this).addClass("selected");
-  // $(this).children('.file-checkbox').removeClass('icon-tick-circle').addClass('icon-tick-circle-filled');
   $("#floating-item-context-menu .block-ver-xxs:nth-of-type(1)").show();
   $("#floating-item-context-menu .block-ver-xxs:nth-of-type(2)").show();
   checkforhover();
@@ -414,7 +378,6 @@ $(".board-row").contextmenu(function(e){
 // click anywhere on the screen to close the context menus and deselect all items
 $('.files-row').click(function(e, evt) {
   $(".file").removeClass("selected");
-  $('.file .file-checkbox').removeClass('icon-tick-circle-filled').addClass('icon-tick-circle');
   $(".context-menu").removeClass("show");
   $('.select-all').prop('checked', false);
   $("#floating-item-context-menu").removeClass("show");
@@ -664,7 +627,6 @@ $('.filter-tag .icon-cross').on('click', function() {
 //       $('.filter-btn').removeClass('active');
 //       $('.right-side-panel').removeClass('has-file-selected has-multiple-files-selected');
 //       $('.file').removeClass('selected');
-//       // $('.file-checkbox').addClass('icon-tick-circle').removeClass('icon-tick-circle-filled');
 //     } else {
 //       $('.filter-extended').removeClass('show');
 //       $('.filter-btn').removeClass('active');
@@ -672,7 +634,6 @@ $('.filter-tag .icon-cross').on('click', function() {
 //       $('#filter-extended-'+ filtername).addClass('show');
 //       $('.right-side-panel').removeClass('has-file-selected has-multiple-files-selected');
 //       $('.file').removeClass('selected');
-//       // $('.file-checkbox').addClass('icon-tick-circle').removeClass('icon-tick-circle-filled');
 //     }
 //   });
 // };
@@ -697,15 +658,10 @@ openExtendedFilter = function(filtername) {
   });
 };
 
-// openExtendedFilter("category");
-// openExtendedFilter("market");
 openExtendedFilter("products");
 openExtendedFilter("brand");
 openExtendedFilter("city");
 openExtendedFilter("season-month");
-// openExtendedFilter("colour");
-// openExtendedFilter("prints");
-// openExtendedFilter("fabric");
 
 
 // ====================================================================================================

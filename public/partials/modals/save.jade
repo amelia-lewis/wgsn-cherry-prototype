@@ -13,7 +13,7 @@ block modal-content
         textarea(placeholder="Add a comment (optional)")
 
     .col-xs-6
-      h3 Choose a board
+      h3 Choose a folder
 
       .panel-folders.border
         .accordion-section.accordion-section-recent-boards.open
@@ -25,23 +25,23 @@ block modal-content
             .board-row.level-1
               span.board-name Folder name
               br
-              span.board-filepath.text-grey.text-smaller Folder name > Folder name
+              span.board-filepath.text-grey.text-smaller Folder name &#62; Folder name
               .btn.btn-black.btn-sm.close-modal Save
 
             .board-row.level-1
               span.board-name Folder name
               br
-              span.board-filepath.text-grey.text-smaller Folder name > Folder name
+              span.board-filepath.text-grey.text-smaller Folder name &#62; Folder name
               .btn.btn-black.btn-sm.close-modal Save
 
             .board-row.level-1
               span.board-name Folder name
               br
-              span.board-filepath.text-grey.text-smaller Folder name > Folder name
+              span.board-filepath.text-grey.text-smaller Folder name &#62; Folder name
               .btn.btn-black.btn-sm.close-modal Save
         
         include ../workspace/folder-structure
 
       .modal-create-new-board-container
-        input(type="text" placeholder="Create new folder")
+        input(type="text" placeholder="+ Create new folder")
         .btn.btn-black.btn-sm.close-modal Create

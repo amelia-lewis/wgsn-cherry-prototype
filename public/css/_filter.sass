@@ -39,12 +39,21 @@
   width: 80vw
   max-width: 1000px
 
+  .col-xs-8
+    position: relative
+    height: 36px
+
   .filter-extended-anchors
+    position: absolute
+    top: 50%
+    left: 10px
+    transform: translate3d(0, -50%, 0)
+
     .anchor-letter
       @extend .hoverable
       @extend .inline-block
       @extend .wgsn-font
-      margin: 11px 14px 0 0
+      margin: 5px 15px 5px 0
       border-radius: 50%
 
       &:hover,
