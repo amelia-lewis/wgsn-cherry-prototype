@@ -662,6 +662,8 @@ openExtendedFilter("products");
 openExtendedFilter("brand");
 openExtendedFilter("city");
 openExtendedFilter("season-month");
+openExtendedFilter("prints-graphics");
+openExtendedFilter("fabrics-materials");
 
 
 // ====================================================================================================
