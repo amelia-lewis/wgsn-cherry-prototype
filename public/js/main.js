@@ -707,12 +707,6 @@ openExtendedFilter("season-month");
 // openExtendedFilter("prints");
 // openExtendedFilter("fabric");
 
-$('.overlay').on('click', function() {
-  $('.overlay').removeClass('show');
-  $('.filter-extended').removeClass('show');
-  $('.filter-btn').removeClass('active');
-});
-
 
 // ====================================================================================================
 //  __  __           _       _     
@@ -762,7 +756,7 @@ openModal('duplicate-board');
 openModal('rename-board');
 openModal('save-search');
 
-//- close modal
+//- close modal with close button
 $('.modal .close-modal').on('click', function() {
   if($('#item-detail-modal').hasClass('show')) {
     $(this).parentsUntil('body').removeClass('show');  
@@ -776,12 +770,14 @@ $('.modal .close-modal').on('click', function() {
   }
 });
 
-//- minimise modal
-$('.modal .minimise-modal').on('click', function() {
-  $(this).parentsUntil('body').toggleClass('minimise');
+// ...by clicking the overlay
+$('.overlay').on('click', function() {
+  $('.overlay').removeClass('show');
+  $('.filter-extended').removeClass('show');
+  $('.modal').removeClass('show');
 });
 
-// close modal with escape key
+// ...with escape key
 $(document).keyup(function(e) { 
   if (e.keyCode == 27) { 
     $('.modal').removeClass('show');
@@ -789,6 +785,11 @@ $(document).keyup(function(e) {
     $('#item-detail-modal').removeClass('fullscreen');
     $('.overlay').removeClass('show');
   } 
+});
+
+//- minimise modal
+$('.modal .minimise-modal').on('click', function() {
+  $(this).parentsUntil('body').toggleClass('minimise');
 });
 
 // print modal layout options

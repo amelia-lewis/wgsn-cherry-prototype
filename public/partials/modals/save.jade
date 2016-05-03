@@ -6,31 +6,42 @@ block append modal-vars
 
 block modal-content
   .row
-    .col-xs-12
-      h3 Choose a Board
+    .col-xs-6
+      img(src="https://www.wgsn.com/storage/vol20/ss_image_store/45/39/44/42/media_blm_aw16_004.jpg")
 
-  .row.block-bot-sm
-    .col-xs-12
-      select
-        option Spring/Summer 2016
-        option Inspiration Images
-        option Reports to Read
-        option Fashion Shows
-        option Balmain 2016
-        option Celine
-        option Alexander Wang
-        option Opening Ceremony
-        option Lookbooks
-  
-  .row
-    .col-xs-12
-      h3 or
+      .block-top-xs
+        textarea(placeholder="Add a comment (optional)")
 
-  .row.block-bot-sm
-    .col-xs-12
-      input(type="text", placeholder="Enter a name for your new board")
+    .col-xs-6
+      h3 Choose a board
 
-  .row
-    .col-xs-12
-      img.pull-left(src="https://www.wgsn.com/storage/vol20/ss_image_store/45/39/44/42/media_blm_aw16_004.jpg")
-      textarea.pull-left(placeholder="Add a comment (optional)")
+      .panel-folders.border
+        .accordion-section.accordion-section-recent-boards.open
+          .accordion-title
+            span.wgsn-font Recent Folders
+            i.section-expand-icon.icon.icon-minus.pull-right.tight
+          
+          .accordion-content
+            .board-row.level-1
+              span.board-name Folder name
+              br
+              span.board-filepath.text-grey.text-smaller Folder name > Folder name
+              .btn.btn-black.btn-sm.close-modal Save
+
+            .board-row.level-1
+              span.board-name Folder name
+              br
+              span.board-filepath.text-grey.text-smaller Folder name > Folder name
+              .btn.btn-black.btn-sm.close-modal Save
+
+            .board-row.level-1
+              span.board-name Folder name
+              br
+              span.board-filepath.text-grey.text-smaller Folder name > Folder name
+              .btn.btn-black.btn-sm.close-modal Save
+        
+        include ../workspace/folder-structure
+
+      .modal-create-new-board-container
+        input(type="text" placeholder="Create new folder")
+        .btn.btn-black.btn-sm.close-modal Create
