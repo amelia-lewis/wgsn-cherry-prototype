@@ -21,7 +21,7 @@
   min-height: 100px
   background: white
   @extend .box-shadow
-  +transform(translate3d(-50%, calc(-50% + 20px), 0))
+  +transform(translate3d(-50%, calc(-50% + 10px), 0))
   +transition(all 300ms)
   z-index: 400
   opacity: 0
@@ -101,7 +101,7 @@
 // ADD, MOVE & COPY
 // ==================================================
 
-#add-to-board-modal,
+#save-modal,
 #move-modal,
 #copy-modal
   img
@@ -250,6 +250,9 @@
       left: 0
       height: 100%
       background: $xlt-grey
+
+  .modal-footer
+    display: none
 
 
 // ==================================================

@@ -1,0 +1,17 @@
+block modal-vars
+  - var id = null
+  - var title = null
+  - var type = null
+
+.modal(id=id + "-modal" class=type)
+  .modal-header
+    h2.pull-left.tight= title
+    p.pull-left.right.num-of-files 1 image
+    i.icon.icon-cross.pull-right.hoverable.close-modal
+
+  .modal-content
+    block modal-content
+
+  .modal-footer
+    p.tight.block-top-xs.hoverable.pull-left.close-modal Cancel
+    .btn.btn-white.pull-right.close-modal Done

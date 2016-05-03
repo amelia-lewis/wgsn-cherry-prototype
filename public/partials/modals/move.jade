@@ -1,32 +1,28 @@
-.modal#move-modal
-  .modal-header
-    h2.pull-left.tight Move
-    p.pull-left.right.num-of-files 1 image
-    i.icon.icon-cross.pull-right.hoverable.close-modal
+extends modal
 
-  .modal-content
-    .row
-      .col-xs-12
-        h3 Choose a Board
+block append modal-vars
+  - id = "move"
+  - title = "Move"
 
-    .row.block-bot-sm
-      .col-xs-12
-        select
-          option Spring/Summer 2016
-    
-    .row
-      .col-xs-12
-        h3 or
+block modal-content
+  .row
+    .col-xs-12
+      h3 Choose a Board
 
-    .row.block-bot-sm
-      .col-xs-12
-        input(type="text", placeholder="Enter a name for your new board")
+  .row.block-bot-sm
+    .col-xs-12
+      select
+        option Spring/Summer 2016
+  
+  .row
+    .col-xs-12
+      h3 or
 
-    .row
-      .col-xs-12
-        img.pull-left(src="https://www.wgsn.com/storage/vol20/ss_image_store/45/39/44/42/media_blm_aw16_004.jpg")
-        textarea.pull-left(placeholder="Add a comment (optional)")
+  .row.block-bot-sm
+    .col-xs-12
+      input(type="text", placeholder="Enter a name for your new board")
 
-  .modal-footer
-    p.tight.block-top-xs.hoverable.pull-left.close-modal Cancel
-    .btn.btn-white.pull-right.close-modal Done
+  .row
+    .col-xs-12
+      img.pull-left(src="https://www.wgsn.com/storage/vol20/ss_image_store/45/39/44/42/media_blm_aw16_004.jpg")
+      textarea.pull-left(placeholder="Add a comment (optional)")

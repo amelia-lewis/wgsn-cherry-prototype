@@ -19,13 +19,16 @@ mixin download-item(status, name, percent)
       else
         p.tight.text-underline.hoverable Cancel
 
-.modal#download-modal
-  .modal-header
-    h3.pull-left.tight Downloads
-    i.icon.icon-minimise.pull-right.hoverable.minimise-modal
+//- ==================================================
 
-  .modal-content
-    +download-item("Queueing", "name_of_download", "")
-    +download-item("Processing", "name_of_download", "36%")
-    +download-item("Cancelling", "name_of_download", "")
-    +download-item("Complete", "name_of_download", "100%")
+extends modal
+
+block append modal-vars
+  - id = "download"
+  - title = "Download"
+
+block modal-content
+  +download-item("Queueing", "name_of_download", "")
+  +download-item("Processing", "name_of_download", "36%")
+  +download-item("Cancelling", "name_of_download", "")
+  +download-item("Complete", "name_of_download", "100%")

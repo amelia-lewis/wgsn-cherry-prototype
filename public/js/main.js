@@ -751,7 +751,7 @@ openModal = function(modalname) {
 };
 
 openModal('share');
-openModal('add-to-board');
+openModal('save');
 openModal('copy');
 openModal('move');
 openModal('download');
