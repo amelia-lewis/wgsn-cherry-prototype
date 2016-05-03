@@ -21,20 +21,20 @@
       width: 100%
       height: 3px
       background: $md-grey
-      +transform(translate3d(0, 0, 0) scale(1, 0))
-      +transform-origin(center bottom)
-      +transition(all 300ms)
+      transform: translate3d(0, 0, 0) scale(1, 0)
+      transform-origin: center bottom
+      transition: all 300ms
 
     &:hover,
     &.active
       &:after
-        +transform(translate3d(0, 0, 0) scale(1, 1))
+        transform: translate3d(0, 0, 0) scale(1, 1)
 
     &.tab-nav-subheading
       cursor: default
 
       &:after
-        +transform(translate3d(0, 0, 0) scale(1, 0))
+        transform: translate3d(0, 0, 0) scale(1, 0)
 
 body.product-fashion
   .tab-nav

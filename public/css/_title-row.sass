@@ -11,7 +11,7 @@
 
   .share-block,
   .utility-block
-    +transform(translate3d(0, 0, 0))
+    transform: translate3d(0, 0, 0)
 
   .pull-left
     position: relative
@@ -48,7 +48,7 @@
 
     input.search-input
       width: 260px
-      +transition(all 500ms)
+      transition: all 500ms
 
   .view-only-block
     padding-top: 23px
@@ -71,12 +71,6 @@
     @extend .inline-block
     @extend .hoverable
     @extend .border
-    
-    // &:first-of-type
-    //   +border-radius(3px 0 0 3px)
-
-    // &:last-of-type
-    //   +border-radius(0 3px 3px 0)
 
     &:hover
       background: $xlt-grey
@@ -90,18 +84,6 @@
   .btn-comments
     margin-left: 15px
     
-    // &:after
-    //   content: ""
-    //   display: block
-    //   position: absolute
-    //   background: white
-    //   width: 100%
-    //   height: 1px
-    //   bottom: -1px
-    //   left: 0
-    //   opacity: 0
-    //   +transition-delay(200ms)
-
     &:before
       content: ""
       position: absolute
@@ -111,13 +93,9 @@
       display: block
       width: 8px
       height: 8px
-      +border-radius(50%)
+      border-radius: 50%
       z-index: 10
       border: 2px solid white
-
-  //   &.active
-  //     &:after
-  //       opacity: 1
 
 body.workspace-view
   .title-row

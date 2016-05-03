@@ -8,7 +8,7 @@
     float: left
     padding: 7px
     margin: 0 8px 8px 0
-    +border-radius(3px)
+    border-radius: 3px
 
     .icon
       margin-left: 10px
@@ -44,10 +44,10 @@
   &.filter-row-fixed
     background: $xlt-grey
     pointer-events: all
-    +transform(translate3d(0, -100%, 0))
+    transform: translate3d(0, -100%, 0)
 
     &.show
-      +transform(translate3d(0, 0, 0))
+      transform: translate3d(0, 0, 0)
 
 .filter-row-fixed-container
   overflow: hidden
@@ -67,20 +67,20 @@
   z-index: 400
   opacity: 0
   pointer-events: none
-  +border-radius(0 0 3px 3px)
+  border-radius: 0 0 3px 3px
 
   .icon
     margin: 0 6px 0 0
-    +transform(translate3d(0, 0, 0) rotate(0deg))
+    transform: translate3d(0, 0, 0) rotate(0deg)
 
   &.active
     .icon
-      +transform(translate3d(0, 0, 0) rotate(180deg))
+      transform: translate3d(0, 0, 0) rotate(180deg)
 
 .files-row
   &.headroom--top
     .filter-row-fixed
-      +transform(translate3d(0, -100%, 0))
+      transform: translate3d(0, -100%, 0)
     
     .btn-filter-row-fixed
       opacity: 0

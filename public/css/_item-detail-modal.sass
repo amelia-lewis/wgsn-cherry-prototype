@@ -8,13 +8,12 @@
   @extend .box-shadow
   z-index: 380
   opacity: 0
-  +transform(translate3d(-50%, calc(-50% + 10px), 0))
-  +transition(all 300ms)
+  transform: translate3d(-50%, calc(-50% + 10px), 0)
   pointer-events: none
 
   &.show
     opacity: 1
-    +transform(translate3d(-50%, -50%, 0))
+    transform: translate3d(-50%, -50%, 0)
     pointer-events: all
 
   
@@ -29,7 +28,7 @@
       color: white
       font-size: 16px
       top: 50%
-      +transform(translate3d(0, -50%, 0))
+      transform: translate3d(0, -50%, 0)
 
     .icon-angle-left
       left: -24px
@@ -223,7 +222,7 @@
 
       .icon
         display: block
-        +transform(translate3d(0, 0, 0) rotate(180deg))
+        transform: translate3d(0, 0, 0) rotate(180deg)
         @extend .no-transition
 
     .file-heart,
@@ -323,7 +322,7 @@
 
     .btn-modal-left-side-panel
       .icon
-        +transform(translate3d(0, 0, 0) rotate(0deg))
+        transform: translate3d(0, 0, 0) rotate(0deg)
 
 
   //- ============================================================
@@ -455,5 +454,5 @@
         display: block
         width: 80px
         height: 80px
-        +transform(translate3d(-50%, -50%, 0))
+        transform: translate3d(-50%, -50%, 0)
         @extend .hoverable

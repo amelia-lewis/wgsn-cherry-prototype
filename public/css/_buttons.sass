@@ -7,9 +7,9 @@ button,
   line-height: 16px
   @extend .wgsn-font
   @extend .text-center
-  +border-radius(3px)
-  +transition(all 300ms)
-  +transform(translate3d(0, 0, 0))
+  border-radius: 3px
+  transition: all 300ms
+  transform: translate3d(0, 0, 0)
   cursor: pointer
 
   span
@@ -17,7 +17,7 @@ button,
     font-size: 1em
 
   &:active
-    +transform(translate3d(0, 2px, 0))
+    transform: translate3d(0, 2px, 0)
 
   &:focus
     outline: none
@@ -82,7 +82,7 @@ body.product-fashion
 
     &:not(.btn-disabled):hover
       background: lighten($fashion, 10)
-      +transition-delay(0ms !important)
+      transition-delay: 0ms !important
 
 body.product-li
   .btn-coloured
@@ -91,7 +91,7 @@ body.product-li
 
     &:not(.btn-disabled):hover
       background: lighten($li, 10)
-      +transition-delay(0ms !important)
+      transition-delay: 0ms !important
 
 body.product-instock
   .btn-coloured
@@ -100,7 +100,7 @@ body.product-instock
 
     &:not(.btn-disabled):hover
       background: lighten($instock, 10)
-      +transition-delay(0ms !important)
+      transition-delay: 0ms !important
 
 body.product-styletrial
   .btn-coloured
@@ -109,7 +109,7 @@ body.product-styletrial
 
     &:not(.btn-disabled):hover
       background: lighten($styletrial, 10)
-      +transition-delay(0ms !important)
+      transition-delay: 0ms !important
 
 // BACK TO TOP BUTTON
 .btn-back-to-top
@@ -137,4 +137,4 @@ body.product-styletrial
     opacity: 0.5
 
   &.show-comments-panel
-    +transform(translate3d(calc(-1 * #{$comments-panel-width}), 0, 0))
+    transform: translate3d(calc(-1 * #{$comments-panel-width}), 0, 0)

@@ -8,9 +8,8 @@
 .floating-utility-row
   color: $xdk-grey
   opacity: 0
-  +transform(translate3d(0, 100%, 0))
+  transform: translate3d(0, 100%, 0)
   pointer-events: none
-  border-left: 1px solid rgba(white, 0.1)
 
   .btn.select-all
     margin-top: -3px
@@ -21,7 +20,7 @@
   .icon
     color: $md-grey
     font-size: 16px
-    +border-radius(3px)
+    border-radius: 3px
 
     &:hover
       color: $xdk-grey
@@ -41,12 +40,12 @@
   .utility-block
     opacity: 0
     pointer-events: none
-    +transform(translate3d(0, -100%, 0))
+    transform: translate3d(0, -100%, 0)
 
   .floating-utility-row-container
     pointer-events: all
 
   .floating-utility-row
     opacity: 1
-    +transform(translate3d(0, 0, 0))
+    transform: translate3d(0, 0, 0)
     pointer-events: all

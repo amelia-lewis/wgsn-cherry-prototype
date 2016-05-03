@@ -47,56 +47,11 @@ header
       @extend .pull-left
       position: relative
 
-      &:before
-        content: ""
-        position: absolute
-        display: block
-        top: -19px
-        left: -15px
-        height: $global-product-row-height
-        width: calc(100% + 30px)
-        background: rgba(white, 0.14)
-        opacity: 0
-        z-index: -1
-
-      &:after
-        content: ""
-        position: absolute
-        display: block
-        bottom: -18px
-        left: -15px
-        width: calc(100% + 30px)
-        height: 2px
-        background: white
-        opacity: 0
-        +transition(all 400ms)
-
-      &#product-link-fashion:after
-        background: $fashion
-
-      &#product-link-li:after
-        background: $li
-
-      &#product-link-instock:after
-        background: $instock
-
-      &#product-link-styletrial:after
-        background: $styletrial
-
-      &#product-link-mindset:after
-        background: $mindset
-
       &:hover
         color: white
 
-        // &:after
-        //   opacity: 1
-
       &.active
         color: white
-
-        // &:before
-        //   opacity: 1
 
       @media (max-width: $screen-md-max)
         &:first-of-type
@@ -143,7 +98,7 @@ header
       
       input[type="text"]
         background: rgba(white, 0.2)
-        +border-radius(0)
+        border-radius: 0
         border: none
         width: 100px
         height: 28px
@@ -197,7 +152,7 @@ header
       color: white
       @extend .flex-center
       font-size: 8px
-      +border-radius(50%)
+      border-radius: 50%
 
     .icon-bell:after
       content: "2"

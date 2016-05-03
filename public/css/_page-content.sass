@@ -18,23 +18,15 @@
       width: calc(100vw - #{$left-side-panel-width})
 
     .left-side-panel
-      +transform(translate3d(0, 0, 0))
+      transform: translate3d(0, 0, 0)
 
     .btn-left-side-panel 
       .icon
-        +transform(translate3d(0, 0, 0) rotate(0deg))
+        transform: translate3d(0, 0, 0) rotate(0deg)
 
   &.show-comments-panel
     .right-side-panel
       right: $comments-panel-width
 
     .comments-panel
-      +transform(translate3d(0, 0, 0))
-
-// body.workspace-view,
-// body.image-library-view,
-// body.workspace-inbox-view,
-// body.workspace-sent-messages-view,
-// body.workspace-favourites-view
-//   .page-content
-//     top: $header-height - $product-row-height + $title-row-height
+      transform: translate3d(0, 0, 0)

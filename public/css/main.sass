@@ -78,7 +78,7 @@ body
 
 *
   box-sizing: border-box
-  +transition(all 400ms)
+  transition: all 400ms
 
 // not really a robust/intelligent solution, but leaving for now
 ::-webkit-scrollbar
@@ -107,13 +107,13 @@ body
           width: 100%
           height: 2px
           background: $xdk-grey
-          +transition(all 400ms)
-          +transform-origin(center top)
+          transition: all 400ms
+          transform-origin: center top
           z-index: -1
 
         &:hover
           &:after
-            +transform(translate3d(0, 0, 0) scale(1, 2))
+            transform: translate3d(0, 0, 0) scale(1, 2)
 
 .mobile-warning
   position: absolute
