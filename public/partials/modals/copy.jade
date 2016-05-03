@@ -3,6 +3,7 @@ extends modal
 block append modal-vars
   - id = "copy"
   - title = "Copy"
+  - type = "simple-modal"
 
 block modal-content
   .row
@@ -13,16 +14,11 @@ block modal-content
     .col-xs-12
       select
         option Spring/Summer 2016
-  
-  .row
-    .col-xs-12
-      h3 or
-
-  .row.block-bot-sm
-    .col-xs-12
-      input(type="text", placeholder="Enter a name for your new board")
-
-  .row
-    .col-xs-12
-      img.pull-left(src="https://www.wgsn.com/storage/vol20/ss_image_store/45/39/44/42/media_blm_aw16_004.jpg")
-      textarea.pull-left(placeholder="Add a comment (optional)")
+        option Inspiration Images
+        option Reports to Read
+        option Fashion Shows
+        option Balmain 2016
+        option Celine
+        option Alexander Wang
+        option Opening Ceremony
+        option Lookbooks
