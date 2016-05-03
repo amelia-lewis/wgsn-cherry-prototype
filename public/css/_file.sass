@@ -266,7 +266,7 @@ html.mobile
 
       .file-checkbox,
       .file-heart
-        opacity: 1
+        opacity: 1 !important
 
   .caption-container
     float: left
@@ -320,7 +320,8 @@ html.mobile
       transform: translate3d(-50%, -50%, 0)
 
 body.product-fashion
-  .file
+  .file,
+  .file-details-view
     .file-comment
       display: none
 
@@ -332,7 +333,8 @@ body.product-fashion
         border: 5px solid $fashion
 
 body.product-none
-  .file
+  .file,
+  .file-details-view
     .file-comment
       color: $yellow
     

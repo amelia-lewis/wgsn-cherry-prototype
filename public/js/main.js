@@ -178,7 +178,7 @@ checkforhover = function(){
 
 // ===== SELECT FILE ON CHECKBOX, OPEN FILE ON SINGLE CLICK =====
 $('.file-checkbox').click(function() {
-  $(this).parentsUntil('.collage').toggleClass('selected');
+  $(this).parentsUntil('.files-container').toggleClass('selected');
 });
 
 multiFileSelect = function(e) {
@@ -399,6 +399,7 @@ $(".file").click(function(e) {
 // |____/ \___/ \__,_|_|  \__,_|  \_____\___/|_|\___/|_|    |______\__,_|_.__/ \___|_|___/
 // ====================================================================================================
 
+// these don't really work anymore but leaving the code here just in case...
 $('.label-circle.label-circle-red').on('click', function() {
   $(this).addClass('selected');
   $(this).siblings().removeClass('selected');
@@ -619,34 +620,6 @@ $('.filter-tag .icon-cross').on('click', function() {
 // | |    | | | ||  __/ |  \__ \
 // |_|    |_|_|\__\___|_|  |___/
 // ====================================================================================================
-
-// openFilter = function(filtername) {
-//   $('#filter-btn-' + filtername).on('click', function() {
-//     if($(this).hasClass('active')) {
-//       $('.filter-extended').removeClass('show');
-//       $('.filter-btn').removeClass('active');
-//       $('.right-side-panel').removeClass('has-file-selected has-multiple-files-selected');
-//       $('.file').removeClass('selected');
-//     } else {
-//       $('.filter-extended').removeClass('show');
-//       $('.filter-btn').removeClass('active');
-//       $(this).addClass('active');
-//       $('#filter-extended-'+ filtername).addClass('show');
-//       $('.right-side-panel').removeClass('has-file-selected has-multiple-files-selected');
-//       $('.file').removeClass('selected');
-//     }
-//   });
-// };
-
-// openFilter("category");
-// openFilter("market");
-// openFilter("products");
-// openFilter("brand");
-// openFilter("city");
-// openFilter("season");
-// openFilter("colour");
-// openFilter("prints");
-// openFilter("fabric");
 
 openExtendedFilter = function(filtername) {
   $('#btn-view-all-' + filtername).on('click', function() {
@@ -883,7 +856,6 @@ $(document).ready(function() {
       "Alex Shishkevich",
       "Deepa Kini",
       "Robert Conn",
-      "Deepa Bhat",
       "Aleksey Mezhva",
       "Samuel Elliott"
     ],
@@ -933,17 +905,6 @@ $(document).ready(function() {
     );
   });
 });
-
-// moveBacktotop = function() {
-//   if($('.right-side-panel').hasClass('has-file-selected')) {
-//     console.log("hello");
-//     $('.btn-back-to-top').css({transform: "translate3d(0, -30px, 0);"})
-//   } else {
-//     $('.btn-back-to-top').css({transform: "translate3d(0, 0, 0);"})
-//   };
-// };
-
-// moveBacktotop();
 
 
 // ====================================================================================================
