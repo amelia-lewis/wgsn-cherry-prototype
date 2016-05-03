@@ -4,25 +4,20 @@ mixin filter(id, title, viewall, ...items)
       span.wgsn-font.pull-left= title
       i.section-expand-icon.icon.icon-plus.pull-right.tight
     
-    if viewall
-      .accordion-content.has-view-all
-        ul.clean.overflow-auto
-          each item in items
-            li
-              label(for=item)
-                input.pull-left(type="checkbox" id=item)
-                span= item
-        
-        .block-hor-sm.block-ver-xs.text-right: a.tight.text-underline.btn-view-all.hoverable(id="btn-view-all-" + id) View all
-
-    if !viewall
-      .accordion-content
-        ul.clean.overflow-auto
-          each item in items
-            li
-              label(for=item)
-                input.pull-left(type="checkbox" id=item)
-                span= item
+    .accordion-content
+      ul.clean.overflow-auto
+        each item in items
+          li
+            label(for=item)
+              input.pull-left(type="checkbox" id=item)
+              span= item
+      
+      .accordion-footer.overflow-auto
+        p.tight.wgsn-font.hoverable.pull-left Reset filter
+        if viewall
+          p.tight.wgsn-font.btn-view-all.hoverable.pull-right(id="btn-view-all-" + id)
+            span.block-right-xxs View all
+            i.icon.icon-angle-right.tight
 
 
 //- ============================================================

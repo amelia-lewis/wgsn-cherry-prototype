@@ -1,68 +1,73 @@
-mixin filter-extended(id, type, tabbed, search, anchors, subheadings, ...items)
-  .filter-extended.bg-xlt-grey.border.box-shadow(id="filter-extended-" +id class!=attributes.class)
-    if type == "single-list"
-      if search
-        .filter-extended-top-row.border-bottom.block-hor-xs
-          //- if tabbed
-          //-   .filter-extended-tabs.pull-left
-          //-     ul.tab-nav
-          //-       li.tab-nav-tab.active Top Brands
-          //-       li.tab-nav-tab All Brands
-          .block-ver-xs.pull-right
-            input.search-input(type="text", placeholder="Search " + id)
+mixin filter-extended(id, title, tabbed, search, anchors, subheadings, ...items)
+  .modal.filter-extended(id="filter-extended-" +id class!=attributes.class)
+    .modal-header
+      h2.pull-left.tight= title
+      i.icon.icon-cross.pull-right.hoverable.close-modal
 
-      if anchors
-        .filter-extended-anchors.block-top-sm.block-hor-sm.block-bot-xs.text-center
-          for letter, i in "#ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
-            span.anchor-letter.text-bold.hoverable.inline-block= letter
+    .modal-content
+      if id != "products"
+        .row.border-bottom.block-bot-sm
+          .col-xs-8
+            .filter-extended-anchors
+              for letter, i in "#ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
+                span.anchor-letter= letter
 
-      .filter-extended-list.block-hor-sm.block-top-sm
-        ul.clean
-          if subheadings
-            li.filter-extended-subheading= subheadings
+          .col-xs-4
+            input.search-input(type="text", placeholder="Search " + title)
+
+        //- if search
+        //-   .border-bottom.block-hor-xs
+        //-     //- if tabbed
+        //-     //-   .filter-extended-tabs.pull-left
+        //-     //-     ul.tab-nav
+        //-     //-       li.tab-nav-tab.active Top Brands
+        //-     //-       li.tab-nav-tab All Brands
+        //-     .block-ver-xs.pull-right
+        //-       input.search-input(type="text", placeholder="Search " + id)
+
+        .row
+          .col-xs-12
+            ul.filter-extended-list.clean
+              if subheadings
+                li.filter-extended-subheading= subheadings
+              
+              each item in items
+                li
+                  label(for=item)
+                    input.pull-left(type="checkbox" id=item)
+                    span= item
+
+      else if id == "products"
+        .row.hierarchical-list
+          .col-xs-4.border-right
+            ul.filter-extended-list.clean
+              each item in items
+                li
+                  label(for=item)
+                    input.pull-left(type="checkbox" id=item)
+                    span= item
+                    i.icon.icon-angle-right.pull-right.tight.text-grey
+
+          .col-xs-4.border-right
+            ul.filter-extended-list.clean
+              each item in items
+                li
+                  label(for=item)
+                    input.pull-left(type="checkbox" id=item)
+                    span= item
+                    i.icon.icon-angle-right.pull-right.tight.text-grey
           
-          each item in items
-            li
-              label(for=item)
-                input.pull-left(type="checkbox" id=item)
-                span= item
-
-    if type == "hierarchical-list"
-      .filter-extended-columns
-        .col
-          .filter-extended-list.block-hor-sm.block-top-sm
-            ul.clean
-              each item in items
-                li
-                  label(for=item)
-                    input.pull-left(type="checkbox" id=item)
-                    span= item
-                    i.icon.icon-angle-right.pull-right.tight
-
-        .col
-          .filter-extended-list.block-hor-sm.block-top-sm
-            ul.clean
-              each item in items
-                li
-                  label(for=item)
-                    input.pull-left(type="checkbox" id=item)
-                    span= item
-                    i.icon.icon-angle-right.pull-right.tight
-        
-        .col
-          .filter-extended-list.block-hor-sm.block-top-sm
-            ul.clean
+          .col-xs-4
+            ul.filter-extended-list.clean
                 each item in items
                   li
                     label(for=item)
                       input.pull-left(type="checkbox" id=item)
                       span= item
 
-    .filter-extended-bottom-row.block-hor-xs.border-top
-      .block-ver-sm.pull-left
-        p.text-underline.tight.block-top-xxs Reset filter
-      .block-ver-xs.pull-right
-        .btn.btn-white Done
+    .modal-footer
+      p.tight.block-top-xs.hoverable.pull-left.close-modal Cancel
+      .btn.btn-white.pull-right.close-modal Done
 
 
 //- ============================================================
@@ -70,19 +75,19 @@ mixin filter-extended(id, type, tabbed, search, anchors, subheadings, ...items)
 
 +filter-extended(
   "products",
-  "hierarchical-list",
+  "Products",
   false,
   false,
   false,
   false,
-  "Apparel (4.54 mil.)",
-  "Accessories (1.07 mil.)",
-  "Beauty (110,973)",
-  "Footwear (68,496)")
+  "Apparel",
+  "Accessories",
+  "Beauty",
+  "Footwear")
 
 +filter-extended(
   "brand",
-  "single-list",
+  "Brand",
   true,
   true,
   true,
@@ -878,7 +883,7 @@ mixin filter-extended(id, type, tabbed, search, anchors, subheadings, ...items)
 
 +filter-extended(
   "city",
-  "single-list",
+  "City",
   false,
   true,
   true,
@@ -981,7 +986,7 @@ mixin filter-extended(id, type, tabbed, search, anchors, subheadings, ...items)
 
 +filter-extended(
   "season-month",
-  "single-list",
+  "Season/Month",
   false,
   true,
   true,

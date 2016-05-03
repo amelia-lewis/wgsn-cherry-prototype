@@ -690,7 +690,7 @@ $('.filter-tag .icon-cross').on('click', function() {
 openExtendedFilter = function(filtername) {
   $('#btn-view-all-' + filtername).on('click', function() {
     $('.filter-extended').removeClass('show');
-    $('.filter-extended-overlay').addClass('show');
+    $('.overlay').addClass('show');
     $('#filter-extended-'+ filtername).addClass('show');
     $('.right-side-panel').removeClass('has-file-selected has-multiple-files-selected');
     $('.file').removeClass('selected');
@@ -707,8 +707,8 @@ openExtendedFilter("season-month");
 // openExtendedFilter("prints");
 // openExtendedFilter("fabric");
 
-$('header, .title-row, .filter-extended-overlay').on('click', function() {
-  $('.filter-extended-overlay').removeClass('show');
+$('.overlay').on('click', function() {
+  $('.overlay').removeClass('show');
   $('.filter-extended').removeClass('show');
   $('.filter-btn').removeClass('active');
 });
@@ -767,10 +767,12 @@ $('.modal .close-modal').on('click', function() {
   if($('#item-detail-modal').hasClass('show')) {
     $(this).parentsUntil('body').removeClass('show');  
     $('.modal-overlay').removeClass('show');
+    $('.filter-extended').removeClass('show');
     $('.btn-modal-tool').removeClass('active');
   } else {
     $(this).parentsUntil('body').removeClass('show');
     $('.overlay').removeClass('show');
+    $('.filter-extended').removeClass('show');
   }
 });
 
@@ -783,6 +785,7 @@ $('.modal .minimise-modal').on('click', function() {
 $(document).keyup(function(e) { 
   if (e.keyCode == 27) { 
     $('.modal').removeClass('show');
+    $('.filter-extended').removeClass('show');
     $('#item-detail-modal').removeClass('fullscreen');
     $('.overlay').removeClass('show');
   } 

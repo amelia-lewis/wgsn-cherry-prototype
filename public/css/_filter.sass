@@ -6,6 +6,7 @@
       @extend .block-bot-sm
       display: flex
       flex-direction: column
+      border-bottom: 1px solid rgba(white, 0.05)
 
       li
         width: 100%
@@ -22,143 +23,65 @@
           width: calc(100% - 30px)
           line-height: 1.4em
 
-    &.has-view-all
-      ul
-        border-bottom: 1px solid rgba(white, 0.05)
-
   &.open
+    .accordion-title span,
+    .accordion-title i
+      color: white
+
     .accordion-content
-      height: 200px
-      
-      &.has-view-all
-        height: 235px
+      height: 242px
 
 
 // ==================================================
 
 
-.filter-extended-overlay
-  background: rgba($xdk-grey, 0.8)
-  position: absolute
-  display: block
-  top: 0
-  left: $left-side-panel-width
-  width: calc(100vw - #{$left-side-panel-width})
-  height: 100%
-  opacity: 0
-  pointer-events: none
-  z-index: 190
-
-  &.show
-    opacity: 1
-    pointer-events: all
-
 .filter-extended
-  position: absolute
-  top: 20px
-  left: calc(#{$left-side-panel-width} + 20px)
-  width: calc(100vw - #{$left-side-panel-width} - 40px)
+  width: 80vw
   max-width: 1000px
-  height: 70vh
-  z-index: 200
-  +transform(translate3d(0, 20px, 0))
-  opacity: 0
-  pointer-events: none
-
-  &.show
-    +transform(translate3d(0, 0, 0))
-    opacity: 1
-    pointer-events: all
-
-  .filter-extended-top-row
-    overflow: auto
-
-    .tab-nav
-      margin-top: 3px
-
-    input.search-input
-      width: 400px
 
   .filter-extended-anchors
     .anchor-letter
-      width: 20px
-      height: 20px
-      margin: 0 4px
-      font-size: 12px
+      @extend .hoverable
+      @extend .inline-block
+      @extend .wgsn-font
+      margin: 11px 14px 0 0
       +border-radius(50%)
-      padding: 3px 0
-      background: transparent
 
       &:hover,
-      &.active
-        background: $fashion
-        color: white
-
+      &.active,
       &:first-of-type
-        @extend .active
+        color: $fashion
 
   .filter-extended-list
-    position: absolute
-    top: 0
-    bottom: 57px
     width: 100%
+    height: 50vh
+    @extend .block-top-sm
     overflow-x: auto
     overflow-y: hidden
-
-    ul
-      display: flex
-      flex-direction: column
-      flex-wrap: wrap
-      height: 100%
-      
-      li
-        width: 200px
-        // margin-bottom: 10px
-        
-        span
-          display: inline-block
-          width: calc(100% - 30px)
-          line-height: 1.4em
-
-      .filter-extended-subheading
-        @extend .text-bold
-
-  .filter-extended-top-row + .filter-extended-anchors + .filter-extended-list
-    top: 100px
-
-  .filter-extended-columns
-    height: calc(100% - 52px)
-
-    .filter-extended-list
-      position: relative
+    display: flex
+    flex-direction: column
+    flex-wrap: wrap
     
-    .col
-      float: left
-      height: 100%
-      width: 230px
-      @extend .border-right
+    li
+      width: 200px
+      margin-bottom: 10px
+      
+      span
+        display: inline-block
+        width: calc(100% - 30px)
+        line-height: 1.4em
 
-      &:last-of-type
-        border-right: none
+    .filter-extended-subheading
+      @extend .wgsn-font
 
-      ul
-        position: relative
-        
-        li
-          span
-            width: calc(100% - 60px)
+  .hierarchical-list
+    .filter-extended-list
+      overflow: hidden
+      flex-wrap: nowrap
+      padding: 0
 
-  .filter-extended-bottom-row
-    position: absolute
-    bottom: 0
-    left: 0
-    width: 100%
-    overflow: auto
+      li
+        width: 100%
 
-    .icon
-      margin: 0 6px 0 0
-
-html.tablet
-  .filter-extended
-    width: calc(100vw - #{$left-side-panel-width})
-    max-width: calc(100vw - #{$left-side-panel-width})
+        span
+          width: calc(100% - 60px)
