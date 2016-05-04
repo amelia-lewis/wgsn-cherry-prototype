@@ -33,7 +33,7 @@ mixin filter-extended(id, title, tabbed, search, anchors, subheadings, ...items)
               
               each item in items
                 li
-                  label(for=item)
+                  label.checkbox-radio(for=item)
                     input.pull-left(type="checkbox" id=item)
                     span= item
 

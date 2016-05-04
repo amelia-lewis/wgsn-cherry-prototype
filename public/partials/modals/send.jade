@@ -17,14 +17,19 @@ block modal-content
     .col-xs-12
       textarea(placeholder="Message (optional)")
 
-  .row.block-bot-sm
-    .col-xs-12
-      label(for="receipt-notification")
-        input#receipt-notification(type="checkbox")
-        span Notify me when message is received.
+  .row
+    .col-xs-6
+      label.checkbox-radio(for="send-comments")
+        input#send-comments(type="checkbox" checked)
+        span Include comments
+
+    .col-xs-6
+      label.checkbox-radio(for="send-children")
+        input#send-children(type="checkbox" checked)
+        span Include nested folders
 
   .row
     .col-xs-12
-      label(for="send-comments")
-        input#send-comments(type="checkbox")
-        span Send comments with items
+      label.checkbox-radio(for="receipt-notification")
+        input#receipt-notification(type="checkbox" checked)
+        span Notify me when message is received.

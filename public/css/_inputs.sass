@@ -1,4 +1,20 @@
 // ============================================================
+// LABEL
+// ============================================================
+
+label
+  display: block
+  margin-bottom: 10px
+  // line-height: 2em
+  font-size: 10px
+
+  span.error-message
+    color: $label-red
+    margin-left: 5px
+    @extend .wgsn-font
+
+
+// ============================================================
 // TEXT
 // ============================================================
 
@@ -60,38 +76,31 @@ textarea.comment-input
 
 
 // ============================================================
-// LABEL
+// CHECKBOXES & RADIO BUTTONS
 // ============================================================
 
-label
-  display: block
-  // margin-bottom: 20px
-  // line-height: 2em
-  // font-size: 10px
+label.checkbox-radio
+  @extend .sans-serif
+  @extend .text-no-transform
+  font-size: 1em
+  line-height: 0.5em
+  cursor: pointer
 
-  span.error-message
-    color: $label-red
-    margin-left: 5px
-    @extend .wgsn-font
-
-
-// ============================================================
-// CHECKBOX
-// ============================================================
-
-input[type="checkbox"]
+input[type="checkbox"],
+input[type="radio"]
   appearance: none
   -moz-appearance: none
   -webkit-appearance: none
   width: 14px
   height: 14px
-  margin-right: 8px
   position: relative
   @extend .hoverable
+  background: none
   border: none
   box-shadow: none
+  margin: 0 8px 0 0
 
-  &:after
+  &:before
     content: ""
     display: block
     position: absolute
@@ -101,49 +110,29 @@ input[type="checkbox"]
     bottom: 1px
     background: white
     @extend .border
-    border-radius: 2px
     @extend .text-center
     color: $xdk-grey
-
-  &:checked
-    background: transparent
-    
-    &:after
-      background: white url('../img/icons/icon-font_tick.svg') no-repeat center center / 12px 12px
 
   &:focus
     outline: none
 
+  &:disabled
+    &:before
+      background: $xlt-grey
 
-// ============================================================
-// RADIO
-// ============================================================
+input[type="checkbox"]
+  &:before
+    border-radius: 2px
+
+  &:checked
+    background: transparent
+    
+    &:before
+      background: white url('../img/icons/icon-font_tick.svg') no-repeat center center / 12px 12px
 
 input[type="radio"]
-  appearance: none
-  -moz-appearance: none
-  -webkit-appearance: none
-  width: 14px
-  height: 14px
-  margin: 0 8px 0 0
-  position: relative
-  @extend .hoverable
-  border: none
-  box-shadow: none
-
   &:before
-    content: ""
-    display: block
-    position: absolute
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    background: white
-    @extend .border
     border-radius: 50%
-    @extend .text-center
-    color: $xdk-grey
 
   &:after
     content: ""
@@ -158,16 +147,8 @@ input[type="radio"]
     opacity: 0
 
   &:checked
-    background: transparent
-    
     &:after
       opacity: 1
-
-  &:focus
-    outline: none
-
-  &:last-of-type
-    margin: 0 8px 0 0
 
 
 // ============================================================

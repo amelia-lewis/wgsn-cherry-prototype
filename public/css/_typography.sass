@@ -5,25 +5,35 @@
   font-weight: normal
   font-style: normal
 
+.serif
+  font-family: "PT Serif", "Georgia", serif
+
+.sans-serif
+  font-family: "Helvetica", sans-serif
+  font-weight: normal
+
+p, li, a
+  @extend .sans-serif
+  line-height: 1.4em
+
 .wgsn-font
-  font-family: 'wgsn_headlineregular'
+  font-family: "WGSN Headline", "Futura", sans-serif
   text-transform: uppercase
   font-size: 0.8em
 
-h1, h2, h3, h4, h5
+h1, h2, h3, h4, label
   @extend .wgsn-font
 
 
 // WEIGHT
 .text-normal
-  // font-weight: lighter
-  // letter-spacing: 0.025em
   font-weight: normal
 
-.text-bold
+.text-bold,
+strong
   font-weight: bold
 
-h1, h2, h3, h4, h5, p, li, span
+h1, h2, h3, h4, h5, p, li, label
   @extend .text-normal
 
 

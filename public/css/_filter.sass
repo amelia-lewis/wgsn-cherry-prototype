@@ -10,7 +10,8 @@
 
       li
         width: 100%
-        margin-bottom: 15px
+        @extend .tight
+        // margin-bottom: 15px
 
         &:first-of-type
           margin-top: 5px
@@ -73,7 +74,8 @@
     
     li
       width: 200px
-      margin-bottom: 10px
+      margin: 0
+      // margin-bottom: 10px
       
       span
         display: inline-block
@@ -82,6 +84,7 @@
 
     .filter-extended-subheading
       @extend .wgsn-font
+      margin-bottom: 10px
 
   .hierarchical-list
     .filter-extended-list
