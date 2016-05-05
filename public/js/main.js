@@ -96,6 +96,36 @@ checkforhover = function(){
   };
 };
 
+checkforhoverDetailsView = function(){
+  if ($('.file-details-view').hasClass('selected')){
+    $('.file-details-view .btn').hide(); 
+    
+    // Count number of items selected
+    var myaccount = $('.file-details-view.selected').length;
+    console.log(myaccount);
+    
+    // if only one file is selected
+    if (myaccount == 1) {
+      $('.file-details-view.selected .btn').show();
+      $('.right-side-panel').addClass('has-file-selected');
+      $('.file-details-view .file-checkbox').css({opacity: "1"})
+      $('.floating-utility-row .displaying-results').text(myaccount + ' item selected');
+      $('.btn-comments').removeClass('active');
+    };
+    
+    // if more than one file is selected
+    if (myaccount > 1) { 
+      $('.right-side-panel').addClass('has-multiple-files-selected');
+      $('.btn-comments').removeClass('active');
+    };
+  } else {
+    $('.file-details-view .btn').show(); 
+    $('.floating.context-menu .count').hide();
+    $('.right-side-panel').removeClass('has-file-selected').removeClass('has-multiple-files-selected');
+    $('.file-details-view .file-checkbox').css({opacity: "0"})
+  };
+};
+
 // ===== SELECT FILE ON SINGLE CLICK, OPEN FILE ON DOUBLE CLICK =====
 // select file on single click, open file on double click
 // var DELAY = 160, clicks = 0, timer = null;
@@ -235,6 +265,63 @@ multiFileSelect = function(e) {
 
 $('.file').on('click', function(e) {
   multiFileSelect(e);
+});
+
+
+multiFileSelectDetailsView = function(e) {
+  // Count number of items selected
+  var myaccount = $('.file-details-view.selected').length;
+  var selectedImg = $(e.target).children('img').prop('src');
+
+  // if no files are selected
+  if (myaccount == 0) {
+    if($(e.target).is('.file-checkbox, .file-heart')) {
+      return;
+    } else if(!($('body').hasClass('workspace-trash-view'))) {
+      $('.overlay').addClass('show');
+      $('#item-detail-modal').addClass('show');
+      $('#item-detail-modal .modal-image-panel .img').css({"background-image": "url('" + selectedImg + "')"});
+
+      // file type
+      if ($(e.target).parent().hasClass('file-type-image')) {
+        $('#item-detail-modal').addClass('file-type-image');
+      } else if ($(e.target).parent().hasClass('file-type-report')) {
+        $('#item-detail-modal').addClass('file-type-report');
+      } else if ($(e.target).parent().hasClass('file-type-video')) {
+        $('#item-detail-modal').addClass('file-type-video');
+      } else if ($(e.target).parent().hasClass('file-type-color-card')) {
+        $('#item-detail-modal').addClass('file-type-color-card');
+      }
+    };
+
+  // if 1 file is selected
+  } else if (myaccount == 1) {
+    if($(e.target).is('.file-heart')) {
+      return;
+    } else {
+      checkforhover();
+      $('.right-side-panel').addClass('has-file-selected');
+      $('.floating-utility-row .displaying-results').text(myaccount + ' item selected');
+      $('.file-checkbox').css({'opacity': 1})
+      $(e.target).parent().addClass('selected');
+    };
+
+  // if 1 or more files are selected
+  } else if (myaccount >= 1) {
+    if($(e.target).is('.file-heart')) {
+      return;
+    } else {
+      checkforhover();
+      $('.right-side-panel').addClass('has-multiple-files-selected');
+      $('.floating-utility-row .displaying-results').text((myaccount + 1) + ' items selected');
+      $('.file-checkbox').css({'opacity': 1})
+      $(e.target).parent().addClass('selected');
+    };
+  };
+};
+
+$('.file-details-view .thumb-container').on('click', function(e) {
+  multiFileSelectDetailsView(e);
 });
 // ===== end SELECT FILE ON CHECKBOX, OPEN FILE ON SINGLE CLICK =====
 
