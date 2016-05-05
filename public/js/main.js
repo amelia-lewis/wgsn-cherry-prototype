@@ -67,12 +67,12 @@ $('.toggle').on('click', function() {
 
 // remove file utility buttons once in "select mode"
 checkforhover = function(){
+  // standard file
   if ($('.file').hasClass('selected')){
     $('.file .btn').hide(); 
     
     // Count number of items selected
     var myaccount = $('.file.selected').length;
-    console.log(myaccount);
     
     // if only one file is selected
     if (myaccount == 1) {
@@ -85,6 +85,7 @@ checkforhover = function(){
     
     // if more than one file is selected
     if (myaccount > 1) { 
+      $('.right-side-panel').addClass('has-file-selected');
       $('.right-side-panel').addClass('has-multiple-files-selected');
       $('.btn-comments').removeClass('active');
     };
@@ -94,19 +95,14 @@ checkforhover = function(){
     $('.right-side-panel').removeClass('has-file-selected').removeClass('has-multiple-files-selected');
     $('.file .file-checkbox').css({opacity: "0"})
   };
-};
 
-checkforhoverDetailsView = function(){
+  // detail view file
   if ($('.file-details-view').hasClass('selected')){
-    $('.file-details-view .btn').hide(); 
-    
     // Count number of items selected
     var myaccount = $('.file-details-view.selected').length;
-    console.log(myaccount);
     
     // if only one file is selected
     if (myaccount == 1) {
-      $('.file-details-view.selected .btn').show();
       $('.right-side-panel').addClass('has-file-selected');
       $('.file-details-view .file-checkbox').css({opacity: "1"})
       $('.floating-utility-row .displaying-results').text(myaccount + ' item selected');
@@ -115,11 +111,11 @@ checkforhoverDetailsView = function(){
     
     // if more than one file is selected
     if (myaccount > 1) { 
+      $('.right-side-panel').addClass('has-file-selected');
       $('.right-side-panel').addClass('has-multiple-files-selected');
       $('.btn-comments').removeClass('active');
     };
   } else {
-    $('.file-details-view .btn').show(); 
     $('.floating.context-menu .count').hide();
     $('.right-side-panel').removeClass('has-file-selected').removeClass('has-multiple-files-selected');
     $('.file-details-view .file-checkbox').css({opacity: "0"})
@@ -271,7 +267,9 @@ $('.file').on('click', function(e) {
 multiFileSelectDetailsView = function(e) {
   // Count number of items selected
   var myaccount = $('.file-details-view.selected').length;
+  console.log(myaccount + "file detail");
   var selectedImg = $(e.target).children('img').prop('src');
+  console.log(selectedImg);
 
   // if no files are selected
   if (myaccount == 0) {
@@ -303,7 +301,7 @@ multiFileSelectDetailsView = function(e) {
       $('.right-side-panel').addClass('has-file-selected');
       $('.floating-utility-row .displaying-results').text(myaccount + ' item selected');
       $('.file-checkbox').css({'opacity': 1})
-      $(e.target).parent().addClass('selected');
+      $(e.target).parentsUntil('details-view').addClass('selected');
     };
 
   // if 1 or more files are selected
@@ -315,7 +313,7 @@ multiFileSelectDetailsView = function(e) {
       $('.right-side-panel').addClass('has-multiple-files-selected');
       $('.floating-utility-row .displaying-results').text((myaccount + 1) + ' items selected');
       $('.file-checkbox').css({'opacity': 1})
-      $(e.target).parent().addClass('selected');
+      $(e.target).parentsUntil('details-view').addClass('selected');
     };
   };
 };
@@ -337,11 +335,22 @@ $('.select-all').click(function() {
     $('.select-all').text('Deselect all');
     $('.file').addClass('selected');
   }
+
+  if ($('.file-details-view').length == $('.file-details-view.selected').length) {
+    $('.select-all').text('Select all');
+    $('.file-details-view').removeClass('selected');
+    $('.right-side-panel').removeClass('has-file-selected').removeClass('has-multiple-files-selected');
+    $('.file-checkbox').css({'opacity': 0})
+  } else {
+    $('.select-all').text('Deselect all');
+    $('.file-details-view').addClass('selected');
+  }
 });
 
 // x to close select mode / floating utility row
 $('.floating-utility-row .icon-cross').click(function() {
   $('.file').removeClass('selected');
+  $('.file-details-view').removeClass('selected');
   $('.right-side-panel').removeClass('has-file-selected').removeClass('has-multiple-files-selected');
   $('.file-checkbox').css({'opacity': 0})
 });
