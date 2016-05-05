@@ -585,7 +585,7 @@ $('.comments-panel .scroll-container').on('scroll', function() {
 });
 
 // close comments panel with arrow button
-$('.comments-panel .icon-arrow-right').on('click', function() {
+$('.comments-panel .icon-angle-right').on('click', function() {
   $('.page-content').removeClass('show-comments-panel');
   $('.btn-comments').removeClass('active');
   $('.btn-back-to-top').removeClass('show-comments-panel');
