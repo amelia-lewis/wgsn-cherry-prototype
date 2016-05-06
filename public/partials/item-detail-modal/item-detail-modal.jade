@@ -1,8 +1,8 @@
+.item-detail-modal-controls
+  i.icon.icon-angle-left.hoverable
+  i.icon.icon-angle-right.hoverable
+
 .modal#item-detail-modal
-  .modal-controls
-    i.icon.icon-angle-left.hoverable
-    i.icon.icon-angle-right.hoverable
-  
   .modal-report-tabs.bg-lt-grey.border-bottom.no-transition.hidden-file-type-image.hidden-file-type-video.hidden-file-type-colour-card
     ul.tab-nav
       li.tab-nav-tab.active Report 1
@@ -47,16 +47,17 @@
     .modal-bottom-panel-content.bg-lt-grey.border-bottom
 
   include comments
+  include page-list
 
   .modal-tool-panel.bg-xlt-grey.border-left
-    .btn-modal-tool.block-sm.hoverable.flex-center.border-bottom.close-modal: i.icon.icon-cross
-    .btn-modal-tool.block-sm.hoverable.flex-center.btn-fullscreen: i.icon.icon-fullscreen
-    .btn-modal-tool.block-sm.hoverable.flex-center.btn-page-list.hidden-file-type-image.hidden-file-type-video.hidden-file-type-colour-card: i.icon.icon-list
-    .btn-modal-tool.block-sm.hoverable.flex-center.btn-crop.hidden-file-type-report.hidden-file-type-video.hidden-file-type-colour-card: i.icon.icon-crop
-    .btn-modal-tool.block-sm.hoverable.flex-center.btn-save: i.icon.icon-plus-circle
-    .btn-modal-tool.block-sm.hoverable.flex-center.btn-print.hidden-file-type-video: i.icon.icon-print
-    .btn-modal-tool.block-sm.hoverable.flex-center.btn-download: i.icon.icon-download
-    .btn-modal-tool.block-sm.hoverable.flex-center.btn-send: i.icon.icon-paper-plane
-    .btn-modal-tool.block-sm.hoverable.flex-center.btn-modal-comments: i.icon.icon-comment
+    .btn-modal-tool.border-bottom.close-modal: i.icon.icon-cross
+    .btn-modal-tool.btn-fullscreen: i.icon.icon-fullscreen
+    .btn-modal-tool.btn-modal-page-list.hidden-file-type-image.hidden-file-type-video.hidden-file-type-colour-card: i.icon.icon-list
+    .btn-modal-tool.btn-crop.hidden-file-type-report.hidden-file-type-video.hidden-file-type-colour-card: i.icon.icon-crop
+    .btn-modal-tool.btn-save: i.icon.icon-plus-circle
+    .btn-modal-tool.btn-print.hidden-file-type-video: i.icon.icon-print
+    .btn-modal-tool.btn-download: i.icon.icon-download
+    .btn-modal-tool.btn-send: i.icon.icon-paper-plane
+    .btn-modal-tool.btn-modal-comments: i.icon.icon-comment
 
   .modal-overlay
