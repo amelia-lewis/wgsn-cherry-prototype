@@ -41,155 +41,50 @@
   //- PANELS
   //- ============================================================
 
-  .modal-info-panel,
-  .modal-image-panel,
-  .modal-tool-panel
-    position: absolute
-    top: 0
-    bottom: 0
-    @extend .no-transition
-
-  $modal-info-panel-width: 480px
   $modal-tool-panel-width: 50px
+
 
   //- ============================================================
   //- REPORT GROUP TABS
   //- ============================================================
   
-  .modal-report-group-tabs
-    display: none
+  .modal-report-tabs
     position: absolute
     top: 0
     left: 0
     width: calc(100% - #{$modal-tool-panel-width})
-    height: 20px
-    margin: 0
-    @extend .border-bottom
+    height: 30px
 
-    .col-xs-2
-      padding-left: 0
-      padding-right: 0
-      height: 100%
+    .tab-nav-tab
+      padding: 9px 0 8px
 
-      &:last-of-type
-        .tab
-          border: none
 
-      .tab
-        @extend .flex-center
-        @extend .bg-white
-        @extend .wgsn-font
-        @extend .border-right
-        @extend .hoverable
-        width: 100%
-        height: 100%
-
-        &.active
-          background: $yellow
-          color: white
-
-  
   //- ============================================================
-  //- INFO PANEL
+  //- INFO BAR
   //- ============================================================
 
-  .modal-info-panel
+  .modal-info-bar
+    position: absolute
+    top: 0
     left: 0
-    width: $modal-info-panel-width
-    display: none
+    width: calc(100% - #{$modal-tool-panel-width})
+    height: 30px
+    color: $md-grey
 
-    // top section
-    .modal-section-caption
-      ul
-        .modal-file-name
-          font-size: 20px
+    span
+      @extend .wgsn-font
+      @extend .inline-block
+      margin: 7px 10px 0 0
 
-    // bottom section
-    .modal-section-other
-      .modal-tabs
-        margin: 0
-        
-        .col-xs-4, 
-        .col-xs-6
-          padding: 0
-        
-        .tab
-          height: 40px
-          @extend .flex-center
-          @extend .no-transition
+      &.divider
+        @extend .sans-serif
 
-          &.active
-            background: white
-            border-bottom-color: transparent
-      
-      .modal-comments
-        .comment
-          .icon-trash
-            opacity: 0
-            margin-top: 4px
+      &.item-name
+        font-size: 12px
+        color: $xdk-grey
 
-          &:hover
-            .icon-trash
-              opacity: 1
-              
-        .comment:last-of-type
-          border-bottom: none
-
-        .comment-input
-          position: absolute
-          bottom: 0
-          left: 0
-          width: 100%
-
-          textarea
-            width: 100%
-            height: 80px
-
-      .modal-related-images
-        .img
-          height: 100px
-          background: white no-repeat center / contain
-
-      .modal-related-reports
-        .related-report
-          .img
-            width: 100%
-            height: 140px
-            background: white no-repeat center / cover
-
-      // tabs show/hide
-      &.show-comments
-        .btn-modal-show-comments
-          @extend .active
-
-        .modal-comments
-          display: block
-
-        .modal-related-images,
-        .modal-related-reports
-          display: none
-
-      &.show-related-images
-        .btn-modal-show-related-images
-          @extend .active
-
-        .modal-related-images
-          display: block
-
-        .modal-comments,
-        .modal-related-reports
-          display: none
-
-      &.show-related-reports
-        .btn-modal-show-related-reports
-          @extend .active
-
-        .modal-related-reports
-          display: block
-
-        .modal-comments,
-        .modal-related-images
-          display: none
+      &.item-count
+        margin: 8px 0 0 0
 
   
   //- ============================================================
@@ -197,33 +92,18 @@
   //- ============================================================
 
   .modal-image-panel
-    background: $xdk-grey
+    position: absolute
+    top: 30px
+    bottom: 30px
     left: 0
     right: $modal-tool-panel-width
+    @extend .no-transition
 
     .img
       width: 100%
       height: 100%
       background: no-repeat center / contain
       @extend .no-transition
-
-    .btn-modal-left-side-panel
-      position: absolute
-      background: white
-      border-left: none
-      left: -1px
-      top: 20px
-      width: 12px
-      height: 40px
-      padding: 12px 0
-      color: $xdk-grey
-      font-size: 10px
-      border-radius: 0 2px 2px 0
-
-      .icon
-        display: block
-        transform: translate3d(0, 0, 0) rotate(180deg)
-        @extend .no-transition
 
     .file-heart,
     .btn-close-fullscreen
@@ -248,14 +128,8 @@
     .modal-zoom-controls
       position: absolute
       bottom: 0
-      display: none
+      left: calc(50% - 42px)
       opacity: 0
-
-    .modal-page-controls
-      left: calc(50% - 40px)
-
-    .modal-zoom-controls
-      right: 10px
 
     .modal-page-left,
     .modal-page-right,
@@ -263,14 +137,15 @@
     .modal-zoom-out
       color: white
       font-size: 16px
-      background: rgba(black, 0.2)
+      background: rgba(black, 0.6)
       width: 40px
       height: 40px
       padding: 11px 12px
       @extend .inline-block
+      margin: 0 1px
 
       &:hover
-        background: rgba(black, 0.4)
+        background: rgba(black, 0.8)
 
     &:hover
       .modal-page-controls,
@@ -282,14 +157,18 @@
   //- ============================================================
 
   .modal-tool-panel
+    position: absolute
+    top: 0
+    bottom: 0
     right: 0
     width: $modal-tool-panel-width
+    @extend .no-transition
 
     .btn-modal-tool
       font-size: 16px
       
       .icon
-        color: $md-grey
+        color: $dk-grey
       
       &:hover
         .icon
@@ -300,29 +179,6 @@
 
         .icon
           color: white
-
-    .item-count
-      position: absolute
-      bottom: 10px
-      right: 0
-      width: 100%
-      font-size: 12px
-
-  
-  //- ============================================================
-  //- TOGGLE INFO PANEL
-  //- ============================================================
-
-  &.show-left-side-panel
-    .modal-info-panel
-      display: block
-
-    .modal-image-panel
-      left: $modal-info-panel-width
-
-    .btn-modal-left-side-panel
-      .icon
-        transform: translate3d(0, 0, 0) rotate(0deg)
 
 
   //- ============================================================
@@ -370,79 +226,24 @@
   //- FILE TYPES
   //- ============================================================
 
+  // IMAGE
   &.file-type-image
-    .modal-info-panel-video,
-    .modal-info-panel-report,
-    .modal-info-panel-color-card,
-    .btn-page-list
+    .hidden-file-type-image
       display: none
-
-    $modal-info-caption-height: 222px
-
-    .modal-section-caption
-      height: $modal-info-caption-height
-
-    .modal-scroll-container
-      overflow-y: auto
-      height: calc((100vh - 60px) - #{$modal-info-caption-height} - 20px) // height of modal - caption - tabs - comment input - borders
-    
-    .modal-comments
-      .modal-scroll-container
-        height: calc((100vh - 60px) - #{$modal-info-caption-height} - 40px - 81px) // height of modal - caption - tabs - comment input - borders
-
-    .modal-zoom-controls
-      display: block
 
   &.file-type-report
-    .modal-info-panel-image,
-    .modal-info-panel-video,
-    .modal-info-panel-color-card,
-    .btn-crop
+    .hidden-file-type-report
       display: none
 
-    .modal-info-panel,
+    .modal-info-bar
+      top: 30px
+
     .modal-image-panel
-      top: 20px
-
-    $modal-info-caption-height: 166px
-
-    .modal-section-caption
-      height: $modal-info-caption-height
-
-    .modal-scroll-container
-      overflow-y: auto
-      height: calc((100vh - 60px) - #{$modal-info-caption-height} - 20px) // height of modal - caption - tabs - comment input - borders
-    
-    .modal-comments
-      .modal-scroll-container
-        height: calc((100vh - 60px) - #{$modal-info-caption-height} - 40px - 81px) // height of modal - caption - tabs - comment input - borders
-    
-    .modal-page-controls,
-    .modal-report-group-tabs
-      display: block
+      top: 60px
 
   &.file-type-video
-    .modal-info-panel-image,
-    .modal-info-panel-report,
-    .modal-info-panel-color-card,
-    .btn-print,
-    .btn-crop,
-    .btn-download,
-    .btn-page-list
+    .hidden-file-type-video
       display: none
-
-    $modal-info-caption-height: 142px
-
-    .modal-section-caption
-      height: $modal-info-caption-height
-
-    .modal-scroll-container
-      overflow-y: auto
-      height: calc((100vh - 60px) - #{$modal-info-caption-height} - 20px) // height of modal - caption - tabs - comment input - borders
-    
-    .modal-comments
-      .modal-scroll-container
-        height: calc((100vh - 60px) - #{$modal-info-caption-height} - 81px) // height of modal - caption - tabs - comment input - borders
 
     .modal-image-panel
       &:after
@@ -456,3 +257,7 @@
         height: 80px
         transform: translate3d(-50%, -50%, 0)
         @extend .hoverable
+
+  &.file-type-colour-card
+    .hidden-file-type-colour-card
+      display: none

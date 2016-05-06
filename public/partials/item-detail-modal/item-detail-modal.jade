@@ -1,43 +1,49 @@
 .modal.show-left-side-panel#item-detail-modal
-  .modal-controls
+  .modal-controls.bg-xlt-grey
     i.icon.icon-angle-left.hoverable
     i.icon.icon-angle-right.hoverable
   
-  .modal-report-group-tabs.row
-    .col-xs-2.text-center: .tab.active Report 1
-    .col-xs-2.text-center: .tab Report 2
-    .col-xs-2.text-center: .tab Report 3
-    .col-xs-2.text-center: .tab Report 4
-    .col-xs-2.text-center: .tab Report 5
-    .col-xs-2.text-center: .tab Report 6
+  .modal-report-tabs.bg-lt-grey.border-bottom.no-transition.hidden-file-type-image.hidden-file-type-video.hidden-file-type-colour-card
+    ul.tab-nav
+      li.tab-nav-tab.active Report 1
+      li.tab-nav-tab Report 2
+      li.tab-nav-tab Report 3
+      li.tab-nav-tab Report 4
+      li.tab-nav-tab Report 5
 
-  include image-info-panel
-  include report-info-panel
-  include video-info-panel
+  .modal-info-bar.bg-xlt-grey.border-bottom.no-transition.block-hor-xs
+    .pull-left
+      span.item-name Balmain
+      span.divider /
+      span.item-detail-1 Autumn/Winter 2016
+      span.divider /
+      span.item-detail-2 Paris
+      i.icon.icon-info-circle.hoverable
 
-  .modal-image-panel
+    .pull-right
+      span.item-count 2/10
+
+  .modal-image-panel.bg-xdk-grey
     .img
-    .btn-modal-left-side-panel.border-top.border-right.border-bottom.hoverable: i.icon.icon-angle-left
     i.file-heart.icon.icon-heart-o.hoverable
     i.icon.icon-cross.btn-close-fullscreen.hoverable
     
-    .modal-page-controls.hoverable
+    .modal-page-controls.hoverable.hidden-file-type-image.hidden-file-type-video.hidden-file-type-colour-card
       .modal-page-left: i.icon.icon-angle-left
       .modal-page-right: i.icon.icon-angle-right
     
-    .modal-zoom-controls.hoverable
+    .modal-zoom-controls.hoverable.hidden-file-type-report.hidden-file-type-video.hidden-file-type-colour-card
       .modal-zoom-in: i.icon.icon-plus-circle
       .modal-zoom-out: i.icon.icon-minus-circle
 
-  .modal-tool-panel.bg-white.border-left
+  .modal-tool-panel.bg-xlt-grey.border-left
     .btn-modal-tool.block-sm.hoverable.flex-center.border-bottom.close-modal: i.icon.icon-cross
     .btn-modal-tool.block-sm.hoverable.flex-center.btn-fullscreen: i.icon.icon-fullscreen
-    .btn-modal-tool.block-sm.hoverable.flex-center.btn-page-list: i.icon.icon-list
-    .btn-modal-tool.block-sm.hoverable.flex-center.btn-crop: i.icon.icon-crop
+    .btn-modal-tool.block-sm.hoverable.flex-center.btn-page-list.hidden-file-type-image.hidden-file-type-video.hidden-file-type-colour-card: i.icon.icon-list
+    .btn-modal-tool.block-sm.hoverable.flex-center.btn-crop.hidden-file-type-report.hidden-file-type-video.hidden-file-type-colour-card: i.icon.icon-crop
     .btn-modal-tool.block-sm.hoverable.flex-center.btn-save: i.icon.icon-plus-circle
-    .btn-modal-tool.block-sm.hoverable.flex-center.btn-print: i.icon.icon-print
+    .btn-modal-tool.block-sm.hoverable.flex-center.btn-print.hidden-file-type-video: i.icon.icon-print
     .btn-modal-tool.block-sm.hoverable.flex-center.btn-download: i.icon.icon-download
     .btn-modal-tool.block-sm.hoverable.flex-center.btn-send: i.icon.icon-paper-plane
-    .item-count.text-center 3/43
 
   .modal-overlay
