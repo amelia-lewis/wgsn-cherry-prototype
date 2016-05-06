@@ -121,8 +121,8 @@ input[type="radio"]
       background: $xlt-grey
 
 input[type="checkbox"]
-  &:before
-    border-radius: 2px
+  // &:before
+  //   border-radius: 2px
 
   &:checked
     background: transparent
@@ -149,6 +149,15 @@ input[type="radio"]
   &:checked
     &:after
       opacity: 1
+
+.bg-xdk-grey
+  input[type="checkbox"]:before,
+  input[type="radio"]:before
+    background: $xdk-grey
+    border-color: rgba(white, 0.5)
+
+  input[type="checkbox"]:checked:before
+    background: transparent url('../img/icons/icon-font_tick-white.svg') no-repeat center center / 12px 12px
 
 
 // ============================================================
