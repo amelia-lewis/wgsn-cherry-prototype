@@ -10,6 +10,8 @@
   opacity: 0
   transform: translate3d(-50%, calc(-50% + 10px), 0)
   pointer-events: none
+  overflow-y: hidden
+  overflow-x: visible
 
   &.show
     opacity: 1
@@ -42,6 +44,8 @@
   //- ============================================================
 
   $modal-tool-panel-width: 50px
+  $modal-comments-panel-width: 260px
+  $modal-bottom-panel-content-height: 150px
 
 
   //- ============================================================
@@ -97,7 +101,6 @@
     bottom: 30px
     left: 0
     right: $modal-tool-panel-width
-    @extend .no-transition
 
     .img
       width: 100%
@@ -130,6 +133,7 @@
       bottom: 0
       left: calc(50% - 42px)
       opacity: 0
+      transform: translate3d(0, 0, 0)
 
     .modal-page-left,
     .modal-page-right,
@@ -151,7 +155,60 @@
       .modal-page-controls,
       .modal-zoom-controls
         opacity: 1
+
+  &.show-bottom-panel
+    .modal-image-panel
+      bottom: $modal-bottom-panel-content-height + 30px
+
+    .modal-page-controls,
+    .modal-zoom-controls
+      transform: translate3d(0, calc(-1 * #{$modal-bottom-panel-content-height}), 0)
+
+  &.show-comments-panel
+    .modal-image-panel
+      right: $modal-tool-panel-width + $modal-comments-panel-width
+
+  //- ============================================================
+  //- BOTTOM PANEL
+  //- ============================================================
+
+  .modal-bottom-panel
+    position: absolute
+    bottom: 0
+    left: 0
+    width: calc(100% - #{$modal-tool-panel-width})
+    height: $modal-bottom-panel-content-height + 30px
+    transform: translate3d(0, $modal-bottom-panel-content-height, 0)
+
+    .icon-double-angle-up
+      margin: 8px 10px
+      transform: translate3d(0, 0, 0) rotate(0deg)
+
+    .modal-bottom-panel-tabs
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 30px
+
+      .tab-nav-tab
+        padding: 9px 0 8px
+
+    .modal-bottom-panel-content
+      position: absolute
+      top: 30px
+      left: 0
+      width: 100%
+      height: $modal-bottom-panel-content-height
+
+  &.show-bottom-panel
+    .modal-bottom-panel
+      transform: translate3d(0, 0, 0)
+
+      .icon-double-angle-up
+        transform: translate3d(0, 0, 0) rotate(180deg)
   
+
   //- ============================================================
   //- TOOL PANEL
   //- ============================================================
@@ -175,10 +232,52 @@
           color: $xdk-grey
 
       &.active
-        background: $xdk-grey
+        background: white
+        @extend .border-top
+        @extend .border-bottom
 
         .icon
-          color: white
+          color: $xdk-grey
+
+
+  //- ============================================================
+  //- COMMENTS PANEL
+  //- ============================================================
+
+  .modal-comments-panel
+    position: absolute
+    top: 30px
+    right: $modal-tool-panel-width
+    bottom: 30px
+    width: $modal-comments-panel-width
+    transform: translate3d($modal-comments-panel-width, 0, 0)
+
+    .scroll-container
+      height: calc(100% - 101px)
+      overflow-y: auto
+
+    .comment
+      .icon-trash
+        opacity: 0
+        margin-top: 4px
+
+      &:hover
+        .icon-trash
+          opacity: 1
+  
+      &:last-of-type
+        border-bottom: none
+
+  &.show-bottom-panel
+    .modal-comments-panel
+      bottom: $modal-bottom-panel-content-height + 30px
+
+  &.show-comments-panel
+    .modal-comments-panel
+      transform: translate3d(0, 0, 0)
+
+    .btn-modal-comments
+      @extend .active
 
 
   //- ============================================================
@@ -189,13 +288,15 @@
     width: 100vw
     height: 100vh
 
-    .modal-info-panel,
-    .btn-modal-left-side-panel,
+    .modal-report-tabs,
+    .modal-info-bar,
     .modal-tool-panel
       display: none
 
     .modal-image-panel
+      top: 0
       left: 0
+      bottom: 0
       right: 0
 
     .btn-close-fullscreen
@@ -238,7 +339,8 @@
     .modal-info-bar
       top: 30px
 
-    .modal-image-panel
+    .modal-image-panel,
+    .modal-comments-panel
       top: 60px
 
   &.file-type-video

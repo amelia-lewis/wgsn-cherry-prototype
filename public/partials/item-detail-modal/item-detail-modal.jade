@@ -1,5 +1,5 @@
-.modal.show-left-side-panel#item-detail-modal
-  .modal-controls.bg-xlt-grey
+.modal#item-detail-modal
+  .modal-controls
     i.icon.icon-angle-left.hoverable
     i.icon.icon-angle-right.hoverable
   
@@ -36,6 +36,18 @@
       .modal-zoom-in: i.icon.icon-plus-circle
       .modal-zoom-out: i.icon.icon-minus-circle
 
+  .modal-bottom-panel
+    .modal-bottom-panel-tabs.bg-xlt-grey.border-top
+      i.icon.icon-double-angle-up.pull-left.hoverable
+      ul.tab-nav.pull-left
+        li.tab-nav-tab.active This folder
+        li.tab-nav-tab Related Images
+        li.tab-nav-tab Reports with this image
+
+    .modal-bottom-panel-content.bg-lt-grey.border-bottom
+
+  include comments
+
   .modal-tool-panel.bg-xlt-grey.border-left
     .btn-modal-tool.block-sm.hoverable.flex-center.border-bottom.close-modal: i.icon.icon-cross
     .btn-modal-tool.block-sm.hoverable.flex-center.btn-fullscreen: i.icon.icon-fullscreen
@@ -45,5 +57,6 @@
     .btn-modal-tool.block-sm.hoverable.flex-center.btn-print.hidden-file-type-video: i.icon.icon-print
     .btn-modal-tool.block-sm.hoverable.flex-center.btn-download: i.icon.icon-download
     .btn-modal-tool.block-sm.hoverable.flex-center.btn-send: i.icon.icon-paper-plane
+    .btn-modal-tool.block-sm.hoverable.flex-center.btn-modal-comments: i.icon.icon-comment
 
   .modal-overlay
