@@ -252,7 +252,7 @@ multiFileSelect = function(e) {
       return;
     } else {
       checkforhover();
-      $('.right-side-panel').addClass('has-multiple-files-selected');
+      $('.right-side-panel').addClass('has-file-selected has-multiple-files-selected');
       $('.floating-utility-row .displaying-results').text((myaccount + 1) + ' items selected');
       $('.file-checkbox').css({'opacity': 1})
       $(e.target).parent().addClass('selected');
@@ -312,7 +312,7 @@ multiFileSelectDetailsView = function(e) {
       return;
     } else {
       checkforhover();
-      $('.right-side-panel').addClass('has-multiple-files-selected');
+      $('.right-side-panel').addClass('has-file-selected has-multiple-files-selected');
       $('.floating-utility-row .displaying-results').text((myaccount + 1) + ' items selected');
       $('.file-checkbox').css({'opacity': 1})
       $(e.target).parentsUntil('details-view').addClass('selected');
