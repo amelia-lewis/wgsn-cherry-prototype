@@ -35,8 +35,7 @@
   opacity: 0
   transform: translate3d(-50%, calc(-50% + 10px), 0)
   pointer-events: none
-  overflow-y: hidden
-  overflow-x: visible
+  overflow: hidden
 
   &.show
     opacity: 1
@@ -165,10 +164,6 @@
     .modal-image-panel
       bottom: $modal-bottom-panel-content-height + 30px
 
-    .modal-page-controls,
-    .modal-zoom-controls
-      transform: translate3d(0, calc(-1 * #{$modal-bottom-panel-content-height}), 0)
-
   &.show-comments-panel,
   &.show-page-list-panel
     .modal-image-panel
@@ -206,6 +201,16 @@
       left: 0
       width: 100%
       height: $modal-bottom-panel-content-height
+
+      .modal-hor-scroll-container
+        width: 100%
+        height: $modal-bottom-panel-content-height
+        overflow-x: auto
+        overflow-y: hidden
+        white-space: nowrap
+
+        img
+          height: calc(#{$modal-bottom-panel-content-height} - 20px)
 
   &.show-bottom-panel
     .modal-bottom-panel
