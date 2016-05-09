@@ -640,6 +640,7 @@ $('.accordion-section .accordion-title').on('click', function() {
 
 //- lhs show folder structure (from image library)
 $('.btn-access-workspace').on('click', function() {
+  $(this).children('.icon').toggleClass('icon-briefcase icon-cross')
   $('.left-side-panel').toggleClass('show-workspace-panel');
 });
 
