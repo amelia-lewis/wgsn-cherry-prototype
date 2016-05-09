@@ -731,8 +731,10 @@ openExtendedFilter = function(filtername) {
 
 openExtendedFilter("products");
 openExtendedFilter("brand");
+openExtendedFilter("retailer");
 openExtendedFilter("city");
 openExtendedFilter("season-month");
+openExtendedFilter("event");
 openExtendedFilter("prints-graphics");
 openExtendedFilter("fabrics-materials");
 

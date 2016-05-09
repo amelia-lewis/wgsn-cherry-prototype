@@ -238,6 +238,19 @@
       height: $modal-tool-panel-width
       @extend .flex-center
       @extend .hoverable
+      position: relative
+      border-color: $lt-grey
+
+      &:after
+        content: ""
+        width: 1px
+        height: calc(#{$modal-tool-panel-width} - 2px)
+        background: white
+        display: block
+        position: absolute
+        top: 0
+        left: -1px
+        opacity: 0
       
       .icon
         color: $dk-grey
@@ -248,6 +261,11 @@
 
       &.active
         background: white
+        @extend .border-top
+        @extend .border-bottom
+
+        &:after
+          opacity: 1
 
         .icon
           color: $xdk-grey
