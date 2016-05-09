@@ -689,12 +689,6 @@ $('.comments-panel .icon-angle-right').on('click', function() {
   $('.btn-back-to-top').removeClass('show-comments-panel');
 });
 
-// board preview
-$('.board-preview').on('click', function() {
-  $(this).toggleClass('closed open');
-  $('.panel-folders').toggleClass('board-preview-open');
-})
-
 //- filter row expand/condense
 $('.btn-filter-row-expand').on('click', function() {
   $('.filter-row').toggleClass('condensed expanded');

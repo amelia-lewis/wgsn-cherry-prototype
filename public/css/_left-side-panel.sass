@@ -142,46 +142,6 @@
     .accordion-content
       height: 129px
 
-  // BOARD PREVIEW
-  .board-preview
-    position: fixed
-    bottom: 0
-    left: 0
-    width: calc(#{$left-side-panel-width} - 1px)
-    height: 330px
-    background: $xdk-grey
-    color: white
-    border-top: 1px solid rgba(white, 0.1)
-
-    .icon-double-angle-down
-      margin: 0
-      transform: translate3d(0, 0, 0) rotate(0deg)
-
-    img
-      height: 100px
-      margin: 0 5px 5px 0
-
-    &.closed
-      transform: translate3d(0, 294px, 0)
-
-      .icon-double-angle-down
-        transform: translate3d(0, 0, 0) rotate(180deg)
-
-    &.open
-      transform: translate3d(0, 0, 0)
-
-      .icon-double-angle-down
-        transform: translate3d(0, 0, 0) rotate(0deg)
-
-    .scroll-container
-      height: 294px
-      overflow: auto
-
-      img
-        margin: 0 5px 5px 0
-        @extend .pull-left
-        @extend .hoverable
-
 // FILTERS PANEL
 .panel-filters
   .filter-btn
@@ -209,12 +169,6 @@
         background: white
         height: 100%
         width: 1px
-
-// FOLDERS PANEL
-.panel-folders
-  &.board-preview-open
-    > .scroll-container
-      height: calc(100% - 330px)
 
 // ACTIVE STATES
 body.workspace-autumn-winter-2016-view
