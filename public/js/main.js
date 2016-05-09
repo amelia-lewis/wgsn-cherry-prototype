@@ -638,19 +638,9 @@ $('.accordion-section .accordion-title').on('click', function() {
   $(this).children('.section-expand-icon').toggleClass('icon-plus icon-minus');
 });
 
-//- image library left-side tabs
-$('#tab-filters').on('click', function() {
-  $(this).addClass('active');
-  $('#tab-folders').removeClass('active');
-  $('.image-library-view .left-side-panel').addClass('lhs-filters-active').removeClass('lhs-folders-active');
-});
-
-$('#tab-folders').on('click', function() {
-  $(this).addClass('active');
-  $('#tab-filters').removeClass('active');
-  $('.filter-extended').removeClass('show');
-  $('.filter-btn').removeClass('active');
-  $('.image-library-view .left-side-panel').addClass('lhs-folders-active').removeClass('lhs-filters-active');
+//- lhs show folder structure (from image library)
+$('.btn-access-workspace').on('click', function() {
+  $('.left-side-panel').toggleClass('show-workspace-panel');
 });
 
 //- comments panel

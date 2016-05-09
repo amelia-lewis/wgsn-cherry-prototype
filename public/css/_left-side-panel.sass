@@ -4,54 +4,69 @@
   position: absolute
   top: 0
   left: 0
-  overflow: hidden
+  // overflow: hidden
   transform: translate3d(-100%, 0, 0)
   z-index: 300
-  @extend .bg-xdk-grey
   color: rgba(white, 0.5)
+
+  .btn-left-side-panel
+    position: absolute
+    left: calc(100% - 1px)
+    top: calc(50% - 20px)
+    width: 12px
+    height: 40px
+    @extend .flex-center
+    font-size: 10px
+    border-radius: 0 3px 3px 0
+    @extend .hoverable
+
+    .icon
+      display: block
+      transform: translate3d(0, 0, 0) rotate(180deg)
+      @extend .no-transition
 
   .scroll-container
     height: 100%
     overflow-y: auto
 
   // TABS
-  .tabs
-    position: relative
-    height: 46px
-    border-bottom: 1px solid rgba(white, 0.1)
-    margin: 0
+  // .tabs
+  //   position: relative
+  //   height: 46px
+  //   border-bottom: 1px solid rgba(white, 0.1)
+  //   margin: 0
 
-    .col-xs-6
-      padding: 0
+  //   .col-xs-6
+  //     padding: 0
 
-    .tab
-      height: 46px
-      @extend .flex-center
-      @extend .no-transition
+  //   .tab
+  //     height: 46px
+  //     @extend .flex-center
+  //     @extend .no-transition
 
-      .icon
-        margin: 0 6px 0 0
+  //     .icon
+  //       margin: 0 6px 0 0
 
-      &.active
-        color: white
+  //     &.active
+  //       color: white
 
-    .col-xs-6:first-of-type
-      .tab
-        &:after
-          content: ""
-          display: block
-          position: absolute
-          bottom: 0
-          left: 0
-          background: white
-          width: 100%
-          height: 1px
-          transform: translate3d(0, 0, 0)
-          transition: all 400ms
+  //   .col-xs-6:first-of-type
+  //     .tab
+  //       &:after
+  //         content: ""
+  //         display: block
+  //         position: absolute
+  //         bottom: 0
+  //         left: 0
+  //         background: white
+  //         width: 100%
+  //         height: 1px
+  //         transform: translate3d(0, 0, 0)
+  //         transition: all 400ms
 
-        &:not(.active)
-          &:after
-            transform: translate3d(100%, 0, 0)
+  //       &:not(.active)
+  //         &:after
+  //           transform: translate3d(100%, 0, 0)
 
   .inbox-number
     background: $yellow
@@ -63,39 +78,19 @@
     margin: 1px
     @extend .flex-center
 
-  // TABS SHOW/HIDE
-  &.lhs-filters-active
-    .panel-filters
-      display: block
-
-    .panel-folders
-      display: none
-
-  &.lhs-folders-active
-    .panel-filters
-      display: none
-
-    .panel-folders
-      display: block
-
 // FILTERS & FOLDERS PANELS
 .panel-filters,
 .panel-folders
   height: 100%
   position: relative
+  @extend .block-hor-xxs
+  position: absolute
+  top: 0
+  left: 0
+  transform: translate3d(0, 0, 0)
 
   .icon
     margin: 0 10px 0 0
-
-  // .scroll-container
-  //   height: calc(100% - 66px)
-
-  .static-bottom-row
-    position: absolute
-    bottom: 0
-    left: 0
-    width: 100%
-    border-top: 1px solid rgba(white, 0.1)
   
   // ACCORDION SECTIONS
   .accordion-section
@@ -132,7 +127,7 @@
 
   .accordion-section-my-boards.open
     .accordion-content
-      height: 282px
+      height: 318px
 
   .accordion-section-shared-boards.open
     .accordion-content
@@ -144,6 +139,12 @@
 
 // FILTERS PANEL
 .panel-filters
+  @extend .bg-white
+  @extend .border-right
+  
+  .scroll-container
+    padding-bottom: 50px // to allow space for the access workspace button
+  
   .filter-btn
     position: relative
     padding: 10px 12px
@@ -169,6 +170,18 @@
         background: white
         height: 100%
         width: 1px
+
+// FOLDERS PANEL
+.panel-folders
+  @extend .bg-xdk-grey
+
+  .btn-access-workspace
+    position: absolute
+    bottom: 0
+    left: 100%
+    width: 50px
+    height: 50px
+    transform: translate3d(0, 0, 0)
 
 // ACTIVE STATES
 body.workspace-autumn-winter-2016-view
@@ -199,6 +212,20 @@ body.workspace-favourites-view
       @extend .active
 
 body.image-library-view
-  .panel-folders
-    .scroll-container
-      height: calc(100% - 26px)
+  .left-side-panel
+    .panel-folders
+      @extend .box-shadow
+      transform: translate3d(calc(-1 * #{$left-side-panel-width}), 0, 0)
+
+    &.show-workspace-panel
+      .panel-folders
+        transform: translate3d(0, 0, 0)
+
+  .btn-left-side-panel
+    @extend .bg-white
+    @extend .border
+    border-left: none
+
+body.workspace-view
+  .btn-left-side-panel
+    @extend .bg-xdk-grey

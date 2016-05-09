@@ -1,4 +1,16 @@
 .panel-folders
+  .btn-clear
+    border-color: rgba(white, 0.6)
+
+    span, .icon
+      color: rgba(white, 0.6)
+
+    &:hover
+      border-color: white
+
+      span, .icon
+        color: white
+
   .icon-caret-right,
   .icon-caret-down
     margin: 0 4px 0 0
@@ -10,8 +22,8 @@
     display: block
     position: relative
     padding: 8px 12px
+    color: rgba(white, 0.6)
     @extend .hoverable
-    // border-left: 4px solid transparent
 
     .board-name
       display: inline-block
@@ -33,7 +45,6 @@
 
     &:hover
       background: rgba(white, 0.05)
-      // border-color: rgba(white, 0.5)
       
       .board-name,
       .icon
@@ -44,7 +55,6 @@
 
     &.active
       background: rgba(white, 0.05)
-      // border-color: $yellow
 
       .board-name,
       .icon

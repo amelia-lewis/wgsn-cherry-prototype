@@ -1,12 +1,14 @@
 .accordion-section.filter
   .accordion-content
+    border-color: $lt-grey
+    
     ul
       height: 192px
       @extend .block-hor-sm
       @extend .block-bot-sm
       display: flex
       flex-direction: column
-      border-bottom: 1px solid rgba(white, 0.05)
+      border-bottom: 1px solid rgba($lt-grey, 0.25)
 
       li
         width: 100%
@@ -24,9 +26,9 @@
           line-height: 1.4em
 
   &.open
-    .accordion-title span,
-    .accordion-title i
-      color: white
+    // .accordion-title span,
+    // .accordion-title i
+    //   color: white
 
     .accordion-content
       height: 234px
