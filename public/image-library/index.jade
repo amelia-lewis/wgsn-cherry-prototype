@@ -8,33 +8,37 @@ block prepend title
 
 block content
   .page-content.show-left-side-panel
-    include ../partials/image-library/left-side-panel
     
+    //- TITLE ROW
+    .title-row
+      .block-ver-sm.pull-left
+        h1.tight.inline-block Image &amp; Design Library
+        h4.text-grey.inline-block &nbsp;&nbsp;&nbsp; 200,000 results
+
+      .utility-block.pull-right
+        .flex-center.pull-left.hoverable.btn-saved-searches
+          i.icon.icon-bookmark
+          include ../partials/image-library/saved-searches
+        
+        .flex-center.pull-left.block-left-sm
+          input.search-input(type="text", placeholder="Search this board")
+        
+        .flex-center.pull-left.block-left-sm.btn-view-option-container
+          .btn-view-option.disabled.btn-view-option-sm: i.icon.icon-grid-sm
+          .btn-view-option.btn-view-option-md: i.icon.icon-grid-md
+          .btn-view-option.disabled.btn-view-option-lg: i.icon.icon-grid-lg
+          .btn-view-option.disabled.btn-view-option-details: i.icon.icon-grid-details
+
+        .flex-center.pull-left.block-left-sm
+          .pull-left.flex-center.hoverable.btn-settings
+            i.icon.icon-gear
+            include ../partials/context-menus/utility-row-settings-context-menu
+
+      include ../partials/floating-utility-row
+
+    //- LEFT SIDE PANEL
+    include ../partials/image-library/left-side-panel
+
+    //- RIGHT SIDE PANEL
     .right-side-panel
-      .title-row.border-bottom.block-hor-md
-        .block-ver-sm.pull-left
-          h1.tight.inline-block Image &amp; Design Library
-          h4.text-grey.inline-block &nbsp;&nbsp;&nbsp; 200,000 results
-
-        .utility-block.pull-right
-          .flex-center.pull-left.hoverable.btn-saved-searches
-            i.icon.icon-bookmark
-            include ../partials/image-library/saved-searches
-          
-          .flex-center.pull-left.block-left-sm
-            input.search-input(type="text", placeholder="Search this board")
-          
-          .flex-center.pull-left.block-left-sm.btn-view-option-container
-            .btn-view-option.disabled.btn-view-option-sm: i.icon.icon-grid-sm
-            .btn-view-option.btn-view-option-md: i.icon.icon-grid-md
-            .btn-view-option.disabled.btn-view-option-lg: i.icon.icon-grid-lg
-            .btn-view-option.disabled.btn-view-option-details: i.icon.icon-grid-details
-
-          .flex-center.pull-left.block-left-sm
-            .pull-left.flex-center.hoverable.btn-settings
-              i.icon.icon-gear
-              include ../partials/context-menus/utility-row-settings-context-menu
-
-        include ../partials/floating-utility-row
-
       include ../partials/images-row

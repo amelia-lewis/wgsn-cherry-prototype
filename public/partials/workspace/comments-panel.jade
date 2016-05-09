@@ -4,6 +4,7 @@ include ../mixins/comment
   .block-xs.border-bottom.overflow-auto
     h4.tight.pull-left Folder comments
     i.icon.icon-angle-right.text-grey.pull-right.hoverable
+  
   .scroll-container
     +comment("https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/005/05b/332/0aa54b4.jpg", "AL", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris.", "Amelia Lewis", "02/03/2016 at 11:00am")
     +comment("https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAT6AAAAJGZiMmIwM2E3LTMzNzMtNDEzNi1iN2JhLWJlZmYzM2MwNmI2Nw.jpg", "JR", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium.", "Julian Ramirez", "02/03/2016 at 11:00am")
@@ -16,4 +17,5 @@ include ../mixins/comment
     +comment("https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAT6AAAAJGZiMmIwM2E3LTMzNzMtNDEzNi1iN2JhLWJlZmYzM2MwNmI2Nw.jpg", "JR",  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris.","Julian Ramirez", "10 minutes ago")
     +comment("https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/005/05b/332/0aa54b4.jpg", "AL", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium.", "Amelia Lewis", "A moment ago")(id="bottom-comment")
     a.btn.btn-coloured.btn-new-comments(href="#bottom-comment") New Comments
+  
   .comment-input-container.block-xs.border-top.bg-xlt-grey: textarea.comment-input(placeholder="Enter your comment")
