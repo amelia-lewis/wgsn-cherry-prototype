@@ -1049,26 +1049,26 @@ $('.btn-filter-row-fixed').on('click', function() {
 //                             |___/           
 // ====================================================================================================
 
-$('.message-preview').click(function(e, evt) {
-  if($(e.target).is('.btn-send, .btn-delete-message')) {
-    // e.preventDefault();
-    return;
-  } else {
-    $(this).parentsUntil('.messages-row').toggleClass('message-closed message-open');
+// $('.message-preview').click(function(e, evt) {
+//   if($(e.target).is('.btn-send, .btn-delete-message')) {
+//     // e.preventDefault();
+//     return;
+//   } else {
+//     $(this).parentsUntil('.messages-row').toggleClass('message-closed message-open');
 
-    var height = $(this).siblings('.message-content-container').find('.message-content').height();
+//     var height = $(this).siblings('.message-content-container').find('.message-content').height();
 
-    if ($(this).parentsUntil('.messages-row').hasClass('message-open')) {
-      $(this).siblings('.message-content-container').css({height: height + "px"})
-    } else {
-      $(this).siblings('.message-content-container').css({height: "0px"})
-    }
-  }
-});
+//     if ($(this).parentsUntil('.messages-row').hasClass('message-open')) {
+//       $(this).siblings('.message-content-container').css({height: height + "px"})
+//     } else {
+//       $(this).siblings('.message-content-container').css({height: "0px"})
+//     }
+//   }
+// });
 
-$('.btn-delete-message').on('click', function() {
-  $(this).parentsUntil('.messages-row').remove();
-});
+// $('.btn-delete-message').on('click', function() {
+//   $(this).parentsUntil('.messages-row').remove();
+// });
 
 
 // ====================================================================================================
