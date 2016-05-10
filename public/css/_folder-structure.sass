@@ -10,17 +10,12 @@
     display: block
     position: relative
     padding: 8px 12px
-    color: rgba(white, 0.6)
+    // color: rgba(white, 0.6)
     @extend .hoverable
 
     .board-name
       display: inline-block
       margin: 0 0 -3px 0
-
-    .board-number
-      display: inline-block
-      color: rgba(white, 0.3)
-      margin: 0 0 0 6px
 
     .icon-ellipsis
       opacity: 0
@@ -32,24 +27,24 @@
       font-size: 10px
 
     &:hover
-      background: rgba(white, 0.05)
+      background: rgba($xdk-grey, 0.05)
       
-      .board-name,
-      .icon
-        color: rgba(white, 0.8)
+      // .board-name,
+      // .icon
+      //   color: rgba(white, 0.8)
       
       .icon-ellipsis
         opacity: 1
 
     &.active
-      background: rgba(white, 0.05)
+      background: rgba($xdk-grey, 0.05)
 
-      .board-name,
-      .icon
-        color: rgba(white, 0.8)
+      // .board-name,
+      // .icon
+      //   color: rgba(white, 0.8)
 
       &:hover
-        background: rgba($lt-grey, 0.1)
+        background: rgba($xdk-grey, 0.1)
 
     &.label-red
       .icon-circle

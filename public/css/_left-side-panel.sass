@@ -16,6 +16,9 @@
     height: 40px
     font-size: 10px
     border-radius: 0 3px 3px 0
+    @extend .bg-white
+    @extend .border
+    border-left: none
     @extend .flex-center
     @extend .hoverable
 
@@ -79,6 +82,8 @@
 // FILTERS & FOLDERS PANELS
 .panel-filters,
 .panel-folders
+  @extend .bg-white
+  @extend .border-right
   height: 100%
   position: relative
   @extend .block-hor-xxs
@@ -98,7 +103,7 @@
       @extend .hoverable
     
     .accordion-content
-      border-bottom: 1px solid rgba(white, 0.1)
+      @extend .border-bottom
       overflow: hidden
       position: relative
 
@@ -112,7 +117,7 @@
   .accordion-section-favourites,
   .accordion-section-mobile
     .accordion-title
-      border-bottom: 1px solid rgba(white, 0.1)
+      @extend .border-bottom
 
   // ACCORDION SECTION PANEL HEIGHTS
   .accordion-section-messages.open
@@ -137,9 +142,6 @@
 
 // FILTERS PANEL
 .panel-filters
-  @extend .bg-white
-  @extend .border-right
-  
   .scroll-container
     padding-bottom: 50px // to allow space for the access workspace button
   
@@ -171,15 +173,19 @@
 
 // FOLDERS PANEL
 .panel-folders
-  @extend .bg-xdk-grey
-
   .btn-access-workspace
     position: absolute
     bottom: 0
     left: 100%
     transform: translate3d(0, 0, 0)
     white-space: nowrap
-    @extend .box-shadow
+    @extend .bg-xlt-grey
+    box-shadow: 2px 0 10px rgba(black, 0)
+    @extend .border-top
+    @extend .border-right
+
+    .icon
+      margin: 0 0 0 10px
 
 // ACTIVE STATES
 body.workspace-autumn-winter-2016-view
@@ -212,27 +218,23 @@ body.workspace-favourites-view
 body.image-library-view
   .left-side-panel
     .panel-folders
-      @extend .box-shadow
+      box-shadow: 2px 0 10px rgba(black, 0)
       transform: translate3d(calc(-1 * #{$left-side-panel-width}), 0, 0)
       z-index: 320
 
     &.show-workspace-panel
       .panel-folders
+        box-shadow: 2px 0 10px rgba(black, 0.1)
         transform: translate3d(0, 0, 0)
 
       .btn-access-workspace
+        @extend .bg-white
+        border-color: transparent
+        box-shadow: 2px 0 10px rgba(black, 0.1)
+        
         .icon
           margin: 0
 
         span
           width: 0
           color: transparent
-
-  .btn-left-side-panel
-    @extend .bg-white
-    @extend .border
-    border-left: none
-
-body.workspace-view
-  .btn-left-side-panel
-    @extend .bg-xdk-grey

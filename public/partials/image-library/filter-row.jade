@@ -20,12 +20,13 @@ mixin filter-tag(search, name)
   +filter-tag("", "Nike")
   +filter-tag("", "Isabel Marant")
   +filter-tag("", "Alexander Wang")
-  .btn.btn-black.btn-save-search.pull-left
-    i.icon.icon-bookmark
-    span Save search
-  .btn-filter-row-delete.pull-left.hoverable
-    i.icon.icon-reset
-    span.text-underline Clear all
+  .pull-left
+    .btn.btn-black.btn-save-search.inline-block
+      i.icon.icon-bookmark
+      span Save search
+    .btn-filter-row-delete.hoverable.inline-block
+      i.icon.icon-reset
+      span.text-underline Clear all
 
 .filter-row-fixed-container.hidden-workspace.hidden-workspace-favourites.hidden-mood-library
   .filter-row.filter-row-fixed.block-sm.border-bottom.hidden-workspace
