@@ -77,7 +77,7 @@ checkforhover = function(){
     // if only one file is selected
     if (myaccount == 1) {
       $('.file.selected .btn').show();
-      $('.right-side-panel').addClass('has-file-selected');
+      // $('.page-content').addClass('has-files-selected');
       $('.file .file-checkbox').css({opacity: "1"})
       $('.floating-utility-row .displaying-results').text(myaccount + ' item selected');
       $('.btn-comments').removeClass('active');
@@ -85,14 +85,13 @@ checkforhover = function(){
     
     // if more than one file is selected
     if (myaccount > 1) { 
-      $('.right-side-panel').addClass('has-file-selected');
-      $('.right-side-panel').addClass('has-multiple-files-selected');
+      // $('.page-content').addClass('has-files-selected');
       $('.btn-comments').removeClass('active');
     };
   } else {
     $('.file .btn').show(); 
     $('.floating.context-menu .count').hide();
-    $('.right-side-panel').removeClass('has-file-selected').removeClass('has-multiple-files-selected');
+    // $('.page-content').removeClass('has-files-selected');
     $('.file .file-checkbox').css({opacity: "0"})
   };
 
@@ -103,7 +102,7 @@ checkforhover = function(){
     
     // if only one file is selected
     if (myaccount == 1) {
-      $('.right-side-panel').addClass('has-file-selected');
+      // $('.page-content').addClass('has-files-selected');
       $('.file-details-view .file-checkbox').css({opacity: "1"})
       $('.floating-utility-row .displaying-results').text(myaccount + ' item selected');
       $('.btn-comments').removeClass('active');
@@ -111,13 +110,12 @@ checkforhover = function(){
     
     // if more than one file is selected
     if (myaccount > 1) { 
-      $('.right-side-panel').addClass('has-file-selected');
-      $('.right-side-panel').addClass('has-multiple-files-selected');
+      // $('.page-content').addClass('has-files-selected');
       $('.btn-comments').removeClass('active');
     };
   } else {
     $('.floating.context-menu .count').hide();
-    $('.right-side-panel').removeClass('has-file-selected').removeClass('has-multiple-files-selected');
+    // $('.page-content').removeClass('has-files-selected');
     $('.file-details-view .file-checkbox').css({opacity: "0"})
   };
 };
@@ -240,7 +238,7 @@ multiFileSelect = function(e) {
       return;
     } else {
       checkforhover();
-      $('.right-side-panel').addClass('has-file-selected');
+      $('.page-content').addClass('has-files-selected');
       $('.floating-utility-row .displaying-results').text(myaccount + ' item selected');
       $('.file-checkbox').css({'opacity': 1})
       $(e.target).parent().addClass('selected');
@@ -252,7 +250,7 @@ multiFileSelect = function(e) {
       return;
     } else {
       checkforhover();
-      $('.right-side-panel').addClass('has-file-selected has-multiple-files-selected');
+      $('.page-content').addClass('has-files-selected');
       $('.floating-utility-row .displaying-results').text((myaccount + 1) + ' items selected');
       $('.file-checkbox').css({'opacity': 1})
       $(e.target).parent().addClass('selected');
@@ -300,7 +298,7 @@ multiFileSelectDetailsView = function(e) {
       return;
     } else {
       checkforhover();
-      $('.right-side-panel').addClass('has-file-selected');
+      $('.page-content').addClass('has-files-selected');
       $('.floating-utility-row .displaying-results').text(myaccount + ' item selected');
       $('.file-checkbox').css({'opacity': 1})
       $(e.target).parentsUntil('details-view').addClass('selected');
@@ -312,7 +310,7 @@ multiFileSelectDetailsView = function(e) {
       return;
     } else {
       checkforhover();
-      $('.right-side-panel').addClass('has-file-selected has-multiple-files-selected');
+      $('.page-content').addClass('has-files-selected');
       $('.floating-utility-row .displaying-results').text((myaccount + 1) + ' items selected');
       $('.file-checkbox').css({'opacity': 1})
       $(e.target).parentsUntil('details-view').addClass('selected');
@@ -331,7 +329,7 @@ $('.select-all').click(function() {
   if ($('.file').length == $('.file.selected').length) {
     $('.select-all').text('Select all');
     $('.file').removeClass('selected');
-    $('.right-side-panel').removeClass('has-file-selected').removeClass('has-multiple-files-selected');
+    $('.page-content').removeClass('has-files-selected');
     $('.file-checkbox').css({'opacity': 0})
   } else {
     $('.select-all').text('Deselect all');
@@ -341,7 +339,7 @@ $('.select-all').click(function() {
   if ($('.file-details-view').length == $('.file-details-view.selected').length) {
     $('.select-all').text('Select all');
     $('.file-details-view').removeClass('selected');
-    $('.right-side-panel').removeClass('has-file-selected').removeClass('has-multiple-files-selected');
+    $('.page-content').removeClass('has-files-selected');
     $('.file-checkbox').css({'opacity': 0})
   } else {
     $('.select-all').text('Deselect all');
@@ -353,7 +351,7 @@ $('.select-all').click(function() {
 $('.floating-utility-row .icon-cross').click(function() {
   $('.file').removeClass('selected');
   $('.file-details-view').removeClass('selected');
-  $('.right-side-panel').removeClass('has-file-selected').removeClass('has-multiple-files-selected');
+  $('.page-content').removeClass('has-files-selected');
   $('.file-checkbox').css({'opacity': 0})
 });
 
@@ -476,6 +474,7 @@ $(".board-row").contextmenu(function(e){
 // click anywhere on the screen to close the context menus and deselect all items
 $('.files-row').click(function(e, evt) {
   $(".file").removeClass("selected");
+  $('.page-content').removeClass('has-files-selected');
   $(".context-menu").removeClass("show");
   $('.select-all').prop('checked', false);
   $("#floating-item-context-menu").removeClass("show");
@@ -709,7 +708,7 @@ openExtendedFilter = function(filtername) {
     $('.filter-extended').removeClass('show');
     $('.overlay').addClass('show');
     $('#filter-extended-'+ filtername).addClass('show');
-    $('.right-side-panel').removeClass('has-file-selected has-multiple-files-selected');
+    $('.page-content').removeClass('has-files-selected');
     $('.file').removeClass('selected');
   });
 };
