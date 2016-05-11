@@ -21,9 +21,13 @@ mixin file(type, img, original, comments, filename, ...caption)
 
     i.file-checkbox.icon.icon-tick-circle
     i.file-heart.icon.icon-heart.hidden-workspace-trash
-    
-    if comments == true
-      i.file-comment.icon.icon-comment-filled.hidden-workspace-trash
+
+    .flag-container
+      if original == true
+        .wgsn-original-content.border.bg-white.inline-block.has-tooltip(data-tooltip="WGSN Original Content"): include wgsn-logo
+
+      if comments == true
+        i.file-comment.icon.icon-comment-filled.inline-block.hidden-workspace-trash
 
 
 mixin file-details-view(type, img, original, comments, filename, ...caption)
