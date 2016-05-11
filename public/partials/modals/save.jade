@@ -6,16 +6,15 @@ block append modal-vars
 
 block modal-content
   .row
-    .col-xs-6
-      img(src="https://www.wgsn.com/storage/vol20/ss_image_store/45/39/44/42/media_blm_aw16_004.jpg")
+    .col-xs-6.save-modal-content-container.bg-xlt-grey.flex-center
+      .img-container
+        img(src="https://www.wgsn.com/storage/vol20/ss_image_store/45/39/44/42/media_blm_aw16_004.jpg")
+        textarea.comment-input(placeholder="Add a comment (optional)")
 
-      .block-top-xs
-        textarea(placeholder="Add a comment (optional)")
-
-    .col-xs-6
+    .col-xs-6.save-modal-folder-container
       h3 Choose a folder
 
-      .panel-folders.border
+      .panel-folders.border.overflow-auto
         .accordion-section.accordion-section-recent-boards.open
           .accordion-title
             span.wgsn-font Recent Folders
