@@ -3,27 +3,26 @@
   i.icon.icon-angle-right.hoverable
 
 .modal#item-detail-modal
-  .modal-report-tabs.bg-lt-grey.border-bottom.no-transition.hidden-file-type-image.hidden-file-type-video.hidden-file-type-colour-card
-    ul.tab-nav
+  .modal-report-tabs.bg-white.border-bottom.no-transition.hidden-file-type-image.hidden-file-type-video.hidden-file-type-colour-card
+    ul.tab-nav-alt
       li.tab-nav-tab.active Report 1
       li.tab-nav-tab Report 2
       li.tab-nav-tab Report 3
       li.tab-nav-tab Report 4
       li.tab-nav-tab Report 5
 
-  .modal-info-bar.bg-xlt-grey.border-bottom.no-transition.block-hor-xs
+  .modal-info-bar.bg-white.border-bottom.no-transition.block-hor-sm
     .pull-left
-      span.item-name Balmain
-      span.divider /
-      span.item-detail-1 Autumn/Winter 2016
-      span.divider /
-      span.item-detail-2 Paris
-      i.icon.icon-info-circle.hoverable
+      span Balmain
+      span.block-hor-xs /
+      span Autumn/Winter 2016
+      span.block-hor-xs /
+      span Paris
 
     .pull-right
       span.item-count 2/10
 
-  .modal-image-panel.bg-xdk-grey
+  .modal-image-panel.bg-xlt-grey
     .img
     i.file-heart.icon.icon-heart-o.hoverable
     i.icon.icon-cross.btn-close-fullscreen.hoverable
@@ -33,25 +32,27 @@
       .modal-page-right: i.icon.icon-angle-right
     
     .modal-zoom-controls.hoverable.hidden-file-type-report.hidden-file-type-video.hidden-file-type-colour-card
-      .modal-zoom-in: i.icon.icon-plus-circle
-      .modal-zoom-out: i.icon.icon-minus-circle
+      .modal-zoom-in: i.icon.icon-zoom-plus
+      .modal-zoom-out: i.icon.icon-zoom-minus
 
   .modal-bottom-panel
-    .modal-bottom-panel-tabs.bg-xlt-grey.border-top
-      i.icon.icon-double-angle-up.pull-left.hoverable
-      ul.tab-nav.pull-left
+    .modal-bottom-panel-tabs.bg-white.border-top.border-bottom
+      i.icon.icon-angle-up.pull-left.hoverable
+      ul.tab-nav-alt.pull-left
         li.tab-nav-tab.active This folder
         li.tab-nav-tab.hidden-file-type-report.hidden-file-type-video.hidden-file-type-colour-card Related Images
         li.tab-nav-tab.hidden-file-type-report.hidden-file-type-video.hidden-file-type-colour-card Reports with this image
         li.tab-nav-tab.hidden-file-type-image.hidden-file-type-video.hidden-file-type-colour-card Images in this report
 
-    .modal-bottom-panel-content.bg-lt-grey.border-bottom
+      .pull-right: include ../wgsn-logo
+
+    .modal-bottom-panel-content.bg-white.border-bottom
       include related-images
 
   include comments
   include page-list
 
-  .modal-tool-panel.bg-xlt-grey.border-left
+  .modal-tool-panel.bg-white.border-left
     .btn-modal-tool.border-bottom.close-modal: i.icon.icon-cross
     .btn-modal-tool.btn-fullscreen: i.icon.icon-fullscreen
     .btn-modal-tool.btn-modal-page-list.hidden-file-type-image.hidden-file-type-video.hidden-file-type-colour-card: i.icon.icon-list

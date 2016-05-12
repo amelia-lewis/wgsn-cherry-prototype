@@ -3,14 +3,18 @@
   padding: 0
   margin: 0
   overflow: auto
+  border-bottom: 1px solid $lt-grey
 
   .tab-nav-tab
-    float: left
-    padding: 20px 0
-    margin: 0 10px
+    @extend .pull-left
+    @extend .block-ver-sm
     @extend .wgsn-font
+    font-size: 0.8em
+    margin: 0 10px
     position: relative
     cursor: pointer
+    color: $dk-grey
+    transition: all 300ms
 
     &:after
       content: ""
@@ -20,21 +24,60 @@
       left: 0
       width: 100%
       height: 3px
-      background: $md-grey
+      background: $xdk-grey
       transform: translate3d(0, 0, 0) scale(1, 0)
       transform-origin: center bottom
       transition: all 300ms
 
     &:hover,
     &.active
+      color: $xdk-grey
+      
       &:after
         transform: translate3d(0, 0, 0) scale(1, 1)
 
-    &.tab-nav-subheading
-      cursor: default
+.tab-nav-alt
+  list-style: none
+  padding: 0
+  margin: 0
+  overflow: auto
+  position: relative
+  
+  &:after
+    content: ""
+    display: block
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 1px
+    background: $lt-grey
 
-      &:after
-        transform: translate3d(0, 0, 0) scale(1, 0)
+  .tab-nav-tab
+    @extend .pull-left
+    @extend .block-ver-sm
+    @extend .block-hor-md
+    @extend .border-top
+    @extend .border-right
+    @extend .wgsn-font
+    margin: 0
+    font-size: 0.8em
+    position: relative
+    cursor: pointer
+    z-index: 10
+    color: $dk-grey
+    transition: all 300ms
+
+    &:first-of-type
+      @extend .border-left
+
+    &:hover
+      color: $xdk-grey
+
+    &.active
+      background: white
+      border-bottom: none
+      color: $xdk-grey
 
 // body.product-fashion
 //   .tab-nav

@@ -47,7 +47,7 @@
   //- PANELS
   //- ============================================================
 
-  $modal-tool-panel-width: 50px
+  $modal-tool-panel-width: 40px
   $modal-comments-panel-width: 260px
   $modal-bottom-panel-content-height: 150px
 
@@ -61,10 +61,11 @@
     top: 0
     left: 0
     width: calc(100% - #{$modal-tool-panel-width})
-    height: 30px
+    height: $modal-tool-panel-width
 
     .tab-nav-tab
-      padding: 9px 0 8px
+      padding-top: 13px
+      padding-bottom: 13px
 
 
   //- ============================================================
@@ -76,23 +77,13 @@
     top: 0
     left: 0
     width: calc(100% - #{$modal-tool-panel-width})
-    height: 30px
-    color: $md-grey
+    height: $modal-tool-panel-width
+    // color: $md-grey
 
     span
       @extend .wgsn-font
       @extend .inline-block
-      margin: 7px 10px 0 0
-
-      &.divider
-        @extend .sans-serif
-
-      &.item-name
-        font-size: 12px
-        color: $xdk-grey
-
-      &.item-count
-        margin: 8px 0 0 0
+      margin: 13px 0 0 0
 
   
   //- ============================================================
@@ -101,8 +92,8 @@
 
   .modal-image-panel
     position: absolute
-    top: 30px
-    bottom: 30px
+    top: $modal-tool-panel-width
+    bottom: $modal-tool-panel-width
     left: 0
     right: $modal-tool-panel-width
 
@@ -162,7 +153,7 @@
 
   &.show-bottom-panel
     .modal-image-panel
-      bottom: $modal-bottom-panel-content-height + 30px
+      bottom: $modal-bottom-panel-content-height + $modal-tool-panel-width
 
   &.show-comments-panel,
   &.show-page-list-panel
@@ -178,11 +169,11 @@
     bottom: 0
     left: 0
     width: calc(100% - #{$modal-tool-panel-width})
-    height: $modal-bottom-panel-content-height + 30px
+    height: $modal-bottom-panel-content-height + $modal-tool-panel-width
     transform: translate3d(0, $modal-bottom-panel-content-height, 0)
 
-    .icon-double-angle-up
-      margin: 8px 10px
+    .icon-angle-up
+      margin: 12px
       transform: translate3d(0, 0, 0) rotate(0deg)
 
     .modal-bottom-panel-tabs
@@ -190,14 +181,22 @@
       top: 0
       left: 0
       width: 100%
-      height: 30px
+      height: $modal-tool-panel-width
 
       .tab-nav-tab
-        padding: 9px 0 8px
+        padding-top: 13px
+        padding-bottom: 13px
+        border-top: none
+
+    svg
+      width: 52px
+      height: 12px
+      margin: 13px 10px 0 0
+      fill: $md-grey
 
     .modal-bottom-panel-content
       position: absolute
-      top: 30px
+      top: $modal-tool-panel-width
       left: 0
       width: 100%
       height: $modal-bottom-panel-content-height
@@ -216,7 +215,7 @@
     .modal-bottom-panel
       transform: translate3d(0, 0, 0)
 
-      .icon-double-angle-up
+      .icon-angle-up
         transform: translate3d(0, 0, 0) rotate(180deg)
   
 
@@ -233,7 +232,7 @@
     @extend .no-transition
 
     .btn-modal-tool
-      font-size: 16px
+      font-size: 14px
       width: $modal-tool-panel-width
       height: $modal-tool-panel-width
       @extend .flex-center
@@ -259,16 +258,18 @@
         .icon
           color: $xdk-grey
 
-      &.active
-        background: white
-        @extend .border-top
-        @extend .border-bottom
+      &.btn-modal-page-list,
+      &.btn-modal-comments
+        &.active
+          background: white
+          @extend .border-top
+          @extend .border-bottom
 
-        &:after
-          opacity: 1
+          &:after
+            opacity: 1
 
-        .icon
-          color: $xdk-grey
+          .icon
+            color: $xdk-grey
 
 
   //- ============================================================
@@ -278,14 +279,14 @@
   .modal-comments-panel,
   .modal-page-list-panel
     position: absolute
-    top: 30px
+    top: $modal-tool-panel-width
     right: $modal-tool-panel-width
-    bottom: 30px
+    bottom: $modal-tool-panel-width
     width: $modal-comments-panel-width
     transform: translate3d($modal-comments-panel-width, 0, 0)
 
     .scroll-container
-      height: calc(100% - 101px)
+      height: 100%
       overflow-y: auto
 
     .comment
@@ -317,9 +318,14 @@
         .text-container span
           color: $fashion
 
+  .modal-comments-panel
+    .scroll-container
+      height: calc(100% - 101px)
+
   &.show-bottom-panel
-    .modal-comments-panel
-      bottom: $modal-bottom-panel-content-height + 30px
+    .modal-comments-panel,
+    .modal-page-list-panel
+      bottom: $modal-bottom-panel-content-height + $modal-tool-panel-width
 
   &.show-comments-panel
     .modal-comments-panel
@@ -356,6 +362,7 @@
       left: 0 !important
       bottom: 0 !important
       right: 0 !important
+      background: $xdk-grey
 
     .btn-close-fullscreen
       opacity: 1
@@ -395,12 +402,12 @@
       display: none
 
     .modal-info-bar
-      top: 30px
+      top: $modal-tool-panel-width
 
     .modal-image-panel,
     .modal-comments-panel,
     .modal-page-list-panel
-      top: 60px
+      top: $modal-tool-panel-width * 2
 
   &.file-type-video
     .hidden-file-type-video

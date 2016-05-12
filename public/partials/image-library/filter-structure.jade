@@ -1,7 +1,9 @@
-mixin filter(id, title, viewall, ...items)
+mixin filter(id, title, viewall, filteredby, ...items)
   .filter.accordion-section.closed
     .accordion-title.overflow-auto.hoverable(id="filter-btn-" + id)
       span.wgsn-font.pull-left= title
+      if filteredby
+        i.icon.icon-tick
       i.section-expand-icon.icon.icon-plus.pull-right.tight
     
     .accordion-content
@@ -27,6 +29,7 @@ mixin filter(id, title, viewall, ...items)
   "category",
   "Category",
   false,
+  false,
   "Catwalk",
   "Denim Details", 
   "Marketing Campaigns", 
@@ -47,6 +50,7 @@ mixin filter(id, title, viewall, ...items)
   "market",
   "Market",
   false,
+  false,
   "Women",
   "Men",
   "Kids",
@@ -57,6 +61,7 @@ mixin filter(id, title, viewall, ...items)
   "products",
   "Products",
   true,
+  true,
   "Apparel",
   "Accessories",
   "Beauty",
@@ -65,6 +70,7 @@ mixin filter(id, title, viewall, ...items)
 +filter(
   "brand",
   "Brand",
+  true,
   true,
   "Acne Studios",
   "Alexander McQueen",
@@ -100,6 +106,7 @@ mixin filter(id, title, viewall, ...items)
   "retailer",
   "Retailer",
   true,
+  true,
   "Dolce & Gabbana",
   "French Connection",
   "Galeries Lafayette",
@@ -120,6 +127,7 @@ mixin filter(id, title, viewall, ...items)
   "city",
   "City",
   true,
+  true,
   "New York",
   "London",
   "Paris",
@@ -128,6 +136,7 @@ mixin filter(id, title, viewall, ...items)
 +filter(
   "season-month",
   "Season/Month",
+  true,
   true,
   "Autumn/Winter 2016",
   "Bridal Autumn/Winter 2016",
@@ -140,6 +149,7 @@ mixin filter(id, title, viewall, ...items)
 +filter(
   "event",
   "Event",
+  true,
   true,
   "Agenda",
   "Bread & Butter",
@@ -162,6 +172,7 @@ mixin filter(id, title, viewall, ...items)
   "colour",
   "Colour & Tone",
   false,
+  false,
   "Black",
   "White",
   "Grey",
@@ -182,6 +193,7 @@ mixin filter(id, title, viewall, ...items)
   "prints-graphics",
   "Prints & Graphics",
   true,
+  true,
   "Abstract",
   "Animal print",
   "Aztec",
@@ -201,6 +213,7 @@ mixin filter(id, title, viewall, ...items)
 +filter(
   "fabrics-materials",
   "Fabrics & Materials",
+  true,
   true,
   "Abstract",
   "Animal print",

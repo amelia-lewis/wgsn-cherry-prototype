@@ -870,7 +870,7 @@ $('#item-detail-modal .close-modal').on('click', function() {
 // });
 
 //- bottom panel
-$('.icon-double-angle-up').on('click', function() {
+$('.icon-angle-up').on('click', function() {
   $('#item-detail-modal').toggleClass('show-bottom-panel');
 });
 
@@ -897,7 +897,7 @@ $('.btn-close-fullscreen').on('click', function() {
 });
 
 // add to board
-$('#item-detail-modal .btn-add-to-board').on('click', function() {
+$('#item-detail-modal .btn-save').on('click', function() {
   $(this).addClass('active');
   $('.modal-overlay').addClass('show');
 });
