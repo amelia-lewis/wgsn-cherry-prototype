@@ -3,7 +3,7 @@
     border-color: $lt-grey
     
     ul
-      height: 192px
+      // height: 192px
       @extend .block-hor-sm
       @extend .block-bot-sm
       display: flex
@@ -25,13 +25,17 @@
           width: calc(100% - 30px)
           line-height: 1.4em
 
+        &:last-of-type
+          label.checkbox-radio
+            margin-bottom: 0px
+
   &.open
     // .accordion-title span,
     // .accordion-title i
     //   color: white
 
     .accordion-content
-      height: 234px
+      height: auto
 
 
 // ==================================================
