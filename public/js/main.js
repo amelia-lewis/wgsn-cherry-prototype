@@ -876,12 +876,17 @@ $('.icon-angle-up').on('click', function() {
 
 //- commnents panel
 $('.btn-modal-comments').on('click', function() {
-  $('#item-detail-modal').removeClass('show-page-list-panel').toggleClass('show-comments-panel');
+  $('#item-detail-modal').removeClass('show-page-list-panel show-info-panel').toggleClass('show-comments-panel');
+});
+
+//- info panel
+$('.btn-modal-info').on('click', function() {
+  $('#item-detail-modal').removeClass('show-page-list-panel show-comments-panel').toggleClass('show-info-panel');
 });
 
 //- page list panel
 $('.btn-modal-page-list').on('click', function() {
-  $('#item-detail-modal').removeClass('show-comments-panel').toggleClass('show-page-list-panel');
+  $('#item-detail-modal').removeClass('show-comments-panel show-info-panel').toggleClass('show-page-list-panel');
 });
 
 // fullscreen

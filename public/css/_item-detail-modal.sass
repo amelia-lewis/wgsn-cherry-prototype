@@ -156,6 +156,7 @@
       bottom: $modal-bottom-panel-content-height + $modal-tool-panel-width
 
   &.show-comments-panel,
+  &.show-info-panel,
   &.show-page-list-panel
     .modal-image-panel
       right: $modal-tool-panel-width + $modal-comments-panel-width
@@ -259,6 +260,7 @@
           color: $xdk-grey
 
       &.btn-modal-page-list,
+      &.btn-modal-info,
       &.btn-modal-comments
         &.active
           background: white
@@ -273,10 +275,11 @@
 
 
   //- ============================================================
-  //- COMMENTS PANEL & REPORT PAGES PANEL
+  //- COMMENTS PANEL, INFO PANEL & REPORT PAGES PANEL
   //- ============================================================
 
   .modal-comments-panel,
+  .modal-info-panel,
   .modal-page-list-panel
     position: absolute
     top: $modal-tool-panel-width
@@ -324,6 +327,7 @@
 
   &.show-bottom-panel
     .modal-comments-panel,
+    .modal-info-panel,
     .modal-page-list-panel
       bottom: $modal-bottom-panel-content-height + $modal-tool-panel-width
 
@@ -332,6 +336,13 @@
       transform: translate3d(0, 0, 0)
 
     .btn-modal-comments
+      @extend .active
+
+  &.show-info-panel
+    .modal-info-panel
+      transform: translate3d(0, 0, 0)
+
+    .btn-modal-info
       @extend .active
 
   &.show-page-list-panel
@@ -406,6 +417,7 @@
 
     .modal-image-panel,
     .modal-comments-panel,
+    .modal-info-panel,
     .modal-page-list-panel
       top: $modal-tool-panel-width * 2
 
