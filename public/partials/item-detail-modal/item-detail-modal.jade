@@ -1,6 +1,6 @@
-.item-detail-modal-controls
-  i.icon.icon-angle-left.hoverable
-  i.icon.icon-angle-right.hoverable
+//- .item-detail-modal-controls
+//-   i.icon.icon-angle-left.hoverable
+//-   i.icon.icon-angle-right.hoverable
 
 .modal#item-detail-modal
   .modal-report-tabs.bg-white.border-bottom.no-transition.hidden-file-type-image.hidden-file-type-video.hidden-file-type-colour-card
@@ -11,8 +11,8 @@
       li.tab-nav-tab Report 4
       li.tab-nav-tab Report 5
 
-  .modal-info-bar.bg-white.border-bottom.no-transition.block-hor-sm
-    .pull-left
+  .modal-info-bar.bg-white.border-bottom.no-transition
+    .pull-left.block-hor-sm
       span Balmain
       span.block-hor-xs /
       span Autumn/Winter 2016
@@ -20,16 +20,18 @@
       span Paris
 
     .pull-right
-      span.item-count 2/10
+      .block-hor-sm.pull-left: span 2/10
+      .btn-modal-nav.border-left.pull-left.flex-center.hoverable: i.icon.icon-angle-left
+      .btn-modal-nav.border-left.pull-left.flex-center.hoverable: i.icon.icon-angle-right
 
   .modal-image-panel.bg-xlt-grey
     .img
     i.file-heart.icon.icon-heart-o.hoverable
     i.icon.icon-cross.btn-close-fullscreen.hoverable
     
-    .modal-page-controls.hoverable.hidden-file-type-image.hidden-file-type-video.hidden-file-type-colour-card
-      .modal-page-left: i.icon.icon-angle-left
-      .modal-page-right: i.icon.icon-angle-right
+    .modal-page-controls.overflow-auto.hoverable.hidden-file-type-image.hidden-file-type-video.hidden-file-type-colour-card
+      .modal-page-left.pull-left: i.icon.icon-angle-left
+      .modal-page-right.pull-right: i.icon.icon-angle-right
     
     .modal-zoom-controls.hoverable.hidden-file-type-report.hidden-file-type-video.hidden-file-type-colour-card
       .modal-zoom-in: i.icon.icon-zoom-plus
