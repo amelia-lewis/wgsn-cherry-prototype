@@ -5,14 +5,22 @@
   height: $page-content-height
   overflow: hidden
 
+  .left-side-panel,
   .right-side-panel
     position: absolute
+    height: calc(100% - #{$title-row-height})
     top: $title-row-height
     left: 0
+
+  .left-side-panel
+    width: $left-side-panel-width
+    transform: translate3d(-100%, 0, 0)
+    z-index: 100
+
+  .right-side-panel
+    position: absolute
     right: 0
-    height: calc(100% - #{$title-row-height})
     @extend .bg-xlt-grey
-    // @extend .no-transition
 
   &.show-left-side-panel
     .right-side-panel
@@ -34,3 +42,10 @@
 
     .comments-panel
       transform: translate3d(0, 0, 0)
+
+body.workspace-view
+  .page-content
+    .left-side-panel,
+    .right-side-panel
+      top: 0
+      height: 100%
