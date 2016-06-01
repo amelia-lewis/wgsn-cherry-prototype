@@ -691,7 +691,7 @@ $('.btn-filter-row-delete').on('click', function() {
 
 $('.filter-tag .icon-cross').on('click', function() {
   $(this).parent().remove();
-}); 
+});
 
 
 // ====================================================================================================
@@ -1022,7 +1022,7 @@ $(document).ready(function() {
 // ====================================================================================================
 
 var scroller = $('.files-row')[0];
-$(".files-row").headroom({
+$(".right-side-panel").headroom({
   "scroller": scroller,
   "offset": 200
 });
