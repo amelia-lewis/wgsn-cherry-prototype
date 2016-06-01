@@ -1,0 +1,20 @@
+.view-options.block-ver-sm.block-hor-md
+  .row
+    .col-xs-12
+      .pull-right
+        .block-xs.pull-left
+          label.checkbox-radio.tight(for="select-all")
+            input.pull-left(type="checkbox" id="select-all")
+            span Select all
+
+        .divider.pull-left
+
+        .btn-view-option.pull-left.hoverable.block-xs.disabled.btn-view-option-sm: i.icon.icon-grid-sm
+        .btn-view-option.pull-left.hoverable.block-xs.btn-view-option-md: i.icon.icon-grid-md
+        .btn-view-option.pull-left.hoverable.block-xs.disabled.btn-view-option-lg: i.icon.icon-grid-lg
+        .btn-view-option.pull-left.hoverable.block-xs.disabled.btn-view-option-details: i.icon.icon-grid-details
+
+        .divider.pull-left
+
+        .btn-settings.pull-left.hoverable.block-xs: i.icon.icon-gear
+        include ../../partials/context-menus/utility-row-settings-context-menu

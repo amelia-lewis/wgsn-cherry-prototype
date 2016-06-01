@@ -13,21 +13,27 @@ block content
     
     //- RIGHT SIDE PANEL
     .right-side-panel
-      .workspace-header.block-md.bg-white.border-bottom
-        .row
+      .workspace-header.block-md
+        .row.block-bot-sm
           .col-xs-12.col-sm-8
-            h3.text-grey.tight Workspace
-            h1 Balmain 2016
-              span.text-grey 224 items
-            p.text-grey by Amelia Lewis
-            p.tight Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            h3.tight.hide-on-scroll Workspace
+            h1.tight Balmain 2016
+            h3.text-grey.hide-on-scroll by Amelia Lewis
+            p.hide-on-scroll Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
           .col-xs-12.col-sm-4
             include ../../partials/workspace/share-block
+
+        .row
+          .col-xs-12.col-sm-4
+            input.search-input.hide-on-scroll(type="text", placeholder="Search this folder")
+
+          .col-xs-12.col-sm-8
+            include ../../partials/workspace/utility-block
+
+      include ../../partials/workspace/view-options
       
-        include ../../partials/workspace/utility-row
-      
-      include ../../partials/files-row
+      include ../../partials/images-row
       
     //- COMMENTS PANEL
     include ../../partials/workspace/comments-panel

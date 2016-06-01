@@ -1,13 +1,32 @@
 .workspace-header
-  h1
-    span
-      font-size: 0.6em
-      margin-left: 10px
-      position: relative
+  background: darken($xlt-grey, 4)
 
-    .icon
-      font-size: 0.6em
+  .utility-block
+    .utility-icon
+      @extend .inline-block
+      @extend .block-xs
 
-    .tooltip-down:after
-      top: 20px
-      bottom: auto
+      .icon
+        font-size: 14px
+        color: $dk-grey
+
+      &:hover
+        .icon
+          color: $xdk-grey
+
+    .divider
+      background: rgba(black, 0.1)
+      width: 1px
+      height: 37px
+      margin: 0 10px
+
+.right-side-panel.headroom--unpinned
+  .share-block,
+  .hide-on-scroll
+    display: none
+
+  .utility-block
+    margin: -32px 0 -10px 0
+
+  .row.block-bot-sm
+    padding-bottom: 0
