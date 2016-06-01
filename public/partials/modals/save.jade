@@ -1,0 +1,46 @@
+extends modal
+
+block append modal-vars
+  - id = "save"
+  - title = "Save"
+
+block modal-content
+  .row
+    .col-xs-6.save-modal-content-container.bg-xlt-grey.flex-center
+      .img-container
+        img(src="https://www.wgsn.com/storage/vol20/ss_image_store/45/39/44/42/media_blm_aw16_004.jpg")
+        textarea.comment-input(placeholder="Add a comment (optional)")
+
+    .col-xs-6.save-modal-folder-container
+      h3 Choose a folder
+
+      .panel-folders.border.overflow-auto
+        .accordion-section.accordion-section-recent-boards.open
+          .accordion-title
+            span.wgsn-font Recent Folders
+            i.section-expand-icon.icon.icon-minus.pull-right.tight
+          
+          .accordion-content
+            .board-row.level-1
+              span.board-name Folder name
+              br
+              span.board-filepath.text-grey.text-smaller Folder name &#62; Folder name
+              .btn.btn-black.btn-sm.close-modal Save
+
+            .board-row.level-1
+              span.board-name Folder name
+              br
+              span.board-filepath.text-grey.text-smaller Folder name &#62; Folder name
+              .btn.btn-black.btn-sm.close-modal Save
+
+            .board-row.level-1
+              span.board-name Folder name
+              br
+              span.board-filepath.text-grey.text-smaller Folder name &#62; Folder name
+              .btn.btn-black.btn-sm.close-modal Save
+        
+        include ../workspace/folder-structure
+
+      .modal-create-new-board-container
+        input(type="text" placeholder="+ Create new folder")
+        .btn.btn-black.btn-sm.close-modal Create

@@ -3,142 +3,163 @@ header
   top: 0
   left: 0
   width: 100%
+  height: $header-height
+  padding: 15px 20px
+  background: black
+  color: rgba(white, 0.5)
   z-index: 100
-  
-  .global-product-row
-    background: black
-    color: white
-    padding: 15px 15px 14px
-    position: absolute
-    top: 0
-    left: 0
-    width: 100%
-    height: $global-product-row-height
-    z-index: 120
 
-    .product-link
+  // &:after
+  //   content: ""
+  //   position: absolute
+  //   top: 0
+  //   left: 0
+  //   width: 100%
+  //   height: 2px
+
+  .icon
+    margin: -2px 8px
+    font-size: 18px
+    color: rgba(white, 0.5)
+
+  .icon-bars
+    margin: 1px 20px 0 0
+    font-size: 16px
+    color: white
+
+  .wgsn-logo
+    width: 70px
+    margin: 1px 25px 0 0
+
+  .product-link
+    color: rgba(white, 0.5)
+    margin: 4px 30px 0 0
+    @extend .wgsn-font
+    @extend .pull-left
+    position: relative
+
+    &:hover
+      color: white
+
+    &.active
+      color: white
+
+    @media (max-width: $screen-md-max)
+      margin: 4px 15px 0 0
+
+    @media (max-width: $screen-md-min)
+      &:first-of-type
+        margin: 4px 0 0 0
+
+      &:not(:first-of-type)
+        display: none
+
+  > .pull-left
+    .icon-caret-down
+      display: none
       font-size: 12px
-      opacity: 0.5
-      @extend .tight
-      @extend .text-uppercase
-      @extend .hoverable
-      @extend .inline-block
+      margin: 3px 0 0 8px
+
+      @media (max-width: $screen-md-min)
+        display: block
+
+  .user-block,
+  .language-block
+    .avatar
+      margin-top: -6px
+
+    h4
+      margin: 3px 0 0 0
+
+    .icon-caret-down
+      font-size: 12px
+      margin: 3px 0 0 6px
+
+  .search-block
+    margin: -4px 0 0 0
+    color: rgba(white, 0.3)
+
+    .icon
+      color: rgba(white, 0.3)
+
+    .icon-search
+      background: rgba(white, 0.2)
+      font-size: 12px
+      width: 28px
+      height: 28px
+      margin: 0
+      @extend .flex-center
+    
+    input[type="text"]
+      background: rgba(white, 0.2)
+      border-radius: 0
+      border: none
+      width: 100px
+      height: 28px
+      padding-left: 0
+      color: rgba(white, 0.5)
+
+      &:focus
+        width: 200px
+
+    .search-section
+      background: rgba(white, 0.2)
+      height: 28px
+      padding: 8px 6px 0 12px
       position: relative
+      
+      .icon-caret-down
+        font-size: 12px
+        margin: 0 0 0 6px
 
       &:after
         content: ""
         position: absolute
-        display: block
-        top: -6px
-        left: 0
-        width: 100%
-        height: 2px
-        background: white
-        opacity: 0
-        +transition(all 400ms)
+        top: 6px
+        left: -1px
+        width: 1px
+        height: 18px
+        background: rgba(white, 0.3)
 
-      &:hover
-        opacity: 1
-
-        &:after
-          opacity: 1
-
-      &.active
-        opacity: 1
-
-        &:after
-          opacity: 1
-
-        &#product-link-fashion:after
-          background: $fashion
-
-        &#product-link-li:after
-          background: $li
-
-        &#product-link-instock:after
-          background: $instock
-
-        &#product-link-styletrial:after
-          background: $styletrial
-
-        &#product-link-mindset:after
-          background: $mindset
-
-    span
-      margin: 0 15px
-      opacity: 0.5
-
-    .icon
-      margin: 0 6px
-
-    .icon-bell:after,
-    .icon-envelope:after
-      content: ""
-      position: absolute
-      top: -8px
-      left: 50%
-      width: 100%
-      background: $label-red
-      color: white
-      font-size: 9px
-      @extend .text-center
-      +border-radius(2px)
-      +transform(translate3d(-50%, 0, 0))
-
-    .icon-bell:after
-      content: "2"
-    
-    .icon-envelope:after
-      content: "1"
-
-  .product-row-bg
-    background: rgba(white, 0.96)
-    position: absolute
-    top: $global-product-row-height
-    left: 0
-    width: 100%
-    height: $product-row-height
-    z-index: 100
-
-  .product-row
-    position: absolute
-    top: $global-product-row-height
-    left: 0
-    width: 100%
-    z-index: 130
-
-    #product-logo
-      width: 100%
-      height: 24px
-      background: no-repeat center / auto 24px
-      padding: 32px 0
-
-    #btn-menu,
-    #btn-search
-      @extend .inline-block
-      font-size: 20px
-      position: absolute
-      top: 0
-
-    #btn-menu
-      padding: 18px 10px
-      left: 0
+    @media (max-width: $screen-md-min)
+      input,
+      .search-section
+        display: none
 
       .icon
-        padding: 10px 15px
-        border: 1px solid $fashion
-        +border-radius(3px)
-        color: $fashion
+        background: none
+        color: rgba(white, 0.5)
+        font-size: 16px
+        height: 23px
+        width: auto
 
-        &:before
-          top: 3px
+  // icon badges
+  .icon-bell:after,
+  .icon-envelope:after
+    content: ""
+    position: absolute
+    top: -4px
+    right: -4px
+    width: 12px
+    height: 12px
+    background: $label-red
+    color: white
+    @extend .flex-center
+    font-size: 8px
+    border-radius: 50%
 
-    #btn-search
-      width: $product-row-height
-      height: $product-row-height
-      padding: 20px 22px
-      right: 0
+  .icon-bell:after
+    content: "2"
+  
+  .icon-envelope:after
+    content: "1"
 
-body.image-library-view
+body.product-fashion
   #product-link-fashion
     @extend .active
+
+  .icon-bars
+    color: $fashion
+
+  &:after
+    background: $fashion

@@ -1,25 +1,41 @@
 ul.context-menu#item-context-menu
   .block-ver-xxs.border-bottom
+    li
+      span.text-grey 1 file selected
+  .block-ver-xxs.border-bottom.hidden-workspace-trash
     li.btn-open
       i.icon.icon-export
       span Open
   .block-ver-xxs.border-bottom
-    li.btn-add-to-board
+    li.btn-save.hidden-workspace.hidden-workspace-trash
       i.icon.icon-plus-circle
-      span Add to a Board
-    li
+      span Save
+    li.btn-move.hidden-image-library.hidden-workspace-messages.hidden-workspace-favourites.hidden-workspace-view-only.hidden-workspace-inbox.hidden-workspace-sent-messages
+      i.icon.icon-move
+      span Move
+    li.btn-copy.hidden-image-library.hidden-workspace-messages.hidden-workspace-favourites.hidden-workspace-trash.hidden-workspace-inbox.hidden-workspace-sent-messages
+      i.icon.icon-clone
+      span Copy
+    li.btn-download.hidden-workspace-trash
       i.icon.icon-download
       span Download
-    li.btn-print
+    li.btn-print.hidden-workspace-trash
       i.icon.icon-print
       span Print
-    li
+    li.hidden-workspace-trash
       i.icon.icon-crop
       span Crop
-    li.btn-send
-      i.icon.icon-paper-plane
-      span Send
-  .block-ver-xxs
+    //- li.btn-send.hidden-workspace-trash
+    //-   i.icon.icon-paper-plane
+    //-   span Send
+    li.hidden-workspace-trash
+      i.icon.icon-link
+      span Copy link
+  .block-ver-xxs.hidden-workspace-trash.hidden-workspace-view-only.hidden-workspace-favourites
     li
       i.icon.icon-trash
       span Delete
+  .block-ver-xxs.hidden-image-library.hidden-workspace-trash.hidden-workspace-view-only.hidden-workspace-folder.hidden-workspace-inbox.hidden-workspace-sent-messages
+    li
+      i.icon.icon-heart
+      span Un-favourite

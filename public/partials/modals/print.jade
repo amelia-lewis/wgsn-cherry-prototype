@@ -1,13 +1,16 @@
-.modal#print-modal
-  .modal-header
-    h2.pull-left.tight Print
-    p.pull-left.right.num-of-files 1 image
-    i.icon.icon-cross.pull-right.hoverable.close-modal
+extends modal
 
-  .modal-content
-    .block-bot-sm
+block append modal-vars
+  - id = "print"
+  - title = "Print"
+
+block modal-content
+  .row
+    .col-xs-12
       h3 Layout
 
+  .row.block-bot-md
+    .col-xs-12
       .block-right-xs.inline-block.hoverable
         .print-layout-tile.pp-1.active
           .layout-tile-container
@@ -52,48 +55,56 @@
             .block
           p Thumbnails
 
-    h3 Page Options
-    .block-bot-sm
-      .block-bot-xs
-        .block-ver-xs.block-right-xs.inline-block Paper size:
-        select.inline-block
-          option Letter (8.5" x 11")
-          option Legal (8.5" x 14")
-          option Tabloid (11" x 17")
-          option A4 (297 x 210mm)
-          option A3 (420 x 297mm)
+  .row
+    .col-xs-12
+      h3 Page Options
+
+  .row.block-bot-sm
+    .col-xs-2
+      .block-ver-xs.block-right-xs.inline-block Paper size:
       
-      .block-bot-xs
-        .block-ver-xs.block-right-xs.inline-block Orientation
-        select.inline-block
-          option Landscape
-          option Portrait
+    .col-xs-4
+      select
+        option Letter (8.5" x 11")
+        option Legal (8.5" x 14")
+        option Tabloid (11" x 17")
+        option A4 (297 x 210mm)
+        option A3 (420 x 297mm)
+        
+    .col-xs-2
+      .block-ver-xs.block-right-xs.inline-block Orientation
+    
+    .col-xs-4
+      select
+        option Landscape
+        option Portrait
 
-    .block-bot-sm
-      .block-right-md.block-bot-sm.inline-block
+  .row
+    .col-xs-3
+      label.checkbox-radio(for='print-page-count')
         input#print-page-count(type='checkbox')
-        label.hoverable(for='print-page-count') Page count
+        span Page count
 
-      .block-right-md.block-bot-sm.inline-block
+    .col-xs-3
+      label.checkbox-radio(for='print-filename')
         input#print-filename(type='checkbox')
-        label.hoverable(for='print-filename') Filename
+        span Filename
 
-      .block-right-md.block-bot-sm.inline-block
+    .col-xs-3
+      label.checkbox-radio(for='print-details')
         input#print-details(type='checkbox')
-        label.hoverable(for='print-details') Details
+        span Details
 
-      .block-right-md.block-bot-sm.inline-block
+    .col-xs-3
+      label.checkbox-radio(for='print-comments')
         input#print-comments(type='checkbox')
-        label.hoverable(for='print-comments') Comments
+        span Comments
 
-      br
+  .row
+    .col-xs-2
+      label.checkbox-radio(for='print-page-title')
+        input#print-page-title(type='checkbox')
+        span Page title
 
-      .block
-        .block-ver-xs.block-right-sm.inline-block
-          input(type='checkbox' id='print-page-title')
-          label(for='print-page-title') Page title
-        input.inline-block(type='text')
-
-  .modal-footer
-    p.tight.block-top-xs.hoverable.pull-left.close-modal Cancel
-    .btn.btn-white.pull-right.close-modal Done
+    .col-xs-10
+      input(type='text', placeholder='Page title')

@@ -1,30 +1,38 @@
 .filter-row
-  width: calc(100vw - #{$left-side-panel-width})
+  width: 100vw
+  overflow: auto
+
+  &:not(.filter-row-fixed)
+    margin-bottom: -20px
   
   .filter-tag
-    background: lighten($lt-grey, 5)
-    border: 1px solid lighten($lt-grey, 5)
+    background: white
+    @extend .border
     float: left
     padding: 7px
-    margin: 0 4px 8px
-    +border-radius(3px)
+    margin: 0 8px 8px 0
+    border-radius: 3px
 
     .icon
       margin-left: 10px
       color: $md-grey
 
     &:hover
-      background: $lt-grey
+      background: $xlt-grey
 
       .icon
-        color: $dk-grey
+        color: $xdk-grey
 
   .filter-search-tag
     background: none
-    border: 1px solid $lt-grey
+    padding: 7px 10px
     
     &:hover
       background: none
+
+  .btn-save-search
+    height: 31px
+    padding: 7px 20px 5px
 
   .btn-save-search,
   .btn-filter-row-delete
@@ -39,43 +47,43 @@
   &.filter-row-fixed
     background: $xlt-grey
     pointer-events: all
-    +transform(translate3d(0, -100%, 0))
+    transform: translate3d(0, -100%, 0)
 
     &.show
-      +transform(translate3d(0, 0, 0))
+      transform: translate3d(0, 0, 0)
 
 .filter-row-fixed-container
   overflow: hidden
   width: 100%
   position: fixed
-  top: $header-height + $title-row-height + $utility-row-height
+  top: 110px
   left: $left-side-panel-width
   z-index: 100
   pointer-events: none
 
 .btn-filter-row-fixed
   position: fixed
-  top: 223px
+  top: 110px
   right: 10px
   background: $xlt-grey
   padding: 5px 10px
   z-index: 400
   opacity: 0
   pointer-events: none
-  +border-radius(0 0 3px 3px)
+  border-radius: 0 0 3px 3px
 
   .icon
     margin: 0 6px 0 0
-    +transform(translate3d(0, 0, 0) rotate(0deg))
+    transform: translate3d(0, 0, 0) rotate(0deg)
 
   &.active
     .icon
-      +transform(translate3d(0, 0, 0) rotate(180deg))
+      transform: translate3d(0, 0, 0) rotate(180deg)
 
-.files-row
+.right-side-panel
   &.headroom--top
     .filter-row-fixed
-      +transform(translate3d(0, -100%, 0))
+      transform: translate3d(0, -100%, 0)
     
     .btn-filter-row-fixed
       opacity: 0

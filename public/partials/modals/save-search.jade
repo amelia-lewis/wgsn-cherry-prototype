@@ -1,12 +1,11 @@
-.modal.simple-modal#save-search-modal
-  .modal-header
-    h2.pull-left.tight Save Search
-    i.icon.icon-cross.pull-right.hoverable.close-modal
+extends modal
 
-  .modal-content
-    .block-bot-sm
+block append modal-vars
+  - id = "save-search"
+  - title = "Save search"
+  - type = "simple-modal"
+
+block modal-content
+  .row.block-bot-sm
+    .col-xs-12
       input(type="text", placeholder="Enter a name for your saved search")
-
-  .modal-footer
-    p.tight.block-top-xs.hoverable.pull-left.close-modal Cancel
-    .btn.btn-white.pull-right.close-modal Done

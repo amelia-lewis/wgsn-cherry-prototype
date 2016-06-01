@@ -3,13 +3,13 @@
   background: white
   opacity: 0
   pointer-events: none
-  width: 180px
+  // width: 180px
   @extend .box-shadow
   @extend .border
   @extend .clean
   @extend .text-left
   @extend .no-transition
-  color: $dk-grey
+  color: $xdk-grey
   z-index: 300
 
   &.show
@@ -25,7 +25,7 @@
     border-width: 0 0 1px 1px
     top: -6px
     z-index: -1
-    +transform(translate3d(0, 0, 0) rotate(135deg))
+    transform: translate3d(0, 0, 0) rotate(135deg)
 
   &.arrow-left:after
     content: ""
@@ -34,7 +34,7 @@
   &.arrow-center:after
     content: ""
     left: 50%
-    +transform(translate3d(-50%, 0, 0) rotate(135deg))
+    transform: translate3d(-50%, 0, 0) rotate(135deg)
 
   &.arrow-right:after
     content: ""
@@ -43,7 +43,7 @@
   li
     @extend .tight
     @extend .hoverable
-    padding: 6px 12px
+    padding: 8px 30px 8px 15px
 
     &:hover,
     &:active
@@ -54,7 +54,7 @@
 
 #item-context-menu
   top: 50%
-  left: calc(50% + 54px)
+  left: calc(50% + 30px)
 
 #floating-item-context-menu
   .block-ver-xxs:first-of-type
@@ -71,7 +71,7 @@
   width: 200px
 
 #top-board-context-menu
-  top: 30px
+  top: 54px
   left: 0
   width: 200px
   @extend .arrow-left
@@ -83,7 +83,7 @@
     width: 12px
     height: 12px
     margin: 0 7px
-    +border-radius(50%)
+    border-radius: 50%
     @extend .inline-block
     position: relative
     
@@ -101,14 +101,14 @@
       border-width: 1px
       border-style: solid
       opacity: 0
-      +border-radius(50%)
-      +transition(all 400ms)
+      border-radius: 50%
+      transition: all 400ms
 
     &:first-of-type
       margin-left: 0
 
     &:last-of-type
-      margin-right: 0
+      margin-right: -15px
 
     &:hover,
     &.selected
@@ -167,36 +167,54 @@
   @extend .arrow-right
 
 #utility-row-settings-context-menu
-  top: 30px
-  right: -4px
+  top: 40px
+  right: 6px
   width: 220px
   @extend .arrow-right
 
   li
+    padding: 8px 15px
+    
     &:hover,
     &:active
       background: none
 
-// #sort-by-context-menu
-//   top: 54px
-//   left: 70px
-//   width: auto
-//   @extend .arrow-left
+  .btn-view-option-container
+    display: none
+
+    @media (max-width: $screen-md-max)
+      display: block
+
+  .btn-view-option
+    padding: 5px 10px
+    margin-left: -1px
+    @extend .inline-block
+    @extend .hoverable
+    @extend .border
+
+    &:hover
+      background: $xlt-grey
+
+    &.disabled
+      opacity: 1
+
+      .icon
+        opacity: 0.3
 
 #saved-searches-context-menu
-  top: 40px
-  left: 12px
+  top: 50px
+  left: -3px
   width: 374px
   @extend .arrow-left
 
 #notifications-context-menu
-  top: 40px
-  right: 111px
+  top: 46px
+  right: 306px
   width: 400px
   @extend .arrow-right
 
 #message-notifications-context-menu
-  top: 40px
-  right: 87px
+  top: 46px
+  right: 274px
   width: 400px
   @extend .arrow-right

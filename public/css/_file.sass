@@ -17,82 +17,60 @@
     &:before
       top: 0
   
-  .icon-heart
+  .icon-heart-filled
     opacity: 1 !important
     color: $label-red !important
+
+  .icon-tick
+    background: transparent
 
   .icon-tick-circle-filled
     background: white
     width: 16px
     height: 16px
-    +border-radius(50%)
+    border-radius: 50%
     opacity: 1 !important
-    color: $dk-grey
+    // color: $xdk-grey
 
 
 // ============================================================
 // STANDARD FILE
 // ============================================================
 
-.file-outer
-  float: left
-
-.file-container
-  padding: 6px
-  // overflow: auto
-
 .file
   width: 100%
   background: white
   position: relative
-
-  .thumb-container
-    position: relative
-    overflow: hidden
-    
-    .thumb-inner
-      background: white no-repeat center / contain
-      width: 100%
-      position: relative
-      margin: 0 auto
-
-      .fa
-        position: absolute
-        top: 50%
-        left: 50%
-        transform: translate3d(-50%, -50%, 0)
-        color: rgba(black, 0.05)
-
-    .original-artwork
-      @extend .font-wgsn
-      position: absolute
-      bottom: 0
-      left: 0
-      background: rgba(black, 0.8)
-      color: white
-      padding: 4px 4px 3px 6px
-      letter-spacing: 0.1em
-      font-size: 9px 
-
-      &:after
-        content: ""
-        position: absolute
-        top: 0
-        right: -10px
-        width: 0
-        height: 0
-        border-bottom: 19px solid rgba(black, 0.8)
-        border-right: 10px solid transparent
+  padding-bottom: 62px
+  overflow: visible !important
+  box-shadow: 0 1px 3px rgba(black, 0.15)
+  
+  img
+    vertical-align: bottom
+    border: 0px solid white
+    transition: all 200ms
 
   .caption-container
     display: none
-    
-    ul
-      padding: 10px
-      min-height: 54px
+    @extend .bg-white
+    @extend .block-xs
+    height: 62px
 
-      li:first-of-type
-        @extend .text-bold
+    ul
+      li
+        +text-truncate(100%)
+        font-size: 11px
+        @extend .tight
+
+        &:first-of-type
+          @extend .text-bold
+
+        &:not(:first-of-type)
+          @extend .text-grey
+
+        &:last-of-type
+          margin: 0
+          +text-truncate(calc(100% - 25px))
 
       .filename
         color: $md-grey
@@ -114,64 +92,149 @@
     width: 100%
     height: 100%
     color: white
+    background: rgba(black, 0.3)
+    opacity: 0
     @extend .flex-center
 
-    > .btn-add-to-board,
-    .btn-item-menu
-      display: inline-block
-      margin: 0 4px
-      +transform(translate3d(0, 10px, 0))
-      opacity: 0
+    .icon-container
+      position: absolute
+      bottom: 10px
+      left: 0
+      width: 100%
 
-      .icon
-        pointer-events: none
+      > .icon
+        font-size: 18px
+        margin: 0 10px
+        opacity: 0
+        color: rgba(white, 0.8)
+        transform: translate3d(0, 5px, 0)
 
+        &:hover
+          color: white
+
+  .file-select-state
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(black, 0.5)
+    opacity: 0
+
+  // FLAG CONTAINER
+  .flag-container
+    position: absolute
+    bottom: 5px
+    right: 5px
+    padding-left: 15px
+
+    .wgsn-original-content
+      width: 40px
+      height: 14px
+      padding: 0 2px
+      border-radius: 2px
+      margin: 0 0 0 5px
+
+      svg
+        width: 100%
+        height: 100%
+        fill: $lt-grey
+    
+    .file-comment
+      font-size: 14px
+      color: $lt-grey
+      margin: 0 3px 0 8px
+
+
+  // HOVER
   &:hover
     .file-checkbox,
     .file-heart
-      opacity: 1
+      opacity: 1 !important
+    
     .file-utilities
-      background: rgba(black, 0.4)
+      opacity: 1
       
-      .btn-add-to-board,
-      .btn-item-menu
-        +transform(translate3d(0, 0, 0))
+      .icon
+        transform: translate3d(0, 0, 0)
         opacity: 1
 
-      .btn-add-to-board
-        +transition-delay(200ms)
-      
-      .btn-item-menu
-        +transition-delay(300ms)
-
+  // SELECTED
   &.selected
-    border-color: $dk-grey
+    // .file-select-state
+    //   opacity: 1
 
-    .file-utilities
-      background: rgba(black, 0.5)
-
-    .icon-tick-circle-filled
+    .file-checkbox
       opacity: 1 !important
-      color: $dk-grey
+      background: white
+      width: 16px
+      height: 16px
+      border-radius: 50%
 
+      &:before
+        content: "\4e"
+
+  // SHOW CAPTION
   &.show-caption
+    .file-utilities,
+    .file-select-state
+      height: calc(100% - 62px)
+
+    .flag-container
+      background: -webkit-linear-gradient(left, rgba(white, 0) 0%, rgba(white, 1) 30%, rgba(white, 1) 100%);
+
     .caption-container
       display: block
 
+  // SHOW FILENAME
   &.show-filename
-    .caption-container .filename
+    .file-utilities,
+    .file-select-state
+      height: calc(100% - 84px)
+
+  &:not(.show-caption)
+    padding-bottom: 0px !important
+
+  // VIDEO FILE TYPE
+  &.file-type-video
+    &:after
+      content: ""
+      position: absolute
+      top: 50%
+      left: 50%
+      background: url('http://www.wgsn.com/assets/common/images/play_button.png') no-repeat center / 100%
       display: block
+      width: 60px
+      height: 60px
+      transform: translate3d(-50%, -50%, 0)
+
+    &.show-caption
+      &:after
+        top: calc(50% - 31px)
+
+html.tablet,
+html.mobile
+  .file
+    .file-checkbox,
+    .file-heart
+      opacity: 1 !important
+    
+    .file-utilities
+      opacity: 1
+      background: -webkit-linear-gradient(top, rgba(black, 0.2) 0%, rgba(black, 0) 20%, rgba(black, 0) 100%)
+      
+      .btn
+        opacity: 0
 
 
 // ============================================================
 // DETAILS VIEW
 // ============================================================
 
-.file-outer-details-view
-  +clearfix()
-
 .file-details-view
   overflow: auto
+  margin: 0 auto 20px
+  max-width: 1200px
   
   .thumb-container
     float: left
@@ -180,6 +243,12 @@
 
     img
       width: 100%
+
+    .file-comment
+      position: absolute
+      bottom: 10px
+      right: 10px
+      font-size: 14px
 
     .file-utilities-1
       position: absolute
@@ -199,7 +268,7 @@
         width: 100%
         height: 70px
         opacity: 0
-        +transition(all 400ms)
+        transition: all 400ms
 
       .file-checkbox,
       .file-heart
@@ -219,7 +288,7 @@
 
       .file-checkbox,
       .file-heart
-        opacity: 1
+        opacity: 1 !important
 
   .caption-container
     float: left
@@ -233,7 +302,7 @@
       &:nth-of-type(4)
         @extend .tight
 
-    .font-wgsn
+    .wgsn-font
       font-size: 10px
 
     .file-utilities-2
@@ -244,8 +313,56 @@
 
         &:hover
           .icon
-            color: $dk-grey
+            color: $xdk-grey
 
   &.selected
     .file-utilities-1:after
       opacity: 1
+
+    .file-checkbox
+      opacity: 1 !important
+      background: white
+      width: 16px
+      height: 16px
+      border-radius: 50%
+
+      &:before
+        content: "\4e"
+
+  &.file-type-video
+    .thumb-container:after
+      content: ""
+      position: absolute
+      top: 50%
+      left: 50%
+      background: url('http://www.wgsn.com/assets/common/images/play_button.png') no-repeat center / 100%
+      display: block
+      width: 60px
+      height: 60px
+      transform: translate3d(-50%, -50%, 0)
+
+body.product-fashion
+  .file,
+  .file-details-view
+    .file-comment
+      display: none
+
+    &.selected
+      .file-checkbox
+        color: $fashion
+
+      img
+        border: 5px solid $fashion
+
+body.product-none
+  .file,
+  .file-details-view
+    .file-comment
+      color: $yellow
+    
+    &.selected
+      .file-checkbox
+        color: $yellow
+
+      img
+        border: 5px solid $yellow

@@ -2,36 +2,41 @@
 @import "vars"
 @import "mixins"
 @import "blocks"
-@import "common-styles"
 @import "typography" 
-@import "grid"
 
 // elements
+@import "layout"
+@import "hiders"
+
 @import "inputs"
 @import "tag-list"
 @import "buttons"
 @import "tooltip"
+@import "avatars"
+@import "tab-nav"
+@import "loading-indicator"
 
 // components
 @import "header"
 @import "title-row"
-@import "page-content"
-
-@import "left-side-panel"
-@import "right-side-panel"
-@import "comments-panel"
-
-@import "utility-row"
-@import "filter-row"
-@import "files-row"
-@import "messages-row"
 
 @import "modal"
 @import "item-detail-modal"
 @import "file"
-
 @import "context-menus"
-@import "filter"
+
+@import "page-content"
+@import "left-side-panel"
+@import "workspace-header"
+@import "workspace-utility-row"
+@import "folder-structure"
+@import "filter-structure"
+
+@import "floating-utility-row"
+@import "filter-row"
+@import "files-row"
+@import "messages"
+@import "comments-panel"
 @import "share-block"
 @import "saved-searches"
 @import "notifications"
@@ -40,18 +45,19 @@
 // ==================================================
 
 body
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+  font-family: Helvetica, Arial, sans-serif
   margin: 0
   padding: 0
   background: white
   font-size: 12px
   overflow: hidden
-  color: $dk-grey
-  -moz-user-select: none
-  -ms-user-select: none
-  -khtml-user-select: none
-  -webkit-user-select: none
-  -webkit-touch-callout: none
+  color: $xdk-grey
+  // -moz-user-select: none
+  // -ms-user-select: none
+  // -khtml-user-select: none
+  // -webkit-user-select: none
+  // -webkit-touch-callout: none
+  -webkit-overflow-scrolling: touch
 
   .content-wrap
     width: 80%
@@ -71,16 +77,23 @@ body
 
 *
   box-sizing: border-box
-  +transition(all 400ms)
+  transition: all 400ms
+
+// not really a robust/intelligent solution, but leaving for now
+::-webkit-scrollbar
+  display: none
 
 // home page styles
 .index
-  .block-xl
-    width: 50%
+  .col-xs-4
     height: 100vh
-    float: left
+
+    > .flex-center
+      height: 100vh
 
     a
+      display: block
+      
       h1
         position: relative
         
@@ -92,11 +105,25 @@ body
           left: 0
           width: 100%
           height: 2px
-          background: $dk-grey
-          +transition(all 400ms)
-          +transform-origin(center top)
+          background: $xdk-grey
+          transition: all 400ms
+          transform-origin: center top
           z-index: -1
 
         &:hover
           &:after
-            +transform(translate3d(0, 0, 0) scale(1, 2))
+            transform: translate3d(0, 0, 0) scale(1, 2)
+
+.mobile-warning
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 1000
+  background: $xdk-grey
+  color: white
+  display: none
+
+  // @media (min-width: $screen-md-min)
+  //   display: none

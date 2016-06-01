@@ -1,0 +1,87 @@
+$message-listing-width: 25%
+
+// MESSAGE LISTING
+.message-listing
+  position: absolute
+  top: 0
+  left: 0
+  width: $message-listing-width
+  height: calc(100vh - #{$header-height} - #{$title-row-height})
+  overflow: auto
+  
+  .header-row
+    width: 100%
+    max-width: 1000px
+    margin: 0 auto
+    padding: 20px 15px 10px
+    background: white
+    @extend .border-bottom
+    @extend .wgsn-font
+    @extend .text-grey
+
+  .message
+    width: 100%
+    position: relative
+
+    // &:after
+    //   content: ""
+    //   width: 1px
+    //   height: 100%
+    //   background: $xlt-grey
+    //   display: block
+    //   position: absolute
+    //   top: 0
+    //   right: -1px
+    //   opacity: 0
+    
+    .unread-dot
+      width: 10px
+      height: 10px
+      background: $yellow
+      border-radius: 50%
+      margin: 8px 10px 0 0
+
+    .unread-dot + .avatar + .text-container
+      width: calc(100% - 63px)
+
+    .avatar + .text-container
+      width: calc(100% - 42px)
+
+    .icon-trash,
+    .icon-share-right
+      position: absolute
+      top: 20px
+      right: 20px
+      color: $md-grey
+      opacity: 0
+
+      &:hover
+        color: $xdk-grey
+
+    &:hover
+      .icon-trash,
+      .icon-share-right
+        opacity: 1
+
+    &.selected
+      @extend .bg-xlt-grey
+
+      &:after
+        opacity: 1
+
+// MESSAGE CONTENT
+.message-content
+  position: absolute
+  top: 0
+  left: $message-listing-width
+  width: calc(100% - #{$message-listing-width})
+  height: calc(100vh - #{$header-height} - #{$title-row-height})
+
+  .text-container
+    padding: 20px 20px 0
+
+    .bg-white.block-sm
+      max-width: 680px
+
+  .collage
+    padding: 20px

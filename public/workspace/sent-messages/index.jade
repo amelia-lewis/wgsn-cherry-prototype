@@ -1,23 +1,25 @@
 extends ../../layout
 
 block append vars
-  - bodyclass = 'workspace-sent-messages-view'
+  - bodyclass = 'workspace-messaages-view workspace-sent-messages-view product-none'
 
 block prepend title
-  | Sent Messages | 
+  | Sent Messages | Messages | Workspace |
 
 block content
-  include ../../partials/header
+  .page-content.show-left-side-panel
+    
+    //- TITLE ROW
+    .title-row.border-bottom.block-hor-md
+      .block-ver-xs.block-right-xs.pull-left
+        h1.tight.inline-block.multi-line
+          span Workspace
+          | Sent Messages
 
-  .row.title-row.border-bottom
-    .title-block.block-sm.pull-left
-      h2.tight.inline-block WGSN Workspace
-      .block-left-xs.inline-block
-        .block-xxs.inline-block.board-name.hoverable: span Sent Messages
-
-  .row.page-content.show-left-side-panel
+    //- LEFT SIDE PANEL
     include ../../partials/workspace/left-side-panel
     
-    .right-side-panel.bg-grey
-      .btn-left-side-panel.border.hoverable: i.icon.icon-angle-left
-      include ../../partials/workspace/messages-row
+    //- RIGHT SIDE PANEL
+    .right-side-panel
+      include ../../partials/workspace/message-listing
+      include ../../partials/workspace/message-content

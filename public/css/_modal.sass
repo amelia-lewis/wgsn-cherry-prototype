@@ -1,5 +1,5 @@
 .overlay
-  position: absolute
+  position: fixed
   top: 0
   right: 0
   left: 0
@@ -14,31 +14,32 @@
     pointer-events: all
 
 .modal
-  position: absolute
+  position: fixed
   top: 50%
   left: 50%
   width: 580px
   min-height: 100px
   background: white
   @extend .box-shadow
-  +transform(translate3d(-50%, calc(-50% + 20px), 0))
-  +transition(all 300ms)
+  transform: translate3d(-50%, calc(-50% + 10px), 0)
   z-index: 400
   opacity: 0
   pointer-events: none
 
   .modal-header
-    background: $dk-grey
+    background: $xdk-grey
     color: white
     @extend .block-sm
     overflow: auto
     vertical-align: bottom
 
-    p
-      margin: 4px 0 0 6px
+    h3 + p
+      margin: 1px 0 0 6px
+      color: rgba(white, 0.6)
 
     .icon-cross
-      font-size: 18px
+      font-size: 16px
+      line-height: 12px
       opacity: 0.6
 
       &:hover
@@ -55,7 +56,7 @@
   &.show
     opacity: 1
     pointer-events: all
-    +transform(translate3d(-50%, -50%, 0))
+    transform: translate3d(-50%, -50%, 0)
 
 
 // ==================================================
@@ -63,20 +64,17 @@
 // ==================================================
 
 #share-modal
-  .input-container
-    width: calc(100% - 89px)
-    
-    input[type="text"],
-    .icon-container
-      border: none
+  .modal-content
+    > .block-bot-md .block-sm.border .row
+      .col-xs-3
+        padding-right: 0
 
-    input[type="text"]
-      width: calc(100% - 40px)
+      .col-xs-9
+        padding-left: 0
+
+        input
+          border-left: none
   
-  .permission-dropdown
-    height: 100%
-    min-height: 40px
-
   .share-user-container
     height: 36vh
     min-height: 100px
@@ -84,19 +82,10 @@
     overflow: scroll
     
     .share-user
-      padding: 2px
-      
-      .avatar
-        width: 26px
-        height: 26px
-        background: $md-grey no-repeat center / cover
-        border-radius: 50%
-        margin: 3px 6px
-        position: relative
-        @extend .flex-center
-        @extend .pull-left
-        @extend .font-wgsn
-        color: white
+      select
+        height: 35px
+        border: none
+        max-width: 100px
 
       &:last-of-type
         border: none
@@ -107,28 +96,117 @@
 
 
 // ==================================================
-// ADD
+// SAVE
 // ==================================================
 
-#add-modal
-  input[type="text"]
-    width: 100%
+#save-modal
+  .modal-content
+    height: 500px
+    padding: 0
 
-  .image-preview
-    width: 220px
-    height: 220px
-    background: white no-repeat center / contain
-    margin-right: 15px
+    .row
+      margin: 0
+      height: 100%
 
-  textarea
-    width: 314px
-    height: 220px
+    .save-modal-content-container,
+    .save-modal-folder-container
+      height: 100%
+      padding: 15px
+      position: relative
+
+    .save-modal-content-container
+      .img-container
+        img
+          max-width: 260px
+          max-height: 100%
+          margin-bottom: 10px
+
+        .comment-input
+          width: 100%
+          height: 60px
+          min-height: 60px
+
+    .save-modal-folder-container
+      .panel-folders
+        height: 414px
+        position: relative
+        top: auto
+        left: auto
+
+        .accordion-section
+          .accordion-content
+            border-bottom: 1px solid rgba($dk-grey, 0.1)
+
+            .misc-row,
+            .board-row,
+            .person-row,
+            .team-row
+              &:hover
+                .board-name,
+                .icon-user,
+                .icon-caret-right,
+                .icon-caret-down
+                  color: inherit
+
+            .board-row
+              .icon-ellipsis
+                display: none
+
+              .btn.close-modal
+                position: absolute
+                top: calc(50% - 13px)
+                right: 10px
+                opacity: 0
+
+                &:before
+                  content: ""
+                  position: absolute
+                  top: -2px
+                  right: 100%
+                  bottom: -2px
+                  left: -40px
+                  background: -webkit-linear-gradient(left, rgba(white, 0) 0%, rgba(white, 1) 100%)
+                  z-index: -1
+
+              &:hover
+                .btn.close-modal
+                  opacity: 1
+
+        .accordion-section-my-boards
+          .accordion-content
+            > .block-bot-xs.block-hor-sm
+              display: none
+
+          &.open
+            .accordion-content
+              height: 248px
+
+      .modal-create-new-board-container
+        margin-top: -1px
+        position: relative
+
+        input::-webkit-input-placeholder
+          color: $xdk-grey
+          @extend .wgsn-font
+
+        input:focus
+          border-color: $lt-grey
+
+        .btn.close-modal
+          position: absolute
+          top: calc(50% - 13px)
+          right: 5px
+          opacity: 0
+
+        input:focus + .btn.close-modal
+          opacity: 1
+
+  .modal-footer
+    display: none
 
   &.add-multiple-files
-    .image-preview
+    img
       display: none
-
-    .text-container,
     textarea
       width: 100%
       height: 120px
@@ -139,20 +217,8 @@
 // ==================================================
 
 #send-modal
-  input[type="text"]
-    width: 100%
-
-  // .image-preview
-  //   width: 220px
-  //   height: 220px
-  //   background: white no-repeat center / contain
-
-  // .block-left-sm
-  //   width: calc(100% - 220px)
-
   textarea
-    width: 100%
-    height: 171px
+    height: 120px
 
 
 // ==================================================
@@ -176,10 +242,10 @@
 
     &.active
       .layout-tile-container
-        border-color: $dk-grey
+        border-color: $xdk-grey
 
         .block
-          background: $dk-grey
+          background: $xdk-grey
 
     &.pp-1
       .block
@@ -244,11 +310,51 @@
 
 
 // ==================================================
+// DOWNLOAD
+// ==================================================
+
+#download-modal
+  top: auto
+  bottom: 0
+  right: 20px
+  left: auto
+  width: 400px
+  transform: translate3d(0, 100%, 0)
+
+  &.show
+    transform: translate3d(0, 0, 0)
+
+  &.minimise
+    transform: translate3d(0, calc(100% - 46px), 0)
+
+  .modal-content
+    padding: 0 10px
+
+    .row:last-of-type
+      border: none
+
+  .download-row
+    position: relative
+  
+    .download-status-bar
+      position: absolute
+      top: 0
+      left: 0
+      height: 100%
+      background: $xlt-grey
+      z-index: -1
+
+  .modal-footer
+    display: none
+
+
+// ==================================================
 // SIMPLE MODALS
 // ==================================================
 
 .simple-modal
   width: 400px
 
-  input[type="text"]
-    width: 100%
+  .modal-header
+    p
+      display: none

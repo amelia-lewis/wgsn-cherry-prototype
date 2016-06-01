@@ -1,0 +1,27 @@
+extends ../../layout
+
+block append vars
+  - bodyclass = 'workspace-view workspace-trash-view product-none'
+
+block prepend title
+  | Trash | Workspace | 
+
+block content
+  .page-content.show-left-side-panel
+    include ../../partials/workspace/left-side-panel
+    
+    .right-side-panel
+      .title-row.border-bottom.block-hor-md
+        .block-ver-xs.block-right-xs.pull-left
+          h1.tight.inline-block.multi-line
+            span Workspace
+            | Trash
+          h4.text-grey.inline-block &nbsp;&nbsp;&nbsp; 452 items
+
+        .utility-block.pull-right
+          .block-ver-xs
+            .btn.btn-white.has-tooltip.tooltip-left(data-tooltip="This will empty all of your trash") Empty trash
+
+        include ../../partials/floating-utility-row
+
+      include ../../partials/images-row

@@ -1,0 +1,104 @@
+.accordion-section.filter
+  .accordion-content
+    border-color: $lt-grey
+    
+    ul
+      // height: 192px
+      @extend .block-hor-sm
+      @extend .block-bot-sm
+      display: flex
+      flex-direction: column
+      border-bottom: 1px solid rgba($lt-grey, 0.25)
+
+      li
+        width: 100%
+        @extend .tight
+
+        &:first-of-type
+          margin-top: 5px
+
+        &:last-of-type
+          margin-bottom: 0
+
+        span
+          display: inline-block
+          width: calc(100% - 30px)
+          line-height: 1.4em
+
+        &:last-of-type
+          label.checkbox-radio
+            margin-bottom: 0px
+
+  &.open
+    // .accordion-title span,
+    // .accordion-title i
+    //   color: white
+
+    .accordion-content
+      height: auto
+
+
+// ==================================================
+
+
+.filter-extended
+  width: 80vw
+  max-width: 1000px
+
+  .col-xs-8
+    position: relative
+    height: 36px
+
+  .filter-extended-anchors
+    position: absolute
+    top: 50%
+    left: 10px
+    transform: translate3d(0, -50%, 0)
+
+    .anchor-letter
+      @extend .hoverable
+      @extend .inline-block
+      @extend .wgsn-font
+      margin: 5px 15px 5px 0
+      border-radius: 50%
+
+      &:hover,
+      &.active,
+      &:first-of-type
+        color: $fashion
+
+  .filter-extended-list
+    width: 100%
+    height: 50vh
+    @extend .block-top-sm
+    overflow-x: auto
+    overflow-y: hidden
+    display: flex
+    flex-direction: column
+    flex-wrap: wrap
+    
+    li
+      width: 200px
+      margin: 0
+      // margin-bottom: 10px
+      
+      span
+        display: inline-block
+        width: calc(100% - 30px)
+        line-height: 1.4em
+
+    .filter-extended-subheading
+      @extend .wgsn-font
+      margin-bottom: 10px
+
+  .hierarchical-list
+    .filter-extended-list
+      overflow: hidden
+      flex-wrap: nowrap
+      padding: 0
+
+      li
+        width: 100%
+
+        span
+          width: calc(100% - 60px)

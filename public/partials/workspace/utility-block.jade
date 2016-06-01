@@ -1,0 +1,16 @@
+.utility-block.pull-right  
+  .flex-center.pull-left
+    input.search-input(type="text", placeholder="Search this board")
+
+  .flex-center.pull-left.block-left-sm.btn-view-option-container
+    .btn-view-option.disabled.btn-view-option-sm: i.icon.icon-grid-sm
+    .btn-view-option.btn-view-option-md: i.icon.icon-grid-md
+    .btn-view-option.disabled.btn-view-option-lg: i.icon.icon-grid-lg
+    .btn-view-option.disabled.btn-view-option-details: i.icon.icon-grid-details
+
+  .flex-center.pull-left.block-left-sm
+    .pull-left.flex-center.hoverable.btn-settings
+      i.icon.icon-gear
+      include ../../partials/context-menus/utility-row-settings-context-menu
+    
+    .pull-left.flex-center.hoverable.btn-comments: i.icon.icon-comment

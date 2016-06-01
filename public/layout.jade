@@ -9,6 +9,7 @@ html
         = locals.name
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.0.0/normalize.min.css")
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/flexboxgrid/6.3.0/flexboxgrid.min.css" type="text/css")
     //- link(rel="stylesheet", type="text/css", href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css")
     link(rel="stylesheet", href="/css/main.css")
     link(href="https://file.myfontastic.com/VeyjPfaKqwcaCVK6kquFB4/icons.css", rel="stylesheet")
@@ -16,15 +17,20 @@ html
     link(rel="shortcut icon", type="image/x-icon", href=locals.url + "/img/favicon.ico")
   
   body(class=bodyclass)
+    include partials/header
+
     block content
 
     a.btn-back-to-top(href="#0"): i.icon.icon-angle-up
     
     .overlay
-    include partials/item-detail-modal
+    include partials/item-detail-modal/item-detail-modal
     
     include partials/modals/share
-    include partials/modals/add
+    include partials/modals/save
+    include partials/modals/move
+    include partials/modals/download
+    include partials/modals/copy
     include partials/modals/send
     include partials/modals/print
     
@@ -32,6 +38,8 @@ html
     include partials/modals/save-search
     include partials/modals/duplicate-board
     include partials/modals/rename-board
+
+    include partials/image-library/filter-extended
     
     include partials/context-menus/floating-item-context-menu
     include partials/context-menus/floating-board-context-menu
@@ -39,4 +47,21 @@ html
     include partials/context-menus/notifications
     include partials/context-menus/message-notifications
 
+    .mobile-warning.block-md.text-center.flex-center
+      h2
+        | Soo this is awkward... but you're going to need to get a bigger screen.
+        br
+        br
+        br
+        | &hearts; from Amelia &#9786;
+
     include partials/scripts
+
+
+//-   ,__ __                      _             ___,                  _           
+//-  /|  |  |           |        | |           /   |                 | | o        
+//-   |  |  |   __,   __|   _    | |          |    |   _  _  _    _  | |     __,  
+//-   |  |  |  /  |  /  |  |/    |/ \_|   |   |    |  / |/ |/ |  |/  |/  |  /  |  
+//-   |  |  |_/\_/|_/\_/|_/|__/   \_/  \_/|/   \__/\_/  |  |  |_/|__/|__/|_/\_/|_/
+//-                                      /|                                       
+//-                                      \|                                     

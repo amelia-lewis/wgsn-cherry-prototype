@@ -1,11 +1,10 @@
 ul.tagit
   @extend .border
-  background: $xlt-grey
-  color: $dk-grey
+  background: white
+  color: $xdk-grey
   padding: 4px 4px 2px 4px
   margin: 0
   min-height: 40px
-  // +border-radius(3px)
   overflow: auto
 
   &:hover
@@ -23,11 +22,11 @@ ul.tagit
       padding: 5px 24px 4px 10px
       position: relative
       @extend .no-transition
-      +border-radius(3px)
+      border-radius: 3px
 
       &:hover
         border-color: $md-grey
-        +transition(border-color 300ms)
+        transition: border-color 300ms
 
       a.tagit-label
         text-decoration: none

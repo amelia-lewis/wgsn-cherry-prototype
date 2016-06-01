@@ -1,279 +1,194 @@
 .left-side-panel
-  width: $left-side-panel-width
-  position: absolute
-  top: 0
-  left: 0
-  overflow: hidden
-  display: none
-  z-index: 300
-  color: darken($md-grey, 25)
+  .btn-left-side-panel
+    position: absolute
+    left: calc(100% - 1px)
+    top: calc(50% - 20px)
+    width: 12px
+    height: 40px
+    font-size: 10px
+    border-radius: 0 3px 3px 0
+    @extend .bg-white
+    @extend .border
+    border-left: none
+    @extend .flex-center
+    @extend .hoverable
+
+    .icon
+      display: block
+      transform: translate3d(0, 0, 0) rotate(180deg)
 
   .scroll-container
     height: 100%
     overflow-y: auto
-  
-  .icon
-    margin: 0 10px 0 0
 
-  .icon-caret-right,
-  .icon-caret-down
-    margin: 0 4px 0 0
+  // TABS
+  // .tabs
+  //   position: relative
+  //   height: 46px
+  //   border-bottom: 1px solid rgba(white, 0.1)
+  //   margin: 0
 
-  .tabs
-    position: relative
-    height: 56px
-    @extend .border-bottom
+  //   .col-xs-6
+  //     padding: 0
 
-    .col-xs-6:first-of-type
-      .tab
-        &:after
-          content: ""
-          display: block
-          position: absolute
-          bottom: 0
-          left: 0
-          background: $fashion
-          width: 100%
-          height: 4px
-          +transform(translate3d(0, 0, 0))
-          +transition(all 400ms)
+  //   .tab
+  //     height: 46px
+  //     @extend .flex-center
+  //     @extend .no-transition
 
-        &:not(.active)
-          &:after
-            +transform(translate3d(100%, 0, 0))
+  //     .icon
+  //       margin: 0 6px 0 0
 
-    .tab
-      height: 56px
-      @extend .flex-center
-      @extend .no-transition
+  //     &.active
+  //       color: white
 
-      // span
-      //   @extend .no-transition
+  //   .col-xs-6:first-of-type
+  //     .tab
+  //       &:after
+  //         content: ""
+  //         display: block
+  //         position: absolute
+  //         bottom: 0
+  //         left: 0
+  //         background: white
+  //         width: 100%
+  //         height: 1px
+  //         transform: translate3d(0, 0, 0)
+  //         transition: all 400ms
 
-      &.active
-        // border-bottom: 4px solid $fashion
-        color: $fashion
+  //       &:not(.active)
+  //         &:after
+  //           transform: translate3d(100%, 0, 0)
 
   .inbox-number
-    background: $label-red
+    background: $yellow
     color: white
+    @extend .wgsn-font
     border-radius: 50%
     width: 16px
     height: 16px
-    font-size: 10px
     margin: 1px
     @extend .flex-center
 
-  .header-row
-    padding: 10px 12px
-    display: block
+// FILTERS & FOLDERS PANELS
+.panel-filters,
+.panel-folders
+  @extend .bg-white
+  @extend .border-right
+  height: 100%
+  position: relative
+  @extend .block-hor-xxs
+  position: absolute
+  top: 0
+  left: 0
+  transform: translate3d(0, 0, 0)
 
-    &.active
-      background: rgba($lt-grey, 0.3)
-
-    .icon-angle-up
-      margin: 0
-
-  .btn-sent-messages
-    .icon-arrow-right
-      font-size: 0.5em
-      position: absolute
-      top: 10px
-      left: 24px
-
-  .misc-row,
-  .board-row,
-  .person-row,
-  .team-row
-    display: block
-    position: relative
-    padding: 6px 12px
-    color: $md-grey
-
-    .board-name
-      display: inline-block
-      // width: 100px
-      white-space: nowrap
-      overflow: hidden
-      text-overflow: ellipsis
-      margin: 0 0 -3px 0
-
-    .board-number
-      display: inline-block
-      color: rgba($md-grey, 0.4)
-      margin: 0 0 0 6px
-
-    &:hover
-      background: rgba($lt-grey, 0.15)
-      
-      .board-name,
-      .icon
-        color: $dk-grey
-
-    &.active
-      background: rgba($lt-grey, 0.3)
-
-      .board-name,
-      .icon
-        color: $dk-grey
-
-      &:hover
-        background: rgba($lt-grey, 0.4)
-
-    &:first-of-type,
-    &:last-of-type
-      border: none
-
-    &.label-red
-      .icon-folder,
-      .icon-folder-shared
-        color: $label-red
-
-    &.label-orange
-      .icon-folder,
-      .icon-folder-shared
-        color: $label-orange
-
-    &.label-yellow
-      .icon-folder,
-      .icon-folder-shared
-        color: $label-yellow
-
-    &.label-green
-      .icon-folder,
-      .icon-folder-shared
-        color: $label-green
-
-    &.label-blue
-      .icon-folder,
-      .icon-folder-shared
-        color: $label-blue
-
-    &.label-purple
-      .icon-folder,
-      .icon-folder-shared
-        color: $label-purple
-
-    @for $i from 1 through 6
-      &.level-#{$i}
-        padding-left: 12px + (20px * ($i - 1))
-
-        .board-name
-          max-width: calc(100% - (80px + (#{$i} * 5px)))
-
-    .icon-ellipsis
-      opacity: 0
-      position: absolute
-      top: 8px
-      right: 6px
-
-    &:hover
-      cursor: pointer
-      
-      .icon-ellipsis
-        opacity: 1
-
-  .panel-filters,
-  .panel-folders
-    height: calc(100% - 56px)
-    position: relative
-
-    .board-preview
-      position: fixed
-      bottom: 0
-      left: 0
-      width: calc(#{$left-side-panel-width} - 1px)
-      height: 330px
-
-      .icon-double-angle-down
-        margin: 0
-        +transform(translate3d(0, 0, 0) rotate(0deg))
-
-      &.closed
-        +transform(translate3d(0, 294px, 0))
-
-        .icon-double-angle-down
-          +transform(translate3d(0, 0, 0) rotate(180deg))
-
-      &.open
-        +transform(translate3d(0, 0, 0))
-
-        .icon-double-angle-down
-          +transform(translate3d(0, 0, 0) rotate(0deg))
-
-      .scroll-container
-        height: 294px
-        overflow: auto
-
-        .img
-          width: 68px
-          height: 68px
-          background: white no-repeat center / contain
-          margin: 2px
-
-  .panel-filters
-    .scroll-container
-      height: calc(100% - 51px)
+  .icon
+    margin: 0 10px 0 0
+  
+  // ACCORDION SECTIONS
+  .accordion-section
+    .accordion-title
+      display: block
+      padding: 14px 15px
+      @extend .hoverable
     
-    .filter-btn
+    .accordion-content
+      @extend .border-bottom
+      overflow: hidden
       position: relative
 
+      .accordion-footer
+        padding: 14px 12px
+
+    &.closed
+      .accordion-content
+        height: 0
+
+  .accordion-section-favourites,
+  .accordion-section-mobile
+    .accordion-title
+      @extend .border-bottom
+
+  // ACCORDION SECTION PANEL HEIGHTS
+  .accordion-section-messages.open
+    .accordion-content
+      height: 67px
+
+  .accordion-section-recent-boards.open // this is actually used in the save modal, just putting it here
+    .accordion-content
+      height: 133px
+
+  .accordion-section-my-boards.open
+    .accordion-content
+      height: 318px
+
+  .accordion-section-shared-boards.open
+    .accordion-content
+      height: 564px
+
+  .accordion-section-trash.open
+    .accordion-content
+      height: 129px
+
+// FILTERS PANEL
+.panel-filters
+  .scroll-container
+    padding-bottom: 50px // to allow space for the access workspace button
+  
+  .filter-btn
+    position: relative
+    padding: 10px 12px
+    // border-bottom: 1px solid rgba(white, 0.1)
+
+    &:hover
+      background: rgba(white, 0.05)
+
+    &.active
+      background: rgba(white, 0.05)
+
       &:hover
-        background: rgba($lt-grey, 0.15)
+        background: rgba($lt-grey, 0.1)
+      
+      span, i
+        color: white
 
-      &.active
-        background: rgba($lt-grey, 0.3)
+      &:after
+        content: ""
+        position: absolute
+        top: 0
+        right: -1px
+        background: white
+        height: 100%
+        width: 1px
 
-        &:hover
-          background: rgba($lt-grey, 0.4)
-        
-        span, i
-          color: $fashion
+// FOLDERS PANEL
+.panel-folders
+  .btn-access-workspace
+    position: absolute
+    bottom: 0
+    left: 100%
+    transform: translate3d(0, 0, 0)
+    white-space: nowrap
+    @extend .bg-xlt-grey
+    box-shadow: 2px 0 10px rgba(black, 0)
+    @extend .border-top
+    @extend .border-right
 
-        &:after
-          content: ""
-          position: absolute
-          top: 0
-          right: -1px
-          background: white
-          height: 100%
-          width: 1px
+    .icon
+      margin: 0 0 0 10px
 
-  .panel-folders
-    display: none
+// ACTIVE STATES
+body.workspace-autumn-winter-2016-view
+  a.board-row.autumn-winter-2016
+    @extend .active
 
-    .scroll-container
-      height: calc(100% - 35px)
+body.workspace-balmain-2016-view
+  a.board-row.balmain-2016
+    @extend .active
 
-    &.board-preview-open
-      > .scroll-container
-        height: calc(100% - 330px)
-
-
-  // tabs show/hide
-  &.image-library-filters-active
-    .panel-filters
-      display: block
-
-    .panel-folders
-      display: none
-
-  &.image-library-folders-active
-    .panel-filters
-      display: none
-
-    .panel-folders
-      display: block
-
-body.image-library-view
-  .left-side-panel
-    height: calc(100vh - #{$header-height} - #{$title-row-height})
-
-body.workspace-view
-  .left-side-panel
-    height: calc(100vh - #{$header-height} - #{$title-row-height} + #{$product-row-height})
-
-  a.board-row
+body.workspace-inspiration-images-view
+  a.board-row.inspiration-images
     @extend .active
 
 body.workspace-inbox-view
@@ -288,5 +203,29 @@ body.workspace-sent-messages-view
 
 body.workspace-favourites-view
   .left-side-panel
-    .btn-favourites
+    .content-favourites a.misc-row
       @extend .active
+
+body.image-library-view
+  .left-side-panel
+    .panel-folders
+      box-shadow: 2px 0 10px rgba(black, 0)
+      transform: translate3d(calc(-1 * #{$left-side-panel-width}), 0, 0)
+      z-index: 320
+
+    &.show-workspace-panel
+      .panel-folders
+        box-shadow: 2px 0 10px rgba(black, 0.1)
+        transform: translate3d(0, 0, 0)
+
+      .btn-access-workspace
+        @extend .bg-white
+        border-color: transparent
+        box-shadow: 2px 0 10px rgba(black, 0.1)
+        
+        .icon
+          margin: 0
+
+        span
+          width: 0
+          color: transparent

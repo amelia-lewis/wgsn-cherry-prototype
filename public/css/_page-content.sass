@@ -1,39 +1,51 @@
 .page-content
-  position: absolute
+  position: fixed
+  top: $header-height
   width: 100%
+  height: $page-content-height
+  overflow: hidden
+
+  .left-side-panel,
+  .right-side-panel
+    position: absolute
+    height: calc(100% - #{$title-row-height})
+    top: $title-row-height
+    left: 0
+
+  .left-side-panel
+    width: $left-side-panel-width
+    transform: translate3d(-100%, 0, 0)
+    z-index: 100
 
   .right-side-panel
-    left: 0
+    position: absolute
     right: 0
+    @extend .bg-xlt-grey
 
   &.show-left-side-panel
     .right-side-panel
       left: $left-side-panel-width
 
-    .left-side-panel
-      display: block
+    .filter-row
+      width: calc(100vw - #{$left-side-panel-width})
 
-    .filter
-      display: block
+    .left-side-panel
+      transform: translate3d(0, 0, 0)
 
     .btn-left-side-panel 
       .icon
-        +transform(translate3d(0, 0, 0) rotate(0deg))
+        transform: translate3d(0, 0, 0) rotate(0deg)
 
   &.show-comments-panel
     .right-side-panel
       right: $comments-panel-width
 
     .comments-panel
-      display: block
+      transform: translate3d(0, 0, 0)
 
-body.image-library-view
+body.workspace-view
   .page-content
-    top: $header-height + $title-row-height
-
-body.workspace-view,
-body.workspace-inbox-view,
-body.workspace-sent-messages-view,
-body.workspace-favourites-view
-  .page-content
-    top: $header-height - $product-row-height + $title-row-height
+    .left-side-panel,
+    .right-side-panel
+      top: 0
+      height: 100%

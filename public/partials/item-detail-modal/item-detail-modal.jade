@@ -1,0 +1,71 @@
+//- .item-detail-modal-controls
+//-   i.icon.icon-angle-left.hoverable
+//-   i.icon.icon-angle-right.hoverable
+
+.modal#item-detail-modal
+  .modal-report-tabs.bg-white.border-bottom.no-transition.hidden-file-type-image.hidden-file-type-video.hidden-file-type-colour-card
+    ul.tab-nav-alt
+      li.tab-nav-tab.active Report 1
+      li.tab-nav-tab Report 2
+      li.tab-nav-tab Report 3
+      li.tab-nav-tab Report 4
+      li.tab-nav-tab Report 5
+
+  .modal-info-bar.bg-white.border-bottom.no-transition
+    .pull-left.block-hor-sm
+      span Balmain
+      span.block-hor-xs /
+      span Autumn/Winter 2016
+      span.block-hor-xs /
+      span Paris
+
+    .pull-right
+      .block-hor-sm.pull-left: span 2/10
+      .btn-modal-nav.border-left.pull-left.flex-center.hoverable: i.icon.icon-angle-left
+      .btn-modal-nav.border-left.pull-left.flex-center.hoverable: i.icon.icon-angle-right
+
+  .modal-image-panel.bg-xlt-grey
+    .img
+    i.file-heart.icon.icon-heart-o.hoverable
+    i.icon.icon-cross.btn-close-fullscreen.hoverable
+    
+    .modal-page-controls.overflow-auto.hoverable.hidden-file-type-image.hidden-file-type-video.hidden-file-type-colour-card
+      .modal-page-left.pull-left: i.icon.icon-angle-left
+      .modal-page-right.pull-right: i.icon.icon-angle-right
+    
+    .modal-zoom-controls.hoverable.hidden-file-type-report.hidden-file-type-video.hidden-file-type-colour-card
+      .modal-zoom-in: i.icon.icon-zoom-plus
+      .modal-zoom-out: i.icon.icon-zoom-minus
+
+  .modal-bottom-panel
+    .modal-bottom-panel-tabs.bg-white.border-top.border-bottom
+      i.icon.icon-angle-up.pull-left.hoverable
+      ul.tab-nav-alt.pull-left
+        li.tab-nav-tab.active This folder
+        li.tab-nav-tab.hidden-file-type-report.hidden-file-type-video.hidden-file-type-colour-card Related Images
+        li.tab-nav-tab.hidden-file-type-report.hidden-file-type-video.hidden-file-type-colour-card Reports with this image
+        li.tab-nav-tab.hidden-file-type-image.hidden-file-type-video.hidden-file-type-colour-card Images in this report
+
+      .pull-right: include ../wgsn-logo
+
+    .modal-bottom-panel-content.bg-white.border-bottom
+      include related-images
+
+  include page-list
+  include info
+  include comments
+
+  .modal-tool-panel.bg-white.border-left
+    .btn-modal-tool.border-bottom.close-modal: i.icon.icon-cross
+    .btn-modal-tool.btn-fullscreen: i.icon.icon-fullscreen
+    .btn-modal-tool.btn-modal-info: i.icon.icon-info-circle
+    .btn-modal-tool.btn-modal-page-list.hidden-file-type-image.hidden-file-type-video.hidden-file-type-colour-card: i.icon.icon-list
+    .btn-modal-tool.hidden-file-type-image.hidden-file-type-video.hidden-file-type-colour-card: i.icon.icon-lang-en
+    .btn-modal-tool.btn-save.border-top: i.icon.icon-plus-circle
+    .btn-modal-tool.btn-download: i.icon.icon-download
+    .btn-modal-tool.btn-print.hidden-file-type-video: i.icon.icon-print
+    .btn-modal-tool.btn-crop.hidden-file-type-report.hidden-file-type-video.hidden-file-type-colour-card: i.icon.icon-crop
+    .btn-modal-tool.btn-send: i.icon.icon-paper-plane
+    .btn-modal-tool.btn-modal-comments.border-top.border-bottom: i.icon.icon-comment
+
+  .modal-overlay

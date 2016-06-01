@@ -1,195 +1,102 @@
+//- ============================================================
+//- MODAL CONTROLS
+//- ============================================================
+
+.item-detail-modal-controls
+  display: none
+  
+  .icon-angle-left,
+  .icon-angle-right
+    position: absolute
+    color: white
+    font-size: 16px
+    top: 50%
+    transform: translate3d(0, -50%, 0)
+    z-index: 350
+
+  .icon-angle-left
+    left: 10px
+
+  .icon-angle-right
+    right: 10px
+
+  &.show
+    display: block
+
 #item-detail-modal
   position: absolute
   top: 50%
   left: 50%
-  width: calc(100vw - 40px)
-  height: calc(100vh - 40px)
+  width: calc(100% - 40px)
+  height: calc(100% - 40px)
   background: white
   @extend .box-shadow
   z-index: 380
   opacity: 0
-  +transform(translate3d(-50%, calc(-50% + 20px), 0))
-  +transition(all 300ms)
+  transform: translate3d(-50%, calc(-50% + 10px), 0)
   pointer-events: none
+  overflow: hidden
 
   &.show
     opacity: 1
-    +transform(translate3d(-50%, -50%, 0))
+    transform: translate3d(-50%, -50%, 0)
     pointer-events: all
-
-  
-  //- ============================================================
-  //- MODAL CONTROLS
-  //- ============================================================
-
-  .modal-controls
-    .icon-cross,
-    .icon-angle-left,
-    .icon-angle-right
-      position: absolute
-      color: white
-      font-size: 16px
-
-      &:hover
-        cursor: pointer
-
-    .icon-cross
-      top: -24px
-      right: 0
-
-    .icon-angle-left
-      top: 50%
-      left: -24px
-
-    .icon-angle-right
-      top: 50%
-      right: -24px
 
   
   //- ============================================================
   //- PANELS
   //- ============================================================
 
-  .modal-info-panel,
-  .modal-image-panel,
-  .modal-tool-panel
+  $modal-tool-panel-width: 40px
+  $modal-comments-panel-width: 260px
+  $modal-bottom-panel-content-height: 150px
+
+
+  //- ============================================================
+  //- REPORT GROUP TABS
+  //- ============================================================
+  
+  .modal-report-tabs
     position: absolute
     top: 0
-    bottom: 0
-
-  $modal-info-panel-width: 480px
-  $modal-tool-panel-width: 50px
-  $modal-info-caption-height: 222px
-
-  
-  //- ============================================================
-  //- INFO PANEL
-  //- ============================================================
-
-  .modal-info-panel
     left: 0
-    width: $modal-info-panel-width
-    display: none
+    width: calc(100% - #{$modal-tool-panel-width})
+    height: $modal-tool-panel-width
 
-    // top section
-    .modal-section-caption
-      height: $modal-info-caption-height
-      
-      ul
-        .modal-file-name
-          font-size: 20px
+    .tab-nav-tab
+      padding-top: 13px
+      padding-bottom: 13px
 
-    // bottom section
-    .modal-section-other
-      .modal-tabs
-        .tab
-          height: 40px
-          @extend .flex-center
-          @extend .no-transition
 
-          &.active
-            background: white
-            border-bottom-color: transparent
-      
-      .modal-scroll-container
-        overflow-y: auto
-        height: calc((100vh - 60px) - #{$modal-info-caption-height} - 20px - 15px) // height of modal - caption - tabs - comment input - borders
-      
-      .modal-comments
-        .modal-scroll-container
-          height: calc((100vh - 60px) - #{$modal-info-caption-height} - 40px - 84px - 15px) // height of modal - caption - tabs - comment input - borders
-        
-        .comment
-          overflow: auto
+  //- ============================================================
+  //- INFO BAR
+  //- ============================================================
 
-          &:last-of-type
-            border: none
-          
-          .avatar
-            float: left
-            width: 32px
-            height: 32px
-            background: $md-grey no-repeat center / cover
-            color: white
-            border-radius: 50%
-            @extend .flex-center
-            @extend .font-wgsn
-            font-size: 10px
+  .modal-info-bar
+    position: absolute
+    top: 0
+    left: 0
+    width: calc(100% - #{$modal-tool-panel-width})
+    height: $modal-tool-panel-width
+    // color: $md-grey
 
-          .text
-            float: left
-            width: calc(100% - 42px)
+    span
+      @extend .wgsn-font
+      @extend .inline-block
+      margin: 13px 0 0 0
 
-            .comment-time
-              font-size: 11px
-              color: $md-grey
-
-        .comment-input
-          position: absolute
-          bottom: 0
-          left: 0
-          width: 100%
-
-          textarea
-            width: 100%
-            height: 80px
-
-      .modal-related-images
-        .img
-          width: 100px
-          height: 100px
-          background: white no-repeat center / contain
-
-      .modal-related-reports
-        .related-report
-          width: 50%
-          
-          .img
-            width: 100%
-            height: 140px
-            background: white no-repeat center / cover
-
-      // tabs show/hide
-      &.show-comments
-        .btn-modal-show-comments
-          @extend .active
-
-        .modal-comments
-          display: block
-
-        .modal-related-images,
-        .modal-related-reports
-          display: none
-
-      &.show-related-images
-        .btn-modal-show-related-images
-          @extend .active
-
-        .modal-related-images
-          display: block
-
-        .modal-comments,
-        .modal-related-reports
-          display: none
-
-      &.show-related-reports
-        .btn-modal-show-related-reports
-          @extend .active
-
-        .modal-related-reports
-          display: block
-
-        .modal-comments,
-        .modal-related-images
-          display: none
-
+    .btn-modal-nav
+      width: $modal-tool-panel-width
+      height: $modal-tool-panel-width
   
   //- ============================================================
   //- IMAGE PANEL
   //- ============================================================
 
   .modal-image-panel
-    background: $dk-grey
+    position: absolute
+    top: $modal-tool-panel-width
+    bottom: $modal-tool-panel-width
     left: 0
     right: $modal-tool-panel-width
 
@@ -198,24 +105,6 @@
       height: 100%
       background: no-repeat center / contain
       @extend .no-transition
-
-    .btn-modal-left-side-panel
-      position: absolute
-      background: white
-      border-left: none
-      left: -1px
-      top: 20px
-      width: 12px
-      height: 40px
-      padding: 12px 0
-      color: $dk-grey
-      font-size: 10px
-      border-radius: 0 2px 2px 0
-
-      .icon
-        display: block
-        +transform(translate3d(0, 0, 0) rotate(180deg))
-        @extend .no-transition
 
     .file-heart,
     .btn-close-fullscreen
@@ -235,73 +124,246 @@
       opacity: 0
       pointer-events: none
 
-    .modal-arrow-left,
-    .modal-arrow-right
+    // MODAL PAGE CONTROLS (for reports) & ZOOM CONTROLS (for images)
+    .modal-page-controls,
+    .modal-zoom-controls
       position: absolute
+      opacity: 0
+      transform: translate3d(0, 0, 0)
+
+    .modal-page-controls
       top: calc(50% - 20px)
-      color: white
-      font-size: 16px
-      background: rgba(black, 0.2)
-      @extend .flex-center
-      width: 40px
-      height: 40px
+      width: calc(100% - 40px)
+      left: 20px
 
-      &:hover
-        background: rgba(black, 0.4)
-
-    .modal-arrow-left
-      left: 0
-
-    .modal-arrow-right
+    .modal-zoom-controls
+      bottom: 0
       right: 0
 
+      .modal-zoom-in,
+      .modal-zoom-out
+        margin: 0 -1px -1px 0
+
+    .modal-page-left,
+    .modal-page-right,
+    .modal-zoom-in,
+    .modal-zoom-out
+      font-size: 16px
+      background: rgba(white, 0.8)
+      @extend .border
+      width: 40px
+      height: 40px
+      padding: 11px 12px
+      @extend .inline-block
+
+      &:hover
+        background: rgba(white, 1)
+
+    &:hover
+      .modal-page-controls,
+      .modal-zoom-controls
+        opacity: 1
+
+  &.show-bottom-panel
+    .modal-image-panel
+      bottom: $modal-bottom-panel-content-height + $modal-tool-panel-width
+
+  &.show-comments-panel,
+  &.show-info-panel,
+  &.show-page-list-panel
+    .modal-image-panel
+      right: $modal-tool-panel-width + $modal-comments-panel-width
+
+  //- ============================================================
+  //- BOTTOM PANEL
+  //- ============================================================
+
+  .modal-bottom-panel
+    position: absolute
+    bottom: 0
+    left: 0
+    width: calc(100% - #{$modal-tool-panel-width})
+    height: $modal-bottom-panel-content-height + $modal-tool-panel-width
+    transform: translate3d(0, $modal-bottom-panel-content-height, 0)
+
+    .icon-angle-up
+      margin: 12px
+      transform: translate3d(0, 0, 0) rotate(0deg)
+
+    .modal-bottom-panel-tabs
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: $modal-tool-panel-width
+
+      .tab-nav-tab
+        padding-top: 13px
+        padding-bottom: 13px
+        border-top: none
+
+    svg
+      width: 52px
+      height: 12px
+      margin: 13px 10px 0 0
+      fill: $md-grey
+
+    .modal-bottom-panel-content
+      position: absolute
+      top: $modal-tool-panel-width
+      left: 0
+      width: 100%
+      height: $modal-bottom-panel-content-height
+
+      .modal-hor-scroll-container
+        width: 100%
+        height: $modal-bottom-panel-content-height
+        overflow-x: auto
+        overflow-y: hidden
+        white-space: nowrap
+
+        img
+          height: calc(#{$modal-bottom-panel-content-height} - 20px)
+
+  &.show-bottom-panel
+    .modal-bottom-panel
+      transform: translate3d(0, 0, 0)
+
+      .icon-angle-up
+        transform: translate3d(0, 0, 0) rotate(180deg)
   
+
   //- ============================================================
   //- TOOL PANEL
   //- ============================================================
 
   .modal-tool-panel
+    position: absolute
+    top: 0
+    bottom: 0
     right: 0
     width: $modal-tool-panel-width
+    @extend .no-transition
 
     .btn-modal-tool
-      font-size: 16px
+      font-size: 14px
+      width: $modal-tool-panel-width
+      height: $modal-tool-panel-width
+      @extend .flex-center
+      @extend .hoverable
+      position: relative
+      border-color: $lt-grey
+
+      &:after
+        content: ""
+        width: 1px
+        height: calc(#{$modal-tool-panel-width} - 2px)
+        background: white
+        display: block
+        position: absolute
+        top: 0
+        left: -1px
+        opacity: 0
       
       .icon
-        color: $md-grey
+        color: $dk-grey
       
       &:hover
         .icon
-          color: $dk-grey
+          color: $xdk-grey
 
-      &.active
-        background: $dk-grey
+      &.btn-modal-page-list,
+      &.btn-modal-info,
+      &.btn-modal-comments
+        &.active
+          background: white
+          @extend .border-top
+          @extend .border-bottom
 
-        .icon
-          color: white
+          &:after
+            opacity: 1
 
-    .item-count
-      position: absolute
-      bottom: 10px
-      right: 0
-      width: 100%
-      font-size: 12px
+          .icon
+            color: $xdk-grey
 
+
+  //- ============================================================
+  //- COMMENTS PANEL, INFO PANEL & REPORT PAGES PANEL
+  //- ============================================================
+
+  .modal-comments-panel,
+  .modal-info-panel,
+  .modal-page-list-panel
+    position: absolute
+    top: $modal-tool-panel-width
+    right: $modal-tool-panel-width
+    bottom: $modal-tool-panel-width
+    width: $modal-comments-panel-width
+    transform: translate3d($modal-comments-panel-width, 0, 0)
+
+    .scroll-container
+      height: 100%
+      overflow-y: auto
+
+    .comment
+      .icon-trash
+        opacity: 0
+        margin-top: 4px
+
+      &:hover
+        .icon-trash
+          opacity: 1
   
-  //- ============================================================
-  //- TOGGLE INFO PANEL
-  //- ============================================================
+      &:last-of-type
+        border-bottom: none
 
-  &.show-left-side-panel
+    .report-page
+      img
+        width: 83px
+        height: 60px
+        background: $md-grey
+
+      .text-container
+        width: calc(100% - 93px)
+        height: 60px
+        display: flex
+        align-items: center
+        justify-content: flex-start
+
+      &:hover
+        .text-container span
+          color: $fashion
+
+  .modal-comments-panel
+    .scroll-container
+      height: calc(100% - 101px)
+
+  &.show-bottom-panel
+    .modal-comments-panel,
+    .modal-info-panel,
+    .modal-page-list-panel
+      bottom: $modal-bottom-panel-content-height + $modal-tool-panel-width
+
+  &.show-comments-panel
+    .modal-comments-panel
+      transform: translate3d(0, 0, 0)
+
+    .btn-modal-comments
+      @extend .active
+
+  &.show-info-panel
     .modal-info-panel
-      display: block
+      transform: translate3d(0, 0, 0)
 
-    .modal-image-panel
-      left: $modal-info-panel-width
+    .btn-modal-info
+      @extend .active
 
-    .btn-modal-left-side-panel
-      .icon
-        +transform(translate3d(0, 0, 0) rotate(0deg))
+  &.show-page-list-panel
+    .modal-page-list-panel
+      transform: translate3d(0, 0, 0)
+
+    .btn-modal-page-list
+      @extend .active
 
 
   //- ============================================================
@@ -312,14 +374,19 @@
     width: 100vw
     height: 100vh
 
-    .modal-info-panel,
-    .btn-modal-left-side-panel,
-    .modal-tool-panel
+    .modal-report-tabs,
+    .modal-bottom-panel,
+    .modal-tool-panel,
+    .modal-comments-panel,
+    .modal-page-list-panel
       display: none
 
     .modal-image-panel
-      left: 0
-      right: 0
+      top: 0 !important
+      left: 0 !important
+      bottom: 0 !important
+      right: 0 !important
+      background: $xdk-grey
 
     .btn-close-fullscreen
       opacity: 1
@@ -343,3 +410,47 @@
     &.show
       opacity: 1
       pointer-events: all
+
+
+  //- ============================================================
+  //- FILE TYPES
+  //- ============================================================
+
+  // IMAGE
+  &.file-type-image
+    .hidden-file-type-image
+      display: none
+
+  &.file-type-report
+    .hidden-file-type-report
+      display: none
+
+    .modal-info-bar
+      top: $modal-tool-panel-width
+
+    .modal-image-panel,
+    .modal-comments-panel,
+    .modal-info-panel,
+    .modal-page-list-panel
+      top: $modal-tool-panel-width * 2
+
+  &.file-type-video
+    .hidden-file-type-video
+      display: none
+
+    .modal-image-panel
+      &:after
+        content: ""
+        position: absolute
+        top: 50%
+        left: 50%
+        background: url('http://www.wgsn.com/assets/common/images/play_button.png') no-repeat center / 100%
+        display: block
+        width: 80px
+        height: 80px
+        transform: translate3d(-50%, -50%, 0)
+        @extend .hoverable
+
+  &.file-type-colour-card
+    .hidden-file-type-colour-card
+      display: none

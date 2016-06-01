@@ -1,0 +1,97 @@
+.panel-folders
+  .icon-caret-right,
+  .icon-caret-down
+    margin: 0 4px 0 0
+
+  .misc-row,
+  .board-row,
+  .person-row,
+  .team-row
+    display: block
+    position: relative
+    padding: 8px 12px
+    // color: rgba(white, 0.6)
+    @extend .hoverable
+
+    .board-name
+      display: inline-block
+      margin: 0 0 -3px 0
+
+    .icon-ellipsis
+      opacity: 0
+      position: absolute
+      top: 8px
+      right: 6px
+
+    .icon-user
+      font-size: 10px
+
+    &:hover
+      background: rgba($xdk-grey, 0.05)
+      
+      // .board-name,
+      // .icon
+      //   color: rgba(white, 0.8)
+      
+      .icon-ellipsis
+        opacity: 1
+
+    &.active
+      background: rgba($xdk-grey, 0.05)
+
+      // .board-name,
+      // .icon
+      //   color: rgba(white, 0.8)
+
+      &:hover
+        background: rgba($xdk-grey, 0.1)
+
+    &.label-red
+      .icon-circle
+        color: $label-red
+
+    &.label-orange
+      .icon-circle
+        color: $label-orange
+
+    &.label-yellow
+      .icon-circle
+        color: $label-yellow
+
+    &.label-green
+      .icon-circle
+        color: $label-green
+
+    &.label-blue
+      .icon-circle
+        color: $label-blue
+
+    &.label-purple
+      .icon-circle
+        color: $label-purple
+
+    @for $i from 1 through 6
+      &.level-#{$i}
+        padding-left: 12px + (15px * ($i - 1))
+
+        .board-name
+          +text-truncate(calc(100% - (30px + (#{$i} * 5px))))
+
+  .board-row
+    .icon-user,
+    .icon-circle
+      margin: 0 0 0 6px
+
+.left-side-panel
+  .board-row
+    .btn.close-modal
+      display: none
+
+html.tablet
+  .left-side-panel
+    .misc-row,
+    .board-row,
+    .person-row,
+    .team-row
+      padding-top: 10px
+      padding-bottom: 10px

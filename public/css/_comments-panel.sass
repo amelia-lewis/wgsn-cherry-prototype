@@ -1,78 +1,48 @@
 .comments-panel
   width: $comments-panel-width
-  height: calc(100vh - (#{$header-height} - #{$product-row-height} + #{$title-row-height}))
+  height: calc(100vh - #{$header-height} - #{$title-row-height})
   position: absolute
-  top: 0
+  top: $title-row-height
   right: 0
   overflow-y: hidden
-  display: none
+  transform: translate3d(100%, 0, 0)
+  box-shadow: 0 0 3px rgba(black, 0.15)
 
-  .tabs
-    position: relative
-    height: 56px
-    @extend .border-bottom
-
-    .col-xs-6:first-of-type
-      .tab
-        &:after
-          content: ""
-          display: block
-          position: absolute
-          bottom: 0
-          left: 0
-          background: $yellow
-          width: 100%
-          height: 4px
-          +transform(translate3d(0, 0, 0))
-          +transition(all 400ms)
-
-        &:not(.active)
-          &:after
-            +transform(translate3d(100%, 0, 0))
-
-    .tab
-      height: 56px
-      @extend .flex-center
-      @extend .no-transition
-
-      // span
-      //   @extend .no-transition
-
-      &.active
-        // border-bottom: 4px solid $yellow
-        color: $yellow
-
-  .panel-board-comments,
-  .panel-item-comments
-    height: 100%
-
-  .panel-item-comments
-    .comments-scroll-container
-      height: calc(100% - 54px)
-      overflow-y: auto
-
-  .panel-board-comments
-    .comments-scroll-container
-      height: calc(100% - 158px)
-      overflow-y: auto
-
-  .comments-alert
-    background: rgba($yellow, 0.1)
+  .scroll-container
+    height: calc(100% - 93px)
+    overflow-y: auto
 
   .comment
-    overflow: auto
+    .icon-trash
+      opacity: 0
+      margin-top: 4px
 
-    &:first-of-type
-      padding-top: 0
-
+    &:hover
+      .icon-trash
+        opacity: 1
+  
     &:last-of-type
-      border: none
+      border-bottom: none
 
-    .comment-time
-      font-size: 11px
-      color: $md-grey
+  .new-comments-bar
+    color: $yellow
+    border-top: 1px solid $yellow
+    margin-top: -1px
 
-  .comment-input
+  .btn-new-comments
+    position: fixed
+    bottom: 70px
+    right: calc(#{$comments-panel-width} / 2)
+    transform: translate3d(50%, 0, 0)
+    @extend .box-shadow
+
+    &.visually-hidden
+      opacity: 0
+
+    &.hidden
+      display: none
+
+  .comment-input-container
     position: absolute
     bottom: 0
     left: 0
@@ -80,35 +50,15 @@
 
     textarea
       width: 100%
-      height: 80px
+      height: 38px
+      min-height: 38px
 
-  .item-comments
-    .item-description
-      overflow: auto
-      
-      .img
-        width: 70px
-        height: 70px
-        background: white no-repeat center / contain
+      // &:focus
+      //   height: 100px 
 
-    textarea
-      width: 100%
-      height: 36px
+  // &.comment-input-active
+  //   .scroll-container
+  //     height: calc(100% - 154px)
 
-      &:focus
-        height: 80px
-
-  // tabs show/hide
-  &.comments-board-active
-    .panel-board-comments
-      display: block
-
-    .panel-item-comments
-      display: none
-
-  &.comments-item-active
-    .panel-board-comments
-      display: none
-
-    .panel-item-comments
-      display: block
+  //   .btn-new-comments
+  //     transform: translate3d(50%, -61px, 0)
