@@ -13,27 +13,36 @@ block content
     
     //- RIGHT SIDE PANEL
     .right-side-panel
-      .workspace-header.block-md.bg-white.border-bottom
-        .row
+      .workspace-header.block-hor-md.block-ver-sm.no-transition
+        .row.block-bot-sm.no-transition
           .col-xs-12.col-sm-8
-            h3.text-grey.tight Workspace
-            h1 Inspiration Images
-              span.text-grey 32 items
-              .block-left-md.inline-block
+            h3.tight.hide-on-scroll Workspace
+            h1.tight.no-transition Inspiration Images
+              .view-only-block.block-left-sm.inline-block
                 i.icon.icon-eye
-                span.has-tooltip.tooltip-down.tooltip-wrap(data-tooltip="You can only view this board. To make changes, ask the board owner for edit permissions.") View only access
-            p.text-grey by Amelia Lewis
-            p.tight Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                span.has-tooltip.tooltip-down.tooltip-wrap.sans-serif.text-no-transform(data-tooltip="You can only view this board. To make changes, ask the board owner for edit permissions.") View only access
+            h3.text-grey.hide-on-scroll by Julian Ramirez
+            p.hide-on-scroll Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
           .col-xs-12.col-sm-4
             include ../../partials/workspace/share-block
-      
-        include ../../partials/workspace/utility-row
+
+        .row
+          .col-xs-12.col-sm-4
+            input.search-input.hide-on-scroll(type="text", placeholder="Search this folder")
+
+          .col-xs-12.col-sm-8
+            include ../../partials/workspace/utility-block
+
+      include ../../partials/workspace/view-options
       
       include ../../partials/files-row
       
     //- COMMENTS PANEL
     include ../../partials/workspace/comments-panel
+
+
+
 
   //- .page-content.show-left-side-panel
     
