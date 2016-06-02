@@ -2,7 +2,7 @@ mixin file(type, img, original, comments, filename, ...caption)
   .file.hoverable.show-caption(class="file-type-" + type)
     img(src=img)
     
-    .caption-container.border-top
+    .caption-container
       ul.clean
         each item in caption
           li= item
@@ -24,10 +24,10 @@ mixin file(type, img, original, comments, filename, ...caption)
 
     .flag-container
       if original == true
-        .wgsn-original-content.border.bg-white.inline-block.has-tooltip(data-tooltip="WGSN Original Content"): include wgsn-logo
+        .wgsn-original-content.wgsn-font.inline-block.has-tooltip(data-tooltip="WGSN Original Content") WGSN Asset
 
       if comments == true
-        i.file-comment.icon.icon-comment-filled.inline-block.hidden-workspace-trash
+        i.file-comment.text-right.icon.icon-comment-filled.inline-block.hidden-workspace-trash
 
 
 mixin file-details-view(type, img, original, comments, filename, ...caption)

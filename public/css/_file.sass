@@ -43,17 +43,18 @@
   position: relative
   padding-bottom: 62px
   overflow: visible !important
-  box-shadow: 0 1px 3px rgba(black, 0.15)
+  // box-shadow: 0 1px 3px rgba(black, 0.15)
   
   img
     vertical-align: bottom
-    border: 0px solid white
+    border: 5px solid white
     transition: all 200ms
 
   .caption-container
     display: none
     @extend .bg-white
     @extend .block-xs
+    @extend .block-top-xxs
     height: 62px
 
     ul
@@ -78,27 +79,28 @@
 
   .file-checkbox,
   .file-heart
-    top: 10px
+    top: 15px
 
   .file-checkbox
-    left: 10px
+    left: 15px
 
   .file-heart
-    right: 10px
+    right: 15px
 
   .file-utilities
     position: absolute
-    top: 0
-    width: 100%
-    height: 100%
+    bottom: 5px
+    left: 5px
+    right: 5px
+    height: 40px
     color: white
-    background: rgba(black, 0.3)
+    background: rgba(black, 0.6)
     opacity: 0
     @extend .flex-center
 
     .icon-container
       position: absolute
-      bottom: 10px
+      bottom: 8px
       left: 0
       width: 100%
 
@@ -124,26 +126,30 @@
   // FLAG CONTAINER
   .flag-container
     position: absolute
-    bottom: 5px
+    bottom: 67px
+    left: 5px
     right: 5px
-    padding-left: 15px
+    height: 20px
 
     .wgsn-original-content
-      width: 40px
-      height: 14px
-      padding: 0 2px
-      border-radius: 2px
-      margin: 0 0 0 5px
-
-      svg
-        width: 100%
-        height: 100%
-        fill: $lt-grey
+      position: absolute
+      left: 0
+      bottom: 0
+      padding: 6px 8px
+      font-size: 10px
+      color: $lt-grey
+      background: rgba(black, 0.6)
     
     .file-comment
-      font-size: 14px
+      position: absolute
+      right: 0
+      bottom: 0
+      padding: 5px 8px
       color: $lt-grey
-      margin: 0 3px 0 8px
+      background: rgba(black, 0.6)
+
+    .wgsn-original-content + .file-comment
+      width: calc(100% - 75px)
 
 
   // HOVER
@@ -158,6 +164,9 @@
       .icon
         transform: translate3d(0, 0, 0)
         opacity: 1
+
+    .flag-container
+      opacity: 0
 
   // SELECTED
   &.selected
@@ -178,10 +187,7 @@
   &.show-caption
     .file-utilities,
     .file-select-state
-      height: calc(100% - 62px)
-
-    .flag-container
-      background: -webkit-linear-gradient(left, rgba(white, 0) 0%, rgba(white, 1) 30%, rgba(white, 1) 100%);
+      bottom: 67px
 
     .caption-container
       display: block
@@ -357,8 +363,8 @@ body.product-fashion
 body.product-none
   .file,
   .file-details-view
-    .file-comment
-      color: $yellow
+    // .file-comment
+    //   color: $yellow
     
     &.selected
       .file-checkbox
