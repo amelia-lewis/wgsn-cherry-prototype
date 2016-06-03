@@ -8,25 +8,23 @@ block prepend title
 
 block content
   .page-content
+    
+    //- TITLE ROW
+    .title-row.bg-lt-grey.block-md
+      .row
+        .col-xs-12
+          h1 Mood Library
+
+      .row
+        .col-xs-12
+          input.search-input(type="text", placeholder="Search Mood Library")
+
+      //- .utility-block.pull-right
+      //-   .flex-center.pull-left.hoverable.btn-saved-searches
+      //-     i.icon.icon-bookmark
+      //-     include ../partials/image-library/saved-searches
+
+    //- RIGHT SIDE PANEL
     .right-side-panel
-      .title-row.border-bottom.block-hor-md
-        .block-ver-sm.pull-left
-          h1.tight.inline-block Mood Library
-
-        .utility-block.pull-right
-          .flex-center.pull-left.block-right-sm
-            input.search-input(type="text", placeholder="Search this board")
-          
-          .flex-center.pull-left
-            .btn-view-option.disabled#btn-view-option-sm: i.icon.icon-grid-sm
-            .btn-view-option#btn-view-option-md: i.icon.icon-grid-md
-            .btn-view-option.disabled#btn-view-option-lg: i.icon.icon-grid-lg
-            .btn-view-option.disabled#btn-view-option-details: i.icon.icon-grid-details
-
-          .flex-center.pull-left.block-hor-xs
-            .block-hor-xs.pull-left.flex-center.hoverable.btn-settings
-              i.icon.icon-gear
-              include ../partials/context-menus/utility-row-settings-context-menu
-
+      include ../partials/workspace/view-options
       include ../partials/images-row
-      include ../partials/floating-utility-row
