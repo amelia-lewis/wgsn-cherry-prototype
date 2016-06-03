@@ -679,16 +679,6 @@ $('.comments-panel .icon-angle-right').on('click', function() {
   $('.btn-back-to-top').removeClass('show-comments-panel');
 });
 
-//- filter row expand/condense
-$('.btn-filter-row-expand').on('click', function() {
-  $('.filter-row').toggleClass('condensed expanded');
-});
-
-$('.btn-filter-row-delete').on('click', function() {
-  $('.filter-row').remove();
-  $('.btn-filter-row-fixed').remove();
-});
-
 $('.filter-tag .icon-cross').on('click', function() {
   $(this).parent().remove();
 });
@@ -1013,33 +1003,18 @@ $(document).ready(function() {
 
 
 // ====================================================================================================
-//  ______ _ _ _              _____               
-// |  ____(_) | |            |  __ \              
-// | |__   _| | |_ ___ _ __  | |__) |_____      __
-// |  __| | | | __/ _ \ '__| |  _  // _ \ \ /\ / /
-// | |    | | | ||  __/ |    | | \ \ (_) \ V  V / 
-// |_|    |_|_|\__\___|_|    |_|  \_\___/ \_/\_/  
+//  _    _                _                           
+// | |  | |              | |                          
+// | |__| | ___  __ _  __| |_ __ ___   ___  _ __ ___  
+// |  __  |/ _ \/ _` |/ _` | '__/ _ \ / _ \| '_ ` _ \ 
+// | |  | |  __/ (_| | (_| | | | (_) | (_) | | | | | |
+// |_|  |_|\___|\__,_|\__,_|_|  \___/ \___/|_| |_| |_|
 // ====================================================================================================
 
 var scroller = $('.files-row')[0];
 $(".right-side-panel").headroom({
   "scroller": scroller,
   "offset": 200
-});
-
-$('.btn-filter-row-fixed').on('click', function() {
-  var height = $('.filter-row-fixed').height() + 30;
-  
-  $(this).toggleClass('active');
-  $('.filter-row-fixed').toggleClass('show');
-
-  if ($(this).hasClass('active')) {
-    $(this).children('span').text('Hide filters');
-    $(this).css({transform: 'translate3d(0,' + height + 'px, 0)'});
-  } else {
-    $(this).children('span').text('Show filters');
-    $(this).css({transform: 'translate3d(0, 0, 0)'});
-  }
 });
 
 
