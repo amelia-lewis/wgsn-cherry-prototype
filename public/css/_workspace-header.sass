@@ -29,6 +29,12 @@
       height: 37px
       margin: 0 10px
 
+    .btn-move,
+    .btn-copy,
+    .btn-print,
+    .displaying-results
+      display: none
+
   .search-input
     background-color: transparent
     width: 0
@@ -53,3 +59,15 @@
 
 //   .row.block-bot-sm
 //     padding-bottom: 0
+
+.page-content.has-files-selected
+  .workspace-header
+    .utility-block
+      .btn-move,
+      .btn-copy,
+      .btn-print,
+      .displaying-results
+        display: block
+
+      .btn-upload
+        display: none

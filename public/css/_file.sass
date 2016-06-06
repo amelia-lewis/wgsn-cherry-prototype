@@ -7,8 +7,6 @@
   .file-checkbox,
   .file-heart
     position: absolute
-    top: 10px
-    opacity: 0
     color: white
     @extend .no-transition
     font-size: 16px
@@ -20,17 +18,6 @@
   .icon-heart-filled
     opacity: 1 !important
     color: $label-red !important
-
-  .icon-tick
-    background: transparent
-
-  .icon-tick-circle-filled
-    background: white
-    width: 16px
-    height: 16px
-    border-radius: 50%
-    opacity: 1 !important
-    // color: $xdk-grey
 
 
 // ============================================================
@@ -80,6 +67,7 @@
   .file-checkbox,
   .file-heart
     top: 15px
+    opacity: 0
 
   .file-checkbox
     left: 15px
@@ -113,15 +101,6 @@
 
         &:hover
           color: white
-
-  .file-select-state
-    position: absolute
-    top: 0
-    left: 0
-    width: 100%
-    height: 100%
-    background: rgba(black, 0.5)
-    opacity: 0
 
   // FLAG CONTAINER
   .flag-container
@@ -170,18 +149,8 @@
 
   // SELECTED
   &.selected
-    // .file-select-state
-    //   opacity: 1
-
-    .file-checkbox
-      opacity: 1 !important
-      background: white
-      width: 16px
-      height: 16px
-      border-radius: 50%
-
-      &:before
-        content: "\4e"
+    .file-checkbox:before
+      background: white url('../img/icons/icon-font_tick.svg') no-repeat center center / 12px 12px
 
   // SHOW CAPTION
   &.show-caption
@@ -218,6 +187,17 @@
       &:after
         top: calc(50% - 31px)
 
+// SELECT MODE
+.page-content.has-files-selected
+  .file
+    .file-utilities,
+    .flag-container
+      opacity: 0
+
+    .file-checkbox
+      opacity: 1
+
+// TOUCH DEVICES
 html.tablet,
 html.mobile
   .file
@@ -325,16 +305,6 @@ html.mobile
     .file-utilities-1:after
       opacity: 1
 
-    .file-checkbox
-      opacity: 1 !important
-      background: white
-      width: 16px
-      height: 16px
-      border-radius: 50%
-
-      &:before
-        content: "\4e"
-
   &.file-type-video
     .thumb-container:after
       content: ""
@@ -354,21 +324,12 @@ body.product-fashion
       display: none
 
     &.selected
-      .file-checkbox
-        color: $fashion
-
       img
         border: 5px solid $fashion
 
 body.product-none
   .file,
   .file-details-view
-    // .file-comment
-    //   color: $yellow
-    
     &.selected
-      .file-checkbox
-        color: $yellow
-
       img
         border: 5px solid $yellow
