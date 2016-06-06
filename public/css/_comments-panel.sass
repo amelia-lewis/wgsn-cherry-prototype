@@ -1,15 +1,17 @@
 .comments-panel
   width: $comments-panel-width
-  height: calc(100vh - #{$header-height} - #{$title-row-height})
+  height: 100%
   position: absolute
-  top: $title-row-height
+  top: 0
   right: 0
   overflow-y: hidden
   transform: translate3d(100%, 0, 0)
-  box-shadow: 0 0 3px rgba(black, 0.15)
+
+  .header-row
+    padding: 14px 15px
 
   .scroll-container
-    height: calc(100% - 93px)
+    height: calc(100% - 104px)
     overflow-y: auto
 
   .comment

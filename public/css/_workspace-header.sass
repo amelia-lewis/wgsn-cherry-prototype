@@ -1,6 +1,4 @@
 .workspace-header
-  // background: darken($xlt-grey, 5)
-
   .view-only-block
     font-size: 12px
 
@@ -34,6 +32,22 @@
     .btn-print,
     .displaying-results
       display: none
+
+    .btn-comments
+      position: relative
+      
+      &:before
+        content: ""
+        position: absolute
+        top: 8px
+        right: 6px
+        background: $yellow
+        display: block
+        width: 8px
+        height: 8px
+        border-radius: 50%
+        z-index: 10
+        border: 2px solid $lt-grey
 
   .search-input
     background-color: transparent
