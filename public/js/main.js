@@ -334,7 +334,7 @@ $('.select-all').click(function() {
 
 // click anywhere on the screen to close the context menus and deselect all items
 $('.page-content').click(function(e, evt) {
-  if($(e.target).is('.btn-view-option')) {
+  if($(e.target).is('.btn-view-option, .select-all')) {
       return;
   } else {
     $(".file").removeClass("selected");
