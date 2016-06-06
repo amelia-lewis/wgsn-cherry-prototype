@@ -314,20 +314,17 @@ $('.file-details-view .thumb-container').on('click', function(e) {
 // select all files
 $('.select-all').click(function() {
   if ($('.file').length == $('.file.selected').length) {
-    $('.select-all').text('Select all');
     $('.file').removeClass('selected');
     $('.page-content').removeClass('has-files-selected');
   } else {
-    $('.select-all').text('Deselect all');
     $('.file').addClass('selected');
+    $('.page-content').addClass('has-files-selected');
   }
 
   if ($('.file-details-view').length == $('.file-details-view.selected').length) {
-    $('.select-all').text('Select all');
     $('.file-details-view').removeClass('selected');
     $('.page-content').removeClass('has-files-selected');
   } else {
-    $('.select-all').text('Deselect all');
     $('.file-details-view').addClass('selected');
   }
 });
@@ -965,7 +962,7 @@ $(document).ready(function() {
     $back_to_top = $('.btn-back-to-top');
 
   //hide or show the "back to top" link
-  $('.files-row').scroll(function(){
+  $('.right-side-panel').scroll(function(){
     ( $(this).scrollTop() > offset ) ? $back_to_top.addClass('is-visible') : $back_to_top.removeClass('is-visible fade-out');
     if( $(this).scrollTop() > offset_opacity ) { 
       $back_to_top.addClass('fade-out');
@@ -975,7 +972,7 @@ $(document).ready(function() {
   //smooth scroll to top
   $back_to_top.on('click', function(event){
     event.preventDefault();
-    $('.files-row').animate({
+    $('.right-side-panel').animate({
       scrollTop: 0 ,
       }, scroll_top_duration
     );
@@ -992,10 +989,10 @@ $(document).ready(function() {
 // |_|  |_|\___|\__,_|\__,_|_|  \___/ \___/|_| |_| |_|
 // ====================================================================================================
 
-var scroller = $('.files-row')[0];
+var scroller = $('.right-side-panel')[0];
 $(".right-side-panel").headroom({
   "scroller": scroller,
-  "offset": 200
+  "offset": 96
 });
 
 

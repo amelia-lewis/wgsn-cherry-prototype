@@ -1,16 +1,22 @@
-.view-options.block-ver-sm.block-hor-md
+.view-options.bg-xlt-grey.block-ver-sm.block-hor-md
   .row
     .col-xs-12.col-sm-4
-      .block-ver-xs
+      .block-ver-xs.pull-left
         h3.tight.hidden-image-library.hidden-mood-library 202 items
         h3.tight.hidden-workspace 200,000 results
+      .pull-left
+        select.pull-left.inline-block.hidden-workspace
+          option Sort by:
+          option Relevance
+          option Date: newest first
+          option Date: oldest first
   
     .col-xs-12.col-sm-8
       .pull-right
         .block-xs.pull-left
           label.checkbox-radio.tight(for="select-all")
             input.pull-left.select-all(type="checkbox" id="select-all")
-            span Select all
+            span Select all (202)
 
         .divider.pull-left
 
