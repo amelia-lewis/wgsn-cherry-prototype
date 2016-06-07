@@ -992,7 +992,7 @@ $(document).ready(function() {
 var scroller = $('.right-side-panel')[0];
 $(".right-side-panel").headroom({
   "scroller": scroller,
-  "offset": 96
+  "offset": 180
 });
 
 

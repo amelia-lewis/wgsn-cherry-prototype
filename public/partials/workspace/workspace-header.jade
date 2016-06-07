@@ -1,0 +1,68 @@
+mixin workspace-header(name, owner, description, numfiles, permissions)
+  .workspace-header.block-md.bg-lt-grey.no-transition
+    .row.block-bot-sm.no-transition
+      .col-xs-12.col-sm-4
+        h3.tight Workspace
+        h1.tight.no-transition
+          span= name
+          if permissions == "view"
+            .view-only-block.block-left-sm.inline-block
+              i.icon.icon-eye
+              span.has-tooltip.tooltip-down.tooltip-wrap.sans-serif.text-no-transform(data-tooltip="You can only view this board. To make changes, ask the board owner for edit permissions.") View only access
+        h3.text-grey by 
+          span= owner
+        p= description
+
+      .col-xs-12.col-sm-8
+        .share-block.pull-right.btn-share.hoverable
+          .pull-left.has-tooltip.tooltip-down(data-tooltip="Amelia Lewis is the owner")
+            .avatar(style="background-image: url('https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/005/05b/332/0aa54b4.jpg')")
+          .divider.pull-left
+          .pull-left.has-tooltip.tooltip-down(data-tooltip="Julian Ramirez can edit")
+            .online-dot
+            .avatar(style="background-image: url('https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAT6AAAAJGZiMmIwM2E3LTMzNzMtNDEzNi1iN2JhLWJlZmYzM2MwNmI2Nw.jpg')")
+          .pull-left.has-tooltip.tooltip-down(data-tooltip="Nicky Ashwell can edit")
+            .avatar(style="background-image: url('https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAFZAAAAJDM1YTk4OTc5LTJjZGUtNGJkMS1iMTM4LTBmMjIzYTM3NGYzMQ.jpg')")
+          .pull-left.has-tooltip.tooltip-down(data-tooltip="Sansan Chen can edit")
+            .online-dot
+            .avatar(style="background-image: url('https://media.licdn.com/media/AAEAAQAAAAAAAAZVAAAAJDBlZWUwZWE0LTk1OWYtNGMyYi1iYmU5LTA3NDNlNDYxZmYwMQ.jpg')")
+          .pull-left.has-tooltip.tooltip-down(data-tooltip="Andrew Harris can edit")
+            .avatar(style="background-image: url('https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/1/005/06d/1ea/349ef69.jpg')")
+          .pull-left.has-tooltip.tooltip-down(data-tooltip="+ 6 others")
+            .avatar.avatar-alt.pull-left(data-initials="+6")
+          .pull-left.has-tooltip.tooltip-down(data-tooltip="Add users")
+            .avatar.pull-left(data-initials="+")
+
+    .row
+      .col-xs-12.col-sm-3
+        input.search-input(type="text", placeholder="Search this folder")
+
+      .col-xs-12.col-sm-9
+        .utility-block.pull-right
+          include ../../partials/workspace/utility-block
+          .divider.pull-left
+          .utility-icon.pull-left.block-xs.btn-comments.hoverable: i.icon.icon-comment
+
+  .workspace-header-condensed.block-md.bg-lt-grey
+    .row
+      .col-xs-12.col-sm-4
+        h3.tight.no-transition Workspace
+        h1.tight.no-transition
+          span= name
+          if permissions == "view"
+            .view-only-block.block-left-sm.inline-block
+              i.icon.icon-eye
+              span.has-tooltip.tooltip-down.tooltip-wrap.sans-serif.text-no-transform(data-tooltip="You can only view this board. To make changes, ask the board owner for edit permissions.") View only access
+
+      .col-xs-12.col-sm-8
+        .utility-block.pull-right
+          include ../../partials/workspace/utility-block
+          .divider.pull-left
+          .block-xs.pull-left
+            label.checkbox-radio.tight(for="select-all")
+              input.pull-left.select-all(type="checkbox" id="select-all")
+              span Select all (
+                span= numfiles
+                span )
+          .divider.pull-left
+          .utility-icon.pull-left.block-xs.btn-comments.hoverable: i.icon.icon-comment

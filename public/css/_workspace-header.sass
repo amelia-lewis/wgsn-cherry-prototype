@@ -1,7 +1,11 @@
+// ====================
+// Workspace header
+// ====================
 .workspace-header,
 .workspace-header-condensed
   z-index: 100
   
+  // VIEW ONLY BLOCK
   .view-only-block
     font-size: 12px
 
@@ -11,6 +15,54 @@
     .has-tooltip:after
       bottom: -61px
 
+  // SHARE BLOCK
+  .share-block
+    .divider
+      width: 1px
+      height: 34px
+      background: rgba(black, 0.1)
+      margin: 0 10px 0 0
+
+    > .pull-left
+      position: relative
+      
+      .online-dot
+        position: absolute
+        display: block
+        border-radius: 50%
+        bottom: 0
+        left: 0
+        width: 10px
+        height: 10px
+        background: $label-green
+        border: 1px solid $xlt-grey
+        z-index: 10
+
+      // these will somehow have to be dynamic to do with the length of the folder title...
+      @media screen and (max-width: 1200px)
+        &:nth-last-of-type(2)
+          display: none
+
+      @media screen and (max-width: 1160px)
+        &:nth-last-of-type(3)
+          display: none
+
+      @media screen and (max-width: 1120px)
+        &:nth-last-of-type(4)
+          display: none
+
+      @media screen and (max-width: 1100px)
+        display: none !important
+
+    // adjusted to account for the 10px space on the right of the avatars
+    .tooltip-down
+      &:before
+        transform: translate3d(calc(-50% - 5px), 0, 0) rotate(45deg)
+      
+      &:after
+        transform: translate3d(calc(-50% - 5px), 0, 0)
+
+  // UTILITY BLOCK
   .utility-block
     .utility-icon
       @extend .inline-block
@@ -54,6 +106,7 @@
         z-index: 10
         border: 2px solid $lt-grey
 
+  // SEARCH INPUT (hide until focused)
   .search-input
     background-color: transparent
     width: 0
@@ -64,52 +117,26 @@
       width: 100%
       transform: translate3d(0, 0, 0)
 
-// hide/show elements in .workspace-header on scroll --> not using, but keeping just in case
-// .right-side-panel.headroom--unpinned
-//   .share-block,
-//   .hide-on-scroll
-//     display: none
 
-//   h1
-//     padding: 6px 0
-
-//   .utility-block
-//     margin: -37px 0 0 0
-//     // transform: translate3d(0, -32px, 0)
-
-//   .row.block-bot-sm
-//     padding-bottom: 0
-
+// ====================
+// Condensed Workspace header (for scroll)
+// ====================
 .workspace-header-condensed
   position: fixed
   top: $header-height
-  left: $left-side-panel-width
-  right: 250px
+  left: 0
+  right: 0
   z-index: 100
-  // transform: translate3d(0, -100%, 0)
-  // opacity: 0
-  // pointer-events: none
-
-  .col-xs-12:last-of-type
-    display: none
+  transform: translate3d(0, -100%, 0)
 
 .right-side-panel.headroom--not-top
-  .workspace-header
-    position: fixed
-    top: -47px
-    left: $left-side-panel-width
-    right: 0
+  .workspace-header-condensed
+    transform: translate3d(0, 0, 0)
 
-  // .workspace-header-condensed
-    // transform: translate3d(0, 0, 0)
-    // opacity: 1
-    // pointer-events: all
-    // right: 0
 
-    .col-xs-12:last-of-type
-      display: block
-
-// SELECT MODE
+// ====================
+// Select mode
+// ====================
 .page-content.has-files-selected
   .workspace-header,
   .workspace-header-condensed
