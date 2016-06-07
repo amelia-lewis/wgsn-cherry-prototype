@@ -1,39 +1,39 @@
-// core
-@import "vars"
-@import "mixins"
-@import "blocks"
-@import "typography" 
+// ====================
+// Core
+// ====================
+@import "core/vars"
+@import "core/mixins"
+@import "core/typography" 
 
-// elements
-@import "layout"
-@import "hiders"
-@import "inputs"
-@import "tag-list"
-@import "buttons"
-@import "tooltip"
-@import "avatars"
-@import "tab-nav"
-@import "loading-indicator"
-@import "modal"
+// ====================
+// Elements
+// ====================
+@import "elements/blocks"
+@import "elements/layout"
+@import "elements/hiders"
+@import "elements/inputs"
+@import "elements/tag-list"
+@import "elements/buttons"
+@import "elements/tooltips"
+@import "elements/avatars"
+@import "elements/tab-nav"
+@import "elements/loading-indicator"
+@import "elements/modal"
 
-// components
+// ====================
+// Components
+// ====================
 @import "header"
 @import "title-row"
-
 @import "item-detail-modal"
 @import "file"
 @import "context-menus"
-
 @import "page-content"
 @import "left-side-panel"
-
 @import "workspace-header"
 @import "view-options"
-
 @import "folder-structure"
 @import "filter-structure"
-
-// @import "floating-utility-row"
 @import "files-row"
 // @import "messages"
 @import "comments-panel"
@@ -41,7 +41,9 @@
 @import "notifications"
 // @import "message-notifications"
 
+
 // ==================================================
+
 
 body
   font-family: Helvetica, Arial, sans-serif
@@ -82,7 +84,10 @@ body
 ::-webkit-scrollbar
   display: none
 
-// home page styles
+
+// ====================
+// Home page
+// ====================
 .index
   .col-xs-4
     height: 100vh
@@ -113,6 +118,10 @@ body
           &:after
             transform: translate3d(0, 0, 0) scale(1, 2)
 
+
+// ====================
+// Mobile blocker page
+// ====================
 .mobile-warning
   position: absolute
   top: 0
