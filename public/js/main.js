@@ -989,12 +989,19 @@ $(document).ready(function() {
 // |_|  |_|\___|\__,_|\__,_|_|  \___/ \___/|_| |_| |_|
 // ====================================================================================================
 
-var scroller = $('.right-side-panel')[0];
+var WSscroller = $(".right-side-panel")[0];
 $(".right-side-panel").headroom({
-  "scroller": scroller,
+  "scroller": WSscroller,
   "offset": 180
 });
 
+var ILscroller = $(".page-content")[0];
+$(".page-content").headroom({
+  // "scroller": ILscroller,
+  "offset": 0
+});
+
+$(".panel-filters").sticky();
 
 // ====================================================================================================
 //  __  __                                     

@@ -8,17 +8,17 @@
 // ====================
 // Elements
 // ====================
+@import "elements/avatars"
 @import "elements/blocks"
-@import "elements/layout"
+@import "elements/buttons"
 @import "elements/hiders"
 @import "elements/inputs"
-@import "elements/tag-list"
-@import "elements/buttons"
-@import "elements/tooltips"
-@import "elements/avatars"
-@import "elements/tab-nav"
+@import "elements/layout"
 @import "elements/loading-indicator"
 @import "elements/modal"
+@import "elements/tab-nav"
+@import "elements/tag-list"
+@import "elements/tooltips"
 
 // ====================
 // Components
@@ -31,6 +31,7 @@
 @import "page-content"
 @import "left-side-panel"
 @import "workspace-header"
+@import "image-library-header"
 @import "view-options"
 @import "folder-structure"
 @import "filter-structure"
@@ -51,7 +52,6 @@ body
   padding: 0
   background: white
   font-size: 12px
-  overflow: hidden
   color: $xdk-grey
   // -moz-user-select: none
   // -ms-user-select: none
@@ -75,6 +75,9 @@ body
 
     &.heading
       padding: 80px 0 0
+
+body.workspace-view
+  overflow: hidden
 
 *
   box-sizing: border-box

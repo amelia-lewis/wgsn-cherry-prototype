@@ -1,9 +1,9 @@
 mixin workspace-header(name, owner, description, numfiles, permissions)
-  .workspace-header.block-md.bg-lt-grey.no-transition
-    .row.block-bot-sm.no-transition
+  .workspace-header.block-md.bg-lt-grey
+    .row.block-bot-sm
       .col-xs-12.col-sm-4
         h3.tight Workspace
-        h1.tight.no-transition
+        h1.tight
           span= name
           if permissions == "view"
             .view-only-block.block-left-sm.inline-block
@@ -46,8 +46,8 @@ mixin workspace-header(name, owner, description, numfiles, permissions)
   .workspace-header-condensed.block-md.bg-lt-grey
     .row
       .col-xs-12.col-sm-4
-        h3.tight.no-transition Workspace
-        h1.tight.no-transition
+        h3.tight Workspace
+        h1.tight
           span= name
           if permissions == "view"
             .view-only-block.block-left-sm.inline-block

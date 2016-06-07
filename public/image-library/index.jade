@@ -8,9 +8,7 @@ block prepend title
 
 block content
   .page-content.show-left-side-panel
-    
-    //- TITLE ROW
-    .title-row.bg-lt-grey.block-md
+    .image-library-header.block-md.bg-lt-grey
       .row
         .col-xs-12
           h1 Image &amp; Design Library
@@ -19,10 +17,19 @@ block content
         .col-xs-12
           input.search-input(type="text", placeholder="Search Image & Design Library")
 
-      //- .utility-block.pull-right
-      //-   .flex-center.pull-left.hoverable.btn-saved-searches
-      //-     i.icon.icon-bookmark
-      //-     include ../partials/image-library/saved-searches
+    .image-library-header-condensed.block-md.bg-lt-grey
+      .row
+        .col-xs-12.col-sm-4
+          h1.tight Image &amp; Design Library
+
+        .col-xs-12.col-sm-8
+          .utility-block.pull-right
+            include ../partials/workspace/utility-block
+            .divider.pull-left
+            .block-xs.pull-left
+              label.checkbox-radio.tight(for="select-all")
+                input.pull-left.select-all(type="checkbox" id="select-all")
+                span Select all (200,000)
 
     //- LEFT SIDE PANEL
     include ../partials/image-library/left-side-panel

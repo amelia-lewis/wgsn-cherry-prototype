@@ -1,0 +1,86 @@
+// ====================
+// Image & Design Library header
+// ====================
+.image-library-header,
+.image-library-header-condensed
+  z-index: 100
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+
+  // UTILITY BLOCK
+  .utility-block
+    .utility-icon
+      @extend .inline-block
+      @extend .block-xs
+
+      .icon
+        font-size: 14px
+        color: $dk-grey
+
+      &:hover
+        .icon
+          color: $xdk-grey
+
+    .divider
+      background: rgba(black, 0.1)
+      width: 1px
+      height: 37px
+      margin: 0 10px
+
+    .btn-move,
+    .btn-copy,
+    .btn-print,
+    .btn-deselect,
+    .btn-deselect + .divider,
+    .displaying-results
+      display: none
+
+    .btn-comments
+      position: relative
+      
+      &:before
+        content: ""
+        position: absolute
+        top: 8px
+        right: 6px
+        background: $yellow
+        display: block
+        width: 8px
+        height: 8px
+        border-radius: 50%
+        z-index: 10
+        border: 2px solid $lt-grey
+
+
+// ====================
+// Condensed Image & Design Library header (for scroll)
+// ====================
+.image-library-header-condensed
+  position: fixed
+  top: $header-height
+  transform: translate3d(0, -100%, 0)
+
+.page-content.headroom--not-top
+  .image-library-header-condensed
+    transform: translate3d(0, 0, 0)
+
+
+// ====================
+// Select mode
+// ====================
+.page-content.has-files-selected
+  .image-library-header,
+  .image-library-header-condensed
+    .utility-block
+      .btn-move,
+      .btn-copy,
+      .btn-print,
+      .btn-deselect,
+      .btn-deselect + .divider,
+      .displaying-results
+        display: block
+
+      .btn-upload
+        display: none

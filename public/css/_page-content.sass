@@ -1,36 +1,32 @@
 .page-content
-  position: fixed
+  position: absolute
   top: $header-height
+  left: 0
+  right: 0
   width: 100%
-  height: $page-content-height
-  // overflow: hidden
-
+  height: 100%
+  
   .left-side-panel,
   .right-side-panel
     position: absolute
-    height: calc(100% - #{$title-row-height})
     top: $title-row-height
     left: 0
 
   .left-side-panel
     width: $left-side-panel-width
     transform: translate3d(-100%, 0, 0)
-    z-index: 100
+    z-index: 50
 
   .right-side-panel
-    position: absolute
     right: 0
     @extend .bg-xlt-grey
-    overflow: auto
 
+  // LEFT-SIDE PANEL
   &.show-left-side-panel
     .right-side-panel,
     .workspace-header,
     .workspace-header-condensed
       left: $left-side-panel-width
-
-    .filter-row
-      width: calc(100vw - #{$left-side-panel-width})
 
     .left-side-panel
       transform: translate3d(0, 0, 0)
@@ -39,18 +35,24 @@
       .icon
         transform: translate3d(0, 0, 0) rotate(0deg)
 
-  &.show-comments-panel
-    .right-side-panel,
-    .workspace-header,
-    .workspace-header-condensed
-      right: $comments-panel-width
-
-    .comments-panel
-      transform: translate3d(0, 0, 0)
-
 body.workspace-view
   .page-content
+    overflow: hidden
+    
     .left-side-panel,
     .right-side-panel
       top: 0
       height: 100%
+
+    .right-side-panel
+      @extend .overflow-auto
+
+    // COMMENTS PANEL
+    &.show-comments-panel
+      .right-side-panel,
+      .workspace-header,
+      .workspace-header-condensed
+        right: $comments-panel-width
+
+      .comments-panel
+        transform: translate3d(0, 0, 0)
