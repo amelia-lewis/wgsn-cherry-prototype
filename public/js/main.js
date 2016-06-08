@@ -9,7 +9,7 @@
 
 //- heart icons
 $('.file-heart').on('click', function() {
-  $(this).toggleClass('icon-heart icon-heart-filled');
+  $(this).toggleClass('favourited');
 });
 
 $(document).ready(function() {
@@ -462,59 +462,6 @@ $(".board-row").contextmenu(function(e){
   var posX = $(this).offset().left, posY = $(this).offset().top;
   $("#floating-board-context-menu").addClass('show');
   $("#floating-board-context-menu").css({"left": (e.pageX), "top":(e.pageY)});
-});
-
-
-// ====================================================================================================
-//  ____                      _    _____      _              _           _          _     
-// |  _ \                    | |  / ____|    | |            | |         | |        | |    
-// | |_) | ___   __ _ _ __ __| | | |     ___ | | ___  _ __  | |     __ _| |__   ___| |___ 
-// |  _ < / _ \ / _` | '__/ _` | | |    / _ \| |/ _ \| '__| | |    / _` | '_ \ / _ \ / __|
-// | |_) | (_) | (_| | | | (_| | | |___| (_) | | (_) | |    | |___| (_| | |_) |  __/ \__ \
-// |____/ \___/ \__,_|_|  \__,_|  \_____\___/|_|\___/|_|    |______\__,_|_.__/ \___|_|___/
-// ====================================================================================================
-
-// these don't really work anymore but leaving the code here just in case...
-$('.label-circle.label-circle-red').on('click', function() {
-  $(this).addClass('selected');
-  $(this).siblings().removeClass('selected');
-  $(this).parentsUntil('.board-container').addClass('label-red').removeClass('label-orange').removeClass('label-yellow').removeClass('label-green').removeClass('label-blue').removeClass('label-purple').removeClass('label-pink');
-});
-
-$('.label-circle.label-circle-orange').on('click', function() {
-  $(this).addClass('selected');
-  $(this).siblings().removeClass('selected');
-  $(this).parentsUntil('.board-container').removeClass('label-red').addClass('label-orange').removeClass('label-yellow').removeClass('label-green').removeClass('label-blue').removeClass('label-purple').removeClass('label-pink');
-});
-
-$('.label-circle.label-circle-yellow').on('click', function() {
-  $(this).addClass('selected');
-  $(this).siblings().removeClass('selected');
-  $(this).parentsUntil('.board-container').removeClass('label-red').removeClass('label-orange').addClass('label-yellow').removeClass('label-green').removeClass('label-blue').removeClass('label-purple').removeClass('label-pink');
-});
-
-$('.label-circle.label-circle-green').on('click', function() {
-  $(this).addClass('selected');
-  $(this).siblings().removeClass('selected');
-  $(this).parentsUntil('.board-container').removeClass('label-red').removeClass('label-orange').removeClass('label-yellow').addClass('label-green').removeClass('label-blue').removeClass('label-purple').removeClass('label-pink');
-});
-
-$('.label-circle.label-circle-blue').on('click', function() {
-  $(this).addClass('selected');
-  $(this).siblings().removeClass('selected');
-  $(this).parentsUntil('.board-container').removeClass('label-red').removeClass('label-orange').removeClass('label-yellow').removeClass('label-green').addClass('label-blue').removeClass('label-purple').removeClass('label-pink');
-});
-
-$('.label-circle.label-circle-purple').on('click', function() {
-  $(this).addClass('selected');
-  $(this).siblings().removeClass('selected');
-  $(this).parentsUntil('.board-container').removeClass('label-red').removeClass('label-orange').removeClass('label-yellow').removeClass('label-green').removeClass('label-blue').addClass('label-purple').removeClass('label-pink');
-});
-
-$('.label-circle.label-circle-grey').on('click', function() {
-  $(this).addClass('selected');
-  $(this).siblings().removeClass('selected');
-  $(this).parentsUntil('.board-container').removeClass('label-red').removeClass('label-orange').removeClass('label-yellow').removeClass('label-green').removeClass('label-blue').removeClass('label-purple').addClass('label-pink');
 });
 
 
