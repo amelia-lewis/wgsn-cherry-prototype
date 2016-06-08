@@ -12,9 +12,6 @@
   // UTILITY BLOCK
   .utility-block
     .utility-icon
-      @extend .inline-block
-      @extend .block-xs
-
       .icon
         font-size: 14px
         color: $dk-grey
@@ -29,29 +26,20 @@
       height: 37px
       margin: 0 10px
 
+    .btn-upload,
+    .btn-save,
     .btn-move,
     .btn-copy,
     .btn-print,
+    .btn-download,
+    .btn-print,
+    .btn-share,
+    .btn-delete,
     .btn-deselect,
     .btn-deselect + .divider,
-    .displaying-results
+    .displaying-results,
+    .btn-delete + .divider
       display: none
-
-    .btn-comments
-      position: relative
-      
-      &:before
-        content: ""
-        position: absolute
-        top: 8px
-        right: 6px
-        background: $yellow
-        display: block
-        width: 8px
-        height: 8px
-        border-radius: 50%
-        z-index: 10
-        border: 2px solid $lt-grey
 
 
 // ====================
@@ -61,6 +49,9 @@
   position: fixed
   top: $header-height
   transform: translate3d(0, -100%, 0)
+
+  h1
+    padding-top: 4px
 
 .page-content.headroom--not-top
   .image-library-header-condensed
@@ -74,12 +65,14 @@
   .image-library-header,
   .image-library-header-condensed
     .utility-block
-      .btn-move,
-      .btn-copy,
+      .btn-save,
+      .btn-print,
+      .btn-download,
       .btn-print,
       .btn-deselect,
       .btn-deselect + .divider,
-      .displaying-results
+      .displaying-results,
+      .btn-delete + .divider
         display: block
 
       .btn-upload
