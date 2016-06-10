@@ -948,7 +948,9 @@ $(".page-content").headroom({
   "offset": 0
 });
 
-$(".panel-filters").sticky({topSpacing:0});
+// $(".panel-filters").stick_in_parent({
+//   inner_scrolling: true
+// });
 
 
 // ====================================================================================================
