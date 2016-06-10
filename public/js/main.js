@@ -331,15 +331,17 @@ $('.select-all').click(function() {
 
 // click anywhere on the screen to close the context menus and deselect all items
 $('.page-content').click(function(e, evt) {
-  if($(e.target).is('.btn-view-option, .select-all')) {
-      return;
-  } else {
-    $(".file").removeClass("selected");
-    $('.page-content').removeClass('has-files-selected');
-    $(".context-menu").removeClass("show");
-    $('.select-all').prop('checked', false);
-    $("#floating-item-context-menu").removeClass("show");
-    checkforhover();
+  if($('.file').hasClass('selected')) {
+    if($(e.target).is('.btn-view-option, .select-all')) {
+        return;
+    } else {
+      $(".file").removeClass("selected");
+      $('.page-content').removeClass('has-files-selected');
+      $(".context-menu").removeClass("show");
+      $('.select-all').prop('checked', false);
+      $("#floating-item-context-menu").removeClass("show");
+      checkforhover();
+    }
   }
 });
 
@@ -371,7 +373,6 @@ $(".board-row .icon-ellipsis").click(function(e){
   var posX = $(this).offset().left, posY = $(this).offset().top;
   $("#floating-board-context-menu").addClass('show');
   $("#floating-board-context-menu").css({"left": (e.pageX), "top":(e.pageY)});
-  console.log("yello board style");
 });
 
 // prevent link from loading when clicking the ellipsis/context menu on the link row
@@ -382,24 +383,9 @@ $('a.board-row').click(function(e, evt) {
   }
 });
 
-//- board context menu
-$('.btn-top-board-context-menu').on('click', function() {
-  $('#top-board-context-menu').toggleClass('show');
-});
-
-//- utility row context menu
-$('.utility-row .icon-ellipsis').on('click', function() {
-  $('#utility-row-context-menu').toggleClass('show');
-});
-
 //- utility row settings context menu
 $('.btn-settings').on('click', function() {
   $('#utility-row-settings-context-menu').toggleClass('show');
-});
-
-//- utility row settings context menu
-$('.utility-row .sort-input').on('click', function() {
-  $('#sort-by-context-menu').toggleClass('show');
 });
 
 //- saved searches context menu
@@ -411,12 +397,6 @@ $('.btn-saved-searches').on('click', function() {
 $('.btn-notifications').on('click', function() {
   $('#message-notifications-context-menu').removeClass('show');
   $('#notifications-context-menu').toggleClass('show');
-});
-
-//- messages context menu
-$('.btn-message-notifications').on('click', function() {
-  $('#notifications-context-menu').removeClass('show');
-  $('#message-notifications-context-menu').toggleClass('show');
 });
 
 //- close context menu

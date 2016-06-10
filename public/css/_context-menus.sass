@@ -70,14 +70,7 @@
 #floating-board-context-menu
   width: 200px
 
-#top-board-context-menu
-  top: 54px
-  left: 0
-  width: 200px
-  @extend .arrow-left
-
 #board-context-menu,
-#top-board-context-menu,
 #floating-board-context-menu
   .label-circle
     width: 12px
@@ -161,11 +154,6 @@
     &:after
       border-color: $label-pink
 
-#utility-row-context-menu
-  top: 30px
-  right: -4px
-  @extend .arrow-right
-
 #utility-row-settings-context-menu
   top: 40px
   right: 6px
@@ -181,19 +169,12 @@
       background: none
 
 #saved-searches-context-menu
-  top: 50px
-  left: -3px
-  width: 374px
-  @extend .arrow-left
+  top: 36px
+  right: 0
+  width: calc(100vw - 40px)
 
 #notifications-context-menu
   top: 46px
-  right: 306px
-  width: 400px
-  @extend .arrow-right
-
-#message-notifications-context-menu
-  top: 46px
-  right: 274px
+  right: 270px
   width: 400px
   @extend .arrow-right
