@@ -1,39 +1,29 @@
 #saved-searches-context-menu
-  &:after
-    @extend .bg-xlt-grey
+  max-height: 400px
+  overflow: auto
+  
+  li
+    position: relative
+    @extend .block-sm // done here to override .context-menu styles
+    @extend .block-right-md
 
-  .header-row
-    @extend .block-sm
-    
-    &:hover
-      @extend .bg-xlt-grey
-      cursor: default
+    &:last-of-type
+      border: none
 
-  .scroll-container
-    max-height: 400px
-    overflow: auto
+    .icon-angle-right
+      margin: 0 6px
+      font-size: 10px 
 
-    li
-      @extend .block-sm
-      position: relative
-
-      &:last-of-type
-        border: none
-
-      .icon-angle-right
-        margin: 0 6px
-        font-size: 10px 
-
-      .icon-trash
-        position: absolute
-        top: calc(50% - 8px)
-        right: 10px
-        color: $md-grey
-        opacity: 0
-
-        &:hover
-          color: $xdk-grey
+    .icon-trash
+      position: absolute
+      top: calc(50% - 8px)
+      right: 10px
+      color: $md-grey
+      opacity: 0
 
       &:hover
-        .icon-trash
-          opacity: 1
+        color: $xdk-grey
+
+    &:hover
+      .icon-trash
+        opacity: 1

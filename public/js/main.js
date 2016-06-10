@@ -391,6 +391,7 @@ $('.btn-settings').on('click', function() {
 //- saved searches context menu
 $('.btn-saved-searches').on('click', function() {
   $('#saved-searches-context-menu').toggleClass('show');
+  $('body').toggleClass('overflow-hidden');
 });
 
 //- notifications context menu

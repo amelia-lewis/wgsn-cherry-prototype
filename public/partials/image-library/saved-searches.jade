@@ -1,25 +1,21 @@
 mixin saved-search(name, path1, path2, path3, date)
   li.saved-search.border-bottom
-    p.text-bold= name
-    p
+    h3.tight= name
+    h4.text-grey.tight
       span= path1
       i.icon.icon-angle-right
       span= path2
       i.icon.icon-angle-right
       span= path3
-    p.text-grey.tight Created: 
+    h4.text-grey.tight Created: 
       span= date
     i.icon.icon-trash
 
 ul.context-menu.text-left#saved-searches-context-menu
-  li.header-row.border-bottom.bg-xlt-grey
-    h3.tight Saved Image Searches
-
-  .scroll-container
-    +saved-search("Pea Coats", "Images", "Catwalk", "Coats", "03.18.2016")
-    +saved-search("Pea Coats", "Images", "Catwalk", "Coats", "03.18.2016")
-    +saved-search("Pea Coats", "Images", "Catwalk", "Coats", "03.18.2016")
-    +saved-search("Pea Coats", "Images", "Catwalk", "Coats", "03.18.2016")
-    +saved-search("Pea Coats", "Images", "Catwalk", "Coats", "03.18.2016")
-    +saved-search("Pea Coats", "Images", "Catwalk", "Coats", "03.18.2016")
-    +saved-search("Pea Coats", "Images", "Catwalk", "Coats", "03.18.2016")
+  +saved-search("Pea Coats", "Images", "Catwalk", "Coats", "03.18.2016")
+  +saved-search("Pea Coats", "Images", "Catwalk", "Coats", "03.18.2016")
+  +saved-search("Pea Coats", "Images", "Catwalk", "Coats", "03.18.2016")
+  +saved-search("Pea Coats", "Images", "Catwalk", "Coats", "03.18.2016")
+  +saved-search("Pea Coats", "Images", "Catwalk", "Coats", "03.18.2016")
+  +saved-search("Pea Coats", "Images", "Catwalk", "Coats", "03.18.2016")
+  +saved-search("Pea Coats", "Images", "Catwalk", "Coats", "03.18.2016")
