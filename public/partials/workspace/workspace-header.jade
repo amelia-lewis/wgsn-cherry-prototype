@@ -14,7 +14,7 @@ mixin workspace-header(name, owner, description, numfiles, permissions)
         p= description
 
       .col-xs-12.col-sm-8
-        .share-block.pull-right.btn-share.hoverable
+        .share-block.pull-right.hoverable
           .pull-left.has-tooltip.tooltip-down(data-tooltip="Amelia Lewis is the owner")
             .avatar(style="background-image: url('https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/005/05b/332/0aa54b4.jpg')")
           .divider.pull-left
@@ -28,10 +28,13 @@ mixin workspace-header(name, owner, description, numfiles, permissions)
             .avatar(style="background-image: url('https://media.licdn.com/media/AAEAAQAAAAAAAAZVAAAAJDBlZWUwZWE0LTk1OWYtNGMyYi1iYmU5LTA3NDNlNDYxZmYwMQ.jpg')")
           .pull-left.has-tooltip.tooltip-down(data-tooltip="Andrew Harris can edit")
             .avatar(style="background-image: url('https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/1/005/06d/1ea/349ef69.jpg')")
-          .pull-left.has-tooltip.tooltip-down(data-tooltip="+ 6 others")
+          .pull-left.has-tooltip.tooltip-down.btn-share(data-tooltip="Others")
             .avatar.avatar-alt.pull-left(data-initials="+6")
-          .pull-left.has-tooltip.tooltip-down(data-tooltip="Add users")
+          .pull-left.has-tooltip.tooltip-down.btn-share(data-tooltip="Add users")
             .avatar.pull-left(data-initials="+")
+
+          .divider.pull-left
+          .utility-icon.pull-left.block-xs.btn-comments.hoverable: i.icon.icon-comment
 
     .row
       .col-xs-12.col-sm-3
@@ -40,8 +43,8 @@ mixin workspace-header(name, owner, description, numfiles, permissions)
       .col-xs-12.col-sm-9
         .utility-block.pull-right
           include ../../partials/workspace/utility-block
-          .divider.pull-left
-          .utility-icon.pull-left.block-xs.btn-comments.hoverable: i.icon.icon-comment
+          //- .divider.pull-left
+          //- .utility-icon.pull-left.block-xs.btn-comments.hoverable: i.icon.icon-comment
 
   .workspace-header-condensed.block-md.bg-lt-grey
     .row
@@ -64,5 +67,5 @@ mixin workspace-header(name, owner, description, numfiles, permissions)
               span Select all (
                 span= numfiles
                 span )
-          .divider.pull-left
-          .utility-icon.pull-left.block-xs.btn-comments.hoverable: i.icon.icon-comment
+          //- .divider.pull-left
+          //- .utility-icon.pull-left.block-xs.btn-comments.hoverable: i.icon.icon-comment

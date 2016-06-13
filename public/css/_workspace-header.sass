@@ -4,6 +4,12 @@
 .workspace-header,
 .workspace-header-condensed
   z-index: 100
+
+  .divider
+    background: rgba(black, 0.1)
+    width: 1px
+    height: 37px
+    margin: 0 10px
   
   // VIEW ONLY BLOCK
   .view-only-block
@@ -18,10 +24,7 @@
   // SHARE BLOCK
   .share-block
     .divider
-      width: 1px
-      height: 34px
-      background: rgba(black, 0.1)
-      margin: 0 10px 0 0
+      margin: 0 10px 0 0 // to allow for .avatar's margin
 
     > .pull-left
       position: relative
@@ -40,19 +43,32 @@
 
       // these will somehow have to be dynamic to do with the length of the folder title...
       @media screen and (max-width: 1200px)
-        &:nth-last-of-type(2)
+        &:nth-last-of-type(5)
           display: none
+
+        .avatar.avatar-alt:after
+          content: "+7"
 
       @media screen and (max-width: 1160px)
-        &:nth-last-of-type(3)
+        &:nth-last-of-type(6)
           display: none
+
+        .avatar.avatar-alt:after
+          content: "+8"
 
       @media screen and (max-width: 1120px)
-        &:nth-last-of-type(4)
+        &:nth-last-of-type(7)
           display: none
 
+        .avatar.avatar-alt:after
+          content: "+9"
+
       @media screen and (max-width: 1100px)
-        display: none !important
+        &:nth-last-of-type(8)  
+          display: none
+
+        .avatar.avatar-alt:after
+          content: "+10"
 
     // adjusted to account for the 10px space on the right of the avatars
     .tooltip-down
@@ -73,12 +89,6 @@
         .icon
           color: $xdk-grey
 
-    .divider
-      background: rgba(black, 0.1)
-      width: 1px
-      height: 37px
-      margin: 0 10px
-
     .btn-save,
     .btn-move,
     .btn-copy,
@@ -88,21 +98,22 @@
     .displaying-results
       display: none
 
-    .btn-comments
-      position: relative
-      
-      &:before
-        content: ""
-        position: absolute
-        top: 8px
-        right: 6px
-        background: $yellow
-        display: block
-        width: 8px
-        height: 8px
-        border-radius: 50%
-        z-index: 10
-        border: 2px solid $lt-grey
+  .btn-comments
+    position: relative
+    font-size: 14px
+    
+    &:before
+      content: ""
+      position: absolute
+      top: 8px
+      right: 6px
+      background: $yellow
+      display: block
+      width: 8px
+      height: 8px
+      border-radius: 50%
+      z-index: 10
+      border: 2px solid $lt-grey
 
   // SEARCH INPUT (hide until focused)
   // .search-input
