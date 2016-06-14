@@ -399,6 +399,7 @@ $('.btn-saved-searches').on('click', function() {
 $('.btn-notifications').on('click', function() {
   $('#message-notifications-context-menu').removeClass('show');
   $('#notifications-context-menu').toggleClass('show');
+  $('body').toggleClass('overflow-hidden');
 });
 
 //- close context menu
@@ -546,7 +547,7 @@ $('.accordion-section .accordion-title').on('click', function() {
 
 //- lhs show folder structure (from image library)
 $('.btn-access-workspace').on('click', function() {
-  $(this).children('.icon').toggleClass('icon-double-angle-right icon-cross')
+  $(this).toggleClass('active');
   $('.left-side-panel').toggleClass('show-workspace-panel');
 });
 
@@ -580,7 +581,7 @@ $('.comments-panel .scroll-container').on('scroll', function() {
 });
 
 // close comments panel with arrow button
-$('.comments-panel .icon-angle-right').on('click', function() {
+$('.comments-panel .icon-double-angle-right').on('click', function() {
   $('.page-content').removeClass('show-comments-panel');
   $('.btn-comments').removeClass('active');
   $('.btn-back-to-top').removeClass('show-comments-panel');

@@ -1,3 +1,5 @@
+// Controllers for how various elements move/show/hide
+
 .page-content
   position: absolute
   top: $header-height
@@ -32,17 +34,28 @@
       transform: translate3d(0, 0, 0)
 
     .btn-left-side-panel 
+      transform: translate3d(calc(#{$left-side-panel-width} - 100%), 0, 0)
+      @extend .bg-white
+      @extend .border-right
+      
       .icon
+        color: $dk-grey
         transform: translate3d(0, 0, 0) rotate(0deg)
+
+    .btn-access-workspace
+      transform: translate3d($left-side-panel-width, 0, 0)
 
 body.workspace-view
   .page-content
     overflow: hidden
     
-    .left-side-panel,
+    .left-side-panel
+      top: 0
+      height: calc(100% - #{$header-height} - 40px)
+    
     .right-side-panel
       top: 0
-      height: 100%
+      height: calc(100% - #{$header-height}) 
 
     .right-side-panel
       @extend .overflow-auto
@@ -56,3 +69,47 @@ body.workspace-view
 
       .comments-panel
         transform: translate3d(0, 0, 0)
+
+      .share-block
+        .btn-comments,
+        .btn-share + .divider // crappy way to target this
+          display: none
+
+body.image-library-view
+  .left-side-panel
+    position: fixed
+    overflow: visible
+    top: $header-height + $title-row-height
+    height: calc(100vh - #{$header-height} - #{$title-row-height} - 40px)
+    
+    .panel-folders
+      box-shadow: 2px 0 10px rgba(black, 0)
+      transform: translate3d(calc(-1 * #{$left-side-panel-width}), 0, 0)
+      z-index: 320
+
+    // WORKSPACE PANEL
+    &.show-workspace-panel
+      .panel-folders
+        box-shadow: 2px 0 10px rgba(black, 0.1)
+        transform: translate3d(0, 0, 0)
+
+      .btn-access-workspace
+        .icon
+          margin: 0
+
+        span
+          width: 0
+          color: transparent
+
+  .page-content
+    // LEFT-SIDE PANEL
+    &.show-left-side-panel
+      .left-side-panel
+        overflow-y: scroll
+        overflow-x: hidden
+
+    // SCROLLING
+    &.headroom--not-top
+      .left-side-panel
+        top: $header-height + 74px
+        min-height: calc(100% - 124px - 40px)

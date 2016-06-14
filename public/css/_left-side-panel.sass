@@ -1,6 +1,7 @@
 .left-side-panel
   height: 100%
   @extend .border-right
+  @extend .border-bottom
 
 // FILTERS & FOLDERS PANELS
 .panel-filters,
@@ -34,6 +35,10 @@
     &.closed
       .accordion-content
         height: 0
+
+    &:last-of-type
+      .accordion-content
+        border-bottom: none
 
   .accordion-section-favourites,
   .accordion-section-mobile
@@ -97,38 +102,49 @@
     height: 100%
     overflow-y: auto
 
+// ACCESS BUTTONS
+.btn-left-side-panel,
 .btn-access-workspace
   position: fixed
   bottom: 0
-  left: 0
-  transform: translate3d(0, 0, 0)
-  white-space: nowrap
-  @extend .bg-xlt-grey
-  box-shadow: 2px 0 10px rgba(black, 0)
-  @extend .border-top
-  @extend .border-right
+  height: 40px
+  background: rgba(black, 0.6)
+  color: white
   z-index: 100
+  transform: translate3d(0, 0, 0)
 
   .icon
-    margin: 0 0 0 10px
+    color: white
 
 .btn-left-side-panel
-  position: absolute
-  left: calc(100% - 1px)
-  top: calc(50vh - 20px)
-  width: 12px
-  height: 40px
-  font-size: 10px
-  border-radius: 0 3px 3px 0
-  @extend .bg-white
-  @extend .border
-  border-left: none
-  @extend .flex-center
-  @extend .hoverable
+  left: 0
+  width: 40px
 
   .icon
+    color: white
     display: block
     transform: translate3d(0, 0, 0) rotate(180deg)
+
+.btn-access-workspace
+  left: -1 * $left-side-panel-width
+  width: $left-side-panel-width - 39px
+  justify-content: flex-start
+
+  span:first-of-type
+    display: inline-block
+
+  span:last-of-type
+    display: none
+
+  &.active
+    span:first-of-type
+      display: none
+
+    span:last-of-type
+      display: inline-block
+
+    .icon
+      transform: translate3d(0, 0, 0) rotate(180deg)
 
 // ACTIVE STATES
 body.workspace-autumn-winter-2016-view
@@ -157,42 +173,3 @@ body.workspace-favourites-view
   .left-side-panel
     .content-favourites a.misc-row
       @extend .active
-
-body.image-library-view
-  .left-side-panel
-    position: fixed
-    overflow-y: scroll
-    overflow-x: hidden
-    top: $header-height + $title-row-height
-    height: calc(100vh - #{$header-height} - #{$title-row-height})
-
-    .panel-filters
-      .filter:last-of-type
-        margin-bottom: 60px
-    
-    .panel-folders
-      box-shadow: 2px 0 10px rgba(black, 0)
-      transform: translate3d(calc(-1 * #{$left-side-panel-width}), 0, 0)
-      z-index: 320
-
-    &.show-workspace-panel
-      .panel-folders
-        box-shadow: 2px 0 10px rgba(black, 0.1)
-        transform: translate3d(0, 0, 0)
-
-      .btn-access-workspace
-        @extend .bg-white
-        border-color: transparent
-        box-shadow: 2px 0 10px rgba(black, 0.1)
-        
-        .icon
-          margin: 0
-
-        span
-          width: 0
-          color: transparent
-
-  .page-content.headroom--not-top
-    .left-side-panel
-      top: $header-height + 74px
-      min-height: calc(100% - 124px)

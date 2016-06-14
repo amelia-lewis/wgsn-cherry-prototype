@@ -2,8 +2,9 @@ include ../mixins/comment
 
 .comments-panel.border-left.block-hor-xxs
   .header-row.border-bottom.overflow-auto
-    h4.tight.pull-left Folder comments
-    i.icon.icon-angle-right.text-grey.pull-right.hoverable
+    i.icon.icon-comment.block-right-xs
+    span.wgsn-font Folder comments
+    i.icon.icon-double-angle-right.pull-right.hoverable
   
   .scroll-container
     +comment("https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/005/05b/332/0aa54b4.jpg", "AL", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris.", "Amelia Lewis", "02/03/2016 at 11:00am")
@@ -18,4 +19,4 @@ include ../mixins/comment
     +comment("https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/005/05b/332/0aa54b4.jpg", "AL", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ante mauris. Vestibulum aliquam venenatis nisl, nec venenatis libero pretium at. In pretium.", "Amelia Lewis", "A moment ago")(id="bottom-comment")
     a.btn.btn-coloured.btn-new-comments(href="#bottom-comment") New Comments
   
-  .comment-input-container.block-xs.border-top.bg-lt-grey: textarea.comment-input(placeholder="Add a comment")
+  .comment-input-container.block-xs.border-top.bg-white: textarea.comment-input(placeholder="Add a comment")

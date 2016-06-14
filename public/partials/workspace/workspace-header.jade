@@ -1,7 +1,7 @@
 mixin workspace-header(name, owner, description, numfiles, permissions)
   .workspace-header.block-md.bg-lt-grey
     .row.block-bot-sm
-      .col-xs-12.col-sm-4
+      .col-xs-12.col-sm-6
         h3.tight Workspace
         h1.tight
           span= name
@@ -13,7 +13,7 @@ mixin workspace-header(name, owner, description, numfiles, permissions)
           span= owner
         p= description
 
-      .col-xs-12.col-sm-8
+      .col-xs-12.col-sm-6
         .share-block.pull-right.hoverable
           .pull-left.has-tooltip.tooltip-down(data-tooltip="Amelia Lewis is the owner")
             .avatar(style="background-image: url('https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/005/05b/332/0aa54b4.jpg')")
