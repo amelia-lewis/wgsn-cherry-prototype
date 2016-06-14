@@ -29,9 +29,12 @@
   .modal-header
     background: $xdk-grey
     color: white
-    @extend .block-sm
+    @extend .block-md
     overflow: auto
     vertical-align: bottom
+
+    h3
+      padding-top: 2px
 
     h3 + p
       margin: 1px 0 0 6px
@@ -46,11 +49,11 @@
         opacity: 1
 
   .modal-content
-    @extend .block-sm
+    @extend .block-md
 
   .modal-footer
-    @extend .block-hor-sm
-    @extend .block-bot-sm
+    @extend .block-md
+    @extend .border-top
     overflow: auto
 
   &.show
@@ -111,7 +114,7 @@
     .save-modal-content-container,
     .save-modal-folder-container
       height: 100%
-      padding: 15px
+      padding: 20px
       position: relative
 
     .save-modal-content-container
@@ -128,7 +131,7 @@
 
     .save-modal-folder-container
       .panel-folders
-        height: 414px
+        height: 404px
         position: relative
         top: auto
         left: auto
@@ -218,7 +221,7 @@
 
 #send-modal
   textarea
-    height: 120px
+    height: 100px
 
 
 // ==================================================
@@ -358,3 +361,7 @@
   .modal-header
     p
       display: none
+
+  .modal-footer
+    padding-top: 0
+    border: none

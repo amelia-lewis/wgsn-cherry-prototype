@@ -12,6 +12,7 @@ block modal-vars
   .modal-content
     block modal-content
 
-  .modal-footer
-    p.tight.text-grey.text-underline.block-top-xs.hoverable.pull-left.close-modal Cancel
-    .btn.btn-white.pull-right.close-modal Done
+  .modal-footer.text-right
+    //- p.tight.text-grey.text-underline.block-top-xs.hoverable.pull-left.close-modal Cancel
+    .block-right-sm.inline-block: .btn.btn-white.close-modal Cancel
+    .inline-block: .btn.btn-black.close-modal Done

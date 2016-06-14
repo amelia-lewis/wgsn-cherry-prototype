@@ -2,10 +2,10 @@ extends modal
 
 block append modal-vars
   - id = "create-new-board"
-  - title = "Create new board"
+  - title = "Create new folder"
   - type = "simple-modal"
 
 block modal-content
-  .row.block-bot-sm
+  .row
     .col-xs-12
-      input(type="text", placeholder="Enter a name for your new board")
+      input(type="text", placeholder="Folder name")
