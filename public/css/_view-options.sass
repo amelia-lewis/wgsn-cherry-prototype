@@ -25,10 +25,26 @@
   select
     width: 110px
 
-// .right-side-panel.headroom--not-top
-//   .view-options
-//     position: fixed
-//     top: calc(#{$header-height} + 76px)
-//     left: $left-side-panel-width
-//     right: 0
-//     z-index: 100
+body.image-library-view
+  .page-content
+    .view-options
+      .col-xs-12.col-sm-6:nth-of-type(2)
+        > .pull-right
+          > .pull-left:nth-of-type(1),
+          > .pull-left:nth-of-type(1) + .divider
+            display: none
+
+    &.has-files-selected
+      .view-options
+        .col-xs-12.col-sm-6:nth-of-type(2)
+          > .pull-right:nth-of-type(1)
+            .btn-view-option,
+            .btn-view-option + .divider,
+            .btn-settings,
+            > .pull-left:nth-of-type(4)
+              display: none
+
+          > .pull-right
+            > .pull-left:nth-of-type(1),
+            > .pull-left:nth-of-type(1) + .divider
+              display: block

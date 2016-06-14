@@ -75,7 +75,7 @@ checkforhover = function(){
     
     // if only one file is selected
     if (myaccount == 1) {
-      $('.utility-block .displaying-results').text(myaccount + ' item selected');
+      $('.displaying-results').text(myaccount + ' item selected');
       $('.btn-comments').removeClass('active');
     };
     
@@ -97,7 +97,7 @@ checkforhover = function(){
     
     // if only one file is selected
     if (myaccount == 1) {
-      $('.utility-block .displaying-results').text(myaccount + ' item selected');
+      $('.displaying-results').text(myaccount + ' item selected');
       $('.btn-comments').removeClass('active');
     };
     
@@ -230,7 +230,7 @@ multiFileSelect = function(e) {
     } else {
       checkforhover();
       $('.page-content').addClass('has-files-selected');
-      $('.utility-block .displaying-results').text(myaccount + ' item selected');
+      $('.displaying-results').text(myaccount + ' item selected');
       $(e.target).parent().addClass('selected');
     };
 
@@ -241,7 +241,7 @@ multiFileSelect = function(e) {
     } else {
       checkforhover();
       $('.page-content').addClass('has-files-selected');
-      $('.utility-block .displaying-results').text((myaccount + 1) + ' items selected');
+      $('.displaying-results').text((myaccount + 1) + ' items selected');
       $(e.target).parent().addClass('selected');
     };
   };
@@ -288,7 +288,7 @@ multiFileSelectDetailsView = function(e) {
     } else {
       checkforhover();
       $('.page-content').addClass('has-files-selected');
-      $('.utility-block .displaying-results').text(myaccount + ' item selected');
+      $('.displaying-results').text(myaccount + ' item selected');
       $(e.target).parentsUntil('details-view').addClass('selected');
     };
 
@@ -299,7 +299,7 @@ multiFileSelectDetailsView = function(e) {
     } else {
       checkforhover();
       $('.page-content').addClass('has-files-selected');
-      $('.utility-block .displaying-results').text((myaccount + 1) + ' items selected');
+      $('.displaying-results').text((myaccount + 1) + ' items selected');
       $(e.target).parentsUntil('details-view').addClass('selected');
     };
   };
