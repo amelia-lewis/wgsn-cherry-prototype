@@ -1,4 +1,4 @@
-// Controllers for how various elements move/show/hide... sorry, this has become a bit of a shitstorm
+// Controllers for how various elements move/show/hide... slight shitstorm of a file
 
 .page-content
   position: fixed
@@ -32,7 +32,7 @@
     left: calc(100% - #{$left-side-panel-width})
     transform: translate3d(100%, 0, 0)
     z-index: 50
-    @extend .border-left
+    // @extend .border-left
 
   .filter-structure,
   .folder-structure
@@ -63,7 +63,7 @@
     height: 40px
     width: 15px
     z-index: 100
-    border-right: none
+    // border-right: none
 
     .icon
       display: block
@@ -170,7 +170,8 @@ body.image-library-view
 .accordion-section
   .accordion-title
     display: block
-    padding: 14px 15px
+    @extend .block-ver-sm
+    @extend .block-hor-md
     @extend .hoverable
   
   .accordion-content
@@ -179,7 +180,8 @@ body.image-library-view
     position: relative
 
     .accordion-footer
-      padding: 14px 12px
+      @extend .block-bot-sm
+      @extend .block-hor-md
 
   &.closed
     .accordion-content
@@ -195,7 +197,7 @@ body.image-library-view
     @extend .border-bottom
 
 
-  // ACCORDION SECTION PANEL HEIGHTS
+  // Accordion section panel heights
   &.accordion-section-messages.open
     .accordion-content
       height: 67px
@@ -220,29 +222,30 @@ body.image-library-view
 // ====================
 // Active states
 // ====================
-body.workspace-autumn-winter-2016-view
-  a.board-row.autumn-winter-2016
-    @extend .active
-
-body.workspace-balmain-2016-view
-  a.board-row.balmain-2016
-    @extend .active
-
-body.workspace-inspiration-images-view
-  a.board-row.inspiration-images
-    @extend .active
-
-body.workspace-inbox-view
-  .left-side-panel
-    .btn-inbox
+body
+  &.workspace-autumn-winter-2016-view
+    a.board-row.autumn-winter-2016
       @extend .active
 
-body.workspace-sent-messages-view
-  .left-side-panel
-    .btn-sent-messages
+  &.workspace-balmain-2016-view
+    a.board-row.balmain-2016
       @extend .active
 
-body.workspace-favourites-view
-  .left-side-panel
-    .content-favourites a.misc-row
+  &.workspace-inspiration-images-view
+    a.board-row.inspiration-images
       @extend .active
+
+  &.workspace-inbox-view
+    .left-side-panel
+      .btn-inbox
+        @extend .active
+
+  &.workspace-sent-messages-view
+    .left-side-panel
+      .btn-sent-messages
+        @extend .active
+
+  &.workspace-favourites-view
+    .left-side-panel
+      .content-favourites a.misc-row
+        @extend .active

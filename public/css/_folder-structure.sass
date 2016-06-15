@@ -9,8 +9,8 @@
   .team-row
     display: block
     position: relative
-    padding: 8px 12px
-    // color: rgba(white, 0.6)
+    @extend .block-ver-xs
+    @extend .block-hor-md
     @extend .hoverable
 
     .board-name
@@ -21,7 +21,7 @@
       opacity: 0
       position: absolute
       top: 8px
-      right: 6px
+      right: 15px
 
     .icon-user
       font-size: 10px
@@ -38,9 +38,33 @@
       &:hover
         background: rgba($xdk-grey, 0.1)
 
+    &.label-red
+      .icon-circle
+        color: $label-red
+
+    &.label-orange
+      .icon-circle
+        color: $label-orange
+
+    &.label-yellow
+      .icon-circle
+        color: $label-yellow
+
+    &.label-green
+      .icon-circle
+        color: $label-green
+
+    &.label-blue
+      .icon-circle
+        color: $label-blue
+
+    &.label-purple
+      .icon-circle
+        color: $label-purple
+
     @for $i from 1 through 6
       &.level-#{$i}
-        padding-left: 12px + (15px * ($i - 1))
+        padding-left: 20px + (15px * ($i - 1))
 
         .board-name
           +text-truncate(calc(100% - (30px + (#{$i} * 5px))))

@@ -12,10 +12,9 @@ mixin filter(id, title, viewall, filteredby, ...items)
               input.pull-left(type="checkbox" id=item)
               span= item
       
-      .accordion-footer.overflow-auto
-        p.tight.wgsn-font.hoverable.pull-left Reset filter
-        if viewall
-          p.tight.wgsn-font.btn-view-all.hoverable.pull-right(id="btn-view-all-" + id)
+      if viewall
+        .accordion-footer.overflow-auto
+          p.tight.wgsn-font.btn-view-all.hoverable.pull-left(id="btn-view-all-" + id)
             span.block-right-xxs View all
             i.icon.icon-angle-right.tight
 

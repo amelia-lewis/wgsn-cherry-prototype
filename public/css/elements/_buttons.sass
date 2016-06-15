@@ -13,6 +13,9 @@ button,
   cursor: pointer
   white-space: nowrap
 
+  .icon
+    @extend .block-right-xxs
+
   span
     @extend .wgsn-font
     font-size: 1em
@@ -116,6 +119,10 @@ body.product-styletrial
     &:not(.btn-disabled):hover
       background: lighten($styletrial, 10)
       transition-delay: 0ms !important
+
+.bg-xdk-grey
+  .btn-black
+    @extend .btn-white
 
 // BACK TO TOP BUTTON
 .btn-back-to-top

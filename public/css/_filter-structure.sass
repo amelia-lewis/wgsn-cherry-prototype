@@ -7,12 +7,11 @@
     border-color: $lt-grey
     
     ul
-      // height: 192px
-      @extend .block-hor-sm
+      @extend .block-hor-md
       @extend .block-bot-sm
+      @extend .hoverable
       display: flex
       flex-direction: column
-      border-bottom: 1px solid rgba($lt-grey, 0.25)
 
       li
         width: 100%
@@ -75,6 +74,7 @@
     width: 100%
     height: 50vh
     @extend .block-top-sm
+    @extend .hoverable
     overflow-x: auto
     overflow-y: hidden
     display: flex
@@ -89,7 +89,7 @@
       span
         display: inline-block
         width: calc(100% - 30px)
-        line-height: 1.4em
+        line-height: 1.5em
 
     .filter-extended-subheading
       @extend .wgsn-font
