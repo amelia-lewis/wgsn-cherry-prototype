@@ -1,47 +1,27 @@
 .left-side-panel
-  .panel-folders
-    .scroll-container
-      //- .accordion-section.accordion-section-messages.closed
-      //-   .accordion-title
-      //-     i.icon.icon-envelope
-      //-     span.wgsn-font Messages
-      //-     i.section-expand-icon.icon.icon-plus.pull-right.tight
+  .folder-structure
+    .accordion-section.accordion-section-favourites
+      a.accordion-title(href="/workspace/favourites")
+        i.icon.icon-heart.block-right-xs
+        span.wgsn-font Favourites
 
-      //-   .accordion-content
-      //-     a.misc-row.btn-inbox(href="/workspace/inbox")
-      //-       span Inbox
-      //-       .inbox-number.pull-right.text-center.hidden-workspace-inbox 1
+    .accordion-section.accordion-section-mobile
+      a.accordion-title(href="")
+        i.icon.icon-mobile.block-right-xs
+        span.wgsn-font Mobile Uploads
+    
+    include folder-structure
 
-      //-     a.misc-row.btn-sent-messages(href="/workspace/sent-messages")
-      //-       span Sent Messages
-      
-      .accordion-section.accordion-section-favourites
-        a.accordion-title(href="/workspace/favourites")
-          i.icon.icon-heart
-          span.wgsn-font Favourites
+    .accordion-section.accordion-section-trash.closed
+      .accordion-title
+        i.icon.icon-trash.block-right-xs
+        span.wgsn-font Trash
+        i.section-expand-icon.icon.icon-plus.pull-right.tight
 
-      .accordion-section.accordion-section-mobile
-        a.accordion-title(href="")
-          i.icon.icon-upload
-          span.wgsn-font Mobile Uploads
-      
-      include folder-structure
+      .accordion-content
+        +board-row("/workspace/trash", "All trash", "200", "1", false, "open", false)
+        +board-row(false, "Board name", "200", "2", false, "", false)
+        +board-row(false, "Supercalifragilisticexpialidocious", "200", "2", false, "", false)
+        +board-row(false, "Old stuff", "200", "2", false, "closed", false)
 
-      .accordion-section.accordion-section-trash.closed
-        .accordion-title
-          i.icon.icon-trash
-          span.wgsn-font Trash
-          i.section-expand-icon.icon.icon-plus.pull-right.tight
-
-        .accordion-content
-          +board-row("/workspace/trash", "All trash", "200", "1", false, "open", false)
-          +board-row(false, "Board name", "200", "2", false, "", false)
-          +board-row(false, "Supercalifragilisticexpialidocious", "200", "2", false, "", false)
-          +board-row(false, "Old stuff", "200", "2", false, "closed", false)
-
-    //- .block-sm.static-bottom-row
-    //-   .btn.btn-clear.btn-full.btn-create-new-board
-    //-     i.icon.icon-plus
-    //-     span Create New Folder
-
-.btn-left-side-panel.flex-center.hoverable: i.icon.icon-double-angle-left
+  .btn-left-side-panel.bg-white.flex-center.border.hoverable: i.icon.icon-double-angle-left

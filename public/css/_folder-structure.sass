@@ -1,4 +1,4 @@
-.panel-folders
+.folder-structure
   .icon-caret-right,
   .icon-caret-down
     margin: 0 4px 0 0
@@ -29,46 +29,14 @@
     &:hover
       background: rgba($xdk-grey, 0.05)
       
-      // .board-name,
-      // .icon
-      //   color: rgba(white, 0.8)
-      
       .icon-ellipsis
         opacity: 1
 
     &.active
       background: rgba($xdk-grey, 0.05)
 
-      // .board-name,
-      // .icon
-      //   color: rgba(white, 0.8)
-
       &:hover
         background: rgba($xdk-grey, 0.1)
-
-    &.label-red
-      .icon-circle
-        color: $label-red
-
-    &.label-orange
-      .icon-circle
-        color: $label-orange
-
-    &.label-yellow
-      .icon-circle
-        color: $label-yellow
-
-    &.label-green
-      .icon-circle
-        color: $label-green
-
-    &.label-blue
-      .icon-circle
-        color: $label-blue
-
-    &.label-purple
-      .icon-circle
-        color: $label-purple
 
     @for $i from 1 through 6
       &.level-#{$i}
@@ -82,10 +50,13 @@
     .icon-circle
       margin: 0 0 0 6px
 
-.left-side-panel
-  .board-row
-    .btn.close-modal
-      display: none
+// hide save button (that has to be shown in the save to folder modal)
+.left-side-panel,
+.workspace-panel
+  .folder-structure
+    .board-row
+      .btn.close-modal
+        display: none
 
 html.tablet
   .left-side-panel

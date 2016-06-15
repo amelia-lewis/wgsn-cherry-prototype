@@ -1,0 +1,248 @@
+// Controllers for how various elements move/show/hide... sorry, this has become a bit of a shitstorm
+
+.page-content
+  position: fixed
+  top: $header-height
+  left: 0
+  right: 0
+  width: 100%
+  height: 100%
+  overflow: hidden
+  
+  .left-side-panel,
+  .right-side-panel,
+  .workspace-panel
+    position: absolute
+    top: 0
+    left: 0
+    height: calc(100vh - #{$header-height})
+
+  .left-side-panel
+    width: $left-side-panel-width
+    transform: translate3d(-100%, 0, 0)
+    z-index: 50
+    @extend .border-right
+
+  .right-side-panel
+    right: 0
+    @extend .bg-xlt-grey
+
+  .workspace-panel
+    width: $left-side-panel-width
+    left: calc(100% - #{$left-side-panel-width})
+    transform: translate3d(100%, 0, 0)
+    z-index: 50
+    @extend .border-left
+
+  .filter-structure,
+  .folder-structure
+    height: 100%
+    overflow-y: auto
+
+  // ====================
+  // Access buttons
+  // ====================
+  .btn-left-side-panel
+    position: absolute
+    top: calc(50% - 20px)
+    left: 100%
+    height: 40px
+    width: 15px
+    z-index: 100
+    border-left: none
+
+    .icon
+      display: block
+      @extend .text-smaller
+      transform: translate3d(0, 0, 0) rotate(180deg)
+
+  .btn-workspace-panel
+    position: absolute
+    top: calc(50% - 20px)
+    right: 100%
+    height: 40px
+    width: 15px
+    z-index: 100
+    border-right: none
+
+    .icon
+      display: block
+      @extend .text-smaller
+      transform: translate3d(0, 0, 0) rotate(180deg)
+
+
+  // ====================
+  // Show left-side panel
+  // ====================
+  &.show-left-side-panel
+    .right-side-panel,
+    .workspace-header,
+    .workspace-header-condensed
+      left: $left-side-panel-width
+
+    .left-side-panel
+      transform: translate3d(0, 0, 0)
+
+    .btn-left-side-panel
+      .icon
+        transform: translate3d(0, 0, 0) rotate(0deg)
+
+  // ====================
+  // Show workspace panel
+  // ====================
+  &.show-workspace-panel
+    .right-side-panel,
+    .image-library-header,
+    .view-option
+      right: $left-side-panel-width
+    
+    .workspace-panel
+      transform: translate3d(0, 0, 0)
+
+    .btn-workspace-panel
+      .icon
+        transform: translate3d(0, 0, 0) rotate(0deg)
+
+  // ====================
+  // Show comments panel
+  // ====================
+  &.show-comments-panel
+    .right-side-panel,
+    .workspace-header,
+    .workspace-header-condensed
+      right: $comments-panel-width
+
+    .comments-panel
+      transform: translate3d(0, 0, 0)
+
+    .share-block
+      .btn-comments,
+      .btn-share + .divider // crappy way to target this
+        display: none
+
+
+// ====================
+// Workspace
+// ====================
+body.workspace-view
+  .page-content
+    .right-side-panel
+      @extend .overflow-auto
+
+
+// ====================
+// Image & Library
+// ====================
+body.image-library-view
+  .page-content
+    .left-side-panel
+      top: $image-library-header-height
+      height: calc(100vh - #{$header-height} - #{$image-library-header-height})
+
+    .right-side-panel
+      top: $image-library-header-height
+      height: calc(100vh - #{$header-height} - #{$image-library-header-height})
+      @extend .overflow-auto
+
+      .view-options
+        position: fixed
+        top: $header-height + $image-library-header-height
+        left: 0
+        right: 0
+        background: rgba($xlt-grey, 0.95)
+        z-index: 50
+
+      .files-row
+        margin-top: 57px
+
+    &.show-left-side-panel
+      .view-options
+        left: $left-side-panel-width
+
+    &.show-workspace-panel
+      .view-options
+        right: $left-side-panel-width
+
+
+// ====================
+// Accordion
+// ====================
+.accordion-section
+  .accordion-title
+    display: block
+    padding: 14px 15px
+    @extend .hoverable
+  
+  .accordion-content
+    @extend .border-bottom
+    overflow: hidden
+    position: relative
+
+    .accordion-footer
+      padding: 14px 12px
+
+  &.closed
+    .accordion-content
+      height: 0
+
+  &:last-of-type
+    .accordion-content
+      border-bottom: none
+
+.accordion-section-favourites,
+.accordion-section-mobile
+  .accordion-title
+    @extend .border-bottom
+
+
+  // ACCORDION SECTION PANEL HEIGHTS
+  &.accordion-section-messages.open
+    .accordion-content
+      height: 67px
+
+  &.accordion-section-recent-boards.open
+    .accordion-content
+      height: 133px
+
+  &.accordion-section-my-boards.open
+    .accordion-content
+      height: 318px
+
+  &.accordion-section-shared-boards.open
+    .accordion-content
+      height: 564px
+
+  &.accordion-section-trash.open
+    .accordion-content
+      height: 129px
+
+
+// ====================
+// Active states
+// ====================
+body.workspace-autumn-winter-2016-view
+  a.board-row.autumn-winter-2016
+    @extend .active
+
+body.workspace-balmain-2016-view
+  a.board-row.balmain-2016
+    @extend .active
+
+body.workspace-inspiration-images-view
+  a.board-row.inspiration-images
+    @extend .active
+
+body.workspace-inbox-view
+  .left-side-panel
+    .btn-inbox
+      @extend .active
+
+body.workspace-sent-messages-view
+  .left-side-panel
+    .btn-sent-messages
+      @extend .active
+
+body.workspace-favourites-view
+  .left-side-panel
+    .content-favourites a.misc-row
+      @extend .active
