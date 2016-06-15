@@ -546,9 +546,9 @@ $('.accordion-section .accordion-title').on('click', function() {
 });
 
 //- lhs show folder structure (from image library)
-$('.btn-access-workspace').on('click', function() {
+$('.btn-workspace-panel').on('click', function() {
   $(this).toggleClass('active');
-  $('.left-side-panel').toggleClass('show-workspace-panel');
+  $('.page-content').toggleClass('show-workspace-panel');
 });
 
 //- comments panel

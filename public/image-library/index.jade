@@ -10,7 +10,7 @@ block content
   .page-content.show-left-side-panel
     .image-library-header.block-md.bg-lt-grey
       .row
-        .col-xs-12
+        .col-xs-12.col-sm-8
           h1 Image &amp; Design Library
 
       .row
@@ -37,9 +37,18 @@ block content
     //-             span Select 500
 
     //- LEFT SIDE PANEL
-    include ../partials/image-library/left-side-panel
+    .left-side-panel
+      include ../partials/image-library/filter-structure
+      .btn-left-side-panel.bg-white.flex-center.border.hoverable: i.icon.icon-double-angle-left
 
     //- RIGHT SIDE PANEL
     .right-side-panel
       include ../partials/workspace/view-options
       include ../partials/images-row
+
+    //- WORKSPACE PANEL
+    .workspace-panel
+      .folder-structure
+        include ../partials/workspace/folder-structure
+
+      .btn-workspace-panel.bg-white.flex-center.border.hoverable: i.icon.icon-double-angle-right
