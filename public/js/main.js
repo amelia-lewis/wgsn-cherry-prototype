@@ -591,6 +591,11 @@ $('.filter-tag .icon-cross').on('click', function() {
   $(this).parent().remove();
 });
 
+//- workspace header
+$('.workspace-header h3 .icon-double-angle-down').on('click', function() {
+  $('.workspace-header').toggleClass('expanded collapsed');
+});
+
 
 // ====================================================================================================
 //  ______ _ _ _                

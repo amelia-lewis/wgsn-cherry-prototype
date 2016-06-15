@@ -1,4 +1,4 @@
-// Controllers for how various elements move/show/hide
+// Controllers for how various elements move/show/hide... this file has become a slight shitstorm...
 
 .page-content
   position: fixed
@@ -30,7 +30,8 @@
   &.show-left-side-panel
     .right-side-panel,
     .workspace-header,
-    .workspace-header-condensed
+    .workspace-header-condensed,
+    .view-options
       left: $left-side-panel-width
 
     .left-side-panel
@@ -50,11 +51,23 @@
 
 body.workspace-view
   .page-content
+    @extend .overflow-hidden
+    
     .left-side-panel
       height: calc(100% - #{$header-height} - 40px)
 
     .right-side-panel
-      @extend .overflow-auto
+      @extend .overflow-hidden
+
+      .view-options
+        top: $header-height + 175px
+
+      .workspace-header.collapsed + .view-options
+        top: $header-height + 80px
+
+      .files-row
+        @extend .overflow-auto
+        height: 100%
 
     // COMMENTS PANEL
     &.show-comments-panel
@@ -99,16 +112,7 @@ body.image-library-view
     @extend .overflow-auto
 
     .view-options
-      position: fixed
       top: $header-height + $image-library-header-height
-      left: 0
-      right: 0
-      background: rgba($xlt-grey, 0.95)
-      z-index: 200
-
-    .files-row
-      margin-top: 57px
-
 
   .page-content
     &.show-left-side-panel

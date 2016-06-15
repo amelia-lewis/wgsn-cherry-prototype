@@ -1,8 +1,10 @@
 mixin workspace-header(name, owner, description, numfiles, permissions)
-  .workspace-header.block-md.bg-lt-grey
+  .workspace-header.block-md.bg-lt-grey.expanded
     .row.block-bot-sm
       .col-xs-12.col-sm-6
-        h3.tight Workspace
+        h3.tight 
+          .block-right-xs.inline-block: i.icon.icon-double-angle-down.hoverable.inline-block
+          | Workspace
         h1.tight
           span= name
           if permissions == "view"
@@ -41,31 +43,31 @@ mixin workspace-header(name, owner, description, numfiles, permissions)
         input.search-input(type="text", placeholder="Search this folder")
 
       .col-xs-12.col-sm-9
-        .utility-block.pull-right
+        .utility-block.pull-right.no-transition
           include ../../partials/workspace/utility-block
           //- .divider.pull-left
           //- .utility-icon.pull-left.block-xs.btn-comments.hoverable: i.icon.icon-comment
 
-  .workspace-header-condensed.block-md.bg-lt-grey
-    .row
-      .col-xs-12.col-sm-4
-        h3.tight Workspace
-        h1.tight
-          span= name
-          if permissions == "view"
-            .view-only-block.block-left-sm.inline-block
-              i.icon.icon-eye
-              span.has-tooltip.tooltip-down.tooltip-wrap.sans-serif.text-no-transform(data-tooltip="You can only view this board. To make changes, ask the board owner for edit permissions.") View only access
+  //- .workspace-header-condensed.block-md.bg-lt-grey
+  //-   .row
+  //-     .col-xs-12.col-sm-4
+  //-       h3.tight Workspace
+  //-       h1.tight
+  //-         span= name
+  //-         if permissions == "view"
+  //-           .view-only-block.block-left-sm.inline-block
+  //-             i.icon.icon-eye
+  //-             span.has-tooltip.tooltip-down.tooltip-wrap.sans-serif.text-no-transform(data-tooltip="You can only view this board. To make changes, ask the board owner for edit permissions.") View only access
 
-      .col-xs-12.col-sm-8
-        .utility-block.pull-right
-          include ../../partials/workspace/utility-block
-          .divider.pull-left
-          .block-xs.pull-left
-            label.checkbox-radio.tight(for="select-all")
-              input.pull-left.select-all(type="checkbox" id="select-all")
-              span Select all (
-                span= numfiles
-                span )
-          //- .divider.pull-left
-          //- .utility-icon.pull-left.block-xs.btn-comments.hoverable: i.icon.icon-comment
+  //-     .col-xs-12.col-sm-8
+  //-       .utility-block.pull-right
+  //-         include ../../partials/workspace/utility-block
+  //-         .divider.pull-left
+  //-         .block-xs.pull-left
+  //-           label.checkbox-radio.tight(for="select-all")
+  //-             input.pull-left.select-all(type="checkbox" id="select-all")
+  //-             span Select all (
+  //-               span= numfiles
+  //-               span )
+  //-         //- .divider.pull-left
+  //-         //- .utility-icon.pull-left.block-xs.btn-comments.hoverable: i.icon.icon-comment

@@ -1,8 +1,7 @@
 // ====================
 // Workspace header
 // ====================
-.workspace-header,
-.workspace-header-condensed
+.workspace-header
   z-index: 100
 
   .divider
@@ -131,29 +130,27 @@
   //     width: 100%
   //     transform: translate3d(0, 0, 0)
 
+  &.collapsed
+    height: 80px
+    
+    .col-xs-12.col-sm-6 > p,
+    h3.text-grey,
+    .share-block,
+    .search-input
+      display: none
 
-// ====================
-// Condensed Workspace header (for scroll)
-// ====================
-.workspace-header-condensed
-  position: fixed
-  top: $header-height
-  left: 0
-  right: 0
-  z-index: 100
-  transform: translate3d(0, -100%, 0)
+    .utility-block
+      transform: translate3d(0, -53px, 0)
 
-.right-side-panel.headroom--not-top
-  .workspace-header-condensed
-    transform: translate3d(0, 0, 0)
+    h3 .icon
+      transform: translate3d(0, 0, 0) rotate(180deg)
 
 
 // ====================
 // Select mode
 // ====================
 .page-content.has-files-selected
-  .workspace-header,
-  .workspace-header-condensed
+  .workspace-header
     .utility-block
       .btn-move,
       .btn-copy,
