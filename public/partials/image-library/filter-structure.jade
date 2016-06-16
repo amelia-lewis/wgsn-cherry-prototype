@@ -8,9 +8,8 @@ mixin filter(id, title, viewall, filteredby, ...items)
       ul.clean.overflow-auto
         each item in items
           li
-            label.checkbox-radio(for=item)
-              input.pull-left(type="checkbox" id=item)
-              span= item
+            label.checkbox-radio(for=item)= item
+              input(type="checkbox" id=item)
       
       if viewall
         .accordion-footer.overflow-auto

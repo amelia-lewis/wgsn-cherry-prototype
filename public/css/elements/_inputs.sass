@@ -5,8 +5,13 @@
 label
   display: block
   margin-bottom: 10px
-  // line-height: 2em
+  line-height: 2em
   font-size: 10px
+
+  span.optional
+    margin-left: 5px
+    @extend .wgsn-font
+    @extend .text-grey
 
   span.error-message
     color: $label-red
@@ -49,6 +54,7 @@ select
     background: white url('../img/icons/icon-font_tick-circle-filled.svg') no-repeat right 10px center / 14px
 
 select
+  line-height: 1em
   background: white url('../img/icons/icon-font_dropdown-arrow.svg') no-repeat right 10px center / 14px
 
 textarea
@@ -90,7 +96,7 @@ label.checkbox-radio
   @extend .sans-serif
   @extend .text-no-transform
   font-size: 1em
-  // line-height: 0.5em
+  line-height: 1.4em
   cursor: pointer
 
 input[type="checkbox"],
@@ -102,6 +108,7 @@ input[type="radio"]
   height: 16px
   position: relative
   @extend .hoverable
+  @extend .pull-left
   background: none
   border: none
   box-shadow: none

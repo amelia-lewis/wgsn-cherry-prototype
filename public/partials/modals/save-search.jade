@@ -6,6 +6,8 @@ block append modal-vars
   - type = "simple-modal"
 
 block modal-content
-  .row.block-bot-sm
+  .row
     .col-xs-12
-      input(type="text", placeholder="Enter a name for your saved search")
+      form
+        label Saved search name
+          input(type="text", placeholder="Saved search name")

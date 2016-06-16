@@ -1,5 +1,5 @@
 mixin filter-extended(id, title, tabbed, search, anchors, subheadings, ...items)
-  .modal.filter-extended(id="filter-extended-" +id class!=attributes.class)
+  .modal.filter-extended(id="filter-extended-" +id)
     .modal-header
       h3.pull-left.tight= title
       i.icon.icon-cross.pull-right.hoverable.close-modal
@@ -33,9 +33,8 @@ mixin filter-extended(id, title, tabbed, search, anchors, subheadings, ...items)
               
               each item in items
                 li
-                  label.checkbox-radio(for=item)
-                    input.pull-left(type="checkbox" id=item)
-                    span= item
+                  label.checkbox-radio(for=item)= item
+                    input(type="checkbox" id=item)
 
       else if id == "products"
         .row.hierarchical-list
@@ -43,65 +42,54 @@ mixin filter-extended(id, title, tabbed, search, anchors, subheadings, ...items)
             ul.filter-extended-list.clean
               each item in items
                 li
-                  label.checkbox-radio(for=item)
-                    input.pull-left(type="checkbox" id=item)
-                    span= item
+                  label.checkbox-radio(for=item)= item
+                    input(type="checkbox" id=item)
                     i.icon.icon-angle-right.pull-right.tight.text-grey
 
           .col-xs-4.border-right
             ul.filter-extended-list.clean
               li
-                label.checkbox-radio(for="products-l2-i1")
-                  input.pull-left(type="checkbox" id="products-l2-i1")
-                  span Coats
+                label.checkbox-radio(for="products-l2-i1") Coats
+                  input(type="checkbox" id="products-l2-i1")
                   i.icon.icon-angle-right.pull-right.tight.text-grey
               li
-                label.checkbox-radio(for="products-l2-i2")
-                  input.pull-left(type="checkbox" id="products-l2-i2")
-                  span Dresses
+                label.checkbox-radio(for="products-l2-i2") Dresses
+                  input(type="checkbox" id="products-l2-i2")
                   i.icon.icon-angle-right.pull-right.tight.text-grey
               li
-                label.checkbox-radio(for="products-l2-i3")
-                  input.pull-left(type="checkbox" id="products-l2-i3")
-                  span Skirts
+                label.checkbox-radio(for="products-l2-i3") Skirts
+                  input(type="checkbox" id="products-l2-i3")
                   i.icon.icon-angle-right.pull-right.tight.text-grey
               li
-                label.checkbox-radio(for="products-l2-i4")
-                  input.pull-left(type="checkbox" id="products-l2-i4")
-                  span Coats
+                label.checkbox-radio(for="products-l2-i4") Coats
+                  input(type="checkbox" id="products-l2-i4")
                   i.icon.icon-angle-right.pull-right.tight.text-grey
               li
-                label.checkbox-radio(for="products-l2-i5")
-                  input.pull-left(type="checkbox" id="products-l2-i5")
-                  span etc.
+                label.checkbox-radio(for="products-l2-i5") etc.
+                  input(type="checkbox" id="products-l2-i5")
                   i.icon.icon-angle-right.pull-right.tight.text-grey
           
           .col-xs-4
             ul.filter-extended-list.clean
               li
-                label.checkbox-radio(for="products-l3-i1")
-                  input.pull-left(type="checkbox" id="products-l3-i1")
-                  span A-line
+                label.checkbox-radio(for="products-l3-i1") A-line
+                  input(type="checkbox" id="products-l3-i1")
                   i.icon.icon-angle-right.pull-right.tight.text-grey
               li
-                label.checkbox-radio(for="products-l3-i2")
-                  input.pull-left(type="checkbox" id="products-l3-i2")
-                  span Maxi
+                label.checkbox-radio(for="products-l3-i2") Maxi
+                  input(type="checkbox" id="products-l3-i2")
                   i.icon.icon-angle-right.pull-right.tight.text-grey
               li
-                label.checkbox-radio(for="products-l3-i3")
-                  input.pull-left(type="checkbox" id="products-l3-i3")
-                  span Shift
+                label.checkbox-radio(for="products-l3-i3") Shift
+                  input(type="checkbox" id="products-l3-i3")
                   i.icon.icon-angle-right.pull-right.tight.text-grey
               li
-                label.checkbox-radio(for="products-l3-i4")
-                  input.pull-left(type="checkbox" id="products-l3-i4")
-                  span Sundress
+                label.checkbox-radio(for="products-l3-i4") Sundress
+                  input(type="checkbox" id="products-l3-i4")
                   i.icon.icon-angle-right.pull-right.tight.text-grey
               li
-                label.checkbox-radio(for="products-l3-i5")
-                  input.pull-left(type="checkbox" id="products-l3-i5")
-                  span etc.
+                label.checkbox-radio(for="products-l3-i5") etc.
+                  input(type="checkbox" id="products-l3-i5")
                   i.icon.icon-angle-right.pull-right.tight.text-grey
 
     .modal-footer

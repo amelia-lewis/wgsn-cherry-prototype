@@ -9,7 +9,7 @@ block modal-content
     .col-xs-12
       h3 Layout
 
-  .row.block-bot-md
+  .row.block-bot-md.border-bottom
     .col-xs-12
       .block-right-xs.inline-block.hoverable
         .print-layout-tile.pp-1.active
@@ -55,56 +55,38 @@ block modal-content
             .block
           p Thumbnails
 
-  .row
+  .row.block-top-md
     .col-xs-12
       h3 Page Options
 
-  .row.block-bot-sm
-    .col-xs-2
-      .block-ver-xs.block-right-xs.inline-block Paper size:
-      
-    .col-xs-4
-      select
-        option Letter (8.5" x 11")
-        option Legal (8.5" x 14")
-        option Tabloid (11" x 17")
-        option A4 (297 x 210mm)
-        option A3 (420 x 297mm)
+  .row
+    .col-xs-6
+      label Paper size:
+        select
+          option Letter (8.5" x 11")
+          option Legal (8.5" x 14")
+          option Tabloid (11" x 17")
+          option A4 (297 x 210mm)
+          option A3 (420 x 297mm)
         
-    .col-xs-2
-      .block-ver-xs.block-right-xs.inline-block Orientation
-    
-    .col-xs-4
-      select
-        option Landscape
-        option Portrait
+      label Orientation:
+        select
+          option Landscape
+          option Portrait
 
-  .row
-    .col-xs-3
-      label.checkbox-radio(for='print-page-count')
+    .col-xs-6
+      label.checkbox-radio(for='print-page-count') Page count
         input#print-page-count(type='checkbox')
-        span Page count
 
-    .col-xs-3
-      label.checkbox-radio(for='print-filename')
+      label.checkbox-radio(for='print-filename') Filename
         input#print-filename(type='checkbox')
-        span Filename
 
-    .col-xs-3
-      label.checkbox-radio(for='print-details')
+      label.checkbox-radio(for='print-details') Details
         input#print-details(type='checkbox')
-        span Details
 
-    .col-xs-3
-      label.checkbox-radio(for='print-comments')
+      label.checkbox-radio(for='print-comments') Comments
         input#print-comments(type='checkbox')
-        span Comments
 
-  .row
-    .col-xs-2
-      label.checkbox-radio.block-ver-xs(for='print-page-title')
+      label.checkbox-radio(for='print-page-title') Page title
         input#print-page-title(type='checkbox')
-        span Page title
-
-    .col-xs-10
-      input(type='text', placeholder='Page title')
+        input(type='text', placeholder='Page title')

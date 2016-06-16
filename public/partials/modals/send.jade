@@ -5,31 +5,26 @@ block append modal-vars
   - title = "Send"
 
 block modal-content
-  .row.block-bot-sm
-    .col-xs-12
-      ul#myTags
-
-  .row.block-bot-sm
-    .col-xs-12
-      input(type="text", placeholder="Subject (optional)")
-
-  .row.block-bot-sm
-    .col-xs-12
-      textarea(placeholder="Message (optional)")
-
-  .row
-    .col-xs-6
-      label.checkbox-radio(for="send-comments")
-        input#send-comments(type="checkbox" checked)
-        span Include comments
-
-    .col-xs-6
-      label.checkbox-radio(for="send-children")
-        input#send-children(type="checkbox" checked)
-        span Include nested folders
-
   .row
     .col-xs-12
-      label.checkbox-radio(for="receipt-notification")
-        input#receipt-notification(type="checkbox" checked)
-        span Notify me when message is received.
+      form
+        label Recipients
+          //- ul#myTags
+          input(type="text", placeholder="Enter email addresses, separated with commas")
+
+        label Subject
+          span.optional (Optional)
+          input(type="text", placeholder="A subject for your email")
+
+        label Message
+          span.optional (Optional)
+          textarea(placeholder="Message")
+
+        label.checkbox-radio(for="send-comments") Include comments
+          input#send-comments(type="checkbox" checked)
+
+        label.checkbox-radio(for="send-children") Include nested folders
+          input#send-children(type="checkbox" checked)
+
+        label.checkbox-radio(for="receipt-notification") Notify me when message is received.
+          input#receipt-notification(type="checkbox" checked)

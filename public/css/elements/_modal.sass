@@ -308,8 +308,17 @@
         &:nth-of-type(8)
           margin: 0 4px 0 0
 
+  select
+    width: 160px
+
   input[type="text"]
-    width: 300px
+    display: none
+
+  label input#print-page-title
+    margin-bottom: 10px
+
+  label input#print-page-title:checked + input[type="text"]
+    display: block
 
 
 // ==================================================

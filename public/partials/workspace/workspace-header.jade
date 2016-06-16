@@ -62,10 +62,9 @@ mixin workspace-header(name, owner, description, numfiles, permissions)
           include ../../partials/workspace/utility-block
           .divider.pull-left
           .block-xs.pull-left
-            label.checkbox-radio.tight(for="select-all")
-              input.pull-left.select-all(type="checkbox" id="select-all")
-              span Select all (
-                span= numfiles
-                span )
+            label.checkbox-radio.tight(for="select-all") Select all (
+              span= numfiles
+              | )
+              input.select-all(type="checkbox" id="select-all")
           //- .divider.pull-left
           //- .utility-icon.pull-left.block-xs.btn-comments.hoverable: i.icon.icon-comment

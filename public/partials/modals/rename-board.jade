@@ -2,10 +2,15 @@ extends modal
 
 block append modal-vars
   - id = "rename-board"
-  - title = "Rename board"
+  - title = "Edit folder"
   - type = "simple-modal"
 
 block modal-content
   .row
     .col-xs-12
-      input(type="text", placeholder="Enter a new name for your board")
+      form
+        label Folder name
+          input(type="text", value="Balmain 2016")
+
+        label Folder description
+          textarea Lorem ipsum dolor sit amet, consectetur adipiscing elit.

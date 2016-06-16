@@ -8,4 +8,10 @@ block append modal-vars
 block modal-content
   .row
     .col-xs-12
-      input(type="text", placeholder="Folder name")
+      form
+        label Name
+          input(type="text", placeholder="Folder name")
+
+        label Description
+          span.optional (Optional)
+          textarea(placeholder="A description to tell your teammates what this folder is for.")
