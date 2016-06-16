@@ -5,10 +5,13 @@
   .team-row
     display: block
     position: relative
+    padding-top: 8px
+    padding-bottom: 8px
+    // border-bottom: 1px solid $xlt-grey
 
     .spacer
       width: 17px
-      height: 16px
+      height: 15px
 
     .icon-ellipsis
       opacity: 0
@@ -20,6 +23,14 @@
       position: absolute
       top: calc(50% - 13px)
       right: 6px
+  
+    .icon
+      color: $dk-grey  
+
+    .icon-folder-filled,
+    .icon-folder-shared-filled
+      font-size: 14px
+      margin-top: -2px
 
     &:hover
       background: rgba($xdk-grey, 0.05)

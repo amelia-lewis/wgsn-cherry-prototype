@@ -1,6 +1,6 @@
 mixin board-row(link, name, number, level, label, caret, shared)
   if link
-    a.board-row.block-ver-xs.block-hor-md.hoverable.overflow-auto(class="level-" + level href=link)
+    a.board-row.block-hor-md.hoverable.overflow-auto(class="level-" + level href=link)
       if caret == "open"
         i.icon.icon-caret-down.pull-left.block-right-xxs
       else if caret == "closed"
@@ -18,7 +18,7 @@ mixin board-row(link, name, number, level, label, caret, shared)
       .btn.btn-black.btn-sm.close-modal Save
   
   else
-    .board-row.block-ver-xs.block-hor-md.hoverable.overflow-auto(class="level-" + level)
+    .board-row.block-hor-md.hoverable.overflow-auto(class="level-" + level)
       if caret == "open"
         i.icon.icon-caret-down.pull-left.block-right-xxs
       else if caret == "closed"
@@ -36,25 +36,25 @@ mixin board-row(link, name, number, level, label, caret, shared)
       .btn.btn-black.btn-sm.close-modal Save
 
 mixin person-row(name, level, caret)
-  .person-row.block-ver-xs.block-hor-md.hoverable.overflow-auto(class="level-" + level)
+  .person-row.block-hor-md.hoverable.overflow-auto(class="level-" + level)
     if caret == "open"
       i.icon.icon-caret-down.pull-left.block-right-xxs
     else if caret == "closed"
       i.icon.icon-caret-right.pull-left.block-right-xxs
     else
       i.spacer.pull-left.block-right-xxs
-    i.icon.icon-user-filled.pull-left.block-right-xxs
+    //- i.icon.icon-user-filled.pull-left.block-right-xxs
     span= name
 
 mixin team-row(name, level, caret)
-  .team-row.block-ver-xs.block-hor-md.hoverable.overflow-auto(class="level-" + level)
+  .team-row.block-hor-md.hoverable.overflow-auto(class="level-" + level)
     if caret == "open"
       i.icon.icon-caret-down.pull-left.block-right-xxs
     else if caret == "closed"
       i.icon.icon-caret-right.pull-left.block-right-xxs
     else
       i.spacer.pull-left.block-right-xxs
-    span.wgsn-font= name
+    span= name
 
 
 //- ============================================================
@@ -64,7 +64,7 @@ mixin team-row(name, level, caret)
   .accordion-title
     i.icon.icon-folder.block-right-xs
     span.wgsn-font My Folders
-    i.section-expand-icon.icon.icon-minus.pull-right.tight
+    i.section-expand-icon.icon.icon-angle-down.pull-right.text-smaller
     
   .accordion-content
     .block-bot-xs.block-hor-md
@@ -90,7 +90,7 @@ mixin team-row(name, level, caret)
   .accordion-title
     i.icon.icon-user.block-right-xs
     span.wgsn-font Shared With Me
-    i.section-expand-icon.icon.icon-minus.pull-right.tight
+    i.section-expand-icon.icon.icon-angle-down.pull-right.text-smaller
 
   .accordion-content
     +team-row("Product", "1", "open", "yes")
@@ -98,7 +98,7 @@ mixin team-row(name, level, caret)
     +board-row("/workspace/inspiration-images", "Inspiration Images", "200", "3 inspiration-images", false, "closed", true)
     +board-row(false, "Really, really long folder name", "200", "3", false, "closed", true)
     +board-row(false, "Folder name", "200", "3", false, "open", true)
-    +board-row(false, "Folder name", "200", "4", false, "", true)
+    +board-row(false, "Sub-folder name", "200", "4", false, "", true)
     +person-row("Sansan Chen", "2", "closed")
     +person-row("Andrew Harris", "2", "closed")
     +person-row("Nicky Ashwell", "2", "closed")

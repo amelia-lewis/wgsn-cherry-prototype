@@ -542,7 +542,7 @@ $('.btn-left-side-panel').on('click', function() {
 // lhs accordion panels
 $('.accordion-section .accordion-title').on('click', function() {
   $(this).parentsUntil('.scroll-container').toggleClass('open closed');
-  $(this).children('.section-expand-icon').toggleClass('icon-plus icon-minus');
+  $(this).children('.section-expand-icon').toggleClass('icon-angle-right icon-angle-down');
 });
 
 //- lhs show folder structure (from image library)
