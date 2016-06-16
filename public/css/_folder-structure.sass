@@ -1,30 +1,20 @@
 .folder-structure
-  .icon-caret-right,
-  .icon-caret-down
-    margin: 0 4px 0 0
-
   .misc-row,
   .board-row,
   .person-row,
   .team-row
     display: block
     position: relative
-    @extend .block-ver-xs
-    @extend .block-hor-md
-    @extend .hoverable
 
-    .board-name
-      display: inline-block
-      margin: 0 0 -3px 0
+    .spacer
+      width: 17px
+      height: 16px
 
     .icon-ellipsis
       opacity: 0
       position: absolute
-      top: 8px
+      top: calc(50% - 7.5px)
       right: 15px
-
-    .icon-user
-      font-size: 10px
 
     .btn.close-modal
       position: absolute
@@ -74,10 +64,10 @@
         .board-name
           +text-truncate(calc(100% - (30px + (#{$i} * 5px))))
 
-  .board-row
-    .icon-user,
-    .icon-circle
-      margin: 0 0 0 6px
+  // .board-row
+  //   .icon-user,
+  //   .icon-circle
+  //     margin: 0 0 0 6px
 
 // hide save button (that has to be shown in the save to folder modal)
 .left-side-panel,

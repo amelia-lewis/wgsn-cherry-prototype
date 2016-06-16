@@ -1,57 +1,60 @@
 mixin board-row(link, name, number, level, label, caret, shared)
   if link
-    a.board-row(class="level-" + level href=link)
+    a.board-row.block-ver-xs.block-hor-md.hoverable.overflow-auto(class="level-" + level href=link)
       if caret == "open"
-        i.icon.icon-caret-down
+        i.icon.icon-caret-down.pull-left.block-right-xxs
       else if caret == "closed"
-        i.icon.icon-caret-right
+        i.icon.icon-caret-right.pull-left.block-right-xxs
       else
-        i.spacer
-      span.board-name= name
+        i.spacer.pull-left.block-right-xxs
       if shared == true
-        i.icon.icon-user
+        i.icon.icon-folder-shared-filled.pull-left.block-right-xxs
+      if shared == false
+        i.icon.icon-folder-filled.pull-left.block-right-xxs
+      span.board-name.pull-left.block-right-xxs= name
       if label == true
-        i.icon.icon-circle
-      //- span.board-number= number
+        i.icon.icon-circle.pull-left.block-right-xxs
       i.icon.icon-ellipsis
       .btn.btn-black.btn-sm.close-modal Save
+  
   else
-    .board-row(class="level-" + level)
+    .board-row.block-ver-xs.block-hor-md.hoverable.overflow-auto(class="level-" + level)
       if caret == "open"
-        i.icon.icon-caret-down
+        i.icon.icon-caret-down.pull-left.block-right-xxs
       else if caret == "closed"
-        i.icon.icon-caret-right
+        i.icon.icon-caret-right.pull-left.block-right-xxs
       else
-        i.spacer
-      span.board-name= name
+        i.spacer.pull-left.block-right-xxs
       if shared == true
-        i.icon.icon-user
+        i.icon.icon-folder-shared-filled.pull-left.block-right-xxs
+      if shared == false
+        i.icon.icon-folder-filled.pull-left.block-right-xxs
+      span.board-name.pull-left.block-right-xxs= name
       if label == true
-        i.icon.icon-circle
-      //- span.board-number= number
+        i.icon.icon-circle.pull-left.block-right-xxs
       i.icon.icon-ellipsis
       .btn.btn-black.btn-sm.close-modal Save
 
 mixin person-row(name, level, caret)
-  .person-row.hoverable(class="level-" + level)
+  .person-row.block-ver-xs.block-hor-md.hoverable.overflow-auto(class="level-" + level)
     if caret == "open"
-      i.icon.icon-caret-down
+      i.icon.icon-caret-down.pull-left.block-right-xxs
     else if caret == "closed"
-      i.icon.icon-caret-right
+      i.icon.icon-caret-right.pull-left.block-right-xxs
     else
-      i.spacer
-    //- i.icon.icon-user
-    span.text-bold= name
+      i.spacer.pull-left.block-right-xxs
+    i.icon.icon-user-filled.pull-left.block-right-xxs
+    span= name
 
 mixin team-row(name, level, caret)
-  .team-row.hoverable(class="level-" + level)
+  .team-row.block-ver-xs.block-hor-md.hoverable.overflow-auto(class="level-" + level)
     if caret == "open"
-      i.icon.icon-caret-down
+      i.icon.icon-caret-down.pull-left.block-right-xxs
     else if caret == "closed"
-      i.icon.icon-caret-right
+      i.icon.icon-caret-right.pull-left.block-right-xxs
     else
-      i.spacer
-    span.text-bold= name
+      i.spacer.pull-left.block-right-xxs
+    span.wgsn-font= name
 
 
 //- ============================================================
