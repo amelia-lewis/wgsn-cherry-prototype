@@ -2,11 +2,12 @@ mixin file(type, img, original, comments, filename, ...caption)
   .file.hoverable.show-caption(class="file-type-" + type)
     img(src=img)
     
-    .caption-container
+    .caption-container.block-xs
       ul.clean
+        li.text-grey.text-capitalize= type
         each item in caption
           li= item
-        li.filename.block-top-xs= filename
+        li.filename= filename
 
     .file-select-state
     
@@ -27,7 +28,9 @@ mixin file(type, img, original, comments, filename, ...caption)
         .wgsn-original-content.wgsn-font.inline-block.has-tooltip(data-tooltip="WGSN Original Content") WGSN Asset
 
       if comments == true
-        i.file-comment.text-right.icon.icon-comment-filled.inline-block.hidden-workspace-trash
+        .file-comment.hidden-workspace-trash
+          i.text-right.icon.icon-comment-filled
+          span.inline-block &nbsp;18
 
 
 mixin file-details-view(type, img, original, comments, filename, ...caption)

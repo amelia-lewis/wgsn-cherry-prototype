@@ -24,24 +24,23 @@
 // STANDARD FILE
 // ============================================================
 
+$file-caption-height: 78px
+
 .file
   width: 100%
   background: white
   position: relative
-  padding-bottom: 62px
+  padding-bottom: 0
   overflow: visible !important
+  border: 5px solid white
   
   img
     vertical-align: bottom
-    border: 5px solid white
     transition: all 200ms
 
   .caption-container
     display: none
-    @extend .bg-white
-    @extend .block-xs
-    @extend .block-top-xxs
-    height: 62px
+    height: $file-caption-height
 
     ul
       li
@@ -49,36 +48,32 @@
         font-size: 11px
         @extend .tight
 
-        &:first-of-type
+        &:nth-of-type(2)
           @extend .wgsn-font
 
-        &:not(:first-of-type)
-          @extend .text-grey
-
-        &:last-of-type
+        &:nth-of-type(4)
           margin: 0
-          +text-truncate(calc(100% - 25px))
+          +text-truncate(calc(100% - 40px))
 
       .filename
-        color: $md-grey
         display: none
 
   .file-checkbox
-    top: 15px
-    left: 15px
+    top: 10px
+    left: 10px
     opacity: 0
 
   .file-heart
-    top: 15px
-    right: 15px
+    top: 10px
+    right: 10px
     opacity: 0
     text-shadow: 0 0 1px $md-grey
 
   .file-utilities
     position: absolute
-    bottom: 5px
-    left: 5px
-    right: 5px
+    bottom: 0
+    left: 0
+    right: 0
     height: 40px
     color: white
     background: rgba(black, 0.7)
@@ -92,7 +87,7 @@
       width: 100%
 
       > .icon
-        font-size: 18px
+        font-size: 16px
         margin: 0 10px
         opacity: 0
         color: rgba(white, 0.8)
@@ -104,30 +99,31 @@
   // FLAG CONTAINER
   .flag-container
     position: absolute
-    bottom: 5px
-    left: 5px
-    right: 5px
-    height: 20px
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    pointer-events: none
 
     .wgsn-original-content
       position: absolute
+      top: 0
       left: 0
-      bottom: 0
-      padding: 6px 8px
-      font-size: 10px
-      color: $lt-grey
-      background: rgba(black, 0.4)
+      padding: 3px 4px
+      font-size: 8px
+      color: rgba(black, 0.5)
+      background: rgba(white, 0.5)
+      transform: translate3d(-22px, 22px, 0) rotate(-90deg)
+      white-space: nowrap
     
     .file-comment
       position: absolute
       right: 0
       bottom: 0
-      padding: 5px 8px
-      color: $lt-grey
-      background: rgba(black, 0.4)
-
-    .wgsn-original-content + .file-comment
-      width: calc(100% - 81px)
+      padding: 3px 4px
+      font-size: 10px
+      color: rgba(black, 0.5)
+      background: rgba(white, 0.5)
 
 
   // HOVER
@@ -143,7 +139,8 @@
         transform: translate3d(0, 0, 0)
         opacity: 1
 
-    .flag-container
+    .file-comment,
+    .wgsn-original-content
       opacity: 0
 
   // SELECTED
@@ -156,18 +153,27 @@
 
   // SHOW CAPTION
   &.show-caption
-    .file-utilities,
-    .flag-container
-      bottom: 67px
+    padding-bottom: $file-caption-height !important
+    
+    .file-utilities
+      bottom: $file-caption-height
 
     .caption-container
       display: block
 
+    &:hover
+      .file-comment
+        opacity: 1
+
   // SHOW FILENAME
   &.show-filename
-    .file-utilities,
-    .file-select-state
+    padding-bottom: $file-caption-height + 15px !important
+    
+    .file-utilities
       height: calc(100% - 84px)
+
+    .caption-container
+      height: $file-caption-height + 15px
 
   &:not(.show-caption)
     padding-bottom: 0px !important
@@ -326,12 +332,10 @@ body.product-fashion
       display: none
 
     &.selected
-      img
-        border: 5px solid $fashion
+      border: 5px solid $fashion
 
 body.product-none
   .file,
   .file-details-view
     &.selected
-      img
-        border: 5px solid $yellow
+      border: 5px solid $yellow
