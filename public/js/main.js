@@ -684,7 +684,7 @@ $('.modal .close-modal').on('click', function() {
   }
 });
 
-// ...by clicking the overlay
+// ...and by clicking the overlay
 $('.overlay').on('click', function() {
   $('.overlay').removeClass('show');
   $('.filter-extended').removeClass('show');
@@ -692,7 +692,7 @@ $('.overlay').on('click', function() {
   $('.item-detail-modal-controls').removeClass('show');
 });
 
-// ...with escape key
+// ...and with the escape key
 $(document).keyup(function(e) { 
   if (e.keyCode == 27) { 
     $('.modal').removeClass('show');
