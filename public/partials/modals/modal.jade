@@ -2,6 +2,7 @@ block modal-vars
   - var id = null
   - var title = null
   - var type = null
+  - var confirmbtn = null
 
 .modal(id=id + "-modal" class=type)
   .modal-header
@@ -14,4 +15,7 @@ block modal-vars
 
   .modal-footer.text-right
     .block-right-sm.inline-block: .btn.btn-white.close-modal Cancel
-    .inline-block: .btn.btn-black.close-modal Done
+    if confirmbtn
+      .inline-block: .btn.btn-black.btn-modal.close-modal= confirmbtn
+    else
+      .inline-block: .btn.btn-black.btn-modal.close-modal Done

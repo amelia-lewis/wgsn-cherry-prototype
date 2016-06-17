@@ -6,15 +6,13 @@ block append modal-vars
 
 block modal-content
   .row
-    .col-xs-6.save-modal-content-container.bg-xlt-grey.flex-center
+    .col-xs-6.save-modal-content-container.bg-xlt-grey.border-right.block-sm.flex-center
       .img-container
         img(src="https://www.wgsn.com/storage/vol20/ss_image_store/45/39/44/42/media_blm_aw16_004.jpg")
         textarea.comment-input(placeholder="Add a comment (optional)")
 
     .col-xs-6.save-modal-folder-container
-      h3 Choose a folder
-
-      .folder-structure.border.overflow-auto
+      .folder-structure.overflow-auto
         .accordion-section.accordion-section-recent-boards.open
           .accordion-title
             span.wgsn-font Recent Folders
@@ -41,6 +39,6 @@ block modal-content
         
         include ../workspace/folder-structure
 
-      .modal-create-new-board-container
+      .modal-create-new-board-container.border-top
         input(type="text" placeholder="+ Create new folder")
         .btn.btn-black.btn-sm.close-modal Create

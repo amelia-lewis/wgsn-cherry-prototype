@@ -114,7 +114,6 @@
     .save-modal-content-container,
     .save-modal-folder-container
       height: 100%
-      padding: 20px
       position: relative
 
     .save-modal-content-container
@@ -130,8 +129,10 @@
           min-height: 60px
 
     .save-modal-folder-container
+      padding: 0
+      
       .folder-structure
-        height: 404px
+        height: 464px
         position: relative
         top: auto
         left: auto
@@ -180,10 +181,6 @@
             > .block-bot-xs.block-hor-sm
               display: none
 
-          &.open
-            .accordion-content
-              height: 248px
-
       .modal-create-new-board-container
         margin-top: -1px
         position: relative
@@ -192,8 +189,11 @@
           color: $xdk-grey
           @extend .wgsn-font
 
-        input:focus
-          border-color: $lt-grey
+        input
+          border: none
+
+          &:focus
+            border: none
 
         .btn.close-modal
           position: absolute
