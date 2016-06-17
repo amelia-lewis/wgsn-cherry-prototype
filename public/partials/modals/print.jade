@@ -55,38 +55,50 @@ block modal-content
             .block
           p Thumbnails
 
-  .row.block-top-md
+  .row.block-top-md.block-bot-xs
+    .col-xs-2
+      p.block-top-xs Paper size:
+      
+    .col-xs-10
+      select.pull-left
+        option Letter (8.5" x 11")
+        option Legal (8.5" x 14")
+        option Tabloid (11" x 17")
+        option A4 (297 x 210mm)
+        option A3 (420 x 297mm)
+
+  .row.border-bottom.block-bot-md
+    .col-xs-2
+      p.block-top-xs Orientation:
+      
+    .col-xs-10
+      select.pull-left
+        option Landscape
+        option Portrait
+
+  .row.block-top-md.block-bot-xs
     .col-xs-12
-      h3 Page Options
+      .block-right-md.pull-left
+        label.checkbox-radio(for='print-page-count') Page count
+          input#print-page-count(type='checkbox')
+
+      .block-right-md.pull-left
+        label.checkbox-radio(for='print-filename') Filename
+          input#print-filename(type='checkbox')
+
+      .block-right-md.pull-left
+        label.checkbox-radio(for='print-details') Details
+          input#print-details(type='checkbox')
+
+      .block-right-md.pull-left
+        label.checkbox-radio(for='print-comments') Comments
+          input#print-comments(type='checkbox')
 
   .row
-    .col-xs-6
-      label Paper size:
-        select
-          option Letter (8.5" x 11")
-          option Legal (8.5" x 14")
-          option Tabloid (11" x 17")
-          option A4 (297 x 210mm)
-          option A3 (420 x 297mm)
-        
-      label Orientation:
-        select
-          option Landscape
-          option Portrait
+    .col-xs-12
+      .block-top-xs.block-right-md.pull-left
+        label.checkbox-radio(for='print-page-title') Page title
+          input#print-page-title(type='checkbox')
 
-    .col-xs-6
-      label.checkbox-radio(for='print-page-count') Page count
-        input#print-page-count(type='checkbox')
-
-      label.checkbox-radio(for='print-filename') Filename
-        input#print-filename(type='checkbox')
-
-      label.checkbox-radio(for='print-details') Details
-        input#print-details(type='checkbox')
-
-      label.checkbox-radio(for='print-comments') Comments
-        input#print-comments(type='checkbox')
-
-      label.checkbox-radio(for='print-page-title') Page title
-        input#print-page-title(type='checkbox')
+      .block-right-md.pull-left
         input(type='text', placeholder='Page title')
