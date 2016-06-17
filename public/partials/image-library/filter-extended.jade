@@ -6,7 +6,7 @@ mixin filter-extended(id, title, tabbed, search, anchors, subheadings, ...items)
 
     .modal-content
       if id != "products"
-        .row.border-bottom.block-bot-sm
+        .row.border-bottom.block-bot-md
           .col-xs-8
             .filter-extended-anchors
               for letter, i in "#ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
@@ -15,17 +15,7 @@ mixin filter-extended(id, title, tabbed, search, anchors, subheadings, ...items)
           .col-xs-4
             input.search-input(type="text", placeholder="Search " + title)
 
-        //- if search
-        //-   .border-bottom.block-hor-xs
-        //-     //- if tabbed
-        //-     //-   .filter-extended-tabs.pull-left
-        //-     //-     ul.tab-nav
-        //-     //-       li.tab-nav-tab.active Top Brands
-        //-     //-       li.tab-nav-tab All Brands
-        //-     .block-ver-xs.pull-right
-        //-       input.search-input(type="text", placeholder="Search " + id)
-
-        .row
+        .row.block-top-md
           .col-xs-12
             ul.filter-extended-list.clean
               if subheadings
@@ -92,9 +82,11 @@ mixin filter-extended(id, title, tabbed, search, anchors, subheadings, ...items)
                   input(type="checkbox" id="products-l3-i5")
                   i.icon.icon-angle-right.pull-right.tight.text-grey
 
-    .modal-footer
-      p.tight.block-top-xs.hoverable.pull-left.close-modal Cancel
-      .btn.btn-white.pull-right.close-modal Done
+    .modal-footer.text-right
+      i.icon.icon-reset.pull-left.block-top-xs.block-right-xs
+      p.tight.block-top-xs.wgsn-font.hoverable.pull-left Reset
+      .block-right-sm.inline-block: .btn.btn-white.close-modal Cancel
+      .inline-block: .btn.btn-black.close-modal Done
 
 
 //- ============================================================
