@@ -11,11 +11,11 @@ block modal-content
         .col-xs-12
           h3 Layout
 
-      .row.block-bot-md.border-bottom
+      .row.block-bot-md
         .col-xs-12
           include print-layout-tiles
 
-      .row.block-top-md.block-bot-xs
+      .row.block-top-xs.block-bot-xs
         .col-xs-2
           label.block-top-xs Paper size:
           
@@ -27,7 +27,7 @@ block modal-content
             option A4 (297 x 210mm)
             option A3 (420 x 297mm)
 
-      .row.border-bottom.block-bot-md
+      .row.block-bot-md
         .col-xs-2
           label.block-top-xs Orientation:
           
@@ -36,7 +36,7 @@ block modal-content
             option Landscape
             option Portrait
 
-      .row.block-top-md.block-bot-xs
+      .row.block-top-xs.block-bot-xs
         .col-xs-12
           .block-right-md.pull-left
             label.checkbox-radio(for='print-filename') Filename
@@ -66,7 +66,7 @@ block modal-content
   #modal-step-2
     .block-md
       form
-        .row.block-bot-md.border-bottom
+        .row.block-bot-md
           .col-xs-12
             label To
               //- ul#myTags
@@ -80,11 +80,11 @@ block modal-content
               span.optional (Optional)
               input(type="text", placeholder="")
 
-            label Message
+            label.tight Message
               span.optional (Optional)
-              textarea.tight(placeholder="Message")
+              textarea(placeholder="Message")
 
-        .row.block-top-md.block-bot-xs
+        .row.block-top-xs.block-bot-xs
           .col-xs-2
             label.block-top-xs Available:
           
@@ -96,7 +96,7 @@ block modal-content
               option 15 days
               option 20 days
 
-        .row.border-bottom.block-bot-md
+        .row.block-bot-md
           .col-xs-2
             label.block-top-xs Language:
           
@@ -109,7 +109,7 @@ block modal-content
               option Japanese
               option Korean
 
-        .row.block-top-md.block-bot-xs
+        .row.block-top-xs.block-bot-xs
           .col-xs-12
             .block-right-md.pull-left
               label.tight Send confirmation for:

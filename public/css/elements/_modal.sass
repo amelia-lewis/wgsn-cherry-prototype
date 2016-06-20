@@ -70,34 +70,33 @@
 
 #share-modal
   .modal-content
-    > .block-bot-md .block-sm.border .row
-      .col-xs-3
-        padding-right: 0
+    .col-xs-3
+      padding-right: 0
 
-      .col-xs-9
-        padding-left: 0
+    .col-xs-9
+      padding-left: 0
 
-        input
-          border-left: none
+      input
+        border-left: none
   
-  .share-user-container
-    height: 36vh
-    min-height: 100px
-    max-height: 400px
-    overflow: scroll
-    
-    .share-user
-      select
-        height: 35px
-        border: none
-        max-width: 100px
+    .share-user-container
+      height: 36vh
+      min-height: 100px
+      max-height: 400px
+      overflow-x: hidden
+      overflow-y: scroll
+      
+      .share-user
+        select
+          height: 35px
+          border: none
+          width: 90px
 
-      &:last-of-type
-        border: none
+        &:last-of-type
+          border: none
 
-    #make-folder-public:hover
-      .tooltip
-        opacity: 1
+      .has-tooltip:after
+        top: -83px
 
 
 // ==================================================

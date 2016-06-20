@@ -1,7 +1,7 @@
 mixin share-user(img, initials, name, owner, permission)
   .row.share-user.border-bottom
     .col-xs-8
-      .block-left-xs.block-ver-xxs
+      .block-xs.overflow-auto
         if img
           .avatar.avatar-sm.pull-left(style="background-image: url('" + img + "')")
         else
@@ -11,16 +11,15 @@ mixin share-user(img, initials, name, owner, permission)
 
     if owner
       .col-xs-4.text-right
-        .block-xs: p.tight Owner
+        .block-sm: p.tight Is owner
     
     if !owner
-      .col-xs-3
-        select.pull-right
-          option Can edit
-          option Can view
-
-      .col-xs-1
-        .block-ver-xs: i.icon.icon-cross-circle
+      .col-xs-4
+        .block-ver-sm.block-right-sm.pull-right.hoverable: i.icon.icon-cross
+        .block-ver-xxs.pull-right
+          select
+            option Can edit
+            option Can view
 
 //- ==================================================
 
@@ -44,7 +43,7 @@ block modal-content
             option Can view
         
         .col-xs-9
-          input(type="text", placeholder="Name")
+          input.search-input(type="text", placeholder="Search for a name")
 
   .row
     .col-xs-12
@@ -65,6 +64,6 @@ block modal-content
     .row.hoverable
       .col-xs-12.text-center
         .block-ver-sm
-          p.tight.has-tooltip(data-tooltip="Share folder with your entire organisation")
+          p.tight.text-underlined.has-tooltip.tooltip-wrap(data-tooltip="Shares this board with everybody in your team. They’ll be added with view permissions by default, but you can change them to edit.")
             | Make folder public
             i.icon.icon-info-circle.block-left-xs
