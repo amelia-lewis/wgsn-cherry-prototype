@@ -8,14 +8,13 @@ mixin filter(id, title, viewall, filteredby, ...items)
       ul.clean.overflow-auto
         each item in items
           li
-            label.checkbox-radio(for=item)= item
+            label.checkbox-radio.tight.block-bot-xs(for=item)= item
               input(type="checkbox" id=item)
       
       if viewall
         .accordion-footer.overflow-auto
-          p.tight.wgsn-font.btn-view-all.hoverable.pull-left(id="btn-view-all-" + id)
-            span.block-right-xxs View all
-            i.icon.icon-angle-right.tight
+          p.text-underline.btn-view-all.hoverable.pull-left(id="btn-view-all-" + id) View all
+          i.icon.icon-angle-right.pull-left.tight
 
 
 //- ============================================================
@@ -69,49 +68,25 @@ mixin filter(id, title, viewall, filteredby, ...items)
     true,
     true,
     "Acne Studios",
-    "Alexander McQueen",
-    "Aquazzura",
     "Balenciaga",
     "Balmain",
-    "Bottega Veneta",
-    "Burberry London",
     "Chloé",
-    "Christian Louboutin",
-    "Dolce & Gabbana",
-    "Eres",
-    "Etro",
-    "Fendi",
-    "Gianvito Rossi",
     "Givenchy",
-    "Gucci",
     "Isabel Marant",
     "Jimmy Choo",
-    "Lanvin",
-    "Marni",
-    "Miu Miu",
-    "Oscar de la Renta",
     "Proenza Schouler",
     "Saint Laurent",
-    "Stella McCartney",
-    "TOM FORD",
-    "The Row",
-    "Valentino",
-    "Victoria Beckham")
+    "TOM FORD")
 
   +filter(
     "retailer",
     "Retailer",
     true,
     true,
-    "Dolce & Gabbana",
-    "French Connection",
     "Galeries Lafayette",
     "H&M",
     "House of Fraser",
-    "JCPenny",
     "J.Crew",
-    "Massimo Dutti",
-    "Max & Co.",
     "Old Navy",
     "Opening Ceremony",
     "Selfridges",
@@ -149,20 +124,14 @@ mixin filter(id, title, viewall, filteredby, ...items)
     true,
     "Agenda",
     "Bread & Butter",
-    "CIFF",
     "Denim by Premiere Vision",
     "Dutch Design Week",
     "GDS Dusseldorf",
-    "IMM Cologne",
     "ISPO",
     "London Design Festival",
     "Maison & Objet",
-    "Milan Design Week",
-    "Outdoor Retailer",
     "Premiere Vision",
-    "Project",
-    "Seek",
-    "Vicenzaoro")
+    "Project")
 
   +filter(
     "colour",
@@ -193,36 +162,26 @@ mixin filter(id, title, viewall, filteredby, ...items)
     "Abstract",
     "Animal print",
     "Aztec",
-    "Camouflage",
     "Checks/Plaids",
     "Floral",
     "Geometric",
-    "Gothic",
     "Heart",
-    "Ikat",
     "Paisley",
-    "Placement print",
     "Spots",
-    "Stripe",
-    "Tropical")
+    "Stripe")
 
   +filter(
     "fabrics-materials",
     "Fabrics & Materials",
     true,
     true,
-    "Abstract",
-    "Animal print",
-    "Aztec",
-    "Camouflage",
-    "Checks/Plaids",
-    "Floral",
-    "Geometric",
-    "Gothic",
-    "Heart",
-    "Ikat",
-    "Paisley",
-    "Placement print",
-    "Spots",
-    "Stripe",
-    "Tropical")
+    "Denim", 
+    "Eco Sustainable", 
+    "Fur", 
+    "Intimates & Swimwear", 
+    "Knit & Jersey", 
+    "Lace", 
+    "Leather & Suede", 
+    "Printed & Patterned", 
+    "Woven", 
+    "Yarn")
