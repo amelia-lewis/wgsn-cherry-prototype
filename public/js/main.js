@@ -174,7 +174,8 @@ $('.file-checkbox').click(function() {
 multiFileSelect = function(e) {
   // Count number of items selected
   var myaccount = $('.file.selected').length;
-  var selectedImg = $(e.target).find('img').prop('src');
+  var selectedImg = $(e.target).prop('src');
+  console.log("the selected image is " + selectedImg);
 
   // if no files are selected
   if (myaccount == 0) {
