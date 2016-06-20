@@ -12,56 +12,14 @@ block modal-content
 
   .row.block-bot-md.border-bottom
     .col-xs-12
-      .block-right-xs.inline-block.hoverable
-        .print-layout-tile.pp-1.active
-          .layout-tile-container
-            .block
-          p 1 per page
-
-      .block-right-xs.inline-block.hoverable
-        .print-layout-tile.pp-2
-          .layout-tile-container
-            .block
-            .block
-          p 2 per page
-
-      .block-right-xs.inline-block.hoverable
-        .print-layout-tile.pp-3
-          .layout-tile-container
-            .block
-            .block
-            .block
-          p 3 per page
-
-      .block-right-xs.inline-block.hoverable
-        .print-layout-tile.pp-4
-          .layout-tile-container
-            .block
-            .block
-            .block
-            .block
-          p 4 per page
-
-      .block.inline-block.hoverable
-        .print-layout-tile.pp-thumbnails
-          .layout-tile-container
-            .block
-            .block
-            .block
-            .block
-            .block
-            .block
-            .block
-            .block
-            .block
-          p Thumbnails
+      include print-layout-tiles
 
   .row.block-top-md.block-bot-xs
     .col-xs-2
-      p.block-top-xs Paper size:
+      label.block-top-xs Paper size:
       
-    .col-xs-10
-      select.pull-left
+    .col-xs-4
+      select
         option Letter (8.5" x 11")
         option Legal (8.5" x 14")
         option Tabloid (11" x 17")
@@ -70,10 +28,10 @@ block modal-content
 
   .row.border-bottom.block-bot-md
     .col-xs-2
-      p.block-top-xs Orientation:
+      label.block-top-xs Orientation:
       
-    .col-xs-10
-      select.pull-left
+    .col-xs-4
+      select
         option Landscape
         option Portrait
 
@@ -101,5 +59,5 @@ block modal-content
         label.checkbox-radio(for='print-page-title') Page title
           input#print-page-title(type='checkbox')
 
-      .block-right-md.pull-left
+      .pull-left
         input(type='text', placeholder='Page title')

@@ -657,6 +657,8 @@ $('.modal .close-modal').on('click', function() {
     $('.overlay').removeClass('show');
     $('.item-detail-modal-controls').removeClass('show');
     $('.filter-extended').removeClass('show');
+    $('#modal-step-1').show();
+    $('#modal-step-2').hide();
   }
 });
 
@@ -666,6 +668,8 @@ $('.overlay').on('click', function() {
   $('.filter-extended').removeClass('show');
   $('.modal').removeClass('show file-type-image file-type-report file-type-video file-type-color-card');
   $('.item-detail-modal-controls').removeClass('show');
+  $('#modal-step-1').show();
+  $('#modal-step-2').hide();
 });
 
 // ...and with the escape key
@@ -675,6 +679,8 @@ $(document).keyup(function(e) {
     $('.filter-extended').removeClass('show');
     $('.item-detail-modal-controls').removeClass('show');
     $('.overlay').removeClass('show');
+    $('#modal-step-1').show();
+    $('#modal-step-2').hide();
   } 
 });
 
@@ -687,6 +693,12 @@ $('.modal .minimise-modal').on('click', function() {
 $('.print-layout-tile').on('click', function() {
   $('.print-layout-tile').removeClass('active');
   $(this).addClass('active');
+})
+
+// send modal steps
+$('.btn-modal-continue').on('click', function() {
+  $('#modal-step-1').hide();
+  $('#modal-step-2').show();
 })
 
 
@@ -728,19 +740,6 @@ $('#item-detail-modal .close-modal').on('click', function() {
   $('#item-detail-modal .modal-image-panel .img').css({"background-image": "none"});
   $('#item-detail-modal').removeClass('file-type-image').removeClass('file-type-report').removeClass('file-type-video').removeClass('file-type-color-card');
 });
-
-// //- tabs
-// $('.btn-modal-show-comments').on('click', function() {
-//   $('.modal-section-other').addClass('show-comments').removeClass('show-related-images').removeClass('show-related-reports');
-// });
-
-// $('.btn-modal-show-related-images').on('click', function() {
-//   $('.modal-section-other').removeClass('show-comments').addClass('show-related-images').removeClass('show-related-reports');
-// });
-
-// $('.btn-modal-show-related-reports').on('click', function() {
-//   $('.modal-section-other').removeClass('show-comments').removeClass('show-related-images').addClass('show-related-reports');
-// });
 
 //- bottom panel
 $('.icon-angle-up').on('click', function() {

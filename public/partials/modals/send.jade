@@ -5,122 +5,128 @@ block append modal-vars
   - title = "Email"
 
 block modal-content
-  #send-step-1
-    .row
-      .col-xs-12
-        h3 Layout
+  #modal-step-1
+    .block-md
+      .row
+        .col-xs-12
+          h3 Layout
 
-    .row.block-bot-md.border-bottom
-      .col-xs-12
-        .block-right-xs.inline-block.hoverable
-          .print-layout-tile.pp-1.active
-            .layout-tile-container
-              .block
-            p 1 per page
+      .row.block-bot-md.border-bottom
+        .col-xs-12
+          include print-layout-tiles
 
-        .block-right-xs.inline-block.hoverable
-          .print-layout-tile.pp-2
-            .layout-tile-container
-              .block
-              .block
-            p 2 per page
+      .row.block-top-md.block-bot-xs
+        .col-xs-2
+          label.block-top-xs Paper size:
+          
+        .col-xs-4
+          select
+            option Letter (8.5" x 11")
+            option Legal (8.5" x 14")
+            option Tabloid (11" x 17")
+            option A4 (297 x 210mm)
+            option A3 (420 x 297mm)
 
-        .block-right-xs.inline-block.hoverable
-          .print-layout-tile.pp-3
-            .layout-tile-container
-              .block
-              .block
-              .block
-            p 3 per page
+      .row.border-bottom.block-bot-md
+        .col-xs-2
+          label.block-top-xs Orientation:
+          
+        .col-xs-4
+          select
+            option Landscape
+            option Portrait
 
-        .block-right-xs.inline-block.hoverable
-          .print-layout-tile.pp-4
-            .layout-tile-container
-              .block
-              .block
-              .block
-              .block
-            p 4 per page
+      .row.block-top-md.block-bot-xs
+        .col-xs-12
+          .block-right-md.pull-left
+            label.checkbox-radio(for='print-filename') Filename
+              input#print-filename(type='checkbox')
 
-        .block.inline-block.hoverable
-          .print-layout-tile.pp-thumbnails
-            .layout-tile-container
-              .block
-              .block
-              .block
-              .block
-              .block
-              .block
-              .block
-              .block
-              .block
-            p Thumbnails
+          .block-right-md.pull-left
+            label.checkbox-radio(for='print-details') Details
+              input#print-details(type='checkbox')
 
-    .row.block-top-md.block-bot-xs
-      .col-xs-2
-        p.block-top-xs Paper size:
-        
-      .col-xs-10
-        select.pull-left
-          option Letter (8.5" x 11")
-          option Legal (8.5" x 14")
-          option Tabloid (11" x 17")
-          option A4 (297 x 210mm)
-          option A3 (420 x 297mm)
+          .block-right-md.pull-left
+            label.checkbox-radio(for='print-comments') Comments
+              input#print-comments(type='checkbox')
 
-    .row.border-bottom.block-bot-md
-      .col-xs-2
-        p.block-top-xs Orientation:
-        
-      .col-xs-10
-        select.pull-left
-          option Landscape
-          option Portrait
+      .row
+        .col-xs-12
+          .block-top-xs.block-right-md.pull-left
+            label.checkbox-radio(for='print-page-title') Page title
+              input#print-page-title(type='checkbox')
 
-    .row.block-top-md.block-bot-xs
-      .col-xs-12
-        .block-right-md.pull-left
-          label.checkbox-radio(for='print-filename') Filename
-            input#print-filename(type='checkbox')
+          .pull-left
+            input(type='text', placeholder='Page title')
 
-        .block-right-md.pull-left
-          label.checkbox-radio(for='print-details') Details
-            input#print-details(type='checkbox')
+    .modal-footer.text-right
+      .block-right-sm.inline-block: .btn.btn-white.close-modal Cancel
+      .inline-block: .btn.btn-black.btn-modal-continue Continue
 
-        .block-right-md.pull-left
-          label.checkbox-radio(for='print-comments') Comments
-            input#print-comments(type='checkbox')
+  #modal-step-2
+    .block-md
+      form
+        .row.block-bot-md.border-bottom
+          .col-xs-12
+            label To
+              //- ul#myTags
+              input(type="text", placeholder="Enter a valid email address")
 
-    .row
-      .col-xs-12
-        .block-top-xs.block-right-md.pull-left
-          label.checkbox-radio(for='print-page-title') Page title
-            input#print-page-title(type='checkbox')
+            label CC
+              span.optional (Optional)
+              input(type="text", placeholder="Enter a valid email address")
 
-        .block-right-md.pull-left
-          input(type='text', placeholder='Page title')
+            label Subject
+              span.optional (Optional)
+              input(type="text", placeholder="")
 
-  #send-step-2
-    .row
-      .col-xs-12
-        form
-          label Recipients
-            //- ul#myTags
-            input(type="text", placeholder="Enter email addresses, separated with commas")
+            label Message
+              span.optional (Optional)
+              textarea.tight(placeholder="Message")
 
-          label Subject
-            span.optional (Optional)
-            input(type="text", placeholder="A subject for your email")
+        .row.block-top-md.block-bot-xs
+          .col-xs-2
+            label.block-top-xs Available:
+          
+          .col-xs-4
+            select
+              option 2 days
+              option 5 days
+              option 10 days
+              option 15 days
+              option 20 days
 
-          label Message
-            span.optional (Optional)
-            textarea(placeholder="Message")
+        .row.border-bottom.block-bot-md
+          .col-xs-2
+            label.block-top-xs Language:
+          
+          .col-xs-4
+            select
+              option English
+              option Spanish
+              option Portuguese
+              option Chinese
+              option Japanese
+              option Korean
 
-          label.checkbox-radio(for="send-comments") Include comments
-            input#send-comments(type="checkbox" checked)
+        .row.block-top-md.block-bot-xs
+          .col-xs-12
+            .block-right-md.pull-left
+              label.tight Send confirmation for:
 
-          label.checkbox-radio(for="send-children") Include nested folders
-            input#send-children(type="checkbox" checked)
+            .block-right-md.pull-left
+              label.checkbox-radio(for='send-confirm-to') To addresses
+                input#send-confirm-to(type='checkbox')
 
-          label.checkbox-radio(for="receipt-notification") Notify me when message is received.
-            input#receipt-notification(type="checkbox" checked)
+            .block-right-md.pull-left
+              label.checkbox-radio(for='send-confirm-cc') CC addresses
+                input#send-confirm-cc(type='checkbox')
+
+        .row
+          .col-xs-12
+            label.checkbox-radio.tight(for='send-download-links') Show download links
+              input#send-download-links(type='checkbox')
+
+    .modal-footer.text-right
+      .block-right-sm.inline-block: .btn.btn-white.close-modal Cancel
+      .inline-block: .btn.btn-black.close-modal Done
