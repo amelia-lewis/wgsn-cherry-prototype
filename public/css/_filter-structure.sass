@@ -53,10 +53,7 @@
 .filter-extended
   width: 80vw
   max-width: 1000px
-
-  // .modal-content
-  //   padding: 0
-
+  
   .col-xs-8
     position: relative
     height: 36px
@@ -74,9 +71,7 @@
       margin: 5px 15px 5px 0
       border-radius: 50%
 
-      &:hover,
-      &.active,
-      &:first-of-type
+      &:hover
         color: $fashion
 
   .filter-extended-list
@@ -98,6 +93,19 @@
         display: inline-block
         width: calc(100% - 30px)
         line-height: 1.5em
+
+      &.subheading
+        margin-top: 16px
+        
+        label
+          padding-left: 0
+          @extend .wgsn-font
+          
+          input
+            display: none
+
+      &:first-of-type.subheading
+        margin-top: 0
 
     .filter-extended-subheading
       @extend .wgsn-font
@@ -168,3 +176,44 @@
           li:nth-of-type(8)
             input[type="checkbox"]
               @extend .partial
+
+
+  // ====================
+  // Subheadings --> terrible, manual way to do this
+  // ====================
+  &#filter-extended-brand
+    .filter-extended-list
+      li:nth-of-type(1)
+        @extend .subheading
+
+  &#filter-extended-retailer
+    .filter-extended-list
+      li:nth-of-type(1)
+        @extend .subheading
+
+  &#filter-extended-city
+    .filter-extended-list
+      li:nth-of-type(1),
+      li:nth-of-type(15),
+      li:nth-of-type(19),
+      li:nth-of-type(59),
+      li:nth-of-type(91)
+        @extend .subheading
+
+  &#filter-extended-season-month
+    .filter-extended-list
+      li:nth-of-type(1),
+      li:nth-of-type(9),
+      li:nth-of-type(18),
+      li:nth-of-type(27),
+      li:nth-of-type(36),
+      li:nth-of-type(45),
+      li:nth-of-type(55),
+      li:nth-of-type(64),
+      li:nth-of-type(74),
+      li:nth-of-type(83),
+      li:nth-of-type(91),
+      li:nth-of-type(99),
+      li:nth-of-type(104),
+      li:nth-of-type(107)
+        @extend .subheading

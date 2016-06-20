@@ -1,4 +1,4 @@
-mixin filter-extended(id, title, tabbed, search, anchors, subheadings, ...items)
+mixin filter-extended(id, title, tabbed, search, anchors, ...items)
   .modal.filter-extended(id="filter-extended-" +id)
     .modal-header
       h3.pull-left.tight= title
@@ -17,8 +17,8 @@ mixin filter-extended(id, title, tabbed, search, anchors, subheadings, ...items)
       .row.block-top-md
         .col-xs-12
           ul.filter-extended-list.clean
-            if subheadings
-              li.filter-extended-subheading= subheadings
+            //- if subheadings
+            //-   li.filter-extended-subheading= subheadings
             
             each item in items
               li
@@ -1006,9 +1006,11 @@ mixin filter-extended(id, title, tabbed, search, anchors, subheadings, ...items)
   "Suzhou",
   "Tokyo",
   "Yokohama",
+  "Australia",
   "Auckland",
   "Melbourne",
   "Sydney",
+  "Europe",
   "Amsterdam",
   "Antwerp",
   "Barcelona",
@@ -1048,6 +1050,7 @@ mixin filter-extended(id, title, tabbed, search, anchors, subheadings, ...items)
   "St. Petersburg",
   "The Hague",
   "Vienna",
+  "North America",
   "Aspen",
   "Austin",
   "Brooklyn",
@@ -1079,6 +1082,7 @@ mixin filter-extended(id, title, tabbed, search, anchors, subheadings, ...items)
   "Seattle",
   "Short Hills",
   "Toronto",
+  "South America",
   "Belo Horizonte",
   "Brasilia",
   "Buenos Aires",
@@ -1103,6 +1107,7 @@ mixin filter-extended(id, title, tabbed, search, anchors, subheadings, ...items)
   "Pre-Fall 2016",
   "Pre-Summer 2016",
   "Spring/Summer 2016",
+  "2015",
   "Autumn/Winter 2015",
   "Bridal Autumn/Winter 2015",
   "Bridal Spring/Summer 2015",
@@ -1111,6 +1116,7 @@ mixin filter-extended(id, title, tabbed, search, anchors, subheadings, ...items)
   "Pre-Fall 2015",
   "Pre-Summer 2015",
   "Spring/Summer 2015",
+  "2014",
   "Autumn/Winter 2014",
   "Bridal Autumn/Winter 2014",
   "Bridal Spring/Summer 2014",
@@ -1119,6 +1125,7 @@ mixin filter-extended(id, title, tabbed, search, anchors, subheadings, ...items)
   "Pre-Fall 2014",
   "Pre-Summer 2014",
   "Spring/Summer 2014",
+  "2013",
   "Autumn/Winter 2013",
   "Bridal Autumn/Winter 2013",
   "Bridal Spring/Summer 2013",
@@ -1127,6 +1134,7 @@ mixin filter-extended(id, title, tabbed, search, anchors, subheadings, ...items)
   "Pre-Fall 2013",
   "Pre-Summer 2013",
   "Spring/Summer 2013",
+  "2012",
   "Autumn/Winter 2012",
   "Bridal Autumn/Winter 2012",
   "Bridal Spring/Summer 2012",
@@ -1135,6 +1143,7 @@ mixin filter-extended(id, title, tabbed, search, anchors, subheadings, ...items)
   "Pre-Fall 2012",
   "Pre-Summer 2012",
   "Spring/Summer 2012",
+  "2011",
   "Autumn/Winter 2011",
   "Bridal Autumn/Winter 2011",
   "Bridal Spring/Summer 2011",
@@ -1144,6 +1153,7 @@ mixin filter-extended(id, title, tabbed, search, anchors, subheadings, ...items)
   "Haute Couture Spring/Summer 2011",
   "Pre Fall 2011",
   "Spring/Summer 2011",
+  "2010",
   "Autumn/Winter 2010",
   "Bridal Autumn/Winter 2010",
   "Bridal Spring/Summer 2010",
@@ -1152,6 +1162,7 @@ mixin filter-extended(id, title, tabbed, search, anchors, subheadings, ...items)
   "Haute Couture Spring/Summer 2010",
   "Pre Fall 2010",
   "Spring/Summer 2010",
+  "2009",
   "Autumn/Winter 2009",
   "Bridal Autumn/Winter 2009",
   "Bridal Spring/Summer 2009",
@@ -1161,6 +1172,7 @@ mixin filter-extended(id, title, tabbed, search, anchors, subheadings, ...items)
   "Haute Couture Spring/Summer 2009",
   "Pre Fall 2009",
   "Spring/Summer 2009",
+  "2008",
   "Autumn/Winter 2008",
   "Bridal Autumn/Winter 2008",
   "Bridal Spring/Summer 2008",
@@ -1169,6 +1181,7 @@ mixin filter-extended(id, title, tabbed, search, anchors, subheadings, ...items)
   "Haute Couture Spring/Summer 2008",
   "Pre Fall 2008",
   "Spring/Summer 2008",
+  "2007",
   "Autumn/Winter 2007",
   "Bridal Autumn/Winter 2007",
   "Bridal Spring/Summer 2007",
@@ -1176,6 +1189,7 @@ mixin filter-extended(id, title, tabbed, search, anchors, subheadings, ...items)
   "Haute Couture Autumn/Winter 2007",
   "Haute Couture Spring/Summer 2007",
   "Spring/Summer 2007",
+  "2006",
   "Autumn/Winter 2006",
   "Bridal Autumn/Winter 2006",
   "Bridal Spring/Summer 2006",
@@ -1183,12 +1197,15 @@ mixin filter-extended(id, title, tabbed, search, anchors, subheadings, ...items)
   "Haute Couture Autumn/Winter 2006",
   "Haute Couture Spring/Summer 2006",
   "Spring/Summer 2006",
+  "2005",
   "Autumn/Winter 2005",
   "Haute Couture Autumn/Winter 2005",
   "Haute Couture Spring/Summer 2005",
   "Spring/Summer 2005",
+  "2004",
   "Autumn/Winter 2004",
   "Haute Couture AutumnWinter 2004",
+  "2003",
   "Autumn/Winter 2003")
 
 +filter-extended(
