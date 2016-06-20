@@ -130,7 +130,7 @@
               padding-left: 44px
               
               input[type="checkbox"]
-                top: 10px
+                top: 5px
                 left: 20px
 
         &:not(:last-of-type) ul li:hover
@@ -156,14 +156,15 @@
     .modal-content
       .col:nth-of-type(1)
         ul
-          li:nth-of-type(1),
-          li:nth-of-type(5),
-          li:nth-of-type(7),
-          li:nth-of-type(8),
+          li:nth-of-type(1)
             background: rgba($xdk-grey, 0.05)
 
             &:hover
               background: rgba($xdk-grey, 0.1)
 
+          li:nth-of-type(1),
+          li:nth-of-type(5),
+          li:nth-of-type(7),
+          li:nth-of-type(8)
             input[type="checkbox"]
               @extend .partial
