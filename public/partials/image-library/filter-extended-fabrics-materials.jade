@@ -1,0 +1,26 @@
+.modal.filter-extended.filter-extended-hierarchical(id="filter-extended-fabrics-materials")
+  .modal-header
+    h3.pull-left.tight Fabrics &amp; Materials
+    i.icon.icon-cross.pull-right.hoverable.close-modal
+
+  .modal-content
+    .col.pull-left.border-right
+      ul.clean
+        each val, index in ["Components", "Denim", "Eco Sustainable", "Experimental", "Fur", "Intimates & Swimwear", "Knit & Jersey", "Lace", "Leather & Suede", "Performance", "Printed & Patterned", "Woven", "Yarn"]
+          li.tight
+            label.checkbox-radio.block-ver-xs.block-hor-md.tight(for="fabrics-materials-l1-i" + index)= val
+              input(type="checkbox" id="fabrics-materials-l1-i" + index)
+              i.icon.icon-angle-right.pull-right.tight.text-grey
+    
+    .col.pull-left
+      ul.clean
+        each val, index in ["Fabric", "Fabric", "Fabric", "Fabric", "Fabric", "Fabric", "Fabric", "Fabric", "Fabric", "Fabric", "Fabric", "Fabric", "Fabric", "Fabric", "Fabric", "Fabric", "Fabric", "Fabric"]
+          li.tight
+            label.checkbox-radio.block-ver-xs.block-hor-md.tight(for="fabrics-materials-l2-i" + index)= val
+              input(type="checkbox" id="fabrics-materials-l2-i" + index)
+
+  .modal-footer.text-right
+    i.icon.icon-reset.pull-left.block-top-xs.block-right-xs
+    p.tight.block-top-xs.wgsn-font.hoverable.pull-left Reset
+    .block-right-sm.inline-block: .btn.btn-white.close-modal Cancel
+    .inline-block: .btn.btn-black.close-modal Done
