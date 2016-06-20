@@ -1,0 +1,46 @@
+.modal.filter-extended.filter-extended-hierarchical(id="filter-extended-products")
+  .modal-header
+    h3.pull-left.tight Products
+    i.icon.icon-cross.pull-right.hoverable.close-modal
+
+  .modal-content
+    .row
+      .col-xs-4.border-right
+        ul.clean
+          li.tight.active
+            label.checkbox-radio.block-xs.tight(for="products-l1-i1") Apparel
+              input.partial(type="checkbox" id="products-l1-i1")
+              i.icon.icon-angle-right.pull-right.tight.text-grey
+          li.tight
+            label.checkbox-radio.block-xs.tight(for="products-l1-i2") Accessories
+              input(type="checkbox" id="products-l1-i2")
+              i.icon.icon-angle-right.pull-right.tight.text-grey
+          li.tight
+            label.checkbox-radio.block-xs.tight(for="products-l1-i3") Beauty
+              input(type="checkbox" id="products-l1-i3")
+              i.icon.icon-angle-right.pull-right.tight.text-grey
+          li.tight
+            label.checkbox-radio.block-xs.tight(for="products-l1-i4") Footwear
+              input(type="checkbox" id="products-l1-i4")
+              i.icon.icon-angle-right.pull-right.tight.text-grey
+      
+      .col-xs-4.border-right
+        ul.clean
+          each val, index in ["Active/sport", "Bridal", "Coats & outerwear", "Denim", "Dresses", "Intimates", "Jackets", "Jumpsuits", "Loungewear", "Shorts", "Socks + legwear", "Skirts", "Suits", "Suits + sets", "Sweaters", "Swimwear", "Tops", "Trousers"]
+            li.tight
+              label.checkbox-radio.block-xs.tight(for="products-l2-i" + index)= val
+                input(type="checkbox" id="products-l2-i" + index)
+                i.icon.icon-angle-right.pull-right.tight.text-grey
+      
+      .col-xs-4
+        ul.clean
+          each val, index in ["A-Line", "Active/Sport", "Anorak", "Asymmetric", "Balmacaan", "Blanket Coat", "Bomber/Blouson", "Boxy", "Boyfriend", "Camel Coat", "Cape/Poncho", "Cargo/Utility", "Coatdress", "Cocoon", "Crombie", "Draped", "Duffel/Toggle", "Duster Coat", "Empire/Babydoll", "Hidden Placket/Buttonless", "Kimono", "Macintosh/Rain Coat", "Military/Safari", "Motorcycle", "Overcoat/Topcoat", "Parka", "Pea", "Princess Coat", "Puffa/Down", "Trenchcoat", "Wrap"]
+            li.tight
+              label.checkbox-radio.block-xs.tight(for="products-l3-i" + index)= val
+                input(type="checkbox" id="products-l3-i" + index)
+
+  .modal-footer.text-right
+    i.icon.icon-reset.pull-left.block-top-xs.block-right-xs
+    p.tight.block-top-xs.wgsn-font.hoverable.pull-left Reset
+    .block-right-sm.inline-block: .btn.btn-white.close-modal Cancel
+    .inline-block: .btn.btn-black.close-modal Done

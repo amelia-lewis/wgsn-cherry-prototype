@@ -5,82 +5,25 @@ mixin filter-extended(id, title, tabbed, search, anchors, subheadings, ...items)
       i.icon.icon-cross.pull-right.hoverable.close-modal
 
     .modal-content
-      if id != "products"
-        .row.border-bottom.block-bot-md
-          .col-xs-8
-            .filter-extended-anchors
-              for letter, i in "#ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
-                span.anchor-letter= letter
+      .row.border-bottom.block-bot-md
+        .col-xs-8
+          .filter-extended-anchors
+            for letter, i in "#ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
+              span.anchor-letter= letter
 
-          .col-xs-4
-            input.search-input(type="text", placeholder="Search " + title)
+        .col-xs-4
+          input.search-input(type="text", placeholder="Search " + title)
 
-        .row.block-top-md
-          .col-xs-12
-            ul.filter-extended-list.clean
-              if subheadings
-                li.filter-extended-subheading= subheadings
-              
-              each item in items
-                li
-                  label.checkbox-radio(for=item)= item
-                    input(type="checkbox" id=item)
-
-      else if id == "products"
-        .row.hierarchical-list
-          .col-xs-4.border-right
-            ul.filter-extended-list.clean
-              each item in items
-                li
-                  label.checkbox-radio(for=item)= item
-                    input(type="checkbox" id=item)
-                    i.icon.icon-angle-right.pull-right.tight.text-grey
-
-          .col-xs-4.border-right
-            ul.filter-extended-list.clean
+      .row.block-top-md
+        .col-xs-12
+          ul.filter-extended-list.clean
+            if subheadings
+              li.filter-extended-subheading= subheadings
+            
+            each item in items
               li
-                label.checkbox-radio(for="products-l2-i1") Coats
-                  input(type="checkbox" id="products-l2-i1")
-                  i.icon.icon-angle-right.pull-right.tight.text-grey
-              li
-                label.checkbox-radio(for="products-l2-i2") Dresses
-                  input(type="checkbox" id="products-l2-i2")
-                  i.icon.icon-angle-right.pull-right.tight.text-grey
-              li
-                label.checkbox-radio(for="products-l2-i3") Skirts
-                  input(type="checkbox" id="products-l2-i3")
-                  i.icon.icon-angle-right.pull-right.tight.text-grey
-              li
-                label.checkbox-radio(for="products-l2-i4") Coats
-                  input(type="checkbox" id="products-l2-i4")
-                  i.icon.icon-angle-right.pull-right.tight.text-grey
-              li
-                label.checkbox-radio(for="products-l2-i5") etc.
-                  input(type="checkbox" id="products-l2-i5")
-                  i.icon.icon-angle-right.pull-right.tight.text-grey
-          
-          .col-xs-4
-            ul.filter-extended-list.clean
-              li
-                label.checkbox-radio(for="products-l3-i1") A-line
-                  input(type="checkbox" id="products-l3-i1")
-                  i.icon.icon-angle-right.pull-right.tight.text-grey
-              li
-                label.checkbox-radio(for="products-l3-i2") Maxi
-                  input(type="checkbox" id="products-l3-i2")
-                  i.icon.icon-angle-right.pull-right.tight.text-grey
-              li
-                label.checkbox-radio(for="products-l3-i3") Shift
-                  input(type="checkbox" id="products-l3-i3")
-                  i.icon.icon-angle-right.pull-right.tight.text-grey
-              li
-                label.checkbox-radio(for="products-l3-i4") Sundress
-                  input(type="checkbox" id="products-l3-i4")
-                  i.icon.icon-angle-right.pull-right.tight.text-grey
-              li
-                label.checkbox-radio(for="products-l3-i5") etc.
-                  input(type="checkbox" id="products-l3-i5")
-                  i.icon.icon-angle-right.pull-right.tight.text-grey
+                label.checkbox-radio(for=item)= item
+                  input(type="checkbox" id=item)
 
     .modal-footer.text-right
       i.icon.icon-reset.pull-left.block-top-xs.block-right-xs
@@ -92,17 +35,17 @@ mixin filter-extended(id, title, tabbed, search, anchors, subheadings, ...items)
 //- ============================================================
 
 
-+filter-extended(
-  "products",
-  "Products",
-  false,
-  false,
-  false,
-  false,
-  "Apparel",
-  "Accessories",
-  "Beauty",
-  "Footwear")
+//- +filter-extended(
+//-   "products",
+//-   "Products",
+//-   false,
+//-   false,
+//-   false,
+//-   false,
+//-   "Apparel",
+//-   "Accessories",
+//-   "Beauty",
+//-   "Footwear")
 
 +filter-extended(
   "brand",

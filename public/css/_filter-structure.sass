@@ -100,14 +100,48 @@
       @extend .wgsn-font
       margin-bottom: 10px
 
-  .hierarchical-list
-    .filter-extended-list
-      overflow: hidden
-      flex-wrap: nowrap
-      padding: 0
+  &.filter-extended-hierarchical
+    .modal-content
+      height: 390px
 
-      li
-        width: 100%
+      .row
+        height: 100%
 
-        span
-          width: calc(100% - 60px)
+        .col-xs-4
+          padding: 0
+          height: 100%
+          overflow-y: scroll
+
+          &:nth-of-type(2)
+            ul
+              li:nth-of-type(3)
+                @extend .active
+
+                input[type="checkbox"]
+                  @extend .partial
+      
+      ul
+        overflow-x: hidden
+        overflow-y: auto
+
+        li
+          width: 100%
+
+          span
+            width: calc(100% - 60px)
+
+          &:hover
+            background: rgba($xdk-grey, 0.05)
+
+          &.active
+            background: rgba($xdk-grey, 0.05)
+
+            &:hover
+              background: rgba($xdk-grey, 0.1)
+
+          label.checkbox-radio.block-xs
+            padding-left: 34px
+            
+            input[type="checkbox"]
+              top: 10px
+              left: 10px
