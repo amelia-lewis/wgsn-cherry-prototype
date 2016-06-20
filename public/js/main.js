@@ -18,40 +18,15 @@ $(document).ready(function() {
   };
 });
 
-// show/hide captions
-showCaptions = function() {
-  if ($('#toggle-show-caption').hasClass('toggle-on')) {
-    $('.file').addClass('show-caption');
-    $('.file .caption-container').show();
-    $('.file').css({'padding-bottom': '62px'});
-  } else if ($('#toggle-show-caption').hasClass('toggle-off')) {
-    $('.file').removeClass('show-caption');
-    $('.file').removeClass('show-filename');
-    $('.file .caption-container').hide();
-    $('.file').css({'padding-bottom': '0'});
-    $('#toggle-show-filename').removeClass('toggle-on').addClass('toggle-off');
-  }
-};
+//- show/hide captions
+$('#display-captions').on('change', function() {
+  $('.file').toggleClass('show-caption');
+})
 
-//- show/hide filenames
-showFilenames = function() {
-  if ($('#toggle-show-filename').hasClass('toggle-on')) {
-    $('.file').addClass('show-filename');
-    $('.file .caption-container .filename').show();
-    $('.file').css({'padding-bottom': '84px'});
-  } else if ($('#toggle-show-filename').hasClass('toggle-off')) {
-    $('.file').removeClass('show-filename');
-    $('.file .caption-container .filename').hide();
-    $('.file').css({'padding-bottom': '62px'});
-  }
-};
-
-// toggle icons
-$('.toggle').on('click', function() {
-  $(this).toggleClass('toggle-on toggle-off');
-  showCaptions();
-  showFilenames();
-});
+//- show/hide file names
+$('#display-filenames').on('change', function() {
+  $('.file').toggleClass('show-filename');
+})
 
 
 // ====================================================================================================

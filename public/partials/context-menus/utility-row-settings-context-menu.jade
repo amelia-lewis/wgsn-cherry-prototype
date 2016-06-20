@@ -2,16 +2,22 @@ ul.context-menu#utility-row-settings-context-menu
   .block-ver-xxs.border-bottom
     li
       h4 Display
-      .row
-        .col-xs-10
-          p.pull-left Captions
-        .col-xs-2
-          .toggle.toggle-on.pull-right#toggle-show-caption
-      .row
-        .col-xs-10
-          p.pull-left.tight Filenames
-        .col-xs-2
-          .toggle.toggle-off.pull-right#toggle-show-filename
+      
+      label.checkbox-radio(for='display-captions') Captions
+        input#display-captions(type='checkbox' checked)
+
+      label.checkbox-radio(for='display-filenames') Filenames
+        input#display-filenames(type='checkbox')
+      //- .row
+      //-   .col-xs-10
+      //-     p.pull-left Captions
+      //-   .col-xs-2
+      //-     .toggle.toggle-on.pull-right#toggle-show-caption
+      //- .row
+      //-   .col-xs-10
+      //-     p.pull-left.tight Filenames
+      //-   .col-xs-2
+      //-     .toggle.toggle-off.pull-right#toggle-show-filename
 
   .block-ver-xxs.border-bottom
     li
