@@ -653,7 +653,7 @@ $('.modal .close-modal').on('click', function() {
     $('.filter-extended').removeClass('show');
     $('.btn-modal-tool').removeClass('active');
   } else {
-    $(this).parentsUntil('body').removeClass('show');
+    $(this).parentsUntil('body').removeClass('show file-type-image file-type-report file-type-video file-type-color-card');;
     $('.overlay').removeClass('show');
     $('.item-detail-modal-controls').removeClass('show');
     $('.filter-extended').removeClass('show');
@@ -664,16 +664,15 @@ $('.modal .close-modal').on('click', function() {
 $('.overlay').on('click', function() {
   $('.overlay').removeClass('show');
   $('.filter-extended').removeClass('show');
-  $('.modal').removeClass('show');
+  $('.modal').removeClass('show file-type-image file-type-report file-type-video file-type-color-card');
   $('.item-detail-modal-controls').removeClass('show');
 });
 
 // ...and with the escape key
 $(document).keyup(function(e) { 
   if (e.keyCode == 27) { 
-    $('.modal').removeClass('show');
+    $('.modal').removeClass('show file-type-image file-type-report file-type-video file-type-color-card fullscreen');
     $('.filter-extended').removeClass('show');
-    $('#item-detail-modal').removeClass('fullscreen');
     $('.item-detail-modal-controls').removeClass('show');
     $('.overlay').removeClass('show');
   } 
