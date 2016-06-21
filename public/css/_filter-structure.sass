@@ -9,41 +9,26 @@
   .accordion-content
     border-color: $lt-grey
     
-    ul
-      @extend .block-hor-md
-      @extend .block-bot-sm
-      @extend .hoverable
+    .list-container
       display: flex
       flex-direction: column
 
-      li
+      label
         width: 100%
-        @extend .tight
-
-        span
-          display: inline-block
-          width: calc(100% - 30px)
-          line-height: 1.4em
 
         &.subheading
           margin-top: 16px
+          padding-left: 0
+          position: relative
+          display: inline-block
+          @extend .wgsn-font
+          @extend .text-grey
           
-          label
-            padding-left: 0
-            position: relative
-            display: inline-block
-            @extend .wgsn-font
-            @extend .text-grey
-            
-            input
-              display: none
+          input
+            display: none
 
         &:last-of-type
           margin-bottom: 0
-
-          label.checkbox-radio
-            margin-bottom: 0px
-            padding-bottom: 0
 
         &:first-of-type.subheading
           margin-top: 0
@@ -57,9 +42,9 @@
       height: auto
 
   #filter-btn-category + .accordion-content
-    ul
-      li:nth-of-type(1),
-      li:nth-of-type(8)
+    .list-container
+      label:nth-of-type(1),
+      label:nth-of-type(8)
         @extend .subheading
 
 
@@ -72,7 +57,7 @@
   
   .col-xs-8
     position: relative
-    height: 36px
+    // height: 36px
 
   .filter-extended-anchors
     position: absolute
@@ -90,7 +75,7 @@
       &:hover
         color: $fashion
 
-  .filter-extended-list
+  .list-container
     width: 100%
     height: 390px
     @extend .hoverable
@@ -100,50 +85,29 @@
     flex-direction: column
     flex-wrap: wrap
     
-    li
+    label
       min-width: 140px
       max-width: 300px 
-      margin: 0 40px 0 0
-      
-      span
-        display: inline-block
-        width: calc(100% - 30px)
-        line-height: 1.5em
+      margin-right: 40px
 
       &.subheading
-        margin-top: 16px
-        
-        label
-          padding-left: 0
-          position: relative
-          display: inline-block
-          @extend .wgsn-font
+        margin-top: 10px
+        @extend .block-ver-xxs
+        @extend .border-bottom
+        page-break-before: always
+        padding-left: 0
+        @extend .wgsn-font
 
-          &:after
-            content: "Select group"
-            position: absolute
-            top: 1px
-            left: calc(100% + 5px)
-            @extend .text-grey
-            @extend .sans-serif
-            @extend .text-no-transform
-            @extend .hoverable
-            white-space: nowrap
-            opacity: 0
-          
-          input
-            display: none
-
-        &:hover
-          label:after
-            opacity: 1
+        input
+          display: none
 
       &:first-of-type.subheading
         margin-top: 0
+        padding-top: 0
+        border-top: none
 
-    .filter-extended-subheading
-      @extend .wgsn-font
-      margin-bottom: 10px
+  ul.tab-nav
+    border-bottom: none
 
   &.filter-extended-hierarchical
     .modal-content
@@ -216,46 +180,52 @@
   // Subheadings --> terrible, manual way to do this
   // ====================
   &#filter-extended-brand
-    .filter-extended-list
-      li:nth-of-type(1)
+    .list-container
+      label:nth-of-type(1)
         @extend .subheading
 
   &#filter-extended-retailer
-    .filter-extended-list
-      li:nth-of-type(1)
+    .list-container
+      label:nth-of-type(1)
         @extend .subheading
 
   &#filter-extended-city
-    .filter-extended-list
-      li:nth-of-type(1),
-      li:nth-of-type(15),
-      li:nth-of-type(19),
-      li:nth-of-type(59),
-      li:nth-of-type(91)
+    .list-container
+      label:nth-of-type(1),
+      label:nth-of-type(15),
+      label:nth-of-type(19),
+      label:nth-of-type(59),
+      label:nth-of-type(91)
         @extend .subheading
 
   &#filter-extended-season-month
-    .filter-extended-list
-      li:nth-of-type(1),
-      li:nth-of-type(9),
-      li:nth-of-type(18),
-      li:nth-of-type(27),
-      li:nth-of-type(36),
-      li:nth-of-type(45),
-      li:nth-of-type(55),
-      li:nth-of-type(64),
-      li:nth-of-type(74),
-      li:nth-of-type(83),
-      li:nth-of-type(91),
-      li:nth-of-type(99),
-      li:nth-of-type(104),
-      li:nth-of-type(107)
+    .list-container
+      label:nth-of-type(1),
+      label:nth-of-type(9),
+      label:nth-of-type(18),
+      label:nth-of-type(27),
+      label:nth-of-type(36),
+      label:nth-of-type(45),
+      label:nth-of-type(55),
+      label:nth-of-type(64),
+      label:nth-of-type(74),
+      label:nth-of-type(83),
+      label:nth-of-type(91),
+      label:nth-of-type(99),
+      label:nth-of-type(104),
+      label:nth-of-type(107)
         @extend .subheading
 
   &#filter-extended-event
-    .filter-extended-list
-      li:nth-of-type(1),
-      li:nth-of-type(12),
-      li:nth-of-type(38),
-      li:nth-of-type(68)
+    .list-container
+      label:nth-of-type(1),
+      label:nth-of-type(12),
+      label:nth-of-type(38),
+      label:nth-of-type(68)
+        @extend .subheading
+
+  &#filter-extended-colour-tone
+    .list-container
+      label:nth-of-type(1),
+      label:nth-of-type(25)
         @extend .subheading

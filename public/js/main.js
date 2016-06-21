@@ -146,64 +146,6 @@ multiFileSelect = function(e) {
 $('.file').on('click', function(e) {
   multiFileSelect(e);
 });
-
-
-// multiFileSelectDetailsView = function(e) {
-//   // Count number of items selected
-//   var myaccount = $('.file-details-view.selected').length;
-//   console.log(myaccount + "file detail");
-//   var selectedImg = $(e.target).children('img').prop('src');
-//   console.log(selectedImg);
-
-//   // if no files are selected
-//   if (myaccount == 0) {
-//     if($(e.target).is('.file-checkbox, .file-heart')) {
-//       return;
-//     } else if(!($('body').hasClass('workspace-trash-view'))) {
-//       $('.overlay').addClass('show');
-//       $('#item-detail-modal').addClass('show');
-//       $('.item-detail-modal-controls').addClass('show');
-//       $('#item-detail-modal .modal-image-panel .img').css({"background-image": "url('" + selectedImg + "')"});
-
-//       // file type
-//       if ($(e.target).parent().hasClass('file-type-image')) {
-//         $('#item-detail-modal').addClass('file-type-image');
-//       } else if ($(e.target).parent().hasClass('file-type-report')) {
-//         $('#item-detail-modal').addClass('file-type-report');
-//       } else if ($(e.target).parent().hasClass('file-type-video')) {
-//         $('#item-detail-modal').addClass('file-type-video');
-//       } else if ($(e.target).parent().hasClass('file-type-color-card')) {
-//         $('#item-detail-modal').addClass('file-type-color-card');
-//       }
-//     };
-
-//   // if 1 file is selected
-//   } else if (myaccount == 1) {
-//     if($(e.target).is('.file-heart')) {
-//       return;
-//     } else {
-//       checkforhover();
-//       $('.page-content').addClass('has-files-selected');
-//       $('.displaying-results').text(myaccount + ' item selected');
-//       $(e.target).parentsUntil('details-view').addClass('selected');
-//     };
-
-//   // if 1 or more files are selected
-//   } else if (myaccount >= 1) {
-//     if($(e.target).is('.file-heart')) {
-//       return;
-//     } else {
-//       checkforhover();
-//       $('.page-content').addClass('has-files-selected');
-//       $('.displaying-results').text((myaccount + 1) + ' items selected');
-//       $(e.target).parentsUntil('details-view').addClass('selected');
-//     };
-//   };
-// };
-
-// $('.file-details-view .thumb-container').on('click', function(e) {
-//   multiFileSelectDetailsView(e);
-// });
 // ===== end SELECT FILE ON CHECKBOX, OPEN FILE ON SINGLE CLICK =====
 
 
@@ -513,6 +455,7 @@ openExtendedFilter("retailer");
 openExtendedFilter("city");
 openExtendedFilter("season-month");
 openExtendedFilter("event");
+openExtendedFilter("colour-tone");
 openExtendedFilter("prints-graphics");
 openExtendedFilter("material");
 

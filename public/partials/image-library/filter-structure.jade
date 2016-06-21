@@ -5,20 +5,21 @@ mixin filter(id, title, viewall, filteredby, ...items)
       i.section-expand-icon.icon.icon-angle-right.pull-right.text-smaller
     
     .accordion-content
-      ul.clean.overflow-auto
+      .list-container.block-hor-md.block-bot-sm
         each item in items
-          li
-            label.checkbox-radio.block-bot-xs(for=item)= item
-              input(type="checkbox" id=item)
+          label.checkbox-radio(for=item)= item
+            input(type="checkbox" id=item)
       
       if viewall
         .accordion-footer.overflow-auto
-          p.text-underline.btn-view-all.hoverable.pull-left(id="btn-view-all-" + id) View all
+          p.text-underline.btn-view-all.hoverable.pull-left.tight(id="btn-view-all-" + id) View all
 
 
 //- ============================================================
 
+
 .filter-structure
+  //- id, title, viewall, filteredby, ...items
   +filter(
     "category",
     "Category",
@@ -38,6 +39,7 @@ mixin filter(id, title, viewall, filteredby, ...items)
     "Colour Libraries",
     "Fabric Swatches")
 
+  //- id, title, viewall, filteredby, ...items
   +filter(
     "market",
     "Market",
@@ -48,6 +50,7 @@ mixin filter(id, title, viewall, filteredby, ...items)
     "Girls",
     "Boys")
 
+  //- id, title, viewall, filteredby, ...items
   +filter(
     "product",
     "Product",
@@ -58,6 +61,7 @@ mixin filter(id, title, viewall, filteredby, ...items)
     "Beauty",
     "Footwear")
 
+  //- id, title, viewall, filteredby, ...items
   +filter(
     "brand",
     "Brand",
@@ -65,15 +69,11 @@ mixin filter(id, title, viewall, filteredby, ...items)
     true,
     "Acne Studios",
     "Balenciaga",
-    "Balmain",
     "Chloé",
     "Givenchy",
-    "Isabel Marant",
-    "Jimmy Choo",
-    "Proenza Schouler",
-    "Saint Laurent",
-    "TOM FORD")
+    "Saint Laurent")
 
+  //- id, title, viewall, filteredby, ...items
   +filter(
     "retailer",
     "Retailer",
@@ -81,15 +81,11 @@ mixin filter(id, title, viewall, filteredby, ...items)
     true,
     "Galeries Lafayette",
     "H&M",
-    "House of Fraser",
-    "J.Crew",
-    "Old Navy",
     "Opening Ceremony",
-    "Selfridges",
-    "Sisley",
     "Topshop",
     "Zara")
 
+  //- id, title, viewall, filteredby, ...items
   +filter(
     "city",
     "City",
@@ -98,8 +94,10 @@ mixin filter(id, title, viewall, filteredby, ...items)
     "New York",
     "London",
     "Paris",
-    "Milan")
+    "Milan",
+    "Sao Paolo")
 
+  //- id, title, viewall, filteredby, ...items
   +filter(
     "season-month",
     "Season/Month",
@@ -107,77 +105,54 @@ mixin filter(id, title, viewall, filteredby, ...items)
     true,
     "Autumn/Winter 2016",
     "Bridal Autumn/Winter 2016",
-    "Bridal Spring/Summer 2016",
-    "Haute Couture Spring/Summer 2016",
-    "Pre-Fall 2016",
-    "Pre-Summer 2016",
-    "Spring/Summer 2016")
+    "June 2016",
+    "May 2016",
+    "April 2016")
 
+  //- id, title, viewall, filteredby, ...items
   +filter(
     "event",
     "Event",
     true,
     true,
-    "Agenda",
     "Bread & Butter",
     "Denim by Premiere Vision",
-    "Dutch Design Week",
-    "GDS Dusseldorf",
-    "ISPO",
     "London Design Festival",
     "Maison & Objet",
-    "Premiere Vision",
-    "Project")
+    "Premiere Vision")
 
+  //- id, title, viewall, filteredby, ...items
   +filter(
-    "colour",
+    "colour-tone",
     "Colour & Tone",
-    false,
+    true,
     false,
     "Black",
     "White",
     "Grey",
     "Red",
-    "Orange",
-    "Yellow",
-    "Green",
-    "Blue",
-    "Navy",
-    "Purple",
-    "Pink",
-    "Cream",
-    "Gold",
-    "Silver",
-    "Multi")
+    "Blue")
 
+  //- id, title, viewall, filteredby, ...items
   +filter(
     "prints-graphics",
     "Prints & Graphics",
     true,
     true,
-    "Abstract",
     "Animal print",
-    "Aztec",
     "Checks/Plaids",
-    "Floral",
     "Geometric",
     "Heart",
-    "Paisley",
-    "Spots",
-    "Stripe")
+    "Spots")
 
+  //- id, title, viewall, filteredby, ...items
   +filter(
     "material",
     "Material",
     true,
     true,
-    "Denim", 
+    "Denim",
     "Eco Sustainable", 
-    "Fur", 
-    "Intimates & Swimwear", 
-    "Knit & Jersey", 
-    "Lace", 
+    "Fur",
     "Leather & Suede", 
-    "Printed & Patterned", 
-    "Woven", 
-    "Yarn")
+    "Woven")

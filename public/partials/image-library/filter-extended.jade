@@ -1,29 +1,76 @@
-mixin filter-extended(id, title, tabbed, search, anchors, ...items)
+mixin filter-extended(id, title, tabs, search, anchors, ...items)
   .modal.filter-extended(id="filter-extended-" +id)
     .modal-header
       h3.pull-left.tight= title
       i.icon.icon-cross.pull-right.hoverable.close-modal
 
     .modal-content
-      .row.border-bottom.block-bot-md
-        .col-xs-8
-          .filter-extended-anchors
-            for letter, i in "#ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
-              span.anchor-letter= letter
+      if tabs && anchors && search
+        .row.border-bottom
+          .col-xs-12
+            ul.tab-nav
+              li.tab-nav-tab.active Top 
+                span= title
+                span s
+              li.tab-nav-tab All 
+                span= title
+                span s
 
-        .col-xs-4
-          input.search-input(type="text", placeholder="Search " + title)
+        .row.border-bottom
+          .col-xs-8.block-ver-md
+            .filter-extended-anchors
+              for letter, i in "#ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
+                span.anchor-letter= letter
 
-      .row.block-top-md
+          .col-xs-4.block-ver-md
+            input.search-input(type="text", placeholder="Search " + title)
+
+        .block-top-md
+
+      else if tabs && search
+        .row.border-bottom
+          .col-xs-8
+            ul.tab-nav
+              li.tab-nav-tab.active Top 
+                span= title
+                span s
+              li.tab-nav-tab All 
+                span= title
+                span s
+
+          .col-xs-4.block-bot-md
+            input.search-input(type="text", placeholder="Search " + title)
+
+        .block-top-md
+
+      else if anchors && search
+        .row.border-bottom
+          .col-xs-8
+            .filter-extended-anchors
+              for letter, i in "#ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
+                span.anchor-letter= letter
+
+          .col-xs-4.block-bot-md
+            input.search-input(type="text", placeholder="Search " + title)
+
+        .block-top-md
+
+      else if search
+        .row.border-bottom
+          .col-xs-8
+            span &nbsp;
+
+          .col-xs-4.block-bot-md
+            input.search-input(type="text", placeholder="Search " + title)
+
+        .block-top-md
+
+      .row
         .col-xs-12
-          ul.filter-extended-list.clean
-            //- if subheadings
-            //-   li.filter-extended-subheading= subheadings
-            
+          .list-container
             each item in items
-              li
-                label.checkbox-radio(for=item)= item
-                  input(type="checkbox" id=item)
+              label.checkbox-radio(for=item)= item
+                input(type="checkbox" id=item)
 
     .modal-footer.text-right
       i.icon.icon-reset.pull-left.block-top-xs.block-right-xs
@@ -35,6 +82,7 @@ mixin filter-extended(id, title, tabbed, search, anchors, ...items)
 //- ============================================================
 
 
+//- id, title, tabs, search, anchors, ...items
 +filter-extended(
   "brand",
   "Brand",
@@ -832,6 +880,7 @@ mixin filter-extended(id, title, tabbed, search, anchors, ...items)
   "Azzurra Gronchi",
   "etc.")
 
+//- id, title, tabs, search, anchors, ...items
 +filter-extended(
   "retailer",
   "Retailer",
@@ -986,12 +1035,13 @@ mixin filter-extended(id, title, tabbed, search, anchors, ...items)
   "3 Blonde Bears",
   "3can4on")
 
+//- id, title, tabs, search, anchors, ...items
 +filter-extended(
   "city",
   "City",
+  true,
+  true,
   false,
-  true,
-  true,
   "Asia",
   "Beijing",
   "Chengdu",
@@ -1093,12 +1143,13 @@ mixin filter-extended(id, title, tabbed, search, anchors, ...items)
   "Rio de Janeiro",
   "Sao Paulo")
 
+//- id, title, tabs, search, anchors, ...items
 +filter-extended(
   "season-month",
   "Season/Month",
   false,
   true,
-  true,
+  false,
   "2016",
   "Autumn/Winter 2016",
   "Bridal Autumn/Winter 2016",
@@ -1208,10 +1259,11 @@ mixin filter-extended(id, title, tabbed, search, anchors, ...items)
   "2003",
   "Autumn/Winter 2003")
 
+//- id, title, tabs, search, anchors, ...items
 +filter-extended(
   "event",
   "Event",
-  false,
+  true,
   true,
   true,
   "#",
@@ -1339,12 +1391,61 @@ mixin filter-extended(id, title, tabbed, search, anchors, ...items)
   "Curve",
   "etc.")
 
+//- id, title, tabs, search, anchors, ...items
++filter-extended(
+  "colour-tone",
+  "Colour & Tone",
+  false,
+  false,
+  false,
+  "Colours",
+  "Aqua/Teal/Turquoise",
+  "Black",
+  "Blue",
+  "Brown",
+  "Coral",
+  "Cosmetic",
+  "Cream",
+  "Fuchsia",
+  "Gold",
+  "Green",
+  "Grey",
+  "Khaki/Tan",
+  "Olive",
+  "Orange",
+  "Peach",
+  "Pink",
+  "Purple",
+  "Red",
+  "Silver",
+  "Straw",
+  "Taupe",
+  "White",
+  "Wine",
+  "Yellow",
+  "Tones",
+  "Black/White",
+  "Cosmetics",
+  "Darks",
+  "Dusty",
+  "Earth Tones",
+  "Jewels/Vegetals",
+  "Metallic",
+  "Midtone",
+  "Midtone Brights",
+  "Neon",
+  "Neutrals",
+  "Pastels"
+)
+
+
+//- id, title, tabs, search, anchors, ...items
 +filter-extended(
   "prints-graphics",
   "Prints & Graphics",
+  true,
+  true,
   false,
-  true,
-  true,
   "A",
   "Abstract",
   "All-over Print/Pattern",
@@ -1431,6 +1532,7 @@ mixin filter-extended(id, title, tabbed, search, anchors, ...items)
   "Zebra",
   "Zig-zag")
 
+//- id, title, tabs, search, anchors, ...items
 //- +filter-extended(
 //-   "fabrics-materials",
 //-   "Fabrics & Materials",
