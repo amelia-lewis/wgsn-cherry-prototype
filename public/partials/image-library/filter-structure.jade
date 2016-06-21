@@ -8,7 +8,7 @@ mixin filter(id, title, viewall, filteredby, ...items)
       ul.clean.overflow-auto
         each item in items
           li
-            label.checkbox-radio.tight.block-bot-xs(for=item)= item
+            label.checkbox-radio.block-bot-xs(for=item)= item
               input(type="checkbox" id=item)
       
       if viewall
@@ -26,21 +26,19 @@ mixin filter(id, title, viewall, filteredby, ...items)
     "Category",
     false,
     false,
+    "Images",
     "Catwalk",
-    "Denim Details", 
     "Marketing Campaigns", 
-    "Mood", 
     "Retail", 
-    "Showrooms", 
     "Street Style", 
     "Trade Shows & Exhibits",
     "Vintage",
-    "Brushes & Fills",
+    "Design Resources",
+    "WGSN Original CADs/Flats",
     "Colour Libraries",
-    "Flats Library",
-    "Graphics & Clip Art",
-    "Materials & Textiles",
-    "Prints")
+    "WGSN Original Brushes & Fills",
+    "Fabric Swatches",
+    "WGSN Original Prints & Graphics")
 
   +filter(
     "market",
@@ -49,7 +47,6 @@ mixin filter(id, title, viewall, filteredby, ...items)
     false,
     "Women",
     "Men",
-    "Kids",
     "Girls",
     "Boys")
 

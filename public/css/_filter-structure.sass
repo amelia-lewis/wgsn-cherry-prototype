@@ -20,23 +20,33 @@
         width: 100%
         @extend .tight
 
-        &:first-of-type
-          margin-top: 5px
-
-        &:last-of-type
-          margin-bottom: 0
-
-          label
-            padding-bottom: 0
-
         span
           display: inline-block
           width: calc(100% - 30px)
           line-height: 1.4em
 
+        &.subheading
+          margin-top: 16px
+          
+          label
+            padding-left: 0
+            position: relative
+            display: inline-block
+            @extend .wgsn-font
+            @extend .text-grey
+            
+            input
+              display: none
+
         &:last-of-type
+          margin-bottom: 0
+
           label.checkbox-radio
             margin-bottom: 0px
+            padding-bottom: 0
+
+        &:first-of-type.subheading
+          margin-top: 0
 
   // .accordion-footer
   //   p
@@ -45,6 +55,12 @@
   &.open
     .accordion-content
       height: auto
+
+  #filter-btn-category + .accordion-content
+    ul
+      li:nth-of-type(1),
+      li:nth-of-type(8)
+        @extend .subheading
 
 
 // ====================
