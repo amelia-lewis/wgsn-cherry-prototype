@@ -13,9 +13,7 @@ mixin filter(id, title, viewall, filteredby, ...items)
       
       if viewall
         .accordion-footer.overflow-auto
-          p.text-underline.btn-view-all.hoverable.pull-left(id="btn-view-all-" + id) View all 
-            span= title
-            span s
+          p.text-underline.btn-view-all.hoverable.pull-left(id="btn-view-all-" + id) View all
 
 
 //- ============================================================
@@ -35,10 +33,10 @@ mixin filter(id, title, viewall, filteredby, ...items)
     "Vintage",
     "Design Resources",
     "WGSN Original CADs/Flats",
-    "Colour Libraries",
     "WGSN Original Brushes & Fills",
-    "Fabric Swatches",
-    "WGSN Original Prints & Graphics")
+    "WGSN Original Prints & Graphics",
+    "Colour Libraries",
+    "Fabric Swatches")
 
   +filter(
     "market",
