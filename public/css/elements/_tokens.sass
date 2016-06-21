@@ -1,0 +1,36 @@
+.token
+  background: darken($lt-grey, 5)
+  @extend .pull-left
+  @extend .block-ver-xxs
+  margin: 0 5px 5px 0
+  border-radius: 3px
+
+  .avatar,
+  span,
+  .icon
+    @extend .pull-left
+
+  span
+    padding: 0 7px
+    @extend .inline-block
+    position: relative
+
+    &:after
+      content: ""
+      position: absolute
+      display: block
+      top: 0
+      right: -1px
+      background: white
+      width: 1px
+      height: 100%
+
+  .icon-cross
+    @extend .hoverable
+    padding: 0 7px
+
+  &:hover
+    border-color: darken($md-grey, 20)
+
+    .icon-cross
+      color: darken($md-grey, 20)
