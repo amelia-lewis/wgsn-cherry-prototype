@@ -1,6 +1,8 @@
 mixin file(type, img, original, comments, filename, ...caption)
-  .file.hoverable.show-caption(class="file-type-" + type)
+  .file.file-grid-view.hoverable.show-caption(class="file-type-" + type)
     img(src=img)
+    input.file-checkbox(type="checkbox")
+    .file-heart: i.icon.icon-heart-filled.hidden-workspace-trash
     
     .caption-container.block-xs
       ul.clean
@@ -18,9 +20,6 @@ mixin file(type, img, original, comments, filename, ...caption)
         i.icon.icon-ellipsis.btn-item-menu.hidden-workspace-trash
         include context-menus/item-context-menu
 
-    input.file-checkbox(type="checkbox")
-    .file-heart: i.icon.icon-heart-filled.hidden-workspace-trash
-
     .flag-container
       if original == true
         .wgsn-original-content.wgsn-font.inline-block.has-tooltip(data-tooltip="WGSN Original Content") WGSN Asset
@@ -32,45 +31,46 @@ mixin file(type, img, original, comments, filename, ...caption)
 
 
 mixin file-details-view(type, img, original, comments, filename, ...caption)
-  .file-details-view(class="file-type-" + type)
-    .thumb-container.hoverable
-      img(src=img)
+  .file.file-details-view.overflow-auto.block-bot-md(class="file-type-" + type)
+    .row
+      .col-xs-12.col-sm-7
+        img.hoverable(src=img width="100%")
+        input.file-checkbox(type="checkbox")
+        .file-heart: i.icon.icon-heart-filled.hidden-workspace-trash
 
-      if comments == true
-        i.file-comment.icon.icon-comment-filled
+        if comments == true
+          i.file-comment.icon.icon-comment-filled
 
-      .file-utilities-1
-        i.file-checkbox.icon.icon-tick-circle
-        i.file-heart.icon.icon-heart
-    
-    .caption-container.block-hor-md.block-ver-sm
-      .block-bot-sm
-        ul.clean
-          li.wgsn-font= type
-          each item in caption
-            li.caption.text-bold= item
+      .col-xs-12.col-sm-5
+        .caption-container.block-ver-sm.block-hor-xs
+          .block-bot-sm
+            ul.clean
+              li.wgsn-font= type
+              each item in caption
+                li.caption.text-bold= item
 
-      .block-right-sm.block-bot-sm.inline-block
-        ul.clean
-          li.tight Image name:
-          li.tight Format:
-          li.tight Market:
-          li.tight View:
-          li.tight Category:
-      .block-right-sm.block-bot-sm.inline-block
-        ul.clean
-          li.tight yzy_aw16_003.jpg
-          li.tight JPG
-          li.tight Menswear
-          li.tight Complete look
-          li.tight Showroom
-      
-      .block-top-xxs.block-bot-sm.border-top
-        ul.clean.file-utilities-2
-          li.block-xs.tight.inline-block.hoverable.btn-open: i.icon.icon-export
-          li.block-xs.tight.inline-block.hoverable.btn-save: i.icon.icon-plus-circle
-          li.block-xs.tight.inline-block.hoverable.btn-download: i.icon.icon-download
-          li.block-xs.tight.inline-block.hoverable.btn-print: i.icon.icon-print
-          li.block-xs.tight.inline-block.hoverable: i.icon.icon-crop
-          li.block-xs.tight.inline-block.hoverable.btn-send: i.icon.icon-paper-plane
-          li.block-xs.tight.inline-block.hoverable.hidden-image-library: i.icon.icon-trash
+          .block-right-sm.block-bot-sm.inline-block
+            ul.clean
+              li.tight Image name:
+              li.tight Format:
+              li.tight Market:
+              li.tight View:
+              li.tight Category:
+          
+          .block-right-sm.block-bot-sm.inline-block
+            ul.clean
+              li.tight yzy_aw16_003.jpg
+              li.tight JPG
+              li.tight Menswear
+              li.tight Complete look
+              li.tight Showroom
+          
+          .block-top-xxs.block-bot-sm.border-top
+            ul.clean.file-utilities
+              li.block-xs.tight.inline-block.hoverable.btn-open: i.icon.icon-export
+              li.block-xs.tight.inline-block.hoverable.btn-save: i.icon.icon-plus-circle
+              li.block-xs.tight.inline-block.hoverable.btn-download: i.icon.icon-download
+              li.block-xs.tight.inline-block.hoverable.btn-print: i.icon.icon-print
+              li.block-xs.tight.inline-block.hoverable: i.icon.icon-crop
+              li.block-xs.tight.inline-block.hoverable.btn-send: i.icon.icon-paper-plane
+              li.block-xs.tight.inline-block.hoverable.hidden-image-library: i.icon.icon-trash

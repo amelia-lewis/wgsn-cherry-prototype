@@ -1,32 +1,79 @@
 // ============================================================
-// HEART & CHECKBOX
+// COMMON
 // ============================================================
 
-.file,
-.file-details-view
+.file
   .file-checkbox,
   .file-heart
     position: absolute
+    top: 15px
     color: white
     @extend .no-transition
     font-size: 14px
     z-index: 10
+    opacity: 0
 
     &:before
       top: 0
-  
-  .file-heart.favourited
-    color: $label-red !important
-    opacity: 1 !important
+
+  .file-checkbox
+    left: 15px
+
+  .file-heart
+    right: 15px
+    text-shadow: 0 0 1px $md-grey
+
+    &.favourited
+      color: $label-red !important
+      opacity: 1 !important
+
+  // HOVER
+  &:hover
+    .file-checkbox,
+    .file-heart
+      opacity: 1 !important
+
+  // SELECTED
+  &.selected
+    .file-checkbox
+      opacity: 1
+      
+      &:before
+        background: white url('../img/icons/icon-font_tick.svg') no-repeat center center / 12px 12px
+
+// SELECT MODE
+.page-content.has-files-selected
+  .file
+    .file-utilities,
+    .flag-container
+      opacity: 0
+
+    .file-checkbox
+      opacity: 1
+
+// TOUCH DEVICES
+html.tablet,
+html.mobile
+  .file
+    .file-checkbox,
+    .file-heart
+      opacity: 1 !important
+    
+    .file-utilities
+      opacity: 1
+      background: -webkit-linear-gradient(top, rgba(black, 0.2) 0%, rgba(black, 0) 20%, rgba(black, 0) 100%)
+      
+      .btn
+        opacity: 0
 
 
 // ============================================================
-// STANDARD FILE
+// GRID VIEW FILE
 // ============================================================
 
 $file-caption-height: 78px
 
-.file
+.file-grid-view
   width: 100%
   background: white
   position: relative
@@ -59,17 +106,6 @@ $file-caption-height: 78px
 
       .filename
         display: none
-
-  .file-checkbox
-    top: 15px
-    left: 15px
-    opacity: 0
-
-  .file-heart
-    top: 15px
-    right: 15px
-    opacity: 0
-    text-shadow: 0 0 1px $md-grey
 
   .file-utilities
     position: absolute
@@ -130,10 +166,6 @@ $file-caption-height: 78px
 
   // HOVER
   &:hover
-    .file-checkbox,
-    .file-heart
-      opacity: 1 !important
-    
     .file-utilities
       opacity: 1
       
@@ -145,13 +177,6 @@ $file-caption-height: 78px
     .wgsn-original-content
       opacity: 0
 
-  // SELECTED
-  &.selected
-    .file-checkbox
-      opacity: 1
-      
-      &:before
-        background: white url('../img/icons/icon-font_tick.svg') no-repeat center center / 12px 12px
 
   // SHOW CAPTION
   &.show-caption
@@ -174,6 +199,7 @@ $file-caption-height: 78px
       .file-comment
         opacity: 1
 
+
   // SHOW FILENAME
   &.show-filename
     padding-bottom: $file-caption-height + 15px !important
@@ -190,6 +216,7 @@ $file-caption-height: 78px
 
   &:not(.show-caption)
     padding-bottom: 0px !important
+
 
   // VIDEO FILE TYPE
   &.file-type-video
@@ -215,99 +242,30 @@ $file-caption-height: 78px
       width: 100% !important
       height: auto !important
 
-// SELECT MODE
-.page-content.has-files-selected
-  .file
-    .file-utilities,
-    .flag-container
-      opacity: 0
-
-    .file-checkbox
-      opacity: 1
-
-// TOUCH DEVICES
-html.tablet,
-html.mobile
-  .file
-    .file-checkbox,
-    .file-heart
-      opacity: 1 !important
-    
-    .file-utilities
-      opacity: 1
-      background: -webkit-linear-gradient(top, rgba(black, 0.2) 0%, rgba(black, 0) 20%, rgba(black, 0) 100%)
-      
-      .btn
-        opacity: 0
-
 
 // ============================================================
 // DETAILS VIEW
 // ============================================================
 
 .file-details-view
-  overflow: auto
-  margin: 0 auto 20px
   max-width: 1200px
-  
-  .thumb-container
-    float: left
-    width: 60%
-    position: relative
+  margin: 0 auto
 
-    img
-      width: 100%
-
-    .file-comment
-      position: absolute
-      bottom: 10px
-      right: 10px
-      font-size: 14px
-
-    .file-utilities-1
-      position: absolute
-      top: 0
-      left: 0
-      width: 100%
-      color: white
-      font-size: 16px
-
-      &:after
-        content: ""
-        background: -webkit-linear-gradient(top, rgba(black, 0.3) 0%, rgba(black, 0) 100%)
-        position: absolute
-        display: block
-        top: 0
-        left: 0
-        width: 100%
-        height: 70px
-        opacity: 0
-        transition: all 400ms
-
-      .file-checkbox,
-      .file-heart
-        top: 15px
+  .row
+    .col-sm-7,
+    .col-sm-5
+      position: relative
 
       .file-checkbox
-        left: 15px
+        left: 20px
 
       .file-heart
-        right: 15px
+        right: 20px
 
-
-    &:hover
-      .file-utilities-1
-        &:after
-          opacity: 1
-
-      .file-checkbox,
-      .file-heart
-        opacity: 1 !important
+      img
+        border: 5px solid white
 
   .caption-container
-    float: left
-    width: 40%
-
     .caption
       &:nth-of-type(2)
         font-size: 18px
@@ -316,10 +274,7 @@ html.mobile
       &:nth-of-type(4)
         @extend .tight
 
-    .wgsn-font
-      font-size: 10px
-
-    .file-utilities-2
+    .file-utilities
       li
         .icon
           color: $md-grey
@@ -330,20 +285,23 @@ html.mobile
             color: $xdk-grey
 
   &.selected
-    .file-utilities-1:after
-      opacity: 1
+    attr: none
 
   &.file-type-video
-    .thumb-container:after
+    .col-sm-7:after
       content: ""
       position: absolute
-      top: 50%
-      left: 50%
+      top: calc(50% - 30px)
+      left: calc(50% - 30px)
       background: url('http://www.wgsn.com/assets/common/images/play_button.png') no-repeat center / 100%
       display: block
       width: 60px
       height: 60px
-      transform: translate3d(-50%, -50%, 0)
+
+
+// ============================================================
+// PRODUCT SELECTED STATES
+// ============================================================
 
 body.product-fashion
   .file,

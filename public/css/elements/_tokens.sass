@@ -1,5 +1,5 @@
 .token
-  background: darken($lt-grey, 5)
+  background: $lt-grey
   @extend .pull-left
   @extend .block-ver-xxs
   margin: 0 5px 5px 0
@@ -11,7 +11,7 @@
     @extend .pull-left
 
   span
-    padding: 0 7px
+    @extend .block-hor-xs
     @extend .inline-block
     position: relative
 
@@ -21,7 +21,7 @@
       display: block
       top: 0
       right: -1px
-      background: white
+      background: $xlt-grey
       width: 1px
       height: 100%
 

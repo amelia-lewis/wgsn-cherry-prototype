@@ -1,41 +1,30 @@
 ul.context-menu#utility-row-settings-context-menu
-  .block-ver-xxs.border-bottom
+  .block-ver-xs.border-bottom
     li
       h4 Display
-      
-      label.checkbox-radio(for='display-captions') Captions
-        input#display-captions(type='checkbox' checked)
 
-      label.checkbox-radio(for='display-filenames') Filenames
-        input#display-filenames(type='checkbox')
-      //- .row
-      //-   .col-xs-10
-      //-     p.pull-left Captions
-      //-   .col-xs-2
-      //-     .toggle.toggle-on.pull-right#toggle-show-caption
-      //- .row
-      //-   .col-xs-10
-      //-     p.pull-left.tight Filenames
-      //-   .col-xs-2
-      //-     .toggle.toggle-off.pull-right#toggle-show-filename
+      form
+        label.checkbox-radio(for='display-captions') Captions
+          input#display-captions(type='checkbox' checked)
+        label.checkbox-radio(for='display-filenames') Filenames
+          input#display-filenames(type='checkbox')
 
-  .block-ver-xxs.border-bottom
+  .block-ver-xs.border-bottom
     li
       h4 Download Preferences
-      .block-bot-xs
+
+      form
         p Images:
-        form
-          label.checkbox-radio(for="best-quality") Best quality
-            input#best-quality(type="radio" name="image-quality" value="best-quality" checked)
-          label.checkbox-radio(for="standard-quality") Standard quality
-            input#standard-quality(type="radio" name="image-quality" value="standard-quality")
-      .block
-        p Design Assets:
-        form
-          label.checkbox-radio(for="#design-file") Design file
-            input(type="radio" name="design-quality" value="design-file" checked)
-          label.checkbox-radio(for="#flat-image") Flat image
-            input(type="radio" name="design-quality" value="flat-image")
+        label.checkbox-radio(for="best-quality") Best quality
+          input#best-quality(type="radio" name="image-quality" value="best-quality" checked)
+        label.checkbox-radio(for="standard-quality") Standard quality
+          input#standard-quality(type="radio" name="image-quality" value="standard-quality")
+        p.block-top-xs Design Assets:
+        label.checkbox-radio(for="#design-file") Design file
+          input(type="radio" name="design-quality" value="design-file" checked)
+        label.checkbox-radio(for="#flat-image") Flat image
+          input(type="radio" name="design-quality" value="flat-image")
+  
   .block-ver-xxs.text-center
     li
       span.text-underline More Settings
