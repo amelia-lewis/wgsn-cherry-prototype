@@ -13,8 +13,9 @@ mixin filter(id, title, viewall, filteredby, ...items)
       
       if viewall
         .accordion-footer.overflow-auto
-          p.text-underline.btn-view-all.hoverable.pull-left(id="btn-view-all-" + id) View all
-          i.icon.icon-angle-right.pull-left.tight
+          p.text-underline.btn-view-all.hoverable.pull-left(id="btn-view-all-" + id) View all 
+            span= title
+            span s
 
 
 //- ============================================================
@@ -53,8 +54,8 @@ mixin filter(id, title, viewall, filteredby, ...items)
     "Boys")
 
   +filter(
-    "products",
-    "Products",
+    "product",
+    "Product",
     true,
     true,
     "Apparel",
@@ -171,8 +172,8 @@ mixin filter(id, title, viewall, filteredby, ...items)
     "Stripe")
 
   +filter(
-    "fabrics-materials",
-    "Fabrics & Materials",
+    "material",
+    "Material",
     true,
     true,
     "Denim", 

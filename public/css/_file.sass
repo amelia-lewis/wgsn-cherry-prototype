@@ -32,15 +32,17 @@ $file-caption-height: 78px
   position: relative
   padding-bottom: 0
   overflow: visible !important
-  border: 5px solid white
   
   img
     vertical-align: bottom
     transition: all 200ms
+    border: 5px solid white
 
   .caption-container
     display: none
     height: $file-caption-height
+    border: solid white
+    border-width: 0 5px 5px 5px
 
     ul
       li
@@ -59,21 +61,21 @@ $file-caption-height: 78px
         display: none
 
   .file-checkbox
-    top: 10px
-    left: 10px
+    top: 15px
+    left: 15px
     opacity: 0
 
   .file-heart
-    top: 10px
-    right: 10px
+    top: 15px
+    right: 15px
     opacity: 0
     text-shadow: 0 0 1px $md-grey
 
   .file-utilities
     position: absolute
-    bottom: 0
-    left: 0
-    right: 0
+    bottom: 5px
+    left: 5px
+    right: 5px
     height: 40px
     color: white
     background: rgba(black, 0.7)
@@ -154,6 +156,9 @@ $file-caption-height: 78px
   // SHOW CAPTION
   &.show-caption
     padding-bottom: $file-caption-height !important
+
+    img
+      border-width: 5px 5px 0 5px
     
     .file-utilities
       bottom: $file-caption-height
@@ -347,10 +352,14 @@ body.product-fashion
       display: none
 
     &.selected
-      border: 5px solid $fashion
+      img,
+      .caption-container
+        border-color: $fashion
 
 body.product-none
   .file,
   .file-details-view
     &.selected
-      border: 5px solid $yellow
+      img,
+      .caption-container
+        border-color: $yellow
