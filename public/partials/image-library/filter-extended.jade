@@ -6,14 +6,14 @@ mixin filter-extended(id, title, tabs, tab1, tab2, tab3, search, anchors, ...ite
 
     .modal-content
       if tabs && anchors && search
-        .row.border-bottom
+        .row.border-bottom.block-hor-md
           .col-xs-12
             ul.tab-nav
               li.tab-nav-tab.active= tab1
               li.tab-nav-tab= tab2
               li.tab-nav-tab= tab3
 
-        .row.border-bottom
+        .row.border-bottom.block-hor-md
           .col-xs-8.block-ver-md
             .filter-extended-anchors
               for letter, i in "#ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
@@ -25,7 +25,7 @@ mixin filter-extended(id, title, tabs, tab1, tab2, tab3, search, anchors, ...ite
         .block-top-md
 
       else if tabs && search
-        .row.border-bottom
+        .row.border-bottom.block-hor-md
           .col-xs-8
             ul.tab-nav
               li.tab-nav-tab.active= tab1
@@ -38,7 +38,7 @@ mixin filter-extended(id, title, tabs, tab1, tab2, tab3, search, anchors, ...ite
         .block-top-md
 
       else if anchors && search
-        .row.border-bottom
+        .row.border-bottom.block-hor-md
           .col-xs-8
             .filter-extended-anchors
               for letter, i in "#ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
@@ -70,7 +70,7 @@ mixin filter-extended(id, title, tabs, tab1, tab2, tab3, search, anchors, ...ite
       i.icon.icon-reset.pull-left.block-top-xs.block-right-xs
       p.tight.block-top-xs.wgsn-font.hoverable.pull-left Reset
       .block-right-sm.inline-block: .btn.btn-white.close-modal Cancel
-      .inline-block: .btn.btn-black.close-modal Done
+      .inline-block: .btn.btn-black.close-modal Apply
 
 
 //- ============================================================

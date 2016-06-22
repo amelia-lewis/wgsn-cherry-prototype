@@ -35,8 +35,8 @@ mixin workspace-header(name, owner, description, numfiles, permissions)
           .pull-left.has-tooltip.tooltip-down.btn-share(data-tooltip="Add users")
             .avatar.pull-left(data-initials="+")
 
-          .divider.pull-left
-          .utility-icon.pull-left.block-xs.btn-comments.hoverable: i.icon.icon-comment
+          //- .divider.pull-left
+          //- .utility-icon.pull-left.block-xs.btn-comments.hoverable: i.icon.icon-comment-filled
 
     .row
       .col-xs-12.col-sm-3
@@ -45,8 +45,10 @@ mixin workspace-header(name, owner, description, numfiles, permissions)
       .col-xs-12.col-sm-9
         .utility-block.pull-right
           include ../../partials/workspace/utility-block
-          //- .divider.pull-left
-          //- .utility-icon.pull-left.block-xs.btn-comments.hoverable: i.icon.icon-comment
+          .divider.pull-left
+          .utility-icon.pull-left.block-xs.btn-comments.hoverable
+            i.icon.icon-comment-filled
+            span &nbsp;18
 
   .workspace-header-condensed.block-md.bg-lt-grey
     .row

@@ -54,7 +54,13 @@
 .filter-extended
   width: 80vw
   max-width: 1000px
-  
+  overflow: hidden
+
+  .modal-content
+    padding-left: 0
+    padding-right: 0
+    overflow: hidden
+
   .col-xs-8
     position: relative
     // height: 36px
@@ -79,6 +85,7 @@
     width: 100%
     height: 390px
     @extend .hoverable
+    @extend .block-left-md
     overflow-x: auto
     overflow-y: hidden
     display: flex
@@ -112,6 +119,9 @@
     .tab-nav-tab
       font-size: 1em
       padding: 10px 0
+
+      &:first-of-type
+        margin-left: 0
 
   .col-xs-12
     .tab-nav
