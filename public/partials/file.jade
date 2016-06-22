@@ -5,8 +5,8 @@ mixin file(type, img, original, comments, filename, ...caption)
     .file-heart: i.icon.icon-heart-filled.hidden-workspace-trash
     
     .caption-container.block-xs
+      p.text-grey.text-capitalize.tight.hidden-image-library.hidden-mood-library= type
       ul.clean
-        li.text-grey.text-capitalize= type
         each item in caption
           li= item
         li.filename= filename
