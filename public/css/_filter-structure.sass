@@ -91,7 +91,7 @@
       margin-right: 40px
 
       &.subheading
-        margin-top: 10px
+        // margin-top: 10px
         @extend .block-ver-xxs
         @extend .border-bottom
         page-break-before: always
@@ -106,8 +106,17 @@
         padding-top: 0
         border-top: none
 
-  ul.tab-nav
+  .tab-nav
     border-bottom: none
+
+    .tab-nav-tab
+      font-size: 1em
+      padding: 10px 0
+
+  .col-xs-12
+    .tab-nav
+      .tab-nav-tab
+        padding: 0 0 15px
 
   &.filter-extended-hierarchical
     .modal-content
@@ -155,25 +164,6 @@
 
         input[type="checkbox"]
           @extend .partial
-
-  &#filter-extended-material
-    width: 600px
-
-    .modal-content
-      .col:nth-of-type(1)
-        ul
-          li:nth-of-type(1)
-            background: rgba($xdk-grey, 0.05)
-
-            &:hover
-              background: rgba($xdk-grey, 0.1)
-
-          li:nth-of-type(1),
-          li:nth-of-type(5),
-          li:nth-of-type(7),
-          li:nth-of-type(8)
-            input[type="checkbox"]
-              @extend .partial
 
 
   // ====================
@@ -227,5 +217,11 @@
   &#filter-extended-colour-tone
     .list-container
       label:nth-of-type(1),
-      label:nth-of-type(25)
+      label:nth-of-type(26)
+        @extend .subheading
+
+  &#filter-extended-prints-graphics,
+  &#filter-extended-material
+    .list-container
+      label:nth-of-type(4n + 1)
         @extend .subheading
