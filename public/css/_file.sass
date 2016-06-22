@@ -22,11 +22,12 @@
     &:before
       border-color: $dk-grey    
 
+  // using an image here not the icon font because it needs an outline
   .file-heart
     right: 15px
     width: 16px
     height: 16px
-    background: white url('../img/icons/icon-font_heart.svg') no-repeat center center / 100%
+    background: url('../img/icons/icon-font_heart.svg') no-repeat center center / 100%
     text-shadow: 0 0 1px $xdk-grey
 
     &.favourited
@@ -200,7 +201,7 @@ $file-caption-height: 64px
       display: block
 
     .file-comment
-      bottom: 4px
+      bottom: 52px
       right: 5px
 
     &:hover

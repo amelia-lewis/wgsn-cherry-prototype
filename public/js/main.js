@@ -14,7 +14,7 @@ $('.file-heart').on('click', function() {
 
 $(document).ready(function() {
   if($('body').hasClass('workspace-favourites-view')) {
-    $('.file-heart').removeClass('icon-heart').addClass('icon-heart-filled');
+    $('.file-heart').addClass('favourited');
   };
 });
 

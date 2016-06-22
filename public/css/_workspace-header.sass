@@ -32,7 +32,7 @@
   // SHARE BLOCK
   .share-block
     .divider
-      margin: 3px 10px 0 0 // to allow for .avatar's margin
+      margin: 2px 10px 0 0 // to allow for .avatar's margin
 
     > .pull-left
       position: relative
@@ -113,9 +113,16 @@
 
   .btn-comments
     position: relative
+    // width: 32px
+    height: 32px
 
     .icon
       font-size: 16px
+      color: $dk-grey
+
+    &:hover
+      .icon
+        color: $xdk-grey
     
     // &:before
     //   content: ""

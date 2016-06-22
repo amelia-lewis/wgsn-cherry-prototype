@@ -8,17 +8,10 @@ block prepend title
 
 block content
   .page-content.show-left-side-panel
-    
-    //- TITLE ROW
-    .title-row.border-bottom.block-hor-md
-      .block-ver-xs.block-right-xs.pull-left
-        h1.tight.inline-block.multi-line
-          span Workspace
-          | Favourites
-
     //- LEFT SIDE PANEL
     include ../../partials/workspace/left-side-panel
     
     //- RIGHT SIDE PANEL
     .right-side-panel
+      include ../../partials/workspace/view-options
       include ../../partials/images-row

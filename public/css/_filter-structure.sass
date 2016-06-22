@@ -93,20 +93,48 @@
     flex-wrap: wrap
     
     label
-      min-width: 140px
-      max-width: 300px 
       margin-right: 40px
 
+      &:not(.subheading)
+        min-width: 140px
+        max-width: 300px 
+
       &.subheading
-        // margin-top: 10px
         @extend .block-ver-xxs
-        @extend .border-bottom
-        page-break-before: always
         padding-left: 0
         @extend .wgsn-font
+        position: relative
+        @extend .inline-block
 
         input
           display: none
+
+        &:before
+          content: ""
+          position: absolute
+          display: block
+          width: 100%
+          height: 1px
+          background: $lt-grey
+          bottom: 0
+          left: 0
+
+        &:after
+          content: "Select group"
+          position: absolute
+          display: block
+          bottom: 3px
+          right: 0
+          @extend .text-no-transform
+          @extend .sans-serif
+          @extend .text-grey
+          @extend .text-right
+          white-space: nowrap
+          opacity: 0
+
+        &:hover
+          &:after
+            opacity: 1
 
       &:first-of-type.subheading
         margin-top: 0

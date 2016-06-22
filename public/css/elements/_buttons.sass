@@ -124,7 +124,9 @@ body.product-styletrial
   .btn-black
     @extend .btn-white
 
-// BACK TO TOP BUTTON
+// ====================
+// Back to Top button
+// ====================
 .btn-back-to-top
   position: fixed
   bottom: 20px
@@ -151,3 +153,14 @@ body.product-styletrial
 
   &.show-comments-panel
     transform: translate3d(calc(-1 * #{$comments-panel-width}), 0, 0)
+
+// ====================
+// Feedback button
+// ====================
+.btn-feedback
+  position: fixed
+  top: calc(50vh - 42px)
+  right: 0
+  width: 24px
+  height: 84px
+  background: url("https://www.wgsn.com/assets/images/feedback/feedback-btn.gif") no-repeat left top / 48px
