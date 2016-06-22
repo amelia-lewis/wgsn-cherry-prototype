@@ -8,10 +8,12 @@
   left: 0
   right: 0
 
-  .search-input
-    width: calc(100% - 150px)
+  input[type="text"]
+    width: 400px
+    @extend .block-xxs
+    height: 25px
 
-  .image-library-search
+  .image-library-search-bar
     width: calc(100% - 150px)
 
   .btn-saved-searches
@@ -22,3 +24,8 @@
       
       .icon-caret-down
         transform: translate3d(0, 0, 0) rotate(180deg)
+
+
+body.image-library-results-view
+  .image-library-search-bar
+    width: calc(100% - 77px)
