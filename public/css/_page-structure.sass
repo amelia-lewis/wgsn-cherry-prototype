@@ -64,6 +64,10 @@
     height: 35px
     z-index: 100
     font-size: 14px
+    @extend .flex-center
+
+    &:after
+      left: 0
 
 
   // ====================
@@ -112,11 +116,6 @@
 
     .comments-panel
       transform: translate3d(0, 0, 0)
-
-    .share-block
-      .btn-comments,
-      .btn-share + .divider // crappy way to target this
-        display: none
 
 
 // ====================
