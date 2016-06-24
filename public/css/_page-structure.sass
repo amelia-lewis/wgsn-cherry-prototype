@@ -58,16 +58,15 @@
 
   .btn-workspace-panel
     position: absolute
-    top: 55px
-    right: 100%
-    width: 35px
-    height: 35px
+    top: 20px
+    right: calc(100% + 20px)
     z-index: 100
-    font-size: 14px
-    @extend .flex-center
 
-    &:after
-      left: 0
+    span:first-of-type
+      display: block
+
+    span:last-of-type
+      display: none
 
 
   // ====================
@@ -99,8 +98,11 @@
       transform: translate3d(0, 0, 0)
 
     .btn-workspace-panel
-      .icon
-        transform: translate3d(0, 0, 0) rotate(0deg)
+      span:first-of-type
+        display: none
+
+      span:last-of-type
+        display: block
 
     #saved-searches-context-menu
       left: calc(-1 * (100vw - 38px - 150px - #{$left-side-panel-width}))
