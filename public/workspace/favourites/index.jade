@@ -1,4 +1,5 @@
 extends ../../layout
+include ../../partials/workspace/workspace-header
 
 block append vars
   - bodyclass = 'workspace-view workspace-favourites-view product-none'
@@ -13,5 +14,6 @@ block content
     
     //- RIGHT SIDE PANEL
     .right-side-panel
+      +workspace-header("Favourites", "You", "Easy access to all the images you've favourited from WGSN.", "66", "edit")
       include ../../partials/workspace/view-options
       include ../../partials/images-row

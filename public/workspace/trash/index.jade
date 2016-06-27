@@ -1,4 +1,5 @@
 extends ../../layout
+include ../../partials/workspace/workspace-header
 
 block append vars
   - bodyclass = 'workspace-view workspace-trash-view product-none'
@@ -8,18 +9,11 @@ block prepend title
 
 block content
   .page-content.show-left-side-panel
+    //- LEFT SIDE PANEL
     include ../../partials/workspace/left-side-panel
     
+    //- RIGHT SIDE PANEL
     .right-side-panel
-      .title-row.border-bottom.block-hor-md
-        .block-ver-xs.block-right-xs.pull-left
-          h1.tight.inline-block.multi-line
-            span Workspace
-            | Trash
-          h4.text-grey.inline-block &nbsp;&nbsp;&nbsp; 452 items
-
-        .utility-block.pull-right
-          .block-ver-xs
-            .btn.btn-white.has-tooltip.tooltip-left(data-tooltip="This will empty all of your trash") Empty trash
-
+      +workspace-header("Trash", "You", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "66", "edit")
+      include ../../partials/workspace/view-options
       include ../../partials/images-row

@@ -29,6 +29,9 @@
     .has-tooltip:after
       bottom: -61px
 
+  .btn-empty-trash
+    display: none
+
   // SHARE BLOCK
   .share-block
     .divider
@@ -182,3 +185,17 @@
 
       .btn-upload
         display: none
+
+// ====================
+// Favourites & Trash
+// ====================
+body.workspace-favourites-view,
+body.workspace-trash-view
+  .workspace-header
+    .share-block
+      display: none
+
+body.workspace-trash-view
+  .workspace-header
+    .btn-empty-trash
+      display: inline-block
