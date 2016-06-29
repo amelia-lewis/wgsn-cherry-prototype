@@ -11,9 +11,9 @@ mixin workspace-header(name, owner, description, numfiles, permissions)
               span.has-tooltip.tooltip-down.tooltip-wrap.sans-serif.text-no-transform(data-tooltip="You can only view this board. To make changes, ask the board owner for edit permissions.") View only access
           else
             i.icon.icon-pencil.text-smaller.text-grey.block-left-xs.hoverable.btn-rename-board
-        h3.text-grey by 
+        h3.tight.text-grey.hidden-workspace-favourites by 
           span= owner
-        p= description
+        p.block-top-xs= description
 
       .col-xs-12.col-sm-6
         .share-block.pull-right.hoverable

@@ -86,7 +86,7 @@ checkforhover = function(){
 };
 
 
-// ===== SELECT FILE ON CHECKBOX, OPEN FILE ON SINGLE CLICK =====
+// select file(s)
 $('.file-checkbox').click(function() {
   $(this).parentsUntil('.files-container').toggleClass('selected');
 });
@@ -146,8 +146,6 @@ multiFileSelect = function(e) {
 $('.file').on('click', function(e) {
   multiFileSelect(e);
 });
-// ===== end SELECT FILE ON CHECKBOX, OPEN FILE ON SINGLE CLICK =====
-
 
 // select all files
 $('.select-all').click(function() {
@@ -157,13 +155,6 @@ $('.select-all').click(function() {
   } else {
     $('.file').addClass('selected');
     $('.page-content').addClass('has-files-selected');
-  }
-
-  if ($('.file-details-view').length == $('.file-details-view.selected').length) {
-    $('.file-details-view').removeClass('selected');
-    $('.page-content').removeClass('has-files-selected');
-  } else {
-    $('.file-details-view').addClass('selected');
   }
 });
 

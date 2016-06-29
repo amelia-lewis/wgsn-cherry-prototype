@@ -1,13 +1,14 @@
 mixin saved-search(name, path1, path2, path3, date)
   li.saved-search.border-bottom
-    h3.tight= name
+    h4.tight= name
     p.text-grey.tight
       span= path1
       span , 
       span= path2
       span , 
       span= path3
-    p.text-grey.tight Created: 
+      span &nbsp;&nbsp;/&nbsp;&nbsp;
+      span Created: 
       span= date
     i.icon.icon-cross
 
