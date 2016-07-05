@@ -14,6 +14,21 @@ block content
     
     //- RIGHT SIDE PANEL
     .right-side-panel
-      +workspace-header("All Trash", "You", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "66", "edit")
+      //- +workspace-header("All Trash", "You", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "66", "edit")
+
+      .workspace-header.block-md.bg-lt-grey
+        .row
+          .col-xs-12.col-sm-4
+            h3.tight
+              span Workspace
+              span.sans-serif &nbsp;&nbsp;/&nbsp;&nbsp;
+              span Trash
+            h1.tight All trash
+
+          .col-xs-12.col-sm-8
+            .utility-block.pull-right
+              include ../../partials/workspace/utility-block
+              .btn.btn-clear-black.has-tooltip.tooltip-left(data-tooltip="This will delete everything in your trash") Empty trash
+      
       include ../../partials/workspace/view-options
-      include ../../partials/images-row
+      include ../../partials/files-row

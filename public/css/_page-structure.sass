@@ -164,6 +164,41 @@ body.image-library-view
 
 
 // ====================
+// Trash
+// ====================
+body.workspace-trash-view
+  .page-content
+    .right-side-panel
+      height: calc(100vh - #{$header-height})
+      @extend .overflow-auto
+
+      .workspace-header
+        position: fixed
+        top: $header-height
+        left: 0
+        right: 0
+      
+      .view-options
+        position: fixed
+        top: $header-height + 80px
+        left: 0
+        right: 0
+        background: rgba($xlt-grey, 0.95)
+        z-index: 50
+
+      .files-row
+        margin-top: 80px + 47px
+
+    &.show-left-side-panel
+      .view-options
+        left: $left-side-panel-width
+
+    &.show-workspace-panel
+      .view-options
+        right: $left-side-panel-width
+
+
+// ====================
 // Accordion
 // ====================
 .accordion-section

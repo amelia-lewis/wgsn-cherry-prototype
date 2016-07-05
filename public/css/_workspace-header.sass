@@ -187,10 +187,9 @@
         display: none
 
 // ====================
-// Favourites & Trash
+// Favourites
 // ====================
-body.workspace-favourites-view,
-body.workspace-trash-view
+body.workspace-favourites-view
   .workspace-header
     .share-block
       display: none
@@ -217,7 +216,23 @@ body.workspace-trash-view
         .displaying-results
           display: block
 
+
+// ====================
+// Trash
+// ====================
 body.workspace-trash-view
   .workspace-header
-    .btn-empty-trash
-      display: inline-block
+    .utility-block
+      .btn-restore,
+      .btn-delete
+        display: none
+
+  .page-content.has-files-selected
+    .workspace-header
+      .utility-block
+        .btn-restore,
+        .btn-delete
+          display: block
+
+      .btn
+        display: none
