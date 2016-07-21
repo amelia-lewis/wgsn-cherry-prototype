@@ -4,6 +4,9 @@ mixin report-page(img, title)
     .text-container.pull-left.block-hor-sm: span=title
 
 .modal-page-list-panel.bg-white.border-left
+  .border-bottom.block-sm.overflow-auto
+    h3.tight.pull-left Pages
+  
   .scroll-container
     +report-page("https://www.wgsn.com//storage/vol20/fo_image_store/cached/boards/65389//page_snapshots/851576.jpg", "1. Cover")
     +report-page("https://www.wgsn.com//storage/vol20/fo_image_store/cached/boards/65389//page_snapshots/851818.jpg", "2. Beyoncé Drops Ivy Park")

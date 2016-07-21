@@ -133,16 +133,16 @@
 
     .modal-page-controls
       top: calc(50% - 20px)
-      width: calc(100% - 40px)
-      left: 20px
+      width: 100%
+      left: 0
 
     .modal-zoom-controls
-      bottom: 0
-      right: 0
+      bottom: 10px
+      left: calc(50% - 41px)
 
       .modal-zoom-in,
       .modal-zoom-out
-        margin: 0 -1px -1px 0
+        margin: 0 1px
 
     .modal-page-left,
     .modal-page-right,
@@ -150,7 +150,7 @@
     .modal-zoom-out
       font-size: 16px
       background: rgba(white, 0.8)
-      @extend .border
+      // @extend .border
       width: 40px
       height: 40px
       padding: 11px 12px
@@ -158,6 +158,14 @@
 
       &:hover
         background: rgba(white, 1)
+
+    .modal-report-blocker
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background: rgba(white, 0.5)
 
     &:hover
       .modal-page-controls,
@@ -182,7 +190,7 @@
     position: absolute
     bottom: 0
     left: 0
-    width: calc(100% - #{$modal-tool-panel-width})
+    width: 100%
     height: $modal-bottom-panel-content-height + $modal-tool-panel-width
     transform: translate3d(0, $modal-bottom-panel-content-height, 0)
 
@@ -206,7 +214,7 @@
       width: 52px
       height: 12px
       margin: 13px 10px 0 0
-      fill: $md-grey
+      fill: $xdk-grey
 
     .modal-bottom-panel-content
       position: absolute
@@ -225,6 +233,9 @@
         img
           height: calc(#{$modal-bottom-panel-content-height} - 20px)
 
+        .block-right-xs.inline-block:nth-child(4) img
+          border: 4px solid $yellow
+
   &.show-bottom-panel
     .modal-bottom-panel
       transform: translate3d(0, 0, 0)
@@ -240,10 +251,9 @@
   .modal-tool-panel
     position: absolute
     top: 0
-    bottom: 0
+    bottom: $modal-tool-panel-width
     right: 0
     width: $modal-tool-panel-width
-    @extend .no-transition
 
     .btn-modal-tool
       font-size: 14px
@@ -276,15 +286,20 @@
       &.btn-modal-info,
       &.btn-modal-comments
         &.active
-          background: white
-          @extend .border-top
-          @extend .border-bottom
+          background: $lt-grey
+          
+          // .icon
+          //   color: white
 
-          &:after
-            opacity: 1
+          // &:after
+          //   opacity: 1
 
-          .icon
-            color: $xdk-grey
+          // .icon
+          //   color: $xdk-grey
+
+  &.show-bottom-panel
+    .modal-tool-panel
+      bottom: $modal-bottom-panel-content-height + $modal-tool-panel-width
 
 
   //- ============================================================
@@ -299,7 +314,7 @@
     right: $modal-tool-panel-width
     bottom: $modal-tool-panel-width
     width: $modal-comments-panel-width
-    transform: translate3d($modal-comments-panel-width, 0, 0)
+    transform: translate3d($modal-comments-panel-width + $modal-tool-panel-width, 0, 0)
 
     .scroll-container
       height: 100%
@@ -336,7 +351,15 @@
 
   .modal-comments-panel
     .scroll-container
-      height: calc(100% - 101px)
+      height: calc(100% - 101px - 46px)
+
+  .modal-info-panel
+    .btn
+      margin: -6px 0
+
+  .modal-page-list-panel
+    .scroll-container
+      height: calc(100% - 46px)
 
   &.show-bottom-panel
     .modal-comments-panel,
@@ -396,10 +419,15 @@
       opacity: 0 !important
       pointer-events: none
 
+    .modal-page-left,
+    .modal-page-right
+      background: rgba(white, 0.1)
+      color: rgba(white, 0.3)
+
   .modal-overlay
     position: absolute
     top: 0
-    right: $modal-tool-panel-width
+    right: 0
     left: 0
     bottom: 0
     background: rgba(black, 0.7)
@@ -425,14 +453,14 @@
     .hidden-file-type-report
       display: none
 
-    .modal-info-bar
-      top: $modal-tool-panel-width
+    // .modal-info-bar
+    //   top: $modal-tool-panel-width
 
-    .modal-image-panel,
-    .modal-comments-panel,
-    .modal-info-panel,
-    .modal-page-list-panel
-      top: $modal-tool-panel-width * 2
+    // .modal-image-panel,
+    // .modal-comments-panel,
+    // .modal-info-panel,
+    // .modal-page-list-panel
+    //   top: $modal-tool-panel-width * 2
 
   &.file-type-video
     .hidden-file-type-video
@@ -454,3 +482,8 @@
   &.file-type-colour-card
     .hidden-file-type-colour-card
       display: none
+
+
+body.product-fashion
+  #item-detail-modal .modal-bottom-panel .modal-bottom-panel-content .modal-hor-scroll-container img
+    border-color: $fashion !important

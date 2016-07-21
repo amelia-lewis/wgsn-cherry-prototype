@@ -3,13 +3,13 @@
 //-   i.icon.icon-angle-right.hoverable
 
 .modal#item-detail-modal
-  .modal-report-tabs.bg-white.border-bottom.no-transition.hidden-file-type-image.hidden-file-type-video.hidden-file-type-colour-card
-    ul.tab-nav-alt
-      li.tab-nav-tab.active Report 1
-      li.tab-nav-tab Report 2
-      li.tab-nav-tab Report 3
-      li.tab-nav-tab Report 4
-      li.tab-nav-tab Report 5
+  //- .modal-report-tabs.bg-white.border-bottom.no-transition.hidden-file-type-image.hidden-file-type-video.hidden-file-type-colour-card
+  //-   ul.tab-nav-alt
+  //-     li.tab-nav-tab.active Report 1
+  //-     li.tab-nav-tab Report 2
+  //-     li.tab-nav-tab Report 3
+  //-     li.tab-nav-tab Report 4
+  //-     li.tab-nav-tab Report 5
 
   .modal-info-bar.bg-white.border-bottom.no-transition
     .pull-left.block-hor-sm
@@ -21,15 +21,16 @@
 
     .pull-right
       .block-hor-sm.pull-left: span 2/10
-      .btn-modal-nav.border-left.pull-left.flex-center.hoverable: i.icon.icon-angle-left
-      .btn-modal-nav.border-left.pull-left.flex-center.hoverable: i.icon.icon-angle-right
+      //- .btn-modal-nav.border-left.pull-left.flex-center.hoverable: i.icon.icon-angle-left
+      //- .btn-modal-nav.border-left.pull-left.flex-center.hoverable: i.icon.icon-angle-right
 
   .modal-image-panel.bg-xlt-grey
     .img
-    i.file-heart.icon.icon-heart-o.hoverable
-    i.icon.icon-cross.btn-close-fullscreen.hoverable
     
-    .modal-page-controls.overflow-auto.hoverable.hidden-file-type-image.hidden-file-type-video.hidden-file-type-colour-card
+    .modal-report-blocker.hoverable.flex-center.hidden-file-type-image.hidden-file-type-video.hidden-file-type-colour-card
+      .btn.btn-black View this report
+
+    .modal-page-controls.overflow-auto.hoverable
       .modal-page-left.pull-left: i.icon.icon-angle-left
       .modal-page-right.pull-right: i.icon.icon-angle-right
     
@@ -37,12 +38,15 @@
       .modal-zoom-in: i.icon.icon-zoom-plus
       .modal-zoom-out: i.icon.icon-zoom-minus
 
+    i.file-heart.icon.icon-heart-o.hoverable
+    i.icon.icon-cross.btn-close-fullscreen.hoverable
+
   .modal-bottom-panel
     .modal-bottom-panel-tabs.bg-white.border-top.border-bottom
       i.icon.icon-angle-up.pull-left.hoverable
-      ul.tab-nav-alt.pull-left
+      ul.tab-nav.pull-left.border-left
         li.tab-nav-tab.active.hidden-workspace Search results
-        li.tab-nav-tab.active.hidden-image-library This folder
+        li.tab-nav-tab.active.hidden-image-library Autumn/Winter 2016 folder
         li.tab-nav-tab.hidden-file-type-report.hidden-file-type-video.hidden-file-type-colour-card Related Images
         li.tab-nav-tab.hidden-file-type-report.hidden-file-type-video.hidden-file-type-colour-card Reports with this image
         li.tab-nav-tab.hidden-file-type-image.hidden-file-type-video.hidden-file-type-colour-card Images in this report
@@ -59,14 +63,14 @@
   .modal-tool-panel.bg-white.border-left
     .btn-modal-tool.border-bottom.close-modal: i.icon.icon-cross
     .btn-modal-tool.btn-fullscreen: i.icon.icon-fullscreen
-    .btn-modal-tool.btn-modal-info: i.icon.icon-info-circle
-    .btn-modal-tool.btn-modal-page-list.hidden-file-type-image.hidden-file-type-video.hidden-file-type-colour-card: i.icon.icon-list
-    .btn-modal-tool.hidden-file-type-image.hidden-file-type-video.hidden-file-type-colour-card: i.icon.icon-lang-en
-    .btn-modal-tool.btn-save.border-top: i.icon.icon-save
-    .btn-modal-tool.btn-download: i.icon.icon-download
-    .btn-modal-tool.btn-print.hidden-file-type-video: i.icon.icon-print
+    .btn-modal-tool.btn-modal-info.border-bottom: i.icon.icon-info-circle
+    .btn-modal-tool.btn-modal-page-list.hidden-workspace.hidden-file-type-image.hidden-file-type-video.hidden-file-type-colour-card: i.icon.icon-list
     .btn-modal-tool.btn-crop.hidden-file-type-report.hidden-file-type-video.hidden-file-type-colour-card: i.icon.icon-crop
-    .btn-modal-tool.btn-send: i.icon.icon-paper-plane
-    .btn-modal-tool.btn-modal-comments.border-top.border-bottom: i.icon.icon-comment
+    .btn-modal-tool.btn-save.hidden-workspace: i.icon.icon-save
+    .btn-modal-tool.btn-download.hidden-file-type-video: i.icon.icon-download
+    .btn-modal-tool.btn-print.hidden-file-type-video: i.icon.icon-print
+    .btn-modal-tool.btn-send.border-bottom: i.icon.icon-paper-plane
+    .btn-modal-tool.border-bottom.hidden-workspace.hidden-file-type-image.hidden-file-type-video.hidden-file-type-colour-card: i.icon.icon-lang-en
+    .btn-modal-tool.btn-modal-comments.border-bottom.hidden-image-library: i.icon.icon-comment
 
   .modal-overlay
