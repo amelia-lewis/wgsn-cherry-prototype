@@ -190,8 +190,10 @@ $(".file").click(function(e) {
 // ====================================================================================================
 
 //- item context menu
-$('.file .btn-item-menu').on('click', function() {
-  $(this).siblings('#item-context-menu').toggleClass('show');
+$('.file .btn-item-menu').click(function(e, evt) {
+  // $(this).siblings('#item-context-menu').toggleClass('show');
+  $("#floating-item-context-menu").addClass('show');
+  $("#floating-item-context-menu").css({"left": (e.pageX), "top":(e.pageY)});
 });
 
 // - board context menu
