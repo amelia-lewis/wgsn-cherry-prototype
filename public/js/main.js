@@ -846,6 +846,15 @@ $('#filter-token-sequins').on('click', function() {
   $('.results-dresses-sequins').hide();
 });
 
+$(document).keypress(function(e) {
+ if($('#image-library-search-input').is(':focus')) {
+  if(e.which == 13) {
+     location.href = "/image-library/search-dresses";
+   }
+ }
+});
+
+
 
 
 
