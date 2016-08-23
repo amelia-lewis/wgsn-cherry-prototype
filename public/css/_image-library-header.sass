@@ -13,12 +13,21 @@
     @extend .block-xxs
     height: 25px
 
+  .col-xs-12
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
+    justify-content: flex-start
+    align-items: stretch
+
   .image-library-search-bar
-    width: calc(100% - 150px)
+    flex-grow: 2
+
+    .token:nth-of-type(2)
+      display: none
 
   .btn-saved-searches,
   .btn-save-search
-    height: 35px
     position: relative
 
     &.active
@@ -27,7 +36,8 @@
       .icon-caret-down
         transform: translate3d(0, 0, 0) rotate(180deg)
 
-
-body.image-library-results-view
-  .image-library-search-bar
-    width: calc(100% - 79px)
+.page-content.filtered-by-sequins
+  .image-library-header
+    .image-library-search-bar
+      .token:nth-of-type(2)
+        display: block

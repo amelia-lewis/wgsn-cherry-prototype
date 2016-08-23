@@ -1,7 +1,7 @@
-extends ../layout
+extends ../../layout
 
 block append vars
-  - bodyclass = 'image-library-view product-fashion'
+  - bodyclass = 'image-library-view image-library-view-search product-fashion'
 
 block prepend title
   | Image &amp; Design Library | 
@@ -16,30 +16,35 @@ block content
       .row
         .col-xs-12
           .image-library-search-bar.block-top-xxs.block-hor-xxs.bg-white.pull-left
+            .token.has-tooltip.tooltip-down(data-tooltip="Product > Apparel > Dresses")
+              span Dresses
+              i.icon.icon-cross
+            .token.has-tooltip.tooltip-down#filter-token-sequins(data-tooltip="Embellishments & Trims > Sequins")
+              span Sequins
+              i.icon.icon-cross
             .block-bot-xxs.pull-left: input(type="text", placeholder="Search images, prints, patterns and more...")
 
-          .btn-saved-searches.block-xs.bg-white.pull-left.hoverable.border-left
+          .btn-save-search.block-xs.bg-white.pull-left.hoverable.border-left
             i.icon.icon-bookmark
-            span.wgsn-font.block-hor-xs Saved searches
-            i.icon.icon-caret-down.inline-block.no-transition
-            include ../partials/image-library/saved-searches
+            span.wgsn-font.block-hor-xs Save
 
     //- LEFT SIDE PANEL
     .left-side-panel
-      include ../partials/image-library/filter-structure
+      include ../../partials/image-library/filter-structure
       .btn-left-side-panel.bg-white.flex-center.border.hoverable: i.icon.icon-double-angle-left
 
     //- RIGHT SIDE PANEL
     .right-side-panel
-      include ../partials/workspace/view-options
-      include ../partials/images-row-2
+      include ../../partials/workspace/view-options
+      .results-dresses: include ../../partials/images-row-dresses
+      .results-dresses-sequins: include ../../partials/images-row-dresses-sequins
 
       .text-center.block-bot-lg: .load-more-button.block-ver-xs.block-hor-md.bg-lt-grey.text-grey.wgsn-font.inline-block.hoverable Load images 501&ndash;1000
 
     //- WORKSPACE PANEL
     .workspace-panel
       .folder-structure.bg-xdk-grey
-        include ../partials/workspace/folder-structure
+        include ../../partials/workspace/folder-structure
 
       .btn.btn-black.btn-sm.btn-workspace-panel
         span Show folders

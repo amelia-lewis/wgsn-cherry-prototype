@@ -1,5 +1,5 @@
 mixin filter(id, title, viewall, filteredby, ...items)
-  .filter.accordion-section.closed
+  .filter.accordion-section.closed(id="filter-" + id)
     .accordion-title.overflow-auto.hoverable(id="filter-btn-" + id)
       span.wgsn-font.pull-left= title
       i.section-expand-icon.icon.icon-angle-right.pull-right.text-smaller
@@ -156,3 +156,50 @@ mixin filter(id, title, viewall, filteredby, ...items)
     "Fur",
     "Leather & Suede", 
     "Woven")
+
+  //- id, title, viewall, filteredby, ...items
+  +filter(
+    "embellishments-trims",
+    "Embellishments & Trims",
+    true,
+    true,
+    "Beads/Beading",
+    "Branding",
+    "Flowers/Rosettes",
+    "Ruffles",
+    "Zips/Zippers")
+
+  //- id, title, viewall, filteredby, ...items
+  +filter(
+    "design-details",
+    "Design Details",
+    true,
+    true,
+    "Backless",
+    "Cutout",
+    "Drawstring",
+    "Peplum",
+    "Pleats/Pleated")
+
+  //- id, title, viewall, filteredby, ...items
+  +filter(
+    "necklines-collars",
+    "Necklines & Collars",
+    true,
+    true,
+    "Boatneck/Bateau",
+    "Collarless",
+    "Halter",
+    "One-Shoulder",
+    "Strapless")
+
+  //- id, title, viewall, filteredby, ...items
+  +filter(
+    "lengths",
+    "Lengths",
+    false,
+    true,
+    "Knee Length",
+    "Long/Maxi",
+    "Mdid/Mid-Calf",
+    "Mini-Short")

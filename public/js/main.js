@@ -451,6 +451,9 @@ openExtendedFilter("event");
 openExtendedFilter("colour-tone");
 openExtendedFilter("prints-graphics");
 openExtendedFilter("material");
+openExtendedFilter("embellishments-trims");
+openExtendedFilter("design-details");
+openExtendedFilter("necklines-collars");
 
 
 // ====================================================================================================
@@ -815,3 +818,34 @@ $(".page-content").headroom({
 // $(function() {
 //   $("img.lazy").lazyload();
 // });
+
+
+// ====================================================================================================
+//  _    _           _     _ _ _ _           _______        _   _             
+// | |  | |         | |   (_) (_) |         |__   __|      | | (_)            
+// | |  | |___  __ _| |__  _| |_| |_ _   _     | | ___  ___| |_ _ _ __   __ _ 
+// | |  | / __|/ _` | '_ \| | | | __| | | |    | |/ _ \/ __| __| | '_ \ / _` |
+// | |__| \__ \ (_| | |_) | | | | |_| |_| |    | |  __/\__ \ |_| | | | | (_| |
+//  \____/|___/\__,_|_.__/|_|_|_|\__|\__, |    |_|\___||___/\__|_|_| |_|\__, |
+//                                    __/ |                              __/ |
+//                                   |___/                              |___/ 
+// ====================================================================================================
+
+$('.results-dresses-sequins').hide();
+
+// hit apply on embelishments & trims filter, apply class to body to fake results
+$('#filter-extended-embellishments-trims .btn-black').on('click', function() {
+  $('.page-content').addClass('filtered-by-sequins');
+  $('.results-dresses').hide();
+  $('.results-dresses-sequins').show();
+});
+
+$('#filter-token-sequins').on('click', function() {
+  $('.page-content').removeClass('filtered-by-sequins');
+  $('.results-dresses').show();
+  $('.results-dresses-sequins').hide();
+});
+
+
+
+
