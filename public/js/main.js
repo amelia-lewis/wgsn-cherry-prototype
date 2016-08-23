@@ -872,7 +872,7 @@ $('#filter-token-sequins .icon-cross').on('click', function() {
 
 // apply wgsn original content filter
 $('.results-animal-print-original-content').hide();
-$('#filter-extended-embellishments-trims .btn-black').on('click', function() {
+$('#wgsn-original-prints-and-graphics').on('click', function() {
   $('.page-content').addClass('filtered-by-original-content');
   $('.results-animal-print').hide();
   $('.results-animal-print-original-content').show();

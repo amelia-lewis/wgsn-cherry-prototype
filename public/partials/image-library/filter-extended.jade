@@ -63,8 +63,8 @@ mixin filter-extended(id, title, tabs, tab1, tab2, tab3, search, anchors, ...ite
         .col-xs-12
           .list-container
             each item in items
-              label.checkbox-radio(for=item)= item
-                input(type="checkbox" id=item)
+              label.checkbox-radio(for=item.replace(/\s+/g, '-').toLowerCase())= item
+                input(type="checkbox" id=item.replace(/\s+/g, '-').toLowerCase())
 
     .modal-footer.text-right
       i.icon.icon-reset.pull-left.block-top-xs.block-right-xs
