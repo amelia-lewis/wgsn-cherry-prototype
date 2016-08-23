@@ -1,7 +1,7 @@
 extends ../../layout
 
 block append vars
-  - bodyclass = 'image-library-view image-library-view-search-dresses product-fashion'
+  - bodyclass = 'image-library-view product-fashion'
 
 block prepend title
   | Image &amp; Design Library | 
@@ -16,11 +16,8 @@ block content
       .row
         .col-xs-12
           .image-library-search-bar.block-top-xxs.block-hor-xxs.bg-white.pull-left
-            .token.has-tooltip.tooltip-down#filter-token-dresses(data-tooltip="Product > Apparel")
-              span Dresses
-              i.icon.icon-cross
-            .token.has-tooltip.tooltip-down#filter-token-sequins(data-tooltip="Embellishments & Trims")
-              span Sequins
+            .token.token-alt#filter-token-animal-print
+              span "animal print"
               i.icon.icon-cross
             .block-bot-xxs.pull-left: input(type="text", placeholder="Search images, prints, patterns and more...")
 
@@ -36,8 +33,8 @@ block content
     //- RIGHT SIDE PANEL
     .right-side-panel
       include ../../partials/workspace/view-options
-      .results-dresses: include ../../partials/images-row-dresses
-      .results-dresses-sequins: include ../../partials/images-row-dresses-sequins
+      .results-animal-print: include ../../partials/images-row-animal-print
+      .results-animal-print-original-content: include ../../partials/images-row-dresses-sequins
 
       .text-center.block-bot-lg: .load-more-button.block-ver-xs.block-hor-md.bg-lt-grey.text-grey.wgsn-font.inline-block.hoverable Load images 501&ndash;1000
 

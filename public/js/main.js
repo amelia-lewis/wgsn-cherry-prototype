@@ -831,28 +831,60 @@ $(".page-content").headroom({
 //                                   |___/                              |___/ 
 // ====================================================================================================
 
-$('.results-dresses-sequins').hide();
+$(document).keypress(function(e) {
+  if($('#image-library-search-input').val() == "dresses") {
+    if(e.which == 13) {
+      location.href = "/image-library/search-dresses";
+    }
+  } else if($('#image-library-search-input').val() == "animal print") {
+    if(e.which == 13) {
+      location.href = "/image-library/search-animal-print";
+    }
+  }
+});
 
-// hit apply on embelishments & trims filter, apply class to body to fake results
+// delete dresses filter
+$('#filter-token-dresses .icon-cross').on('click', function() {
+  $('.page-content').removeClass('filtered-by-sequins');
+  location.href = "/image-library";
+});
+
+// delete animal print filter
+$('#filter-token-animal-print .icon-cross').on('click', function() {
+  $('.page-content').removeClass('filtered-by-sequins');
+  location.href = "/image-library";
+});
+
+// apply "sequins" filter
+$('.results-dresses-sequins').hide();
 $('#filter-extended-embellishments-trims .btn-black').on('click', function() {
   $('.page-content').addClass('filtered-by-sequins');
   $('.results-dresses').hide();
   $('.results-dresses-sequins').show();
 });
 
-$('#filter-token-sequins').on('click', function() {
+// delete sequins filter
+$('#filter-token-sequins .icon-cross').on('click', function() {
   $('.page-content').removeClass('filtered-by-sequins');
   $('.results-dresses').show();
   $('.results-dresses-sequins').hide();
 });
 
-$(document).keypress(function(e) {
- if($('#image-library-search-input').is(':focus')) {
-  if(e.which == 13) {
-     location.href = "/image-library/search-dresses";
-   }
- }
+// apply wgsn original content filter
+$('.results-animal-print-original-content').hide();
+$('#filter-extended-embellishments-trims .btn-black').on('click', function() {
+  $('.page-content').addClass('filtered-by-original-content');
+  $('.results-animal-print').hide();
+  $('.results-animal-print-original-content').show();
 });
+
+// delete sequins filter
+$('#filter-token-sequins .icon-cross').on('click', function() {
+  $('.page-content').removeClass('filtered-by-sequins');
+  $('.results-dresses').show();
+  $('.results-dresses-sequins').hide();
+});
+
 
 
 
