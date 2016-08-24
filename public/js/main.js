@@ -838,16 +838,18 @@ $(".page-content").headroom({
 //                                   |___/                              |___/ 
 // ====================================================================================================
 
-$(document).keypress(function(e) {
-  if($('#image-library-search-input').val() == "dresses") {
-    if(e.which == 13) {
-      location.href = "/image-library/search-dresses";
+$('#image-library-search-input').on('focus', function() {
+  $('#image-library-search-input').keypress(function(e) {
+    if($('#image-library-search-input').val() == "dresses") {
+      if(e.which == 13) {
+        location.href = "/image-library/search-dresses";
+      }
+    } else if($('#image-library-search-input').val() == "animal print") {
+      if(e.which == 13) {
+        location.href = "/image-library/search-animal-print";
+      }
     }
-  } else if($('#image-library-search-input').val() == "animal print") {
-    if(e.which == 13) {
-      location.href = "/image-library/search-animal-print";
-    }
-  }
+  });
 });
 
 if ($('body').hasClass('image-library-view-search-dresses')) {
