@@ -518,6 +518,7 @@ $('.modal .close-modal').on('click', function() {
     $('.filter-extended').removeClass('show');
     $('#modal-step-1').show();
     $('#modal-step-2').hide();
+    $('input').val('');
   }
 });
 
@@ -529,6 +530,7 @@ $('.overlay').on('click', function() {
   $('.item-detail-modal-controls').removeClass('show');
   $('#modal-step-1').show();
   $('#modal-step-2').hide();
+  $('input').val('');
 });
 
 // ...and with the escape key
@@ -540,6 +542,7 @@ $(document).keyup(function(e) {
     $('.overlay').removeClass('show');
     $('#modal-step-1').show();
     $('#modal-step-2').hide();
+    $('input').val('');
   } 
 });
 
