@@ -19,6 +19,9 @@ block content
             .token.token-alt#filter-token-animal-print
               span "animal print"
               i.icon.icon-cross
+            .token#filter-token-original-content
+              span WGSN Original Prints and Graphics
+              i.icon.icon-cross
             .block-bot-xxs.pull-left: input(type="text", placeholder="Search images, prints, patterns and more...")
 
           .btn-save-search.block-xs.bg-white.pull-left.hoverable.border-left
@@ -34,7 +37,7 @@ block content
     .right-side-panel
       include ../../partials/workspace/view-options
       .results-animal-print: include ../../partials/images-row-animal-print
-      .results-animal-print-original-content: include ../../partials/images-row-dresses-sequins
+      .results-animal-print-original-content: include ../../partials/images-row-animal-print-original-content
 
       .text-center.block-bot-lg: .load-more-button.block-ver-xs.block-hor-md.bg-lt-grey.text-grey.wgsn-font.inline-block.hoverable Load images 501&ndash;1000
 
