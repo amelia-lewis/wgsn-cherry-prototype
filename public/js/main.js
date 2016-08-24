@@ -475,6 +475,10 @@ openModal = function(modalname) {
       $('.overlay').addClass('show');
     }
 
+    // var selectedModalImg = $(e.target).parentsUntil('.collage').find('img').prop('src');
+    // console.log(selectedModalImg);
+    // $('#save-modal img').attr("src", selectedModalImg);
+
     $('#' + modalname + '-modal').addClass('show');
 
     setTimeout(function() {
