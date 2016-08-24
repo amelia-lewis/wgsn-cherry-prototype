@@ -843,6 +843,14 @@ $(document).keypress(function(e) {
   }
 });
 
+if ($('body').hasClass('image-library-view-search-dresses')) {
+  $('#image-library-results-text').text("25,102 results");
+} else if ($('body').hasClass('image-library-view-search-animal-print')) {
+  $('#image-library-results-text').text("12,304 results");
+} else {
+  $('#image-library-results-text').text("Latest Images");
+}
+
 // delete dresses filter
 $('#filter-token-dresses .icon-cross').on('click', function() {
   location.href = "/image-library";
@@ -860,6 +868,7 @@ $('#filter-extended-embellishments-trims .btn-black').on('click', function() {
   $('.results-dresses').hide();
   $('.results-dresses-sequins').show();
   $('#filter-token-sequins').show();
+  $('#image-library-results-text').text("2,543 results");
 });
 
 // delete sequins filter
@@ -867,6 +876,7 @@ $('#filter-token-sequins .icon-cross').on('click', function() {
   $('.results-dresses').show();
   $('.results-dresses-sequins').hide();
   $('#filter-token-sequins').hide();
+  $('#image-library-results-text').text("25,102 results");
 });
 
 // apply wgsn original content filter
@@ -876,13 +886,16 @@ $('#wgsn-original-prints-and-graphics').on('click', function() {
   $('.results-animal-print').toggle();
   $('.results-animal-print-original-content').toggle();
   $('#filter-token-original-content').toggle();
+  $('#image-library-results-text').text("889 results");
 });
 
 // delete original content filter
 $('#filter-token-original-content .icon-cross').on('click', function() {
-  $('.results-dresses').show();
-  $('.results-dresses-sequins').hide();
+  $('.results-animal-print').show();
+  $('.results-animal-print-original-content').hide();
   $('#filter-token-original-content').hide();
+  $('#image-library-results-text').text("12,304 results");
+  $('#wgsn-original-prints-and-graphics').prop('checked', false);
 });
 
 
