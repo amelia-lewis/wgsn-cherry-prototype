@@ -84,32 +84,27 @@ block modal-content
               span.optional (Optional)
               textarea(placeholder="Message")
 
-        .row.block-top-xs.block-bot-xs
-          .col-xs-2
-            label.block-top-xs Available:
-          
-          .col-xs-4
-            select
-              option 2 days
-              option 5 days
-              option 10 days
-              option 15 days
-              option 20 days
+        .row.block-bot-md
+          .col-xs-6
+            label Available:
+              select
+                option 2 days
+                option 5 days
+                option 10 days
+                option 15 days
+                option 20 days
+
+          .col-xs-6
+            label Language:
+              select
+                option English
+                option Spanish
+                option Portuguese
+                option Chinese
+                option Japanese
+                option Korean
 
         .row.block-bot-md
-          .col-xs-2
-            label.block-top-xs Language:
-          
-          .col-xs-4
-            select
-              option English
-              option Spanish
-              option Portuguese
-              option Chinese
-              option Japanese
-              option Korean
-
-        .row.block-top-xs.block-bot-xs
           .col-xs-12
             .block-right-md.pull-left
               label.tight Send confirmation for:
